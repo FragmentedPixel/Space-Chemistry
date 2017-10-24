@@ -21,13 +21,11 @@ public class GasSubstance : iSubstanceBehaviour
 
     private void GasFloating()
     {
-        //TODO: Refactor this.
+        // Gas always goes upwards
 
-        if (GetComponentInParent<Rigidbody2D>().velocity.y < 50)
+        if (rb.velocity.y < 50)
         {
-            //Limits the speed in Y to avoid speed light.
-            // Gas always goes upwards
-            GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(0, floatability));
+            rb.AddForce(new Vector2(0, floatability));
         }
     }
 }

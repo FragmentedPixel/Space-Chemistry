@@ -18,21 +18,34 @@ public class iSubstanceBehaviour : MonoBehaviour
     public float particleLifeTime = 3.0f;
 
     // Layer of the particle
-    //TODO: Later transform this in single layer mask type or enum type.
-    [Tooltip("Fluids = 8 Gas = 9")]
-    public int particleLayer;
+    public enum SubstanceLayer { Fluids = 8, Steam = 9};
+    
+    public SubstanceLayer particleLayer;
+
+    // Holds the parent's Rigidbody.
+    protected Rigidbody2D rb;
+
+    // Holds the parent's substance script.
+    protected Substance substanceScript;
     #endregion
 
     #region Specific
+    private void OnEnable()
+    {
+        rb = GetComponentInParent<Rigidbody2D>();
+        substanceScript = GetComponentInParent<Substance>();
+    }
 
     public void ActivateState()
     {
         // Set the gravity for this particle.
-        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
         rb.gravityScale = particleGravity;
 
-        // Move it to the coresponding layer.
-        transform.parent.gameObject.layer = particleLayer;
+        // Move it to the corresponding layer.
+        transform.parent.gameObject.layer = (int) particleLayer;
+
+        //Update total life time in script.
+        substanceScript.UpdateTotalLifeTime(particleLifeTime);
     }
 
     public virtual void Update()
@@ -47,15 +60,12 @@ public class iSubstanceBehaviour : MonoBehaviour
         return State.NONE;
     }
 
-    
     #endregion
 
     #region Movement & Scale
 
     public void MovementAnimation()
     {
-        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-
         // This scales the particle image according to its velocity, so it looks like its deformable
 
         Vector3 movementScale = new Vector3(1.0f, 1.0f, 1.0f);			
@@ -68,18 +78,17 @@ public class iSubstanceBehaviour : MonoBehaviour
 
     public void ScaleDown()
     {
-        //TODO: Refactor this for OOP
-
         // The effect for the particle to seem to fade away
-        float timePassed = GetComponentInParent<Substance>().currentLifeTime;
+        float percentagePassed = substanceScript.GetPercentagePassed();
 
-        float scaleValue = 1.0f - ( timePassed / particleLifeTime);
+        // Calculate scale depending on life time left.
+        float scaleValue = 1.0f - percentagePassed;
         Vector2 particleScale = Vector2.one;
         
+        // Update the particle scale.
         particleScale.x = scaleValue;
         particleScale.y = scaleValue;
         transform.localScale = particleScale;
-        
     }
 
     #endregion

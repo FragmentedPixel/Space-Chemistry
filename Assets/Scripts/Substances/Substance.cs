@@ -17,8 +17,10 @@ public class Substance : MonoBehaviour
     public State substanceState;
 
     // Time since the particle was created.
-    // TODO: Create getter.
-    public float currentLifeTime = 0f;
+    private float currentLifeTime = 0f;
+
+    // Total life time of the particle.
+    private float totalLifeTime = 0f;
 
     // Current substance behaviour running.
     private iSubstanceBehaviour currentBehaviour;
@@ -43,7 +45,7 @@ public class Substance : MonoBehaviour
         currentBehaviour.Update();
 
         //TODO: Create a better approach to end a particle life time.
-        if(currentLifeTime > currentBehaviour.particleLifeTime)
+        if(currentLifeTime > totalLifeTime)
         {
             Destroy(gameObject);
         }
@@ -125,6 +127,16 @@ public class Substance : MonoBehaviour
     {
         substanceState = newState;
         UpdateBehaviour();
+    }
+
+    public float GetPercentagePassed()
+    {
+        return currentLifeTime/totalLifeTime;
+    }
+
+    public void UpdateTotalLifeTime(float newTotal)
+    {
+        totalLifeTime = newTotal;
     }
 
     #endregion

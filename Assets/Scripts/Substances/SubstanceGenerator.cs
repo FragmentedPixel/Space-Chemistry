@@ -37,13 +37,13 @@ public class SubstanceGenerator : MonoBehaviour
             // It is time to spawn a new particle.
 
             // Create the new particle object.
-            GameObject newObject = Instantiate(ParticulePrefab);
+            GameObject newParticle = Instantiate(ParticulePrefab);
 
-            // TODO: Refactor this for OOP.
-            newObject.GetComponent<Rigidbody2D>().AddForce(particleForce);
-            newObject.GetComponent<Substance>().ChangeSubstanceState(particlesState);
-            newObject.transform.position = transform.position;
-            newObject.transform.parent = particlesParent;
+            // Update particle parameters.
+            newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce);
+            newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);
+            newParticle.transform.position = transform.position;
+            newParticle.transform.parent = particlesParent;
 
             // Reset timer.
             spawnTimer = 0f; 	

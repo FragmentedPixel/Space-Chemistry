@@ -43,8 +43,7 @@ public class Substance : MonoBehaviour
     private void Update()
     {
         currentBehaviour.Update();
-
-        //TODO: Create a better approach to end a particle life time.
+        
         if(currentLifeTime > totalLifeTime)
         {
             Destroy(gameObject);

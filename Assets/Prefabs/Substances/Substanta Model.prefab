@@ -310,6 +310,7 @@ MonoBehaviour:
   particleState: 0
   particleGravity: 1
   particleLifeTime: 3
+  particleLayer: 8
 --- !u!114 &114462022829389768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,6 +325,7 @@ MonoBehaviour:
   particleState: 1
   particleGravity: 0
   particleLifeTime: 1.5
+  particleLayer: 9
   floatability: 7
 --- !u!114 &114492491055071102
 MonoBehaviour:
@@ -350,5 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleState: 2
-  particleGravity: 0.3
-  particleLifeTime: 2
+  particleGravity: 1.5
+  particleLifeTime: 1
+  particleLayer: 8

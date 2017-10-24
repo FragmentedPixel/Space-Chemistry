@@ -5,6 +5,10 @@ using UnityEngine;
 // All possible states of the particle.
 public enum State { WATER, GAS, LAVA, NONE };
 
+/*
+ * Responsible for delegating the events to the current state.
+ */
+
 public class Substance : MonoBehaviour
 {
     #region Variabiles
@@ -12,15 +16,15 @@ public class Substance : MonoBehaviour
     // Current state of the substance.
     public State substanceState;
 
+    // Time since the particle was created.
+    // TODO: Create getter.
+    public float currentLifeTime = 0f;
+
     // Current substance behaviour running.
     private iSubstanceBehaviour currentBehaviour;
 
     // All possible substances behaviours.
-    private List<iSubstanceBehaviour> behaviourList = new List<iSubstanceBehaviour>();
-
-    // Time since the particle was created.
-    public float currentLifeTime = 0f;
-    
+    private List<iSubstanceBehaviour> behaviourList = new List<iSubstanceBehaviour>();    
     #endregion
 
     #region Initialization
@@ -38,6 +42,7 @@ public class Substance : MonoBehaviour
     {
         currentBehaviour.Update();
 
+        //TODO: Create a better approach to end a particle life time.
         if(currentLifeTime > currentBehaviour.particleLifeTime)
         {
             Destroy(gameObject);
@@ -50,7 +55,19 @@ public class Substance : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        currentBehaviour.OnCollisionEnter2D(collision);
+        // The the other substance script.
+        Substance otherSubstance = collision.gameObject.GetComponent<Substance>();
+
+        if (otherSubstance != null)
+        {
+            // Handle the collision between them in the current state.
+            State otherState = otherSubstance.substanceState;
+            State newState = currentBehaviour.CollidingWith(otherState);
+
+            // Update current substance if the answer is not null.
+            if (newState != State.NONE)
+                ChangeSubstanceState(newState);
+        }
     }
     #endregion
 
@@ -58,9 +75,6 @@ public class Substance : MonoBehaviour
 
     private void SetUpSubstancesBehavioursList()
     {
-        // Reset life timer.
-        currentLifeTime = 0.0f;
-
         // Adds all the behaviours to the substance.
         foreach (Transform child in transform)
         {
@@ -83,6 +97,10 @@ public class Substance : MonoBehaviour
 
     private void UpdateBehaviour()
     {
+        // Reset life timer.
+        currentLifeTime = 0.0f;
+
+        // TODO: Remove this on sprite approach.
         if (currentBehaviour != null)
             currentBehaviour.gameObject.SetActive(false);
 
@@ -103,7 +121,7 @@ public class Substance : MonoBehaviour
         }
     }
     
-    public void UpdateSubstanceState(State newState)
+    public void ChangeSubstanceState(State newState)
     {
         substanceState = newState;
         UpdateBehaviour();

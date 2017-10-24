@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class LavaSubstance : iSubstanceBehaviour
 {
-    public override void ActivateState()
-    {
-        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-        rb.gravityScale = particleGravity;
-
-    }
-
     public override void Update()
     {
+        // Move the particle according to it's velocity and scale it down for burning effect.
         MovementAnimation();
         ScaleDown();
     }
 
-    public override State HandleSubstanceCollision(State otherSubstance)
+    public override State CollidingWith(State otherSubstance)
     {
         if (otherSubstance == State.WATER)
             return State.GAS;

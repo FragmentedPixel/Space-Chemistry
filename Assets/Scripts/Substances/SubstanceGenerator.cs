@@ -2,31 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for generating particles at a specific interval.
+ */
+
 public class SubstanceGenerator : MonoBehaviour
 {
-    public float spawnInterval = 0.025f; // How much time until the next particle spawns
-    private float lastSpawnTime = float.MinValue; //The last spawn time
+    #region Parameters
+    // Interval between particles spawns.
+    public float spawnInterval = 0.025f;
+
+    //The last spawn time.
+    private float spawnTimer = 0f; 
     
-    public Vector3 particleForce; //Is there a initial force particles should have?
+    // Initial Force of the particle at spawn.
+    public Vector3 particleForce;
+
+    // State of the particle generated.
     public State particlesState;
 
-    public Transform particlesParent; // Where will the spawned particles will be parented (To avoid covering the whole inspector with them)
+    // Where will the spawned particles will be parented (To avoid covering the whole inspector with them)
+    // TODO: Later in object pool
+    public Transform particlesParent;
+    
+    // Prefab of the particle.
     public GameObject ParticulePrefab;
+    #endregion
 
-    void Update()
+    #region Update
+    private void Update()
     {
-        if (lastSpawnTime + spawnInterval < Time.time)
+        if (spawnTimer >= spawnInterval)
         {
-            // Is it time already for spawning a new particle?
+            // It is time to spawn a new particle.
 
+            // Create the new particle object.
             GameObject newObject = Instantiate(ParticulePrefab);
 
+            // TODO: Refactor this for OOP.
             newObject.GetComponent<Rigidbody2D>().AddForce(particleForce);
-            newObject.GetComponent<Substance>().UpdateSubstanceState(particlesState);
+            newObject.GetComponent<Substance>().ChangeSubstanceState(particlesState);
             newObject.transform.position = transform.position;
             newObject.transform.parent = particlesParent;
-			
-            lastSpawnTime = Time.time; // Register the last spawnTime			
+
+            // Reset timer.
+            spawnTimer = 0f; 	
+        }
+        else
+        {
+            spawnTimer += Time.deltaTime;
         }
     }
+    #endregion
 }

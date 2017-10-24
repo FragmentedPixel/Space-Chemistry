@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 58261943492675982}
   - component: {fileID: 50796137204846788}
   - component: {fileID: 114492491055071102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Substanta Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,6 @@ MonoBehaviour:
   particleState: 0
   particleGravity: 1
   particleLifeTime: 3
-  chestieSpecifica: 0
 --- !u!114 &114462022829389768
 MonoBehaviour:
   m_ObjectHideFlags: 1

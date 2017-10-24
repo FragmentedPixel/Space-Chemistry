@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class WaterSubstance : iSubstanceBehaviour
 {
-    [Header("Specific")]
-    public float chestieSpecifica;
-
-    public override void ActivateState()
-    {
-        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-        rb.gravityScale = particleGravity;
-    }
-
     public override void Update()
     {
+        // Let gravity handle the movement only scale the particle down.
         ScaleDown();
     }
 
-    public override State HandleSubstanceCollision(State otherSubstance)
+    public override State CollidingWith(State otherSubstance)
     {
         if (otherSubstance == State.LAVA)
             return State.GAS;
 
         return State.NONE;
     }
-
-
 }

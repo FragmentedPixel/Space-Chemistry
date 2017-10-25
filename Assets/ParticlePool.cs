@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParticlePool : MonoBehaviour 
 {
+    #region Variabiles
+    // Singleton reference.
     public static ParticlePool instance;
 
 	// Prefab for the particle instance.
@@ -12,10 +14,13 @@ public class ParticlePool : MonoBehaviour
 	// Maximum particles at one moment.
 	public int MAX_SUBSTANCES;
 
-	public List<Substance> notInUse = new List<Substance>();
-	public List<Substance> inUse = new List<Substance>();
+    // Lists to hold particles.
+	private List<Substance> notInUse = new List<Substance>();
+	private List<Substance> inUse = new List<Substance>();
+    #endregion
 
-	private void Start()
+    #region Pool Methods
+    private void Start()
 	{
         instance = this;
 
@@ -35,17 +40,17 @@ public class ParticlePool : MonoBehaviour
 		// If the list is empty return null.
 		if (notInUse.Count <= 0) 
 		{
+            //TODO: Create catch in case creating more particles.
 			Debug.Log ("The object pool went over " + MAX_SUBSTANCES);
 			return null;
 		}
 
 		else 
-			//TODO: Check if remove at has better performance.
-		{
-			// Select the first particle.
+		{	
+            // Select the first particle.
 			Substance substanceScript = notInUse [0];
 
-			// Change the list.
+			// Update the list.
 			notInUse.Remove(substanceScript);
 			inUse.Add (substanceScript);
 
@@ -64,5 +69,5 @@ public class ParticlePool : MonoBehaviour
 		inUse.Remove (substanceScript);
 		notInUse.Add (substanceScript);
 	}
-
+    #endregion
 }

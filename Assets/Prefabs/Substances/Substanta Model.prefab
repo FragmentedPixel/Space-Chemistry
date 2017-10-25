@@ -352,5 +352,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleState: 2
   particleGravity: 1.5
-  particleLifeTime: 1
+  particleLifeTime: 2
   particleLayer: 8

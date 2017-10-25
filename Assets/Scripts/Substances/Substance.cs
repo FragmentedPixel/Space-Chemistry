@@ -86,6 +86,7 @@ public class Substance : MonoBehaviour
 		// Disable Components.
 		GetComponent<Collider2D> ().enabled = isOn;
 		GetComponent<Substance> ().enabled = isOn;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
 		// Make particle invisible.
 		transform.localScale = isOn ? Vector3.one : Vector3.zero;
@@ -121,8 +122,8 @@ public class Substance : MonoBehaviour
     {
         // Reset life timer.
         currentLifeTime = 0.0f;
-
-        // TODO: Remove this on sprite approach.
+        
+        // Set current Behaviour of to hide sprite.
         if (currentBehaviour != null)
             currentBehaviour.gameObject.SetActive(false);
 

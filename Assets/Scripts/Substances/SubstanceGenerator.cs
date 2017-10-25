@@ -20,9 +20,6 @@ public class SubstanceGenerator : MonoBehaviour
 
     // State of the particle generated.
     public State particlesState;
-    
-    // Prefab of the particle.
-    public GameObject ParticulePrefab;
     #endregion
 
     #region Update

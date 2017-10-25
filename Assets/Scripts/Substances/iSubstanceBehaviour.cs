@@ -88,7 +88,7 @@ public class iSubstanceBehaviour : MonoBehaviour
         // Update the particle scale.
         particleScale.x = scaleValue;
         particleScale.y = scaleValue;
-        transform.localScale = particleScale;
+		substanceScript.transform.localScale = particleScale;
     }
 
     #endregion

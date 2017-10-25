@@ -6,9 +6,12 @@ public class WaterSubstance : iSubstanceBehaviour
 {
     public override void Update()
     {
-        // Let gravity handle the movement only scale the particle down.
-        ScaleDown();
-    }
+		// Let gravity handle the movement only scale the particle down and move it accordingly.
+		ScaleDown ();
+
+    	// TODO: Check if needed.
+		//MovementAnimation ();
+	}
 
     public override State CollidingWith(State otherSubstance)
     {

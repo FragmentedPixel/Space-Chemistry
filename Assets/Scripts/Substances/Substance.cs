@@ -29,16 +29,6 @@ public class Substance : MonoBehaviour
     private List<iSubstanceBehaviour> behaviourList = new List<iSubstanceBehaviour>();    
     #endregion
 
-    #region Initialization
-
-    private void Start()
-    {
-        SetUpSubstancesBehavioursList();
-        UpdateBehaviour();
-    }
-
-    #endregion
-
     #region State Specific
     private void Update()
     {
@@ -71,6 +61,37 @@ public class Substance : MonoBehaviour
         }
     }
     #endregion
+
+	#region Activation
+
+	private void Start()
+	{
+		// Reads all the behaviours on the substance.
+		SetUpSubstancesBehavioursList ();
+	}
+
+	public void Activate(State newState)
+	{
+		ChangeActiveState (true);
+		ChangeSubstanceState (newState);
+	}
+
+	public void Deactivate()
+	{
+		ChangeActiveState (false);
+	}
+
+	private void ChangeActiveState(bool isOn)
+	{
+		// Disable Components.
+		GetComponent<Collider2D> ().enabled = isOn;
+		GetComponent<Substance> ().enabled = isOn;
+
+		// Make particle invisible.
+		transform.localScale = isOn ? Vector3.one : Vector3.zero;
+	}
+
+	#endregion
 
     #region Helper Methods
 
@@ -139,4 +160,5 @@ public class Substance : MonoBehaviour
     }
 
     #endregion
+
 }

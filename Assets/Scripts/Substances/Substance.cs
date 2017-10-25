@@ -32,11 +32,11 @@ public class Substance : MonoBehaviour
     #region State Specific
     private void Update()
     {
-        currentBehaviour.Update();
+        currentBehaviour.BehaviourUpdate();
         
         if(currentLifeTime > totalLifeTime)
         {
-            Destroy(gameObject);
+            ParticlePool.instance.ReturnParticle(gameObject);
         }
         else
         {
@@ -64,7 +64,7 @@ public class Substance : MonoBehaviour
 
 	#region Activation
 
-	private void Start()
+	private void OnEnable()
 	{
 		// Reads all the behaviours on the substance.
 		SetUpSubstancesBehavioursList ();
@@ -72,8 +72,8 @@ public class Substance : MonoBehaviour
 
 	public void Activate(State newState)
 	{
-		ChangeActiveState (true);
 		ChangeSubstanceState (newState);
+		ChangeActiveState (true);
 	}
 
 	public void Deactivate()

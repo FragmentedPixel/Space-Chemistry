@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterSubstance : iSubstanceBehaviour
 {
-    public override void Update()
+    public override void BehaviourUpdate()
     {
 		// Let gravity handle the movement only scale the particle down and move it accordingly.
 		ScaleDown ();

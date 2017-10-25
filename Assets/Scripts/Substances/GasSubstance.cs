@@ -8,7 +8,7 @@ public class GasSubstance : iSubstanceBehaviour
     // How fast does the gas goes up?
     public float floatability = 7.0f;
 
-    public override void Update()
+    public override void BehaviourUpdate()
     {
         GasFloating();
         ScaleDown();

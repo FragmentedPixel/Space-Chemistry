@@ -48,7 +48,7 @@ public class iSubstanceBehaviour : MonoBehaviour
         substanceScript.UpdateTotalLifeTime(particleLifeTime);
     }
 
-    public virtual void Update()
+    public virtual void BehaviourUpdate()
     {
         Debug.Log("Running Update on base class.");
     }

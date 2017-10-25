@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LavaSubstance : iSubstanceBehaviour
 {
-    public override void Update()
+    public override void BehaviourUpdate()
     {
         // Move the particle according to it's velocity and scale it down for burning effect.
         MovementAnimation();

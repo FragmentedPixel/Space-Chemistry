@@ -20,10 +20,6 @@ public class SubstanceGenerator : MonoBehaviour
 
     // State of the particle generated.
     public State particlesState;
-
-    // Where will the spawned particles will be parented (To avoid covering the whole inspector with them)
-    // TODO: Later in object pool
-    public Transform particlesParent;
     
     // Prefab of the particle.
     public GameObject ParticulePrefab;
@@ -37,13 +33,12 @@ public class SubstanceGenerator : MonoBehaviour
             // It is time to spawn a new particle.
 
             // Create the new particle object.
-            GameObject newParticle = Instantiate(ParticulePrefab);
+            GameObject newParticle = ParticlePool.instance.RequestParticle(particlesState);
 
             // Update particle parameters.
             newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce);
             newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);
             newParticle.transform.position = transform.position;
-            newParticle.transform.parent = particlesParent;
 
             // Reset timer.
             spawnTimer = 0f; 	

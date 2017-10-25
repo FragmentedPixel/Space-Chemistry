@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class ParticlePool : MonoBehaviour 
 {
-	// Prefab for the patricle instance.
+    public static ParticlePool instance;
+
+	// Prefab for the particle instance.
 	public GameObject substancePrefab;
 
 	// Maximum particles at one moment.
 	public int MAX_SUBSTANCES;
 
-	private List<Substance> notInUse;
-	private List<Substance> inUse;
+	public List<Substance> notInUse = new List<Substance>();
+	public List<Substance> inUse = new List<Substance>();
 
 	private void Start()
 	{
+        instance = this;
+
 		for (int i = 0; i < MAX_SUBSTANCES; i++) 
 		{
 			GameObject substanceInstance = Instantiate (substancePrefab, transform);

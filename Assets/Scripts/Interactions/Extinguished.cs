@@ -24,8 +24,10 @@ public class Extinguished : MonoBehaviour
             {
                 dropsAdded++;
 
-                if (dropsAdded > dropsNeeded)
-                    Destroy(gameObject);
+				if (dropsAdded > dropsNeeded)
+					Destroy (gameObject);
+				else
+					Destroy (substance.gameObject);
             }
         }
     }

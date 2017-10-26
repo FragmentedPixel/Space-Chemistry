@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.025
-  particleForce: 100
+  particleForce: 500
   particlesState: 0
 --- !u!114 &114895579676422094
 MonoBehaviour:

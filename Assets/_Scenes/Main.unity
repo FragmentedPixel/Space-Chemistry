@@ -156,11 +156,6 @@ Prefab:
       propertyPath: handCamera
       value: 
       objectReference: {fileID: 290185860}
-    - target: {fileID: 114880823727597074, guid: 741a95361e328534880799759797b36d,
-        type: 2}
-      propertyPath: particleForce
-      value: 500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 741a95361e328534880799759797b36d, type: 2}
   m_IsPrefabParent: 0

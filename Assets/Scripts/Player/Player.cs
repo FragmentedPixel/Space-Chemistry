@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+		anim = GetComponentInChildren<Animator>();
     }
 
 	// Update is called once per frame
@@ -34,9 +34,9 @@ public class Player : MonoBehaviour {
             if (vel < maxVelocity)
             {
                 forceX = speed;
-                Vector3 temp = transform.localScale;
+				Vector3 temp = anim.transform.localScale;
                 temp.x = 0.3f;
-                transform.localScale = temp;
+				anim.transform.localScale = temp;
                 anim.SetBool("Walk", true);
             }
         }
@@ -45,9 +45,9 @@ public class Player : MonoBehaviour {
             if (vel < maxVelocity)
             {
                 forceX = -speed;
-                Vector3 temp = transform.localScale;
+				Vector3 temp = anim.transform.localScale;
                 temp.x = -0.3f;
-                transform.localScale = temp;
+				anim.transform.localScale = temp;
                 anim.SetBool("Walk", true);
             }
         }

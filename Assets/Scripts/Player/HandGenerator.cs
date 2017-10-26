@@ -30,7 +30,7 @@ public class HandGenerator : MonoBehaviour
 			GameObject newParticle = ParticlePool.instance.RequestParticle(particlesState);
 
 			// Update particle parameters.
-			newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * 100f*particleForce);
+			newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * particleForce);
 			newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);
 			newParticle.transform.position = transform.position;
 

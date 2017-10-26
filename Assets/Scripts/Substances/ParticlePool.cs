@@ -40,25 +40,30 @@ public class ParticlePool : MonoBehaviour
 		// If the list is empty return null.
 		if (notInUse.Count <= 0) 
 		{
-            //TODO: Create catch in case creating more particles.
+			// Create a new substance for the empty list.
+			GameObject substanceInstance = Instantiate (substancePrefab, transform);
+
+			Substance substanceScript = substanceInstance.GetComponent<Substance> ();
+			substanceScript.Deactivate ();
+
+			notInUse.Add (substanceScript);
+
+			// Debug to increase the number.
 			Debug.Log ("The object pool went over " + MAX_SUBSTANCES);
 			return null;
 		}
 
-		else 
-		{	
-            // Select the first particle.
-			Substance substanceScript = notInUse [0];
+        // Select the first particle.
+		Substance substScript = notInUse [0];
 
-			// Update the list.
-			notInUse.Remove(substanceScript);
-			inUse.Add (substanceScript);
+		// Update the list.
+		notInUse.Remove(substScript);
+		inUse.Add (substScript);
 
-			// Activate the substance.
-			substanceScript.Activate (substanceState);
+		// Activate the substance.
+		substScript.Activate (substanceState);
 
-			return substanceScript.gameObject;
-		}
+		return substScript.gameObject;
 	}
 
 	public void ReturnParticle(GameObject substanceToReturn)

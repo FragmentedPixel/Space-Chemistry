@@ -13,7 +13,10 @@ public class SubstanceGenerator : MonoBehaviour
     public float spawnInterval = 0.025f;
 
     //The last spawn time.
-    private float spawnTimer = 0f; 
+    private float spawnTimer = 0f;
+
+	// SpawnRandomness.
+	public float randomDelta;
     
     // Initial Force of the particle at spawn.
     public Vector3 particleForce;
@@ -32,8 +35,10 @@ public class SubstanceGenerator : MonoBehaviour
             // Create the new particle object.
             GameObject newParticle = ParticlePool.instance.RequestParticle(particlesState);
 
+			Vector3 randomVector = randomDelta * Vector3.one;
+
             // Update particle parameters.
-            newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce);
+			newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce + randomVector);
             newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);
             newParticle.transform.position = transform.position;
 

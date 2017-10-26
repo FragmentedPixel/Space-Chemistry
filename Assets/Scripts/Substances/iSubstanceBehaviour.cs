@@ -39,8 +39,13 @@ public class iSubstanceBehaviour : MonoBehaviour
     public void ActivateState()
     {
         // Set the gravity for this particle.
-        rb.gravityScale = particleGravity;
+		if(rb == null)
+		{
+			OnEnable ();
+		}
 
+        rb.gravityScale = particleGravity;
+		
         // Move it to the corresponding layer.
         transform.parent.gameObject.layer = (int) particleLayer;
 

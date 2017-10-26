@@ -22,25 +22,29 @@ public class HandGenerator : MonoBehaviour
 	#region Update
 	private void Update()
 	{
-		if (spawnTimer >= spawnInterval)
+		if(Input.GetMouseButton(0))
 		{
-			// It is time to spawn a new particle.
+			if (spawnTimer >= spawnInterval)
+			{
+				// It is time to spawn a new particle.
 
-			// Create the new particle object.
-			GameObject newParticle = ParticlePool.instance.RequestParticle(particlesState);
+				// Create the new particle object.
+				GameObject newParticle = ParticlePool.instance.RequestParticle(particlesState);
 
-			// Update particle parameters.
-			newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * particleForce);
-			newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);
-			newParticle.transform.position = transform.position;
+				// Update particle parameters.
+				newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * particleForce);
+				newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);
+				newParticle.transform.position = transform.position;
 
-			// Reset timer.
-			spawnTimer = 0f; 	
+				// Reset timer.
+				spawnTimer = 0f; 	
+			}
+			else
+			{
+				spawnTimer += Time.deltaTime;
+			}	
 		}
-		else
-		{
-			spawnTimer += Time.deltaTime;
-		}
+
 	}
 	#endregion
 }

@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.05
+  randomDelta: 0
   particleForce: {x: 0, y: 250, z: 0}
   particlesState: 2
 --- !u!114 &114980635555001396

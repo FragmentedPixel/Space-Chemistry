@@ -6,10 +6,10 @@ public class HandCollector : MonoBehaviour
 {
     #region Variabiles
     // Number of particles need to sample substance.
-    public int particlesNeeded = 15;
+    public float particlesNeeded = 15;
 
     // Currently soaked particles.
-    private int currentParticles = 0;
+    private float currentParticles = 0;
 
     // Is the player collecting now ?
     private bool collecting = false;

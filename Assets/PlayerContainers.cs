@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerContainers : MonoBehaviour
 {
+    // UI Reference to the containers.
+    public Image[] containersImage = new Image[3];
+
     // State of the particles hold inside the containers.
-    public State[] containers = new State[3];
+    private State[] containers = new State[3];
 
     // currently selected container.
     private int currentIndex = 0;
@@ -56,6 +60,6 @@ public class PlayerContainers : MonoBehaviour
         float percent = collector.Collect();
         //TODO: Make option to get substance collected.
 
-        // Update UI.
+        containersImage[currentIndex].fillAmount = percent;
     }
 }

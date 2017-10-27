@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // All possible states of the particle.
-public enum State { WATER, GAS, LAVA, NONE };
+public enum State { WATER, GAS, LAVA, ACID, NONE };
 
 /*
  * Responsible for delegating the events to the current state.

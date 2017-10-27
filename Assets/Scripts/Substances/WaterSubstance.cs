@@ -12,7 +12,7 @@ public class WaterSubstance : iSubstanceBehaviour
 
     public override State CollidingWith(State otherSubstance)
     {
-        if (otherSubstance == State.LAVA)
+        if (otherSubstance == State.LAVA || otherSubstance == State.ACID)
             return State.GAS;
 
         return State.NONE;

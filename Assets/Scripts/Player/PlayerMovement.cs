@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
+    // The movement speed of the player.
     public float speed = 10f;
-    public float maxVelocity = 4f;
 
+    // Maximum speed of the player.
+    public float maxVelocity = 4f;
+    
     private Rigidbody2D myBody;
     private Animator anim;
+    private const string walkingHash = "Walk";
 
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
     }
-
-	// Update is called once per frame
+    
 	void Update () 
 	{
         PlayerMoveKeyboard();
@@ -24,39 +27,39 @@ public class PlayerMovement : MonoBehaviour {
 
     void PlayerMoveKeyboard()
     {
-        float forceX = 0f;
+        //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
+        float movement = Input.GetAxisRaw("Horizontal"); 
+
+        // Get current speed of the rb.
         float vel = Mathf.Abs(myBody.velocity.x);
 
-        float movement = Input.GetAxisRaw("Horizontal"); //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
+        if(movement != 0)
+        {
+            StopMove();
+        }
 
-        if (movement > 0)
+        else if(vel < maxVelocity)
         {
-            if (vel < maxVelocity)
-            {
-                forceX = speed;
-				Vector3 temp = anim.transform.localScale;
-                temp.x = 0.3f;
-				anim.transform.localScale = temp;
-                anim.SetBool("Walk", true);
-            }
+            Move(movement > 0);
         }
-        else if (movement < 0)
-        {
-            if (vel < maxVelocity)
-            {
-                forceX = -speed;
-				Vector3 temp = anim.transform.localScale;
-                temp.x = -0.3f;
-				anim.transform.localScale = temp;
-                anim.SetBool("Walk", true);
-            }
-        }
-        else
-        {
-            forceX = 0f;
-			myBody.velocity = Vector2.zero;
-            anim.SetBool("Walk", false);
-        }
+    }
+
+    private void Move(bool right)
+    {
+        Vector3 temp = anim.transform.localScale;
+        temp.x = right ? 0.3f :  -0.3f;
+
+        anim.transform.localScale = temp;
+        anim.SetBool(walkingHash, true);
+
+        float forceX = right ? speed : -speed;
         myBody.AddForce(new Vector2(forceX, 0));
     }
+
+    private void StopMove()
+    {
+        myBody.velocity = Vector2.zero;
+        anim.SetBool(walkingHash, false);
+    }
+
 }

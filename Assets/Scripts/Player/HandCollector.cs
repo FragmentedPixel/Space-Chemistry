@@ -4,30 +4,47 @@ using UnityEngine;
 
 public class HandCollector : MonoBehaviour
 {
+    #region Variabiles
     // Number of particles need to sample substance.
     public int particlesNeeded = 15;
 
+    // Currently soaked particles.
     private int currentParticles = 0;
 
     // Is the player collecting now ?
     private bool collecting = false;
 
-    private void Update()
-    {
-        if(Input.GetMouseButton(1) && currentParticles < particlesNeeded)
-        {
-            collecting = true;
-        }
+    // The force at which the particles are attracted.
+    public Effector2D particleSoaker;
 
+    // The trigger for entering the collector.
+    public Collider2D particleCollector;
+    #endregion
+
+    #region Collecting
+    public float Collect()
+    {
+        if(collecting == false)
+        {
+            StartCollecting();
+            return 0;
+        }
         else
         {
-            collecting = false;
+            return currentParticles / particlesNeeded;
         }
+    }
+
+    private void StartCollecting()
+    {
+        collecting = true;
+        particleSoaker.enabled = true;
+        particleCollector.enabled = true;
+        currentParticles = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // TODO: Make sure it is the small collider.
         if (!collecting)
             return;
 
@@ -35,9 +52,11 @@ public class HandCollector : MonoBehaviour
 
         if(collectedSubstance != null)
         {
-            Debug.Log(currentParticles);
             currentParticles++;
             Destroy(collectedSubstance.gameObject);
         }
+
+        //TODO: play sound when enough particles.
     }
+    #endregion
 }

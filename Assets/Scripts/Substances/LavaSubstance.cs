@@ -18,6 +18,4 @@ public class LavaSubstance : iSubstanceBehaviour
 
         return State.NONE;
     }
-
-    //TODO: Add randomness to mimic fire.
 }

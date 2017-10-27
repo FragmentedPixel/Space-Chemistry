@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
         // Get current speed of the rb.
         float vel = Mathf.Abs(myBody.velocity.x);
 
-        if(movement != 0)
+        if(movement == 0)
         {
             StopMove();
         }

@@ -43,11 +43,20 @@ public class HandCollector : MonoBehaviour
         currentParticles = 0;
     }
 
+    public void StopCollecting()
+    {
+        collecting = false;
+        particleSoaker.enabled = false;
+        particleCollector.enabled = false;
+        currentParticles = 0;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collecting)
             return;
 
+        // Make sure to collect only 1 type of substance.
         Substance collectedSubstance = collision.GetComponent<Substance>();
 
         if(collectedSubstance != null)

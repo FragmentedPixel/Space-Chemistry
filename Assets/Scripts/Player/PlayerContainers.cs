@@ -36,6 +36,10 @@ public class PlayerContainers : MonoBehaviour
         {
             Collect();
         }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            collector.StopCollecting();
+        }
     }
 
     private void SelectContainer()
@@ -61,5 +65,7 @@ public class PlayerContainers : MonoBehaviour
         //TODO: Make option to get substance collected.
 
         containersImage[currentIndex].fillAmount = percent;
+
+        containersImage[currentIndex].color = Color.Lerp(Color.red, Color.green, percent);
     }
 }

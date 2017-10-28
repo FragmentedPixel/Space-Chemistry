@@ -35,8 +35,8 @@ public class SubstanceGenerator : MonoBehaviour
             // Create the new particle object.
             GameObject newParticle = ParticlePool.instance.RequestParticle(particlesState);
 
-			Vector3 randomVector = randomDelta * Vector3.one;
-
+			Vector3 randomVector = randomDelta * Random.onUnitSphere;
+           
             // Update particle parameters.
 			newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce + randomVector);
             newParticle.GetComponent<Substance>().ChangeSubstanceState(particlesState);

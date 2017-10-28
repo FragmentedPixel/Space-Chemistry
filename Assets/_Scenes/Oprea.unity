@@ -346,7 +346,7 @@ Prefab:
     - target: {fileID: 114928550315792882, guid: 31a7f9398acab7445a7cda209ea904bd,
         type: 2}
       propertyPath: randomDelta
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31a7f9398acab7445a7cda209ea904bd, type: 2}
@@ -788,6 +788,11 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!4 &911989218 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4279772834777426, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 262279398}
 --- !u!1001 &997749999
 Prefab:
   m_ObjectHideFlags: 0
@@ -1237,6 +1242,53 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 58722619943334982, guid: 741a95361e328534880799759797b36d,
     type: 2}
   m_PrefabInternal: {fileID: 24679118}
+--- !u!1 &1559190635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1808991347058954, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1559190636}
+  - component: {fileID: 1559190637}
+  m_Layer: 0
+  m_Name: Fire Source (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559190636
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4856114743461298, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559190635}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.239, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 911989218}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559190637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114928550315792882, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559190635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe9a84a16d81c44f842cd5e7f5f9a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnInterval: 0.1
+  randomDelta: 100
+  particleForce: {x: 0, y: 350, z: 0}
+  particlesState: 2
 --- !u!4 &1661914628 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4459358455133230, guid: 3b1e4b99f8e0c584683f84766f315d9a,
@@ -1288,6 +1340,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b1e4b99f8e0c584683f84766f315d9a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1817455357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1808991347058954, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1817455358}
+  - component: {fileID: 1817455359}
+  m_Layer: 0
+  m_Name: Fire Source (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817455358
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4856114743461298, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817455357}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.175, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 911989218}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817455359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114928550315792882, guid: 31a7f9398acab7445a7cda209ea904bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817455357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe9a84a16d81c44f842cd5e7f5f9a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnInterval: 0.1
+  randomDelta: 100
+  particleForce: {x: 0, y: 350, z: 0}
+  particlesState: 2
 --- !u!1 &1861482471
 GameObject:
   m_ObjectHideFlags: 0

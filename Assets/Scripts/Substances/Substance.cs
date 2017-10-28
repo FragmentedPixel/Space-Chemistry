@@ -12,7 +12,6 @@ public enum State { WATER, GAS, LAVA, ACID, NONE };
 public class Substance : MonoBehaviour
 {
     #region Variabiles
-
     // Current state of the substance.
     public State substanceState;
 
@@ -26,7 +25,10 @@ public class Substance : MonoBehaviour
     private iSubstanceBehaviour currentBehaviour;
 
     // All possible substances behaviours.
-    private List<iSubstanceBehaviour> behaviourList = new List<iSubstanceBehaviour>();    
+    private List<iSubstanceBehaviour> behaviourList = new List<iSubstanceBehaviour>();
+
+    // Components
+    private Rigidbody2D rb;
     #endregion
 
     #region State Specific
@@ -53,12 +55,17 @@ public class Substance : MonoBehaviour
         {
             // Handle the collision between them in the current state.
             State otherState = otherSubstance.substanceState;
-            State newState = currentBehaviour.CollidingWith(otherState);
-
-            // Update current substance if the answer is not null.
-            if (newState != State.NONE)
-                ChangeSubstanceState(newState);
+            ReactWith(otherState);
         }
+    }
+
+    public void ReactWith(State otherState)
+    {
+        State newState = currentBehaviour.CollidingWith(otherState);
+
+        // Update current substance if the answer is not null.
+        if (newState != State.NONE)
+            ChangeSubstanceState(newState);
     }
     #endregion
 
@@ -66,6 +73,8 @@ public class Substance : MonoBehaviour
 
 	private void OnEnable()
 	{
+        rb = GetComponent<Rigidbody2D>();
+
 		// Reads all the behaviours on the substance.
 		SetUpSubstancesBehavioursList ();
 	}
@@ -147,6 +156,7 @@ public class Substance : MonoBehaviour
     public void ChangeSubstanceState(State newState)
     {
         substanceState = newState;
+        rb.velocity = Vector2.zero;
         UpdateBehaviour();
     }
 

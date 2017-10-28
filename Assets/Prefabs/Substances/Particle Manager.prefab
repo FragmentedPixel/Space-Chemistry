@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   substancePrefab: {fileID: 1921103306889804, guid: 87d126e282f73c5488d712a7fbb7f137,
     type: 2}
-  MAX_SUBSTANCES: 300
+  MAX_SUBSTANCES: 3000

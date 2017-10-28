@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcidSubstrance : iSubstanceBehaviour {
+public class AcidSubstance : iSubstanceBehaviour {
 
 	// Use this for initialization
     public override void BehaviourUpdate()

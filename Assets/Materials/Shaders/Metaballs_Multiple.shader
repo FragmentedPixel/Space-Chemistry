@@ -52,7 +52,7 @@ SubShader {
 		     finalColor.a=0.5f; // To add some transparency		    
 	    }	    
 	    else if(texcol.b>0.3){	//This is for the water effect
-	    		finalColor=half4(0.0,texcol.b/2.0,texcol.b,0.5);
+	    		finalColor=half4(8.0,texcol.b/2.0,texcol.b,0.5);
 				
 				finalColor.b=floor((finalColor.b/0.1)*0.5);
 		}	    

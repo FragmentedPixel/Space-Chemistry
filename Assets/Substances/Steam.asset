@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940ede5a3ff27ca44b19df15df04a99a, type: 3}
+  m_Name: Steam
+  m_EditorClassIdentifier: 
+  particleLayer: 9
+  particleGravity: 0
+  particleMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
+  particleLifeTime: 3
+  reactions: []
+  floatability: 7

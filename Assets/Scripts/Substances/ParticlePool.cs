@@ -15,8 +15,8 @@ public class ParticlePool : MonoBehaviour
 	public int MAX_SUBSTANCES;
 
     // Lists to hold particles.
-	private List<Substance> notInUse = new List<Substance>();
-	private List<Substance> inUse = new List<Substance>();
+	private List<Particle> notInUse = new List<Particle>();
+	private List<Particle> inUse = new List<Particle>();
     #endregion
 
     #region Pool Methods
@@ -28,14 +28,14 @@ public class ParticlePool : MonoBehaviour
 		{
 			GameObject substanceInstance = Instantiate (substancePrefab, transform);
 
-			Substance substanceScript = substanceInstance.GetComponent<Substance> ();
+			Particle substanceScript = substanceInstance.GetComponent<Particle> ();
 			substanceScript.Deactivate ();
 
 			notInUse.Add (substanceScript);
 		}
 	}
 
-	public GameObject RequestParticle(State substanceState)
+	public GameObject RequestParticle(sSubstance substanceRequested)
 	{
 		// If the list is empty return null.
 		if (notInUse.Count <= 0) 
@@ -43,7 +43,7 @@ public class ParticlePool : MonoBehaviour
 			// Create a new substance for the empty list.
 			GameObject substanceInstance = Instantiate (substancePrefab, transform);
 
-			Substance substanceScript = substanceInstance.GetComponent<Substance> ();
+			Particle substanceScript = substanceInstance.GetComponent<Particle> ();
 			substanceScript.Deactivate ();
 
 			notInUse.Add (substanceScript);
@@ -54,21 +54,21 @@ public class ParticlePool : MonoBehaviour
 		}
 
         // Select the first particle.
-		Substance substScript = notInUse [0];
+		Particle substScript = notInUse [0];
 
 		// Update the list.
 		notInUse.Remove(substScript);
 		inUse.Add (substScript);
 
 		// Activate the substance.
-		substScript.Activate (substanceState);
+		substScript.Activate (substanceRequested);
 
 		return substScript.gameObject;
 	}
 
 	public void ReturnParticle(GameObject substanceToReturn)
 	{
-		Substance substanceScript = substanceToReturn.GetComponent<Substance> ();
+		Particle substanceScript = substanceToReturn.GetComponent<Particle> ();
 		substanceScript.Deactivate ();
 
 		inUse.Remove (substanceScript);

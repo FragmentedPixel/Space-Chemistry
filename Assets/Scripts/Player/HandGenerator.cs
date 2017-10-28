@@ -16,21 +16,20 @@ public class HandGenerator : MonoBehaviour
 	#endregion
 
 	#region Release
-	public void Relase(State particleStateToRelase)
+	public void Relase(sSubstance substanceToRelase)
 	{
         if (nextRelease <= Time.time)
         {
             // It is time to spawn a new particle.
 
-            // Get the current state of the selected container.
-            State particleState = particleStateToRelase;
-
             // Create the new particle object.
-            GameObject newParticle = ParticlePool.instance.RequestParticle(particleState);
+            GameObject newParticle = ParticlePool.instance.RequestParticle(substanceToRelase);
 
             // Update particle parameters.
+            //TODO: Create getter methode maybe?
+            // 
             newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * relaseForce);
-            newParticle.GetComponent<Substance>().ChangeSubstanceState(particleState);
+            newParticle.GetComponent<Particle>().ChangeSubstanceState(substanceToRelase);
             newParticle.transform.position = transform.position;
 
             // Set the timer.

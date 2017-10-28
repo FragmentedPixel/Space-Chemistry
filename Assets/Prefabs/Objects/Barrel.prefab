@@ -151,7 +151,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698310540433798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.22, y: -3.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -170,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197578675500582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4279772834777426}
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280613895665912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.239, y: 0, z: 0}
+  m_LocalPosition: {x: -0.239, y: -0.547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4279772834777426}
@@ -196,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808991347058954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: -0.547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4279772834777426}
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropsBar: {fileID: 114863844978816686}
+  substanceNeeded: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
   dropsNeeded: 30
 --- !u!114 &114358935471663110
 MonoBehaviour:
@@ -292,7 +293,7 @@ MonoBehaviour:
   spawnInterval: 0.1
   randomDelta: 100
   particleForce: {x: 0, y: 350, z: 0}
-  particlesState: 2
+  particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114395347549388446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,7 +345,7 @@ MonoBehaviour:
   spawnInterval: 0.1
   randomDelta: 100
   particleForce: {x: 0, y: 350, z: 0}
-  particlesState: 2
+  particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114863844978816686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -386,7 +387,7 @@ MonoBehaviour:
   spawnInterval: 0.1
   randomDelta: 100
   particleForce: {x: 0, y: 350, z: 0}
-  particlesState: 2
+  particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114980635555001396
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,6 +11,7 @@ public class Extinguished : MonoBehaviour
 {
 	// UI Heat meter of the object.
     public Image dropsBar;
+    public sSubstance substanceNeeded;
 
 	// Number of drops needed in order to extinguish the fire.
     public float dropsNeeded = 30;
@@ -18,12 +19,12 @@ public class Extinguished : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Substance substance = collision.GetComponent<Substance>();
+        Particle substance = collision.GetComponent<Particle>();
 
         if(substance != null)
         {
 			// Check if the current substance is water.
-            if(substance.substanceState == State.WATER)
+            if(substance.currentSubstance == substanceNeeded)
             {
                 dropsAdded++;
 
@@ -33,17 +34,15 @@ public class Extinguished : MonoBehaviour
 				}
 				else 
 				{
-					//TODO: Creat reaction with fire.
+					//TODO: create reaction with fire.
 					Destroy (substance.gameObject);
 				}
             }
 
-			else if(substance.substanceState == State.LAVA)
-			{
+			
 				//TODO: If lava hits container, increase it.
 				//dropsAdded--;
 				//Destroy (substance.gameObject);
-			}
         }
     }
 

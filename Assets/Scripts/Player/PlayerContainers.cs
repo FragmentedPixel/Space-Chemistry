@@ -9,7 +9,7 @@ public class PlayerContainers : MonoBehaviour
     public Image[] containersImage = new Image[3];
 
     // State of the particles hold inside the containers.
-    public State[] containers = new State[3];
+    public sSubstance[] containers = new sSubstance[3];
 
     // currently selected container.
     private int currentIndex = 0;
@@ -39,16 +39,18 @@ public class PlayerContainers : MonoBehaviour
         else if(Input.GetMouseButtonUp(1))
         {
             //TODO: Update Container Color.
-            State newState = collector.StopCollecting();
+            sSubstance newSubstance = collector.StopCollecting();
             if(containersImage[currentIndex].fillAmount >= 1)
             {
-                containers[currentIndex] = newState;
+                containers[currentIndex] = newSubstance;
             }
         }
     }
 
     private void SelectContainer()
     {
+        //TODO: Update selected Container color.
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
             currentIndex = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -59,10 +61,10 @@ public class PlayerContainers : MonoBehaviour
 
     private void Relase()
     {
-        State particleToRelase = containers[currentIndex];
+        sSubstance particleSubstanceToRelease = containers[currentIndex];
 
-        if (particleToRelase != State.NONE)
-            generator.Relase(particleToRelase);
+        if (particleSubstanceToRelease != null)
+            generator.Relase(particleSubstanceToRelease);
         else
             MessageManager.instance.DissplayMessage("Container is empty", 3f);
     }

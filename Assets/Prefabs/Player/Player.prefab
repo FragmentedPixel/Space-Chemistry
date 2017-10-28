@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 50151151725783798}
   - component: {fileID: 70077327695791148}
   - component: {fileID: 114895579676422094}
+  - component: {fileID: 114500851870271196}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -148,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135188176638254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0, z: 0}
+  m_LocalPosition: {x: 2.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4083669381226614}
@@ -176,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103714966415070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0, z: 0}
+  m_LocalPosition: {x: 2.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4825801675220076}
@@ -259,14 +260,14 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 4
 --- !u!58 &58722619943334982
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135188176638254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -274,7 +275,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.02
+  m_Radius: 0.5
 --- !u!70 &70077327695791148
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -320,6 +321,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handCamera: {fileID: 0}
   speed: 5
+--- !u!114 &114500851870271196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691164950640854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fb449f2dedab3499fd7803b6ee65a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containersImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  containers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114880823727597074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,10 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebcdfd1234b13943bc496f191ac9a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relaseInvterval: 0.01
+  releaseInterval: 0.025
   relaseForce: 300
-  currentState: 0
-  containers: 010000000200000000000000
 --- !u!114 &114895579676422094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,6 +378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlesNeeded: 15
+  particleSoaker: {fileID: 250805521873200118}
+  particleCollector: {fileID: 58722619943334982}
 --- !u!212 &212216449298762398
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -454,7 +474,7 @@ PointEffector2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326629634909968}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
@@ -463,7 +483,7 @@ PointEffector2D:
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 1
-  m_ForceTarget: 1
+  m_ForceTarget: 0
   m_ForceMode: 2
   m_Drag: 0
   m_AngularDrag: 0

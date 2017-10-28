@@ -14,6 +14,9 @@ public class HandCollector : MonoBehaviour
     // Is the player collecting now ?
     private bool collecting = false;
 
+    // The substance the player is now collecting.
+    private State currentSubstance;
+
     // The force at which the particles are attracted.
     public Effector2D particleSoaker;
 
@@ -41,14 +44,17 @@ public class HandCollector : MonoBehaviour
         particleSoaker.enabled = true;
         particleCollector.enabled = true;
         currentParticles = 0;
+        currentSubstance = State.NONE;
     }
 
-    public void StopCollecting()
+    public State StopCollecting()
     {
         collecting = false;
         particleSoaker.enabled = false;
         particleCollector.enabled = false;
         currentParticles = 0;
+
+        return currentSubstance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,13 +62,22 @@ public class HandCollector : MonoBehaviour
         if (!collecting)
             return;
 
-        // Make sure to collect only 1 type of substance.
+        // Get information about the current collision
         Substance collectedSubstance = collision.GetComponent<Substance>();
+
+        if(currentSubstance == State.NONE)
+        {
+            currentSubstance = collectedSubstance.substanceState;
+        }
 
         if(collectedSubstance != null)
         {
-            currentParticles++;
-            Destroy(collectedSubstance.gameObject);
+            // Make sure to collect only 1 type of substance.
+            if (currentSubstance == collectedSubstance.substanceState)
+            {
+                currentParticles++;
+                Destroy(collectedSubstance.gameObject);
+            }
         }
 
         //TODO: play sound when enough particles.

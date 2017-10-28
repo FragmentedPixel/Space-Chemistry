@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleState: 0
   particleGravity: 1
-  particleLifeTime: 5
+  particleLifeTime: 3
   particleLayer: 8
 --- !u!114 &114462022829389768
 MonoBehaviour:

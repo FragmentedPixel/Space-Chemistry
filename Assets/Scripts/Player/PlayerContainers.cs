@@ -9,7 +9,7 @@ public class PlayerContainers : MonoBehaviour
     public Image[] containersImage = new Image[3];
 
     // State of the particles hold inside the containers.
-    private State[] containers = new State[3];
+    public State[] containers = new State[3];
 
     // currently selected container.
     private int currentIndex = 0;
@@ -38,7 +38,12 @@ public class PlayerContainers : MonoBehaviour
         }
         else if(Input.GetMouseButtonUp(1))
         {
-            collector.StopCollecting();
+            //TODO: Update Container Color.
+            State newState = collector.StopCollecting();
+            if(containersImage[currentIndex].fillAmount >= 1)
+            {
+                containers[currentIndex] = newState;
+            }
         }
     }
 

@@ -61,7 +61,10 @@ public class PlayerContainers : MonoBehaviour
     {
         State particleToRelase = containers[currentIndex];
 
-        generator.Relase(particleToRelase);
+        if (particleToRelase != State.NONE)
+            generator.Relase(particleToRelase);
+        else
+            MessageManager.instance.DissplayMessage("Container is empty", 3f);
     }
 
     private void Collect()

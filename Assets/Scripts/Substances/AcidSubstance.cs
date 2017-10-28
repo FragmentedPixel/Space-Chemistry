@@ -9,8 +9,7 @@ public class AcidSubstance : iSubstanceBehaviour {
     {
         // Let gravity handle the movement only scale the particle down and move it accordingly.
         particleLifeTime = 10.0f;
-
-        ScaleDown();
+        
     }
 
     public override State CollidingWith(State otherSubstance)

@@ -15,8 +15,8 @@ public class Generator : MonoBehaviour
     //The last spawn time.
     private float spawnTimer = 0f;
 
-	// SpawnRandomness.
-	public float randomDelta;
+	// Magnitude of the random force applied at the spawn.
+	public float randomForce;
     
     // Initial Force of the particle at spawn.
     public Vector3 particleForce;
@@ -26,7 +26,7 @@ public class Generator : MonoBehaviour
     #endregion
 
     #region Update
-    private void FixedUpdate()
+    private void Update()
     {
         if (spawnTimer >= spawnInterval)
         {
@@ -35,7 +35,7 @@ public class Generator : MonoBehaviour
             // Create the new particle object.
             GameObject newParticle = ParticlePool.instance.RequestParticle(particleSubstance);
 
-			Vector3 randomVector = randomDelta * Random.onUnitSphere;
+			Vector3 randomVector = randomForce * Random.onUnitSphere;
            
             // Update particle parameters.
 			newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce + randomVector);

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Responsible for delegating the events to the current state.
+ * Responsible for delegating the events to the current substance.
  */
 
+//TODO: Add them from substance data scriptable object.
 public class Particle : MonoBehaviour
 {
     #region Variabiles
-    // All possible substances behaviours.
-
-    //TODO: Add them from substance data scriptable object.
-    public List<sSubstance> behaviourList = new List<sSubstance>();
+    
+    // All possible substances.
+    public List<sSubstance> substanceList = new List<sSubstance>();
 
     // Current state of the substance.
     public sSubstance currentSubstance;
@@ -25,20 +25,24 @@ public class Particle : MonoBehaviour
 
     // Components
     private Rigidbody2D rb;
+    private Collider2D col;
+    private MeshRenderer renderer;
     #endregion
 
     #region State Specific
     private void FixedUpdate()
     {
         // Runs the update on the scriptable object.
-        currentSubstance.BehaviourUpdate(this);
+        if(currentSubstance !=  null)
+        {
+            currentSubstance.BehaviourUpdate(this);
+        }
         
         // Return the particle to the pool when it dies.
         if(currentLifeTime > totalLifeTime)
         {
             ParticlePool.instance.ReturnParticle(gameObject);
         }
-
         else
         {
             currentLifeTime += Time.deltaTime;
@@ -74,6 +78,8 @@ public class Particle : MonoBehaviour
 	private void OnEnable()
 	{
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        renderer = GetComponent<MeshRenderer>();
 	}
 
 	public void Activate(sSubstance newSubstance)
@@ -89,33 +95,39 @@ public class Particle : MonoBehaviour
 
 	private void ChangeActiveState(bool isOn)
 	{
-		// Disable Components.
-		GetComponent<Collider2D> ().enabled = isOn;
-		GetComponent<Particle> ().enabled = isOn;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        // Disable Components.
+		col.enabled = isOn;
+        rb.velocity = Vector2.zero;
 
 		// Make particle invisible.
 		transform.localScale = isOn ? Vector3.one : Vector3.zero;
+
+        // Disable Script
+        enabled = isOn;
 	}
 
 	#endregion
 
     #region Helper Methods
-    public void ChangeSubstanceState(sSubstance newState)
+    public void ChangeSubstanceState(sSubstance newSubstance)
     {
-        currentSubstance = newState;
-        rb.velocity = Vector2.zero;
+        // Set substance reference
+        currentSubstance = newSubstance;
 
         // Update the total life time.
-        totalLifeTime = newState.particleLifeTime;
+        totalLifeTime = newSubstance.particleLifeTime;
+        //TODO: Check if this is not done somewhere else.
+        currentLifeTime = 0;
 
-        // Set the gravity for this particle.
-        rb.gravityScale = newState.particleGravity;
+        // Set the rigidbody for the particle..
+        rb.gravityScale = newSubstance.particleGravity;
+        rb.velocity = Vector2.zero;
 
         // Move it to the corresponding layer.
-        gameObject.layer = (int)newState.particleLayer;
+        gameObject.layer = (int)newSubstance.particleLayer;
 
-        GetComponent<MeshRenderer>().material = newState.particleMaterial;
+        // Update the material used by the mesh renderer.
+        renderer.material = newSubstance.particleMaterial;
     }
 
     public float GetPercentagePassed()

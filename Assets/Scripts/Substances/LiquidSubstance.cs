@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Specific data container for Liquid Substances.
+ */
+
 [CreateAssetMenu(fileName = "NewLiquid", menuName = "Substance/New Liquid")]
 public class LiquidSubstance : sSubstance
 {

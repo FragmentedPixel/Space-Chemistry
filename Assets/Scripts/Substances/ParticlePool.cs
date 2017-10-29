@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Particle pool responsible for performing the object pool for the particles in the scene.
+ */
+
 public class ParticlePool : MonoBehaviour 
 {
     #region Variabiles
@@ -9,10 +13,10 @@ public class ParticlePool : MonoBehaviour
     public static ParticlePool instance;
 
 	// Prefab for the particle instance.
-	public GameObject substancePrefab;
+	public GameObject particlePrefab;
 
 	// Maximum particles at one moment.
-	public int MAX_SUBSTANCES;
+	public int MAX_Particules;
 
     // Lists to hold particles.
 	private List<Particle> notInUse = new List<Particle>();
@@ -22,11 +26,13 @@ public class ParticlePool : MonoBehaviour
     #region Pool Methods
     private void Start()
 	{
+        // Setup singleton.
         instance = this;
 
-		for (int i = 0; i < MAX_SUBSTANCES; i++) 
+        // Create particles for the pool.
+		for (int i = 0; i < MAX_Particules; i++) 
 		{
-			GameObject substanceInstance = Instantiate (substancePrefab, transform);
+			GameObject substanceInstance = Instantiate (particlePrefab, transform);
 
 			Particle substanceScript = substanceInstance.GetComponent<Particle> ();
 			substanceScript.Deactivate ();
@@ -41,7 +47,7 @@ public class ParticlePool : MonoBehaviour
 		if (notInUse.Count <= 0) 
 		{
 			// Create a new substance for the empty list.
-			GameObject substanceInstance = Instantiate (substancePrefab, transform);
+			GameObject substanceInstance = Instantiate (particlePrefab, transform);
 
 			Particle substanceScript = substanceInstance.GetComponent<Particle> ();
 			substanceScript.Deactivate ();
@@ -49,8 +55,7 @@ public class ParticlePool : MonoBehaviour
 			notInUse.Add (substanceScript);
 
 			// Debug to increase the number.
-			Debug.Log ("The object pool went over " + MAX_SUBSTANCES);
-			return null;
+			Debug.Log ("The object pool went over " + MAX_Particules);
 		}
 
         // Select the first particle.
@@ -68,9 +73,11 @@ public class ParticlePool : MonoBehaviour
 
 	public void ReturnParticle(GameObject substanceToReturn)
 	{
+        // Access the particle's script to reset it for later use.
 		Particle substanceScript = substanceToReturn.GetComponent<Particle> ();
 		substanceScript.Deactivate ();
 
+        // Update it;s position in the lists.
 		inUse.Remove (substanceScript);
 		notInUse.Add (substanceScript);
 	}

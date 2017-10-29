@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * Requests a number of drops in order the extinguish
+ * Requests a number of drops in order the extinguish the fire.
  */
 
 public class Extinguished : MonoBehaviour
@@ -30,24 +30,21 @@ public class Extinguished : MonoBehaviour
 
 				if (dropsAdded > dropsNeeded) 
 				{
+                    // Stop the fire if enough particles have hit.
 					Destroy (gameObject);
 				}
 				else 
 				{
-					//TODO: create reaction with fire.
+                    // Destory the colliding particle.
 					Destroy (substance.gameObject);
 				}
             }
-
-			
-				//TODO: If lava hits container, increase it.
-				//dropsAdded--;
-				//Destroy (substance.gameObject);
         }
     }
 
     private void Update()
     {
+        // Update the heat meter.
         dropsBar.fillAmount = (dropsNeeded - dropsAdded) / dropsNeeded;
     }
 }

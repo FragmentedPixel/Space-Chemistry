@@ -6,13 +6,12 @@ using System;
 [CreateAssetMenu(fileName = "NewSubstance", menuName = "Substance/New Basic Substance")]
 
 [Serializable]
-
 public class sSubstance : ScriptableObject
 {
     //TODO: Make all objects use the substance script as parameter.
    
     // Layer of the particle
-    public enum SubstanceLayer { Fluids = 8, Steam = 9 };
+    public enum SubstanceLayer { Fluids = 8, Floating = 9, Solid = 10 };
 
     #region Variabiles
     [Header("General")]

@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+/*
+ * Responsible for the player's movement.
+ */
 
+public class PlayerMovement : MonoBehaviour
+{
+    #region Variabiles
     // The movement speed of the player.
     public float speed = 10f;
 
     // Maximum speed of the player.
     public float maxVelocity = 4f;
     
+    // Components.
     private Rigidbody2D myBody;
     private Animator anim;
     private const string walkingHash = "Walk";
+    #endregion
 
+    #region Methods
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -33,25 +41,29 @@ public class PlayerMovement : MonoBehaviour {
         // Get current speed of the rb.
         float vel = Mathf.Abs(myBody.velocity.x);
 
+        // Stop if there is no movement input.
         if(movement == 0)
         {
             StopMove();
         }
 
+        // Update the player rigidbody according to the user input.
         else if(vel < maxVelocity)
         {
-            Move(movement > 0);
+            bool movingRight = (movement > 0);
+            Move(movingRight);
         }
     }
 
     private void Move(bool right)
     {
+        // Make the player face the movement direction.
         Vector3 temp = anim.transform.localScale;
         temp.x = right ? 0.3f :  -0.3f;
-
         anim.transform.localScale = temp;
-        anim.SetBool(walkingHash, true);
 
+        // Upate the player's components.
+        anim.SetBool(walkingHash, true);
         float forceX = right ? speed : -speed;
         myBody.AddForce(new Vector2(forceX, 0));
     }
@@ -61,5 +73,5 @@ public class PlayerMovement : MonoBehaviour {
         myBody.velocity = Vector2.zero;
         anim.SetBool(walkingHash, false);
     }
-
+    #endregion
 }

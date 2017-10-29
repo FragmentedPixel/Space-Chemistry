@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for creating reaction between particles and objects.
+ */
+
 public class Reactant : MonoBehaviour
 {
+    // Having similar reaction to this substance.
     public sSubstance reactantSubstance;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Particle substance = collision.gameObject.GetComponent<Particle>();
+        // Check if a reaction is needed.
+        Particle otherParticle = collision.gameObject.GetComponent<Particle>();
 
-        if(substance != null)
+        if(otherParticle != null)
         {
-            ReactWith(substance);
+            otherParticle.ReactWith(reactantSubstance);
         }
-    }
-
-    protected virtual void ReactWith(Particle otherParticle)
-    {
-        otherParticle.ReactWith(reactantSubstance);
     }
 }

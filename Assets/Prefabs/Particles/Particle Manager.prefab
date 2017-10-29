@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b67c095e3a49542a2919f002d42c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  substancePrefab: {fileID: 1404930214960182, guid: f4e7a79688388ea4e8399c376abd1f7b,
+  particlePrefab: {fileID: 1404930214960182, guid: f4e7a79688388ea4e8399c376abd1f7b,
     type: 2}
-  MAX_SUBSTANCES: 3000
+  MAX_Particules: 300

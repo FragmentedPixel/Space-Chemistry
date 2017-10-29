@@ -11,12 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ed37c66b298bc4caf7072ae23c3533, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
+  reactionTable: {fileID: 0}
   particleLayer: 8
   particleGravity: 1
   particleMaterial: {fileID: 2100000, guid: 0adabd7cf01785c47b8ab03189629c38, type: 2}
   particleLifeTime: 3
-  reactions:
-  - secondSubstance: {fileID: 11400000, guid: cd1cae7243f17be40b85aaf5ce6ebec2, type: 2}
-    resultSubstance: {fileID: 11400000, guid: 75120b0ba42eacb4abd4bfbf09fe1ff3, type: 2}
-  - secondSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
-    resultSubstance: {fileID: 11400000, guid: 75120b0ba42eacb4abd4bfbf09fe1ff3, type: 2}
+  particleColor: {r: 0, g: 0.7931032, b: 1, a: 1}

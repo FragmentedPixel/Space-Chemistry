@@ -15,13 +15,14 @@ public class FloatingSubstance : sSubstance
 
     public override void BehaviourUpdate(Particle substanceScript)
     {
-        Rigidbody2D particleRb = substanceScript.GetComponent<Rigidbody2D>();
-        GasFloating(particleRb);
+        GasFloating(substanceScript);
         ScaleDown(substanceScript);
     }
 
-    private void GasFloating(Rigidbody2D rb)
+    private void GasFloating(Particle substanceScript)
     {
+        Rigidbody2D rb = substanceScript.rb;
+
         // Gas always goes upwards
         if (rb.velocity.y < 50)
         {

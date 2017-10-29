@@ -119,6 +119,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114500851870271196, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: containersImage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4980496993196246, guid: 741a95361e328534880799759797b36d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.68
@@ -160,17 +165,17 @@ Prefab:
         type: 2}
       propertyPath: containersImage.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994847781}
     - target: {fileID: 114500851870271196, guid: 741a95361e328534880799759797b36d,
         type: 2}
       propertyPath: containersImage.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1505133047}
     - target: {fileID: 114500851870271196, guid: 741a95361e328534880799759797b36d,
         type: 2}
       propertyPath: containersImage.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1553225334}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 741a95361e328534880799759797b36d, type: 2}
   m_IsPrefabParent: 0
@@ -399,11 +404,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114846673009931626, guid: 87775aa5563c6914a8f62299a6959188,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87775aa5563c6914a8f62299a6959188, type: 2}
@@ -1379,6 +1379,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1505133047 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114528172955994182, guid: 87775aa5563c6914a8f62299a6959188,
+    type: 2}
+  m_PrefabInternal: {fileID: 47714898}
+  m_Script: {fileID: 11500000, guid: 5058d25296263a141bbec193dd7d26da, type: 3}
+--- !u!114 &1553225334 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114528172955994182, guid: 87775aa5563c6914a8f62299a6959188,
+    type: 2}
+  m_PrefabInternal: {fileID: 1967812133}
+  m_Script: {fileID: 11500000, guid: 5058d25296263a141bbec193dd7d26da, type: 3}
 --- !u!4 &1661914628 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4459358455133230, guid: 3b1e4b99f8e0c584683f84766f315d9a,
@@ -1479,7 +1491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.1
-  randomDelta: 100
+  randomForce: 0
   particleForce: {x: 0, y: -350, z: 0}
   particleSubstance: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
 --- !u!4 &1927594927 stripped
@@ -1667,6 +1679,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224523568974790000, guid: 87775aa5563c6914a8f62299a6959188,
     type: 2}
   m_PrefabInternal: {fileID: 201333919}
+--- !u!114 &1994847781 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114528172955994182, guid: 87775aa5563c6914a8f62299a6959188,
+    type: 2}
+  m_PrefabInternal: {fileID: 201333919}
+  m_Script: {fileID: 11500000, guid: 5058d25296263a141bbec193dd7d26da, type: 3}
 --- !u!1001 &2026120481
 Prefab:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ public class ParticlePool : MonoBehaviour
 		}
 	}
 
-	public GameObject RequestParticle(sSubstance substanceRequested)
+	public Particle RequestParticle(sSubstance substanceRequested)
 	{
 		// If the list is empty return null.
 		if (notInUse.Count <= 0) 
@@ -59,27 +59,26 @@ public class ParticlePool : MonoBehaviour
 		}
 
         // Select the first particle.
-		Particle substScript = notInUse [0];
+		Particle particleScript = notInUse [0];
 
 		// Update the list.
-		notInUse.Remove(substScript);
-		inUse.Add (substScript);
+		notInUse.Remove(particleScript);
+		inUse.Add (particleScript);
 
 		// Activate the substance.
-		substScript.Activate (substanceRequested);
+		particleScript.Activate (substanceRequested);
 
-		return substScript.gameObject;
+		return particleScript;
 	}
 
-	public void ReturnParticle(GameObject substanceToReturn)
+	public void ReturnParticle(Particle substanceToReturn)
 	{
         // Access the particle's script to reset it for later use.
-		Particle substanceScript = substanceToReturn.GetComponent<Particle> ();
-		substanceScript.Deactivate ();
+        substanceToReturn.Deactivate ();
 
         // Update it;s position in the lists.
-		inUse.Remove (substanceScript);
-		notInUse.Add (substanceScript);
+		inUse.Remove (substanceToReturn);
+		notInUse.Add (substanceToReturn);
 	}
     #endregion
 }

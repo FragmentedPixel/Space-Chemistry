@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for collecting substances particles for the player.
+ */
+
 public class HandCollector : MonoBehaviour
 {
     #region Variabiles
-
     // Currently soaked particles.
     private int currentParticles = 0;
 
@@ -55,22 +58,25 @@ public class HandCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Escape colisions with ground or other objects
-        if (!collision.GetComponent<Particle>()) 
+        // Get information about the current collision.
+        Particle collectedSubstance = collision.GetComponent<Particle>();
+     
+        //Escape collisions with ground or other objects.
+        if (collectedSubstance ==  null) 
             return;
 
+        // The players is not collecting now.
         if (!collecting)
             return;
-
-        // Get information about the current collision
-        Particle collectedSubstance = collision.GetComponent<Particle>();
 
 
         if(currentSubstance == null)
         {
             currentSubstance = collectedSubstance.currentSubstance;
         }
-        else if(currentSubstance!=collectedSubstance.currentSubstance)             // Make sure to collect the same type of substance.
+
+        // Make sure to collect the same type of substance.
+        else if (currentSubstance!=collectedSubstance.currentSubstance)             
         {
             MessageManager.instance.DissplayMessage("You can't collect this substance", 3f);
             return;
@@ -78,13 +84,10 @@ public class HandCollector : MonoBehaviour
 
         if(collectedSubstance != null)
         {
-
-            //TODO: Make getter method.
-                currentParticles++;
-                Destroy(collectedSubstance.gameObject);
+            currentParticles++;
+            Destroy(collectedSubstance.gameObject);
         }
 
-        //TODO: play sound when enough particles.
     }
     #endregion
 }

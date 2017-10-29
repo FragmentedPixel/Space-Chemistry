@@ -6,11 +6,9 @@ using UnityEngine;
  * Responsible for delegating the events to the current substance.
  */
 
-//TODO: Add them from substance data scriptable object.
 public class Particle : MonoBehaviour
 {
     #region Variabiles
-    
     // All possible substances.
     public List<sSubstance> substanceList = new List<sSubstance>();
 
@@ -24,9 +22,9 @@ public class Particle : MonoBehaviour
     private float totalLifeTime = 0f;
 
     // Components
-    private Rigidbody2D rb;
-    private Collider2D col;
-    private MeshRenderer renderer;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public Collider2D col;
+    [HideInInspector] public MeshRenderer rend;
     #endregion
 
     #region State Specific
@@ -41,7 +39,7 @@ public class Particle : MonoBehaviour
         // Return the particle to the pool when it dies.
         if(currentLifeTime > totalLifeTime)
         {
-            ParticlePool.instance.ReturnParticle(gameObject);
+            ParticlePool.instance.ReturnParticle(this);
         }
         else
         {
@@ -79,7 +77,7 @@ public class Particle : MonoBehaviour
 	{
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        renderer = GetComponent<MeshRenderer>();
+        rend = GetComponent<MeshRenderer>();
 	}
 
 	public void Activate(sSubstance newSubstance)
@@ -114,9 +112,8 @@ public class Particle : MonoBehaviour
         // Set substance reference
         currentSubstance = newSubstance;
 
-        // Update the total life time.
+        // Update the life time.
         totalLifeTime = newSubstance.particleLifeTime;
-        //TODO: Check if this is not done somewhere else.
         currentLifeTime = 0;
 
         // Set the rigidbody for the particle..
@@ -127,7 +124,7 @@ public class Particle : MonoBehaviour
         gameObject.layer = (int)newSubstance.particleLayer;
 
         // Update the material used by the mesh renderer.
-        renderer.material = newSubstance.particleMaterial;
+        rend.material = newSubstance.particleMaterial;
     }
 
     public float GetPercentagePassed()

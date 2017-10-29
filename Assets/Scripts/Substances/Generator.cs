@@ -33,13 +33,13 @@ public class Generator : MonoBehaviour
             // It is time to spawn a new particle.
 
             // Create the new particle object.
-            GameObject newParticle = ParticlePool.instance.RequestParticle(particleSubstance);
+            Particle newParticle = ParticlePool.instance.RequestParticle(particleSubstance);
 
 			Vector3 randomVector = randomForce * Random.onUnitSphere;
            
             // Update particle parameters.
-			newParticle.GetComponent<Rigidbody2D>().AddForce(particleForce + randomVector);
-            newParticle.GetComponent<Particle>().ChangeSubstanceState(particleSubstance);
+            newParticle.ChangeSubstanceState(particleSubstance);
+			newParticle.rb.AddForce(particleForce + randomVector);
             newParticle.transform.position = transform.position;
 
             // Reset timer.

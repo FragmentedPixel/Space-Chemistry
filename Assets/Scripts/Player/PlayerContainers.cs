@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Responsible for managing the player's containers.
+ */
+
+//TODO: play sound when enough particles.
+
 public class PlayerContainers : MonoBehaviour
 {
+    #region Variabiles
     // UI Reference to the containers.
-    public Image[] containersImage = new Image[3];
+    public UIContainer[] containersImage = new UIContainer[3];
 
     // State of the particles hold inside the containers.
     public sSubstance[] containers = new sSubstance[3];
@@ -23,17 +30,20 @@ public class PlayerContainers : MonoBehaviour
     // Hand subclasses.
     private HandGenerator generator;
     private HandCollector collector;
+    #endregion
+
+    #region Methods
 
     private void Start()
     {
         generator = GetComponentInChildren<HandGenerator>();
         collector = GetComponentInChildren<HandCollector>();
+
+        containersImage[currentIndex].HighLight();
     }
 
     private void Update()
     {
-        
-
         if (Input.GetMouseButton(0))
         {
             Relase();
@@ -44,25 +54,36 @@ public class PlayerContainers : MonoBehaviour
         }
         else if(Input.GetMouseButtonUp(1))
         {
-            //TODO: Update Container Color.
             sSubstance newSubstance = collector.StopCollecting();
-            
-            containers[currentIndex] = newSubstance; 
+            containers[currentIndex] = newSubstance;
+
+            //TODO: Improve this one.
+            containersImage[currentIndex].UpdateContainerColor(newSubstance.particleColor);
         }
         else
-            SelectContainer(); //Nu poti schimba containerul cat timp elimini/colectezi
+        {
+            // Can't change containers while performing any actions.
+            SelectContainer();
+        }
     }
 
     private void SelectContainer()
     {
-        //TODO: Update selected Container color.
+        int input = -1;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            currentIndex = 0;
+            input = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2))
-            currentIndex = 1;
+            input = 1;
         else if (Input.GetKeyDown(KeyCode.Alpha3))
-            currentIndex = 2;
+            input = 2;
+
+        if(input != -1)
+        {
+            containersImage[currentIndex].StopHighLigh();
+            currentIndex = input;
+            containersImage[currentIndex].HighLight();
+        }
     }
 
     private void Relase()
@@ -91,13 +112,12 @@ public class PlayerContainers : MonoBehaviour
     private void Collect()
     {
         int currentparticles = collector.Collect(particles[currentIndex],containers[currentIndex]);
-        if(currentparticles>=particlesNeeded)  //Dont go over the maximum capacity
+        if(currentparticles>=particlesNeeded)
         {
             sSubstance newSubstance = collector.StopCollecting();
             containers[currentIndex] = newSubstance;
             currentparticles = particlesNeeded;
         }
-        //TODO: Make option to get substance collected.
 
         //Set the current particles in the container
         particles[currentIndex] = currentparticles;
@@ -108,11 +128,11 @@ public class PlayerContainers : MonoBehaviour
 
     private void ChangeContainerImage()
     {
-        float percent =(float) particles[currentIndex] / particlesNeeded;
+        float newPercent =(float) particles[currentIndex] / particlesNeeded;
+        Color newColor = Color.Lerp(Color.red, Color.green, newPercent);
 
-        containersImage[currentIndex].fillAmount = percent;
-
-        containersImage[currentIndex].color = Color.Lerp(Color.red, Color.green, percent);
-
+        containersImage[currentIndex].UpdateContainer(newColor,newPercent);
     }
+    
+    #endregion
 }

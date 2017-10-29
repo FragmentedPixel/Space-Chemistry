@@ -8,13 +8,14 @@ using System;
 [Serializable]
 public class sSubstance : ScriptableObject
 {
-    //TODO: Make all objects use the substance script as parameter.
-   
     // Layer of the particle
-    public enum SubstanceLayer { Fluids = 8, Floating = 9, Solid = 10 };
+    public enum SubstanceLayer { Fluids = 8, Floating = 9, Solid = 10  };
 
     #region Variabiles
     [Header("General")]
+    public ReactionsTable reactionTable;
+
+    // Layer of the particle
     public SubstanceLayer particleLayer;
 
     // Gravity particle
@@ -26,16 +27,25 @@ public class sSubstance : ScriptableObject
     // How much time before the particle scales down and dies
     public float particleLifeTime = 3.0f;
 
-    public List<Reaction> reactions;
+    // Color of the particle.
+    public Color particleColor;
+
+    // List of all reaction with this substance.
+    private List<ReactionEq> reactions;
     #endregion
 
     #region Specific
+    private void Start()
+    {
+        reactions = reactionTable.GetReactionsFor(this);
+    }
+
     public sSubstance CollidingWith(sSubstance otherSubstance)
     {
         for(int i = 0; i < reactions.Count; i++)
         {
-            if (reactions[i].secondSubstance == otherSubstance)
-                return reactions[i].resultSubstance;
+            if (reactions[i].second == otherSubstance)
+                return reactions[i].result;
         }
 
         return null;
@@ -78,11 +88,4 @@ public class sSubstance : ScriptableObject
     }
 
     #endregion
-}
-
-[Serializable]
-public class Reaction
-{
-    public sSubstance secondSubstance;
-    public sSubstance resultSubstance;
 }

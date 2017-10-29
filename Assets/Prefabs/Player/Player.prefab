@@ -340,6 +340,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  particlesNeeded: 15
 --- !u!114 &114880823727597074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,7 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dc16283c1fdf049894e3d46acc5fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesNeeded: 15
   particleSoaker: {fileID: 250805521873200118}
   particleCollector: {fileID: 58722619943334982}
 --- !u!212 &212216449298762398

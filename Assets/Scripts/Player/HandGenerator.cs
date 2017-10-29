@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for generating particles from the player's hand.
+ */ 
+
 public class HandGenerator : MonoBehaviour 
 {
 	#region Parameters
@@ -23,13 +27,11 @@ public class HandGenerator : MonoBehaviour
             // It is time to spawn a new particle.
 
             // Create the new particle object.
-            GameObject newParticle = ParticlePool.instance.RequestParticle(substanceToRelase);
+            Particle newParticle = ParticlePool.instance.RequestParticle(substanceToRelase);
 
             // Update particle parameters.
-            //TODO: Create getter methode maybe?
-            // 
-            newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * relaseForce);
-            newParticle.GetComponent<Particle>().ChangeSubstanceState(substanceToRelase);
+            newParticle.ChangeSubstanceState(substanceToRelase);
+            newParticle.rb.AddForce(transform.right * relaseForce);
             newParticle.transform.position = transform.position;
             
             // Set the timer.

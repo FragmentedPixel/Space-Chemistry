@@ -49,7 +49,7 @@ public class ReactionTableEditor : Editor
         GUI.color = Color.green;
         if (GUILayout.Button("Add reaction", GUILayout.Width(100f)))
         {
-            myTarget.table.Add(new ReactionEq());
+            myTarget.table.Add(new ReactionEq(null, null, null));
         }
 
         //Update script.

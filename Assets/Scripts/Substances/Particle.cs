@@ -28,7 +28,7 @@ public class Particle : MonoBehaviour
     #endregion
 
     #region State Specific
-    private void Update()
+    private void FixedUpdate()
     {
         // Runs the update on the scriptable object.
         currentSubstance.BehaviourUpdate(this);

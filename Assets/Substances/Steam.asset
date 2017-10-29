@@ -14,6 +14,6 @@ MonoBehaviour:
   particleLayer: 9
   particleGravity: 0
   particleMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
-  particleLifeTime: 3
+  particleLifeTime: 5
   reactions: []
-  floatability: 7
+  floatability: 1

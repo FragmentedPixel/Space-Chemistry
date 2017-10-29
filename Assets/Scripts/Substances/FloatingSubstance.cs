@@ -8,7 +8,7 @@ public class FloatingSubstance : sSubstance
 
     [Header("Specific")]
     // How fast does the gas goes up?
-    public float floatability = 7.0f;
+    public float floatability = 15.0f;
 
     public override void BehaviourUpdate(Particle substanceScript)
     {

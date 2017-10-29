@@ -17,6 +17,6 @@ MonoBehaviour:
   particleLifeTime: 3
   reactions:
   - secondSubstance: {fileID: 11400000, guid: cd1cae7243f17be40b85aaf5ce6ebec2, type: 2}
-    resultSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
+    resultSubstance: {fileID: 11400000, guid: 75120b0ba42eacb4abd4bfbf09fe1ff3, type: 2}
   - secondSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
     resultSubstance: {fileID: 11400000, guid: 75120b0ba42eacb4abd4bfbf09fe1ff3, type: 2}

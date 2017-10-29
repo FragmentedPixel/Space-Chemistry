@@ -26,7 +26,7 @@ public class Generator : MonoBehaviour
     #endregion
 
     #region Update
-    private void Update()
+    private void FixedUpdate()
     {
         if (spawnTimer >= spawnInterval)
         {

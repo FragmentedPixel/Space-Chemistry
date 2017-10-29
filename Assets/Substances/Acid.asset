@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Acid
   m_EditorClassIdentifier: 
   particleLayer: 8
-  particleGravity: 0.8
+  particleGravity: 1
   particleMaterial: {fileID: 2100000, guid: 6d6f513145f0fe6499c68d3623bae829, type: 2}
-  particleLifeTime: 3
+  particleLifeTime: 10
   reactions:
   - secondSubstance: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
     resultSubstance: {fileID: 11400000, guid: 75120b0ba42eacb4abd4bfbf09fe1ff3, type: 2}

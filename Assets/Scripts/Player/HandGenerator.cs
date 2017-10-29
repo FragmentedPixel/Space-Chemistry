@@ -16,7 +16,7 @@ public class HandGenerator : MonoBehaviour
 	#endregion
 
 	#region Release
-	public void Relase(sSubstance substanceToRelase)
+	public bool Relase(sSubstance substanceToRelase)
 	{
         if (nextRelease <= Time.time)
         {
@@ -31,10 +31,14 @@ public class HandGenerator : MonoBehaviour
             newParticle.GetComponent<Rigidbody2D>().AddForce(transform.right * relaseForce);
             newParticle.GetComponent<Particle>().ChangeSubstanceState(substanceToRelase);
             newParticle.transform.position = transform.position;
-
+            
             // Set the timer.
             nextRelease = Time.time + releaseInterval;
-        }	
+            return true;
+        }
+        else
+            return false;
+        
 	}
 	#endregion
 }

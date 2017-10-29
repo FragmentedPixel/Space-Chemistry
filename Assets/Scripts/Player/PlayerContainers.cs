@@ -11,6 +11,12 @@ public class PlayerContainers : MonoBehaviour
     // State of the particles hold inside the containers.
     public sSubstance[] containers = new sSubstance[3];
 
+    // Container capacity
+    public int particlesNeeded = 15;
+
+    //Number of particles in the coresponding container
+    private int[] particles= { 0, 0, 0 };
+
     // currently selected container.
     private int currentIndex = 0;
 
@@ -26,7 +32,7 @@ public class PlayerContainers : MonoBehaviour
 
     private void Update()
     {
-        SelectContainer();
+        
 
         if (Input.GetMouseButton(0))
         {
@@ -40,11 +46,11 @@ public class PlayerContainers : MonoBehaviour
         {
             //TODO: Update Container Color.
             sSubstance newSubstance = collector.StopCollecting();
-            if(containersImage[currentIndex].fillAmount >= 1)
-            {
-                containers[currentIndex] = newSubstance;
-            }
+            
+            containers[currentIndex] = newSubstance; 
         }
+        else
+            SelectContainer(); //Nu poti schimba containerul cat timp elimini/colectezi
     }
 
     private void SelectContainer()
@@ -61,21 +67,53 @@ public class PlayerContainers : MonoBehaviour
 
     private void Relase()
     {
+        //Check if container is empty
+        if (particles[currentIndex] == 0)
+        {
+            MessageManager.instance.DissplayMessage("Container is empty", 3f);
+            containers[currentIndex] = null;
+            return;
+        }
+            
         sSubstance particleSubstanceToRelease = containers[currentIndex];
 
         if (particleSubstanceToRelease != null)
-            generator.Relase(particleSubstanceToRelease);
-        else
-            MessageManager.instance.DissplayMessage("Container is empty", 3f);
+        {
+            bool goodRelease=generator.Relase(particleSubstanceToRelease);
+            //Set the current particles in the container
+            if(goodRelease)
+                particles[currentIndex]--;
+            //Change the UI accordingly
+            ChangeContainerImage();
+        }
     }
 
     private void Collect()
     {
-        float percent = collector.Collect();
+        
+        int currentparticles = collector.Collect(particles[currentIndex],containers[currentIndex]);
+        if(currentparticles>=particlesNeeded)  //Dont go over the maximum capacity
+        {
+            sSubstance newSubstance = collector.StopCollecting();
+            containers[currentIndex] = newSubstance;
+            currentparticles = particlesNeeded;
+        }
         //TODO: Make option to get substance collected.
+
+        //Set the current particles in the container
+        particles[currentIndex] = currentparticles;
+        //Change the UI accordingly
+        ChangeContainerImage();
+        
+    }
+
+    private void ChangeContainerImage()
+    {
+        float percent =(float) particles[currentIndex] / particlesNeeded;
 
         containersImage[currentIndex].fillAmount = percent;
 
         containersImage[currentIndex].color = Color.Lerp(Color.red, Color.green, percent);
+
     }
 }

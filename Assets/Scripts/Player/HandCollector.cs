@@ -26,13 +26,13 @@ public class HandCollector : MonoBehaviour
     public int Collect(int particles,sSubstance currentSubstance)
     {
         
-        
         if(collecting == false)
         {
             this.currentSubstance = currentSubstance;
             currentParticles = particles;
             StartCollecting();
         }
+
         return currentParticles;
     }
 

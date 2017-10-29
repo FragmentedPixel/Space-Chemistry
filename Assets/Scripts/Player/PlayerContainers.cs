@@ -14,7 +14,7 @@ public class PlayerContainers : MonoBehaviour
     // Container capacity
     public int particlesNeeded = 15;
 
-    //Number of particles in the coresponding container
+    //Number of particles in the corresponding container
     private int[] particles= { 0, 0, 0 };
 
     // currently selected container.
@@ -90,7 +90,6 @@ public class PlayerContainers : MonoBehaviour
 
     private void Collect()
     {
-        
         int currentparticles = collector.Collect(particles[currentIndex],containers[currentIndex]);
         if(currentparticles>=particlesNeeded)  //Dont go over the maximum capacity
         {

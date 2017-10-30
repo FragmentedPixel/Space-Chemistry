@@ -100,6 +100,7 @@ public class PlayerContainers : MonoBehaviour
         if (containers[currentIndex].particules <= 0)
         {
             MessageManager.getInstance().DissplayMessage("Container is empty", 1f);
+            containers[currentIndex].substance = null;
         }
         else
         {

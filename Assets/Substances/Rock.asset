@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
   particleLayer: 10
-  particleGravity: 0
-  particleMaterial: {fileID: 0}
-  particleLifeTime: 3
+  particleGravity: 1
+  particleMaterial: {fileID: 2100000, guid: 3a212b6edcee40541815267f66a7b9b3, type: 2}
+  particleLifeTime: 20
   particleColor: {r: 0, g: 0, b: 0, a: 0}

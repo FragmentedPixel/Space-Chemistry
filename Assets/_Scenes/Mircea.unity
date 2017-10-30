@@ -661,6 +661,16 @@ Prefab:
       propertyPath: m_Name
       value: AcidPIT
       objectReference: {fileID: 0}
+    - target: {fileID: 61916791020491126, guid: 3e795f6b790e2184ca9c16018cb60c7f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61285762029941072, guid: 3e795f6b790e2184ca9c16018cb60c7f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e795f6b790e2184ca9c16018cb60c7f, type: 2}
   m_IsPrefabParent: 0
@@ -820,12 +830,12 @@ Prefab:
     - target: {fileID: 224365859399186740, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 60
+      value: 60.00004
       objectReference: {fileID: 0}
     - target: {fileID: 224704448479938946, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 60
+      value: 60.00004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65a09024e56e84944a5ff07c334e8be7, type: 2}

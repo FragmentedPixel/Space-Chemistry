@@ -128,8 +128,8 @@ public class LiquidPool : MonoBehaviour {
         //for each node, set the line renderer and physics arrays
         for (int i = 0; i < nodecount; i++)
         {
-            ypositions[i] = this.transform.position.y + Top;
-            xpositions[i] = this.transform.position.x +(Left + Width * i / edgecount);
+            ypositions[i] = this.transform.localPosition.y + Top;
+            xpositions[i] = this.transform.localPosition.x +(Left + Width * i / edgecount);
             Body.SetPosition(i, new Vector3(xpositions[i], Top, z));
             accelerations[i] = 0;
             velocities[i] = 0;

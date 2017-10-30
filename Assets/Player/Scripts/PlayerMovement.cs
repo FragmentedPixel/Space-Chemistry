@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform groundCheck;
 
-    private float groundRadius = 0.2f;
+    private float groundRadius = 0.5f;
 
     public float jumpForce = 5f;
 
@@ -48,13 +48,13 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatisGround);
 
-        anim.SetBool("Ground", grounded);
+       // anim.SetBool("Ground", grounded);
 
-        anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+        //anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
         if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            anim.SetBool("Ground", false);
+           // anim.SetBool("Ground", false);
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
         }
 

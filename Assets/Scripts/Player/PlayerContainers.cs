@@ -91,7 +91,7 @@ public class PlayerContainers : MonoBehaviour
         //Check if container is empty
         if (particles[currentIndex] == 0)
         {
-            MessageManager.instance.DissplayMessage("Container is empty", 3f);
+            MessageManager.getInstance().DissplayMessage("Container is empty", 3f);
             containers[currentIndex] = null;
             return;
         }

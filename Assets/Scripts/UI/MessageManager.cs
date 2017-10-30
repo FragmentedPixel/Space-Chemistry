@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class MessageManager : MonoBehaviour
 {
     // Singleton instance.
-    public static MessageManager instance;
+    private static MessageManager instance;
 
     // UI References.
     private Text messageText;
@@ -29,6 +29,11 @@ public class MessageManager : MonoBehaviour
         initColor = messageText.color;
         finalColor = initColor;
         finalColor.a = 0;
+    }
+
+    public static MessageManager getInstance()
+    {
+        return instance;
     }
 
     public void DissplayMessage(string text, float duration)

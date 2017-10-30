@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.1
-  randomDelta: 100
+  randomForce: 0
   particleForce: {x: 0, y: 350, z: 0}
   particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114395347549388446
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.1
-  randomDelta: 100
+  randomForce: 0
   particleForce: {x: 0, y: 350, z: 0}
   particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114863844978816686
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 0.1
-  randomDelta: 100
+  randomForce: 0
   particleForce: {x: 0, y: 350, z: 0}
   particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114980635555001396

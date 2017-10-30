@@ -78,7 +78,7 @@ public class HandCollector : MonoBehaviour
         // Make sure to collect the same type of substance.
         else if (currentSubstance!=collectedSubstance.currentSubstance)             
         {
-            MessageManager.instance.DissplayMessage("You can't collect this substance", 3f);
+            MessageManager.getInstance().DissplayMessage("You can't collect this substance", 3f);
             return;
         }
 

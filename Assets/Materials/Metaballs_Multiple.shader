@@ -25,12 +25,15 @@ SubShader {
 	#include "UnityCG.cginc"	
 	float4 _Color;
 	sampler2D _MainTex;	
-	struct v2f {
+	struct v2f 
+	{
 	    float4  pos : SV_POSITION;
 	    float2  uv : TEXCOORD0;
 	};	
+
 	float4 _MainTex_ST;		
-	v2f vert (appdata_base v){
+	v2f vert (appdata_base v)
+	{
 	    v2f o;
 	    o.pos = UnityObjectToClipPos (v.vertex);
 	    o.uv = TRANSFORM_TEX (v.texcoord, _MainTex);
@@ -39,23 +42,32 @@ SubShader {
 	
 	// Here goes the metaball magic
 	float COLOR_TRESHHOLD=0.2; //To separate and process each color.		
-	half4 frag (v2f i) : COLOR{		
+
+	half4 frag (v2f i) : COLOR
+	{		
 		half4 texcol= tex2D (_MainTex, i.uv); 
 		half4 finalColor= texcol;					
-		if(texcol.r>0.3){ // This is for the lava effect, easiest one!
+		
+		if(texcol.r>0.3)
+		{ // This is for the lava effect, easiest one!
 			finalColor=half4(texcol.r,texcol.r/9.5,0.0,texcol.a);
 			finalColor=floor(finalColor/0.05)*0.5; //The floor function for the metaball effect play around the 2 values for different effects (use the color preview at the scene!)		    
 	    }
-	    else if(texcol.g>0.3){ //This is for the gas effect		
+
+	    else if(texcol.g>0.3)
+		{ //This is for the gas effect		
 		    finalColor=half4(texcol.g,texcol.g,texcol.g,0.5f);// All channels white with some transparency
 		    finalColor=floor(finalColor/0.05)*0.3;  //Blend it in
 		     finalColor.a=0.5f; // To add some transparency		    
 	    }	    
-	    else if(texcol.b>0.3){	//This is for the water effect
+	    
+		else if(texcol.b>0.3)
+		{	//This is for the water effect
 	    		finalColor=half4(8.0,texcol.b/2.0,texcol.b,0.5);
 				
 				finalColor.b=floor((finalColor.b/0.1)*0.5);
 		}	    
+
 	    return finalColor;
 	}
 	ENDCG

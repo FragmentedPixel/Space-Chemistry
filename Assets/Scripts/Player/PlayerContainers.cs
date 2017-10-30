@@ -7,8 +7,6 @@ using UnityEngine.UI;
  * Responsible for managing the player's containers.
  */
 
-//TODO: play sound when enough particles.
-
 public class PlayerContainers : MonoBehaviour
 {
     #region Variabiles

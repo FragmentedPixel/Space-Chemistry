@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopMove()
     {
-        myBody.velocity = Vector2.zero;
+        myBody.velocity = new Vector2(0f, myBody.velocity.x);
         anim.SetBool(walkingHash, false);
     }
     #endregion

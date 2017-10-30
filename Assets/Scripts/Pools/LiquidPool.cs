@@ -51,7 +51,7 @@ public class LiquidPool : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        SpawnWater(-5, 10, 0, -3);
+        SpawnWater(-5, 5, 0, -5);
 	}
 
     public void Splash(float xpos, float velocity)
@@ -99,7 +99,7 @@ public class LiquidPool : MonoBehaviour {
 
         //Add our line renderer and set it up;
         Body = gameObject.AddComponent<LineRenderer>();
-       // Body.useWorldSpace = false;
+    //    Body.useWorldSpace = false;
         Body.material = mat;
         Body.material.renderQueue = 1000;
         //Body.SetVertexCount(nodecount);
@@ -120,7 +120,7 @@ public class LiquidPool : MonoBehaviour {
         colliders = new GameObject[edgecount];
 
         //Set the variables
-        baseheight = Top;
+        baseheight = this.transform.localPosition.y;
         bottom = Bottom;
         left = Left;
         
@@ -128,9 +128,10 @@ public class LiquidPool : MonoBehaviour {
         //for each node, set the line renderer and physics arrays
         for (int i = 0; i < nodecount; i++)
         {
-            ypositions[i] = this.transform.localPosition.y + Top;
-            xpositions[i] = this.transform.localPosition.x +(Left + Width * i / edgecount);
+            ypositions[i] = this.transform.localPosition.y;
+            xpositions[i] = this.transform.localPosition.x + (Left + Width * i / edgecount);
             Body.SetPosition(i, new Vector3(xpositions[i], Top, z));
+  
             accelerations[i] = 0;
             velocities[i] = 0;
         }
@@ -145,10 +146,10 @@ public class LiquidPool : MonoBehaviour {
             
             //mesh corners
             Vector3[] Vertices = new Vector3[4]; //each mesh has 4 corners
-            Vertices[0] = new Vector3(xpositions[i], ypositions[i], z); //top part is variable where the waves are
-            Vertices[1] = new Vector3(xpositions[i + 1], ypositions[i + 1], z); //top part is variable where the waves are
-            Vertices[2] = new Vector3(xpositions[i], bottom, z); //mesh bottom is flat
-            Vertices[3] = new Vector3(xpositions[i+1], bottom, z); //mesh bottom is flat
+            Vertices[0] = new Vector3(xpositions[i],ypositions[i], z); //top part is variable where the waves are
+            Vertices[1] = new Vector3(xpositions[i + 1],ypositions[i + 1], z); //top part is variable where the waves are
+            Vertices[2] = new Vector3(xpositions[i],  bottom, z); //mesh bottom is flat
+            Vertices[3] = new Vector3(xpositions[i + 1],  bottom, z); //mesh bottom is flat
 
             //UVs of the mesh's texture
             Vector2[] UVs = new Vector2[4];
@@ -175,9 +176,10 @@ public class LiquidPool : MonoBehaviour {
             colliders[i].name = "Trigger";
             colliders[i].AddComponent<BoxCollider2D>();
             colliders[i].transform.parent = transform;
+            
 
             //set the pos and scale to the correct dimens
-            colliders[i].transform.position = new Vector3(Left + Width * (i + 0.5f) / edgecount, Top - 0.5f, 0);
+            colliders[i].transform.position =this.transform.localPosition + this.transform.TransformDirection( new Vector3(Left + Width * (i + 0.5f) / edgecount, Top - 0.5f, 0));
             colliders[i].transform.localScale = new Vector3(Width / edgecount, 1, 1);
 
             //add WaterDetector and make sure they're triggers

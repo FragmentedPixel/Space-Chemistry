@@ -381,7 +381,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1314814013}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.86, z: 0.019}
+  m_LocalPosition: {x: 15.23, y: -2.17, z: 0.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
-  splash: {fileID: 0}
+  splash: {fileID: 100000, guid: 65d34cb50686e4b4eaca8a726743b775, type: 2}
   mat: {fileID: 2100000, guid: 0bd1d533c6e7dce469f5a6aae475f921, type: 2}
   watermesh: {fileID: 1782609550830530, guid: dfff7b6a449dc904a8aaf3211af9cdf8, type: 2}
 --- !u!114 &1314814016

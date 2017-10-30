@@ -11,10 +11,10 @@ public class Reactant : MonoBehaviour
     // Having similar reaction to this substance.
     public sSubstance reactantSubstance;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         // Check if a reaction is needed.
-        Particle otherParticle = collision.gameObject.GetComponent<Particle>();
+        Particle otherParticle = collider.gameObject.GetComponent<Particle>();
 
         if(otherParticle != null)
         {

@@ -33,11 +33,6 @@ public class Extinguished : MonoBehaviour
                     // Stop the fire if enough particles have hit.
 					Destroy (gameObject);
 				}
-				else 
-				{
-                    // Destory the colliding particle.
-					Destroy (substance.gameObject);
-				}
             }
         }
     }

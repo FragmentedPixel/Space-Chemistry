@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114846673009931626}
   - component: {fileID: 114528172955994182}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5058d25296263a141bbec193dd7d26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  substance: {fileID: 0}
+  particules: 0
   highLightImage: {fileID: 114846673009931626}
   fillImage: {fileID: 114295480266911302}
 --- !u!114 &114846673009931626

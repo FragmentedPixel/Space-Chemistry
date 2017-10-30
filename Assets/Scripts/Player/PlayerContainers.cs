@@ -48,8 +48,10 @@ public class PlayerContainers : MonoBehaviour
         sSubstance newSubstance = collector.StopCollecting();
         containers[currentIndex].substance = newSubstance;
 
-        //TODO: Improve this one.
-        containers[currentIndex].UpdateContainerColor(newSubstance.particleColor);
+        if(newSubstance != null)
+        {
+          containers[currentIndex].UpdateContainerColor(newSubstance.particleColor);
+        }
     }
 
     private void Update()

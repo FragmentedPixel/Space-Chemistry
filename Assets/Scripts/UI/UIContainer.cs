@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-//TODO: Move particules inside a container to this class as well.
+/*
+ * Responsible for managing the player's containers.
+ */
 
 public class UIContainer : MonoBehaviour
 {

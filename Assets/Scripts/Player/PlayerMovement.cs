@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Make the player face the movement direction.
         Vector3 temp = anim.transform.localScale;
-        temp.x = right ? 0.3f :  -0.3f;
+        temp.x = right ? 0.5f :  -0.5f;
         anim.transform.localScale = temp;
 
         // Upate the player's components.

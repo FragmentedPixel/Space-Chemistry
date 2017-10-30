@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
  * Responsible for navigating the main menu.
  */
 
-public class MenuManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     #region Variabiles
     // Sound played at each button press.

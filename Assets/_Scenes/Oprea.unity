@@ -181,7 +181,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980496993196246, guid: 741a95361e328534880799759797b36d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.99
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4980496993196246, guid: 741a95361e328534880799759797b36d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -252,6 +252,41 @@ Prefab:
       propertyPath: collectSound
       value: 
       objectReference: {fileID: 8300000, guid: 53df1ba675bb84592aa8104512652085, type: 3}
+    - target: {fileID: 82528645621230838, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50151151725783798, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1.2853982
+      objectReference: {fileID: 0}
+    - target: {fileID: 50151151725783798, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95994662648364238, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95994662648364238, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50151151725783798, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50151151725783798, guid: 741a95361e328534880799759797b36d,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 9402703cae4ca7e4a9b81514222b892e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 741a95361e328534880799759797b36d, type: 2}
   m_IsPrefabParent: 0
@@ -1831,7 +1866,7 @@ Prefab:
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 266.5
+      value: 267.5
       objectReference: {fileID: 0}
     - target: {fileID: 224704448479938946, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}

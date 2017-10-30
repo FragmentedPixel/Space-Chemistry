@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Steam
   m_EditorClassIdentifier: 
   reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
-  particleLayer: 8
+  particleLayer: 9
   particleGravity: 0
   particleMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
   particleLifeTime: 5

@@ -11,38 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1698310540433798}
   m_IsPrefabParent: 1
---- !u!1 &1197578675500582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4503042981494304}
-  - component: {fileID: 114669331248871468}
-  m_Layer: 0
-  m_Name: Fire Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1280613895665912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4682138252988290}
-  - component: {fileID: 114358935471663110}
-  m_Layer: 0
-  m_Name: Fire Source (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1424492455141772
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4279772834777426}
   - component: {fileID: 61535772165745196}
+  - component: {fileID: 114062049369386382}
   - component: {fileID: 114048250921167304}
   m_Layer: 0
   m_Name: Barrel
@@ -111,22 +80,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1808991347058954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4856114743461298}
-  - component: {fileID: 114928550315792882}
-  m_Layer: 0
-  m_Name: Fire Source (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1935645758837636
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,51 +109,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224664414058331856}
-  - {fileID: 4503042981494304}
-  - {fileID: 4682138252988290}
-  - {fileID: 4856114743461298}
   - {fileID: 4910762591022768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4503042981494304
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197578675500582}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.547, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4279772834777426}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4682138252988290
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1280613895665912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.239, y: -0.547, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4279772834777426}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4856114743461298
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1808991347058954}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.547, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4279772834777426}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4910762591022768
 Transform:
@@ -213,7 +124,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4279772834777426}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61215308957906442
 BoxCollider2D:
@@ -279,21 +190,18 @@ MonoBehaviour:
   dropsBar: {fileID: 114863844978816686}
   substanceNeeded: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
   dropsNeeded: 30
---- !u!114 &114358935471663110
+--- !u!114 &114062049369386382
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1280613895665912}
+  m_GameObject: {fileID: 1698310540433798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe9a84a16d81c44f842cd5e7f5f9a15, type: 3}
+  m_Script: {fileID: 11500000, guid: 72edd4133062d7a4cae7567d558834e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 0.1
-  randomForce: 0
-  particleForce: {x: 0, y: 350, z: 0}
-  particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
+  reactantSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114395347549388446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,21 +239,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114669331248871468
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197578675500582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe9a84a16d81c44f842cd5e7f5f9a15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnInterval: 0.1
-  randomForce: 0
-  particleForce: {x: 0, y: 350, z: 0}
-  particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114863844978816686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,21 +266,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114928550315792882
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1808991347058954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe9a84a16d81c44f842cd5e7f5f9a15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnInterval: 0.1
-  randomForce: 0
-  particleForce: {x: 0, y: 350, z: 0}
-  particleSubstance: {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
 --- !u!114 &114980635555001396
 MonoBehaviour:
   m_ObjectHideFlags: 1

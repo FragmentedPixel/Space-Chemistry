@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ed37c66b298bc4caf7072ae23c3533, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  reactionTable: {fileID: 0}
+  reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
   particleLayer: 8
   particleGravity: 1
   particleMaterial: {fileID: 2100000, guid: 0adabd7cf01785c47b8ab03189629c38, type: 2}

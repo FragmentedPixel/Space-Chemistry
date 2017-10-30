@@ -35,7 +35,7 @@ public class sSubstance : ScriptableObject
     #endregion
 
     #region Specific
-    private void Start()
+    private void OnEnable()
     {
         reactions = reactionTable.GetReactionsFor(this);
     }

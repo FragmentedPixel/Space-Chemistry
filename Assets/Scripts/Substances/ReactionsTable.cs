@@ -14,7 +14,7 @@ public class ReactionsTable : ScriptableObject
 
     public List<ReactionEq> GetReactionsFor(sSubstance substToFind)
     {
-        // Create new empty list.
+        // Create new empty list. 
         List<ReactionEq> searchedList = new List<ReactionEq>();
 
         foreach(ReactionEq reaction in table)

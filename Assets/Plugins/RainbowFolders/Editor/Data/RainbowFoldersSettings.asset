@@ -207,3 +207,13 @@ MonoBehaviour:
     IsRecursive: 0
     SmallIcon: {fileID: 2800000, guid: 277aff0709e51d2418b61f0c82cb277f, type: 3}
     LargeIcon: {fileID: 2800000, guid: c34025bbb220b844a8e633a414c63632, type: 3}
+  - Type: 1
+    Key: Assets/Substances/Elements
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 4604f75e19797b44880551dc47c0a657, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 0d0ce6157355db044aa688963c5eb699, type: 3}
+  - Type: 1
+    Key: Assets/LiquidPools/Water
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: fbdc6fd28e899654f852a0513176de9c, type: 3}
+    LargeIcon: {fileID: 2800000, guid: abfb0edd27ee508449e9e25c64d0f38c, type: 3}

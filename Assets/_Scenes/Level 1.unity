@@ -1640,7 +1640,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2}
+  m_Size: {x: 2.5, y: 1.7}
   m_EdgeRadius: 0
 --- !u!114 &450415636
 MonoBehaviour:
@@ -1795,7 +1795,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980496993196246, guid: 741a95361e328534880799759797b36d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.37
       objectReference: {fileID: 0}
     - target: {fileID: 4980496993196246, guid: 741a95361e328534880799759797b36d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2881,7 +2881,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2}
+  m_Size: {x: 2.5, y: 1.7}
   m_EdgeRadius: 0
 --- !u!114 &860372743
 MonoBehaviour:
@@ -6046,12 +6046,12 @@ Prefab:
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 573.5
+      value: 543
       objectReference: {fileID: 0}
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 268
+      value: 305.5
       objectReference: {fileID: 0}
     - target: {fileID: 224704448479938946, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}

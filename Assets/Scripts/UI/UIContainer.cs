@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class UIContainer : MonoBehaviour
 {
+    public sSubstance substance;
+    public int particules;
+
     public Image highLightImage;
     public Image fillImage;
 

@@ -13,16 +13,10 @@ public class PlayerContainers : MonoBehaviour
 {
     #region Variabiles
     // UI Reference to the containers.
-    public UIContainer[] containersImage = new UIContainer[3];
-
-    // State of the particles hold inside the containers.
-    public sSubstance[] containers = new sSubstance[3];
+    public UIContainer[] containers = new UIContainer[3];
 
     // Container capacity
-    public int particlesNeeded = 15;
-
-    //Number of particles in the corresponding container
-    private int[] particles= { 0, 0, 0 };
+    public int capacity = 15;
 
     // currently selected container.
     private int currentIndex = 0;
@@ -30,6 +24,12 @@ public class PlayerContainers : MonoBehaviour
     // Hand subclasses.
     private HandGenerator generator;
     private HandCollector collector;
+
+    // Sounds
+    private AudioSource audioS;
+    public AudioClip releaseSound;
+    public AudioClip collectSound;
+    public AudioClip endCollect;
     #endregion
 
     #region Methods
@@ -38,8 +38,18 @@ public class PlayerContainers : MonoBehaviour
     {
         generator = GetComponentInChildren<HandGenerator>();
         collector = GetComponentInChildren<HandCollector>();
+        audioS = GetComponent<AudioSource>();
 
-        containersImage[currentIndex].HighLight();
+        containers[currentIndex].HighLight();
+    }
+
+    private void UpdateSubstanceColor()
+    {
+        sSubstance newSubstance = collector.StopCollecting();
+        containers[currentIndex].substance = newSubstance;
+
+        //TODO: Improve this one.
+        containers[currentIndex].UpdateContainerColor(newSubstance.particleColor);
     }
 
     private void Update()
@@ -54,11 +64,7 @@ public class PlayerContainers : MonoBehaviour
         }
         else if(Input.GetMouseButtonUp(1))
         {
-            sSubstance newSubstance = collector.StopCollecting();
-            containers[currentIndex] = newSubstance;
-
-            //TODO: Improve this one.
-            containersImage[currentIndex].UpdateContainerColor(newSubstance.particleColor);
+            UpdateSubstanceColor();
         }
         else
         {
@@ -69,6 +75,7 @@ public class PlayerContainers : MonoBehaviour
 
     private void SelectContainer()
     {
+        // Check for new input.
         int input = -1;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -78,60 +85,79 @@ public class PlayerContainers : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             input = 2;
 
+        //Change the highlighted container according to input.
         if(input != -1)
         {
-            containersImage[currentIndex].StopHighLigh();
+            containers[currentIndex].StopHighLigh();
             currentIndex = input;
-            containersImage[currentIndex].HighLight();
+            containers[currentIndex].HighLight();
         }
     }
 
     private void Relase()
     {
         //Check if container is empty
-        if (particles[currentIndex] == 0)
+        if (containers[currentIndex].particules <= 0)
         {
-            MessageManager.getInstance().DissplayMessage("Container is empty", 3f);
-            containers[currentIndex] = null;
-            return;
+            MessageManager.getInstance().DissplayMessage("Container is empty", 1f);
         }
-            
-        sSubstance particleSubstanceToRelease = containers[currentIndex];
-
-        if (particleSubstanceToRelease != null)
+        else
         {
-            bool goodRelease=generator.Relase(particleSubstanceToRelease);
-            //Set the current particles in the container
-            if(goodRelease)
-                particles[currentIndex]--;
-            //Change the UI accordingly
-            ChangeContainerImage();
+            sSubstance particleSubstanceToRelease = containers[currentIndex].substance;
+
+            if (particleSubstanceToRelease != null)
+            {
+                //Set the current particles in the container
+                bool goodRelease = generator.Relase(particleSubstanceToRelease);
+
+                if (goodRelease)
+                    containers[currentIndex].particules--;
+
+                UpdateContainersPercent();
+            }
+
+            if (!audioS.isPlaying)
+            {
+                audioS.PlayOneShot(releaseSound);
+            }
         }
     }
 
     private void Collect()
     {
-        int currentparticles = collector.Collect(particles[currentIndex],containers[currentIndex]);
-        if(currentparticles>=particlesNeeded)
+        int currentparticles = collector.Collect(containers[currentIndex].particules, containers[currentIndex].substance);
+
+        if(currentparticles>=capacity)
         {
             sSubstance newSubstance = collector.StopCollecting();
-            containers[currentIndex] = newSubstance;
-            currentparticles = particlesNeeded;
+            containers[currentIndex].substance = newSubstance;
+            currentparticles = capacity;
+            if(!audioS.isPlaying)
+            {
+                audioS.PlayOneShot(endCollect);
+            }
+        }
+        else
+        {
+            if (!audioS.isPlaying)
+            {
+                audioS.PlayOneShot(collectSound);
+            }
         }
 
         //Set the current particles in the container
-        particles[currentIndex] = currentparticles;
+        containers[currentIndex].particules = currentparticles;
         //Change the UI accordingly
-        ChangeContainerImage();
+        UpdateContainersPercent();
         
     }
 
-    private void ChangeContainerImage()
+    private void UpdateContainersPercent()
     {
-        float newPercent =(float) particles[currentIndex] / particlesNeeded;
+        float newPercent =(float)containers[currentIndex].particules / capacity;
         Color newColor = Color.Lerp(Color.red, Color.green, newPercent);
 
-        containersImage[currentIndex].UpdateContainer(newColor,newPercent);
+        containers[currentIndex].UpdateContainer(newColor,newPercent);
     }
     
     #endregion

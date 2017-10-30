@@ -19,6 +19,16 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myBody;
     private Animator anim;
     private const string walkingHash = "Walk";
+
+    private bool grounded = false;
+
+    public Transform groundCheck;
+
+    private float groundRadius = 0.2f;
+
+    public float jumpForce = 5f;
+
+    public LayerMask whatisGround;
     #endregion
 
     #region Methods
@@ -27,14 +37,27 @@ public class PlayerMovement : MonoBehaviour
         myBody = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
     }
-    
-	void Update () 
+
+
+	void FixedUpdate () 
 	{
         PlayerMoveKeyboard();
 	}
 
     void PlayerMoveKeyboard()
     {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatisGround);
+
+        anim.SetBool("Ground", grounded);
+
+        anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+
+        if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+        {
+            anim.SetBool("Ground", false);
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+        }
+
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
         float movement = Input.GetAxisRaw("Horizontal"); 
 
@@ -42,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         float vel = Mathf.Abs(myBody.velocity.x);
 
         // Stop if there is no movement input.
-        if(movement == 0)
+        if (movement == 0)
         {
             StopMove();
         }
@@ -70,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopMove()
     {
-        myBody.velocity = new Vector2(0f, myBody.velocity.x);
+        myBody.velocity = new Vector2(0f, myBody.velocity.y);
         anim.SetBool(walkingHash, false);
     }
     #endregion

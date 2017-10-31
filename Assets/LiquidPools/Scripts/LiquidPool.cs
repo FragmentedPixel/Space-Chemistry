@@ -163,6 +163,11 @@ public class LiquidPool : MonoBehaviour {
             //add WaterDetector and make sure they're triggers
             colliders[i].GetComponent<BoxCollider2D>().isTrigger = true;
             colliders[i].AddComponent<LiquidDetector>();
+            Reactant reactant = GetComponent<Reactant>();
+            Reactant newReactant = colliders[i].AddComponent<Reactant>();
+
+            newReactant.reactantSubstance = reactant.reactantSubstance;
+
         }
     }
 
@@ -267,7 +272,7 @@ public class LiquidPool : MonoBehaviour {
         }
     }
 
-    public void OnDrawGizmosSelected()
+    public void OnDrawGizmos()
     {
         Gizmos.color = poolColor;
         Gizmos.DrawCube(transform.position + Vector3.up * height / 2, new Vector3(width, height, 1f));

@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         // Upate the player's components.
         anim.SetBool(walkingHash, true);
         float forceX = right ? speed : -speed;
-        myBody.AddForce(new Vector2(forceX, 0));
+        myBody.velocity = (new Vector2(forceX, myBody.velocity.y));
     }
 
     private void StopMove()

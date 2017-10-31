@@ -72,7 +72,11 @@ public class LiquidPool : MonoBehaviour {
     public void SpawnWater(float width, float height)
     {
        //for floating add a box collider
- 
+        gameObject.AddComponent<BoxCollider2D>();
+        gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, height / 2);
+        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(width, height);
+        gameObject.GetComponent<BoxCollider2D>().usedByEffector = true;
+       // gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 
         //calculate no of edges and nodes we have
         int edgecount = Mathf.RoundToInt(width) * 5; //five per unit width to give smoothness and lower the performance impact
@@ -164,11 +168,15 @@ public class LiquidPool : MonoBehaviour {
             //add WaterDetector and make sure they're triggers
             colliders[i].GetComponent<BoxCollider2D>().isTrigger = true;
             colliders[i].AddComponent<LiquidDetector>();
+
+
             Reactant reactant = GetComponent<Reactant>();
             Reactant newReactant = colliders[i].AddComponent<Reactant>();
 
             newReactant.reactantSubstance = reactant.reactantSubstance;
 
+            Death death = GetComponent<Death>();
+            colliders[i].AddComponent<Death>();
         }
     }
 

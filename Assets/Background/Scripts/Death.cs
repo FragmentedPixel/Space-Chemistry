@@ -7,9 +7,15 @@ public class Death : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        StartCoroutine(ExecuteAfterTime(1, player));
 
-        if(player)
+    }
+
+    IEnumerator ExecuteAfterTime(float time, PlayerHealth player)
+    {
+        if (player)
         {
+            yield return new WaitForSeconds(time);
             player.Death();
         }
     }

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4819420789302546}
   - component: {fileID: 212489534336063988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_eye (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4063912923589272}
   - component: {fileID: 95059441011694574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4445524369308486}
   - component: {fileID: 114009683764134644}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hand Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4648142514034868}
   - component: {fileID: 212344813516370370}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4843282716574932}
   - component: {fileID: 212398736777489106}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_shoulder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4645716824257304}
   - component: {fileID: 212762673072219598}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4376798958409736}
   - component: {fileID: 212744137590627818}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4800997688661620}
   - component: {fileID: 212861795308024128}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_front wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757436820528544}
   - component: {fileID: 212390611754798556}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4308404603606208}
   - component: {fileID: 212135723850617050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4087967574988102}
   - component: {fileID: 212310085518186314}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot_wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +990,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1691164950640854}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6dfc56df75a8cb240a5472ea786a22ed, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

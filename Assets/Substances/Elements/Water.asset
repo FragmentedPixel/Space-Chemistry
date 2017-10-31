@@ -16,4 +16,4 @@ MonoBehaviour:
   particleGravity: 1
   particleMaterial: {fileID: 2100000, guid: 0adabd7cf01785c47b8ab03189629c38, type: 2}
   particleLifeTime: 3
-  particleColor: {r: 0, g: 0.7931032, b: 1, a: 1}
+  particleColor: {r: 0, g: 0.08965492, b: 1, a: 1}

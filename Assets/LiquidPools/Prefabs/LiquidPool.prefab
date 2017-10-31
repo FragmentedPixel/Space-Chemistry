@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1
   splash: {fileID: 100000, guid: 65d34cb50686e4b4eaca8a726743b775, type: 2}
-  mat: {fileID: 2100000, guid: 0bd1d533c6e7dce469f5a6aae475f921, type: 2}
+  mat: {fileID: 2100000, guid: 968fd716a88f0fd4da6cb2d3957470d4, type: 2}
   watermesh: {fileID: 1782609550830530, guid: dfff7b6a449dc904a8aaf3211af9cdf8, type: 2}
   height: 2
   width: 5

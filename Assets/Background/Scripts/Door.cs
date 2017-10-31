@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
 
         if(player.CompareTag("Player"))
         {
-            Debug.Log("Move to next level.");
+            FindObjectOfType<LevelManager>().ChangeScene("Menu");
         }
     }
 }

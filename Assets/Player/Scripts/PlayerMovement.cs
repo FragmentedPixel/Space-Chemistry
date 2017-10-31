@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerMoveKeyboard()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatisGround);
+        grounded = isGrounded();
 
        // anim.SetBool("Ground", grounded);
 
@@ -95,6 +95,14 @@ public class PlayerMovement : MonoBehaviour
     {
         myBody.velocity = new Vector2(0f, myBody.velocity.y);
         anim.SetBool(walkingHash, false);
+    }
+
+    public bool isGrounded()
+    {
+        float distanceToGround = 0.1f;
+        RaycastHit2D hit = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, distanceToGround, whatisGround);
+
+        return (hit.point != Vector2.zero);
     }
     #endregion
 }

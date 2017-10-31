@@ -60,10 +60,22 @@ public class PlayerContainers : MonoBehaviour
         }
         else if (Input.GetMouseButton(1))
         {
+            if (!audioS.isPlaying)
+            {
+                audioS.loop = true;
+                audioS.PlayOneShot(collectSound);
+            }
             Collect();
         }
         else if(Input.GetMouseButtonUp(1))
         {
+            if (audioS.isPlaying)
+            {
+                audioS.loop = false;
+                audioS.Stop();
+                audioS.PlayOneShot(endCollect);
+            }
+
             UpdateSubstanceColor();
         }
         else
@@ -135,14 +147,14 @@ public class PlayerContainers : MonoBehaviour
             currentparticles = capacity;
             if(!audioS.isPlaying)
             {
-                audioS.PlayOneShot(endCollect);
+                //audioS.PlayOneShot(endCollect);
             }
         }
         else
         {
             if (!audioS.isPlaying)
             {
-                audioS.PlayOneShot(collectSound);
+               // audioS.PlayOneShot(collectSound);
             }
         }
 

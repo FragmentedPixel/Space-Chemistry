@@ -72,6 +72,7 @@ public class LiquidPool : MonoBehaviour {
     public void SpawnWater(float width, float height)
     {
        //for floating add a box collider
+ 
 
         //calculate no of edges and nodes we have
         int edgecount = Mathf.RoundToInt(width) * 5; //five per unit width to give smoothness and lower the performance impact

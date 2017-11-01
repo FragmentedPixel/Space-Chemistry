@@ -25,6 +25,7 @@ public class Generator : MonoBehaviour
     public sSubstance particleSubstance;
     #endregion
 
+
     #region Update
     private void Update()
     {

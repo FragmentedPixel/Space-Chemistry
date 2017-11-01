@@ -12,6 +12,9 @@ public class Extinguished : MonoBehaviour
 	// UI Heat meter of the object.
     public Image dropsBar;
     public sSubstance substanceNeeded;
+    public bool hasEmmiter = false;
+    public Generator generatorSubstance;
+    public sSubstance changedSubstance;
 
 	// Number of drops needed in order to extinguish the fire.
     public float dropsNeeded = 30;
@@ -31,6 +34,10 @@ public class Extinguished : MonoBehaviour
 				if (dropsAdded > dropsNeeded) 
 				{
                     // Stop the fire if enough particles have hit.
+                    if (hasEmmiter == true)
+                    {
+                        generatorSubstance.particleSubstance = changedSubstance;
+                    }
 					Destroy (gameObject);
 				}
             }

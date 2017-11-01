@@ -11,23 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1698310540433798}
   m_IsPrefabParent: 1
---- !u!1 &1245209318037046
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4135026050602158}
-  - component: {fileID: 114436720411893214}
-  - component: {fileID: 61713745336312572}
-  m_Layer: 0
-  m_Name: Bouncer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1424492455141772
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +87,7 @@ GameObject:
   - component: {fileID: 114797581412644560}
   - component: {fileID: 114526111629599936}
   - component: {fileID: 61076734841978664}
+  - component: {fileID: 114422763433066944}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -146,19 +130,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4135026050602158
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245209318037046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4358870318911540}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4279772834777426
 Transform:
   m_ObjectHideFlags: 1
@@ -166,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698310540433798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -3.18, z: 0}
+  m_LocalPosition: {x: -2.79, y: -3.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4910762591022768}
@@ -186,7 +157,6 @@ Transform:
   m_Children:
   - {fileID: 224664414058331856}
   - {fileID: 4405755919091644}
-  - {fileID: 4135026050602158}
   m_Father: {fileID: 4279772834777426}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -197,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859303022305966}
   m_LocalRotation: {x: -0.7078218, y: -0.00039983148, z: 0.0010877872, w: 0.7063901}
-  m_LocalPosition: {x: 0.03999999, y: 0.099999905, z: 0}
+  m_LocalPosition: {x: 0.041, y: -0.433, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 0.36200285}
   m_Children: []
   m_Father: {fileID: 4358870318911540}
@@ -228,7 +198,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.8}
+  m_Offset: {x: 0, y: 0.47199798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -239,32 +209,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
-  m_EdgeRadius: 0
---- !u!61 &61713745336312572
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245209318037046}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 1, y: 2.156004}
   m_EdgeRadius: 0
 --- !u!114 &114395347549388446
 MonoBehaviour:
@@ -287,18 +232,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114436720411893214
+--- !u!114 &114422763433066944
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245209318037046}
+  m_GameObject: {fileID: 1737552460408926}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce2a0d2686964f47952bbd275e46d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: {x: -400, y: 500, z: 0}
+  bounceForce: {x: -700, y: 250, z: 0}
 --- !u!114 &114459419973648640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -455,7 +400,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -600516756
+  randomSeed: -1637203994
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -821,7 +766,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.14
+      scalar: -0.28
       minScalar: -0.14
       maxCurve:
         serializedVersion: 2

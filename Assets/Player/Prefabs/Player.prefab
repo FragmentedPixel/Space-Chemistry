@@ -1071,7 +1071,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   jumpForce: 500
   whatisGround:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1025
 --- !u!114 &114924839462849950
 MonoBehaviour:
   m_ObjectHideFlags: 1

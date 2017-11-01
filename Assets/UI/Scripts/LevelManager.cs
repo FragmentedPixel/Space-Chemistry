@@ -15,11 +15,17 @@ public class LevelManager : MonoBehaviour
 
     // AudioSource used for playing sounds.
     private AudioSource audioS;
+
+    public GameObject currentCheckpoint;
+
+    private PlayerMovement player;
+
     #endregion
 
     #region Initialization
     private void Start()
     {
+        player = FindObjectOfType<PlayerMovement>();
         audioS = GetComponent<AudioSource>();
         audioS.volume = .5f;
     }
@@ -45,6 +51,14 @@ public class LevelManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    #endregion
+
+    #region CheckPoint
+    public void RespawnPlayer()
+    {
+       
+        player.transform.position = currentCheckpoint.transform.position;
     }
     #endregion
 }

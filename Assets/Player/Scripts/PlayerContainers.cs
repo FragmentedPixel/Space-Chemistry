@@ -78,6 +78,10 @@ public class PlayerContainers : MonoBehaviour
 
             UpdateSubstanceColor();
         }
+        else if(Input.GetKeyDown(KeyCode.E))
+        {
+            Mix();
+        }
         else
         {
             // Can't change containers while performing any actions.
@@ -163,6 +167,68 @@ public class PlayerContainers : MonoBehaviour
         //Change the UI accordingly
         UpdateContainersPercent();
         
+    }
+
+    private void Mix()
+    {
+        //TODO: Change highlight better.
+
+        containers[currentIndex].StopHighLigh();
+
+        if(containers[0].substance == null && containers[0].particules == 0)
+        {
+            currentIndex = 0;
+            MixContainers(1, 2); 
+        }
+
+        else if (containers[1].substance == null && containers[1].particules == 0)
+        {
+            currentIndex = 1;
+            MixContainers(0, 2);
+        }
+
+        else if (containers[2].substance == null && containers[2].particules == 0)
+        {
+            currentIndex = 2;
+            MixContainers(0, 1);
+        }
+        else
+        {
+            MessageManager.getInstance().DissplayMessage("All containers are full.", 1.5f);
+        }
+
+        containers[currentIndex].HighLight();
+    }
+
+    private void MixContainers(int firstContainer, int secondContainer)
+    {
+        
+        sSubstance result = containers[firstContainer].substance.CollidingWith(containers[secondContainer].substance);
+        if(result == null)
+        {
+            MessageManager.getInstance().DissplayMessage("Substances can't mix", 1f);
+        }
+        else
+        {
+            //TODO: Implement containers logics.
+            int resultPart = containers[firstContainer].particules + containers[secondContainer].particules;
+
+            containers[firstContainer].particules = 0;
+            containers[secondContainer].particules = 0;
+
+
+            containers[firstContainer].fillImage.fillAmount = 0;
+            containers[secondContainer].fillImage.fillAmount = 0;
+
+            containers[firstContainer].substance = null;
+            containers[secondContainer].substance = null;
+
+            containers[currentIndex].fillImage.color = result.particleColor;
+            containers[currentIndex].particules = resultPart > capacity ? capacity : resultPart;
+            containers[currentIndex].fillImage.fillAmount = containers[currentIndex].particules / capacity;
+            containers[currentIndex].substance = result;
+
+        }
     }
 
     private void UpdateContainersPercent()

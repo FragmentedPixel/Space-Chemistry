@@ -62,8 +62,10 @@ public class PlayerContainers : MonoBehaviour
         {
             if (!audioS.isPlaying)
             {
+                Debug.Log("Sound Play");
                 audioS.loop = true;
-                audioS.PlayOneShot(collectSound);
+                audioS.clip = collectSound;
+                audioS.Play();
             }
             Collect();
         }

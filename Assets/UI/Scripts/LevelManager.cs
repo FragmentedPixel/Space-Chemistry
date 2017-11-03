@@ -25,6 +25,14 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F5))
+        {
+            Reload();
+        }
+    }
+
     #region Changing Scene
     public void ChangeScene(string scene)
     {
@@ -45,6 +53,10 @@ public class LevelManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     #endregion
 }

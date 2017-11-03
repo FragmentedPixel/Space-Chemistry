@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    public LevelManager levelManager;
-
-    void Start()
-    {
-        levelManager = FindObjectOfType<LevelManager>();
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Player")
+        PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+
+        if (player != null)
         {
-            StartCoroutine(ExecuteAfterTime(1));
+            player.Death();
         }
-    }
-
-    IEnumerator ExecuteAfterTime(float time)
-    {
-
-            yield return new WaitForSeconds(time);
-            levelManager.RespawnPlayer();
-        
     }
 }

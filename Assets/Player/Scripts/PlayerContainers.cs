@@ -78,7 +78,7 @@ public class PlayerContainers : MonoBehaviour
 
             UpdateSubstanceColor();
         }
-        else if(Input.GetKeyDown(KeyCode.E))
+        else if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
             Mix();
         }

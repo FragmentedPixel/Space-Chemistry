@@ -2952,7 +2952,7 @@ Prefab:
         type: 2}
       propertyPath: collectSound
       value: 
-      objectReference: {fileID: 8300000, guid: 53df1ba675bb84592aa8104512652085, type: 3}
+      objectReference: {fileID: 8300000, guid: 369ab55b50f5fd049b336a2bf759fe6e, type: 3}
     - target: {fileID: 250805521873200118, guid: 741a95361e328534880799759797b36d,
         type: 2}
       propertyPath: m_ColliderMask.m_Bits
@@ -8037,12 +8037,12 @@ Prefab:
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 574
+      value: 538
       objectReference: {fileID: 0}
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 267.5
+      value: 302.5
       objectReference: {fileID: 0}
     - target: {fileID: 224704448479938946, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
@@ -8147,12 +8147,12 @@ Prefab:
     - target: {fileID: 224881601779626562, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 60.000008
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 224564989472343944, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 60.000008
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114204420083483386, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ed37c66b298bc4caf7072ae23c3533, type: 3}
+  m_Name: Lava
+  m_EditorClassIdentifier: 
+  reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
+  particleLayer: 8
+  particleGravity: 1
+  particleMaterial: {fileID: 2100000, guid: dbc32ff0384fbe24f94a1e80a64e44a2, type: 2}
+  particleLifeTime: 3
+  particleColor: {r: 0.52205884, g: 0.5116812, b: 0.1458694, a: 1}

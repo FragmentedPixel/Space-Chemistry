@@ -145,7 +145,7 @@ public class PlayerContainers : MonoBehaviour
     private void Collect()
     {
         int currentparticles = collector.Collect(containers[currentIndex].particules, containers[currentIndex].substance);
-
+        
         if(currentparticles>=capacity)
         {
             sSubstance newSubstance = collector.StopCollecting();
@@ -236,9 +236,11 @@ public class PlayerContainers : MonoBehaviour
     private void UpdateContainersPercent()
     {
         float newPercent =(float)containers[currentIndex].particules / capacity;
-        Color newColor = Color.Lerp(Color.red, Color.green, newPercent);
+        //Color newColor = Color.Lerp(Color.red, Color.green, newPercent);
+        if (containers[currentIndex].substance == null)
+            containers[currentIndex].substance = collector.GetCurrentSsubstance();
 
-        containers[currentIndex].UpdateContainer(newColor,newPercent);
+        containers[currentIndex].UpdateContainer(containers[currentIndex].substance.particleColor,newPercent);
     }
     
     #endregion

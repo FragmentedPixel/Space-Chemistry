@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4559214417592402}
   - component: {fileID: 212796528949116338}
   - component: {fileID: 61689415625148114}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile (2) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,8 +34,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531816962383738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: -2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29.93, y: -1.8346419, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

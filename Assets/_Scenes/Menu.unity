@@ -112,23 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &117819025 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1321098744845446, guid: 599c3a4194faf0f4b83fcf70152735e5,
-    type: 2}
-  m_PrefabInternal: {fileID: 273424132}
---- !u!114 &117819028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 117819025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24dc599286d08704f933f063797a4320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundLoop: {fileID: 8300000, guid: 3f8c0af9766b73f4bb016cdbbb6ca5f6, type: 3}
 --- !u!1 &213005226
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,8 +925,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1823580116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 574, y: 267.5, z: 0}
-  m_LocalScale: {x: 0.89166665, y: 0.89166665, z: 0.89166665}
+  m_LocalPosition: {x: 538, y: 302.5, z: 0}
+  m_LocalScale: {x: 1.0083333, y: 1.0083333, z: 1.0083333}
   m_Children:
   - {fileID: 2126186045}
   - {fileID: 1632365468}

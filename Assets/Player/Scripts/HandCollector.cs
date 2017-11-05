@@ -38,6 +38,10 @@ public class HandCollector : MonoBehaviour
 
         return currentParticles;
     }
+    public sSubstance GetCurrentSsubstance()
+    {
+        return currentSubstance;
+    }
 
     private void StartCollecting()
     {
@@ -72,6 +76,7 @@ public class HandCollector : MonoBehaviour
 
         if(currentSubstance == null)
         {
+
             currentSubstance = collectedSubstance.currentSubstance;
         }
 

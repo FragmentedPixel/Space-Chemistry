@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ed37c66b298bc4caf7072ae23c3533, type: 3}
   m_Name: LiquidFoam
   m_EditorClassIdentifier: 
-  reactionTable: {fileID: 0}
-  particleLayer: 0
-  particleGravity: 0
-  particleMaterial: {fileID: 0}
-  particleLifeTime: 3
-  particleColor: {r: 0, g: 0, b: 0, a: 0}
+  reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
+  particleLayer: 8
+  particleGravity: 1
+  particleMaterial: {fileID: 2100000, guid: 945e0e56b949f6944be78df209822f42, type: 2}
+  particleLifeTime: 8
+  particleColor: {r: 0.8897059, g: 0.8897059, b: 0.8897059, a: 0}

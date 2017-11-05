@@ -239,8 +239,8 @@ public class PlayerContainers : MonoBehaviour
         //Color newColor = Color.Lerp(Color.red, Color.green, newPercent);
         if (containers[currentIndex].substance == null)
             containers[currentIndex].substance = collector.GetCurrentSsubstance();
-		if(containers[currentIndex].substance!=null)
-       	 containers[currentIndex].UpdateContainer(containers[currentIndex].substance.particleColor,newPercent);
+		if (containers[currentIndex].substance != null)
+        containers[currentIndex].UpdateContainer(containers[currentIndex].substance.particleColor,newPercent);
     }
     
     #endregion

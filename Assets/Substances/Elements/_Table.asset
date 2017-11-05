@@ -28,7 +28,3 @@ MonoBehaviour:
     second: {fileID: 11400000, guid: cd1cae7243f17be40b85aaf5ce6ebec2, type: 2}
     result: {fileID: 11400000, guid: 4b70254bac54cd34ab65c5065245685a, type: 2}
     reversible: 1
-  - first: {fileID: 11400000, guid: 71f0e2358cb293848bbed7223bfeac0f, type: 2}
-    second: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
-    result: {fileID: 11400000, guid: 6356d4e658d14ad409191823913bafa2, type: 2}
-    reversible: 1

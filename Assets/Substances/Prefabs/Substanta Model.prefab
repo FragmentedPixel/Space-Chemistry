@@ -426,19 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ef862972b27ab4d97ef18366b4de4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  substanceList:
-  - {fileID: 11400000, guid: cd1cae7243f17be40b85aaf5ce6ebec2, type: 2}
-  - {fileID: 11400000, guid: 4701badeb653413419a99a1beb7187f8, type: 2}
-  - {fileID: 11400000, guid: ad3ed63f180372c4e8e8c60edfb35221, type: 2}
-  - {fileID: 11400000, guid: 6356d4e658d14ad409191823913bafa2, type: 2}
-  - {fileID: 11400000, guid: 71f0e2358cb293848bbed7223bfeac0f, type: 2}
-  - {fileID: 11400000, guid: 4b70254bac54cd34ab65c5065245685a, type: 2}
-  - {fileID: 11400000, guid: 75120b0ba42eacb4abd4bfbf09fe1ff3, type: 2}
-  - {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
-  currentSubstance: {fileID: 0}
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  rend: {fileID: 0}
+  substanceState: 1
 --- !u!114 &114867056141918766
 MonoBehaviour:
   m_ObjectHideFlags: 1

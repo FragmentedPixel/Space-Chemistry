@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940ede5a3ff27ca44b19df15df04a99a, type: 3}
+  m_Name: Nitrogen
+  m_EditorClassIdentifier: 
+  reactionTable: {fileID: 0}
+  particleLayer: 0
+  particleGravity: 0
+  particleMaterial: {fileID: 0}
+  particleLifeTime: 3
+  particleColor: {r: 0, g: 0, b: 0, a: 0}
+  floatability: 15

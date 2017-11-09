@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour {
 
     void Start()
     {
-        spriterenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriterenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 	
     private void OnTriggerEnter2D(Collider2D other)

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4053826746327694}
   - component: {fileID: 212794816962340858}
   m_Layer: 1
-  m_Name: BGTile (3)
+  m_Name: BG_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

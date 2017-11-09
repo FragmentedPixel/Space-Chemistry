@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseInterval: 0.025
-  relaseForce: 800
+  relaseForce: 400
 --- !u!114 &114895579676422094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   speed: 3.5
   maxVelocity: 4
   groundCheck: {fileID: 4237290739898196}
-  jumpForce: 500
+  jumpForce: 550
   whatisGround:
     serializedVersion: 2
     m_Bits: 9216

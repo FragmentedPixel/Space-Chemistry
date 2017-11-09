@@ -20,7 +20,7 @@ public class Checkpoint : MonoBehaviour {
         if (player != null)
         {
             spriterenderer.sprite = checkpointPassed;
-            player.currentCheckpoint = transform.position;
+            player.SetCheckPoint(transform.position);
         }
     }
 }

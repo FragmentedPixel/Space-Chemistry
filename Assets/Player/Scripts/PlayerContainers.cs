@@ -11,6 +11,7 @@ public class PlayerContainers : MonoBehaviour
 {
     #region Variabiles
     // Reference to the containers.
+    //TODO: Implement containers manager.
     public Container[] containers = new Container[3];
 
     // currently selected container.

@@ -6,7 +6,6 @@ using UnityEditor;
 using System.Collections.Generic;
 using System;
 
-//TODO Хотелось бы сделать красивее инспектор, только не знаю что именно красить то..)
 
 [CustomEditor(typeof(Chain))]
 [CanEditMultipleObjects]

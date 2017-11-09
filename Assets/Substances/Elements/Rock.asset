@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
+  baseMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
   particleLayer: 10
   particleGravity: 1
-  particleMaterial: {fileID: 2100000, guid: 3a212b6edcee40541815267f66a7b9b3, type: 2}
+  particleMaterial: {fileID: 0}
   particleLifeTime: 30
-  particleColor: {r: 0.2205882, g: 0.21734427, b: 0.21734427, a: 0}
+  particleColor: {r: 0.2205882, g: 0.21734427, b: 0.21734427, a: 1}

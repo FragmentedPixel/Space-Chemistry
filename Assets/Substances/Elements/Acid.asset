@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Acid
   m_EditorClassIdentifier: 
   reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
+  baseMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
   particleLayer: 8
   particleGravity: 1
-  particleMaterial: {fileID: 2100000, guid: 6d6f513145f0fe6499c68d3623bae829, type: 2}
+  particleMaterial: {fileID: 0}
   particleLifeTime: 10
   particleColor: {r: 0, g: 1, b: 0.21379304, a: 1}

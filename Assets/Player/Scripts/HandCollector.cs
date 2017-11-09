@@ -9,15 +9,12 @@ using UnityEngine;
 public class HandCollector : MonoBehaviour
 {
     #region Variabiles
-    // Currently soaked particles.
-    private int currentParticles = 0;
-
     // Is the player collecting now ?
     private bool collecting = false;
 
-    // The substance the player is now collecting.
-    private sSubstance currentSubstance;
-
+    // The currently filled container.
+    private Container containerToFill;
+    
     // The force at which the particles are attracted.
     public Effector2D particleSoaker;
 
@@ -26,21 +23,10 @@ public class HandCollector : MonoBehaviour
     #endregion
 
     #region Collecting
-    public int Collect(int particles,sSubstance currentSubstance)
+    public void Collect(Container _containerToFill)
     {
-        
-        if(collecting == false)
-        {
-            this.currentSubstance = currentSubstance;
-            currentParticles = particles;
-            StartCollecting();
-        }
-
-        return currentParticles;
-    }
-    public sSubstance GetCurrentSsubstance()
-    {
-        return currentSubstance;
+        containerToFill = _containerToFill;
+        StartCollecting();
     }
 
     private void StartCollecting()
@@ -50,49 +36,33 @@ public class HandCollector : MonoBehaviour
         particleCollector.enabled = true;
     }
 
-    public sSubstance StopCollecting()
+    public void StopCollecting()
     {
         collecting = false;
         particleSoaker.enabled = false;
         particleCollector.enabled = false;
-        currentParticles = 0;
-        
-        return currentSubstance;
+     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Get information about the current collision.
-        Particle collectedSubstance = collision.GetComponent<Particle>();
-     
-        //Escape collisions with ground or other objects.
-        if (collectedSubstance ==  null) 
-            return;
+        Particle collectedParticle = collision.GetComponent<Particle>();
 
-        // The players is not collecting now.
-        if (!collecting)
+        //Escape collisions with ground or other objects or the players is not collecting now.
+        if (collectedParticle ==  null || collecting == false ) 
             return;
 
 
-        if(currentSubstance == null)
+        // Add the substance to the current container sent.
+        bool success = containerToFill.AddParticule(collectedParticle.currentSubstance);
+
+        // Destory particle if collected.
+        if (success)
         {
-
-            currentSubstance = collectedSubstance.currentSubstance;
+            Destroy(collectedParticle.gameObject);
         }
-
-        // Make sure to collect the same type of substance.
-        else if (currentSubstance!=collectedSubstance.currentSubstance)             
-        {
-            MessageManager.getInstance().DissplayMessage("You can't collect this substance", 3f);
-            return;
-        }
-
-        if(collectedSubstance != null)
-        {
-            currentParticles++;
-            Destroy(collectedSubstance.gameObject);
-        }
-
+        
     }
     #endregion
 }

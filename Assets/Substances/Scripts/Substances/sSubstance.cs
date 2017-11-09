@@ -15,6 +15,10 @@ public class sSubstance : ScriptableObject
     [Header("General")]
     public ReactionsTable reactionTable;
 
+    public Material baseMaterial;
+
+    [Header("Specific")]
+
     // Layer of the particle
     public SubstanceLayer particleLayer;
 
@@ -38,6 +42,9 @@ public class sSubstance : ScriptableObject
     private void OnEnable()
     {
         reactions = reactionTable.GetReactionsFor(this);
+        Material mat = new Material(baseMaterial);
+        particleMaterial = mat;
+        particleMaterial.color = particleColor;
     }
 
     public sSubstance CollidingWith(sSubstance otherSubstance)

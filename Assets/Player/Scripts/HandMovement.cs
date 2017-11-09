@@ -8,13 +8,16 @@ using UnityEngine;
 
 public class HandMovement : MonoBehaviour 
 {
+    #region Parameters
     // Camera from where the raycast is done.
-	public Camera handCamera;
+    public Camera handCamera;
 
     // Speed of the rotation.
 	public float speed = 5f;
+    #endregion
 
-	private void Update () 
+    #region Update
+    private void Update () 
 	{
         // Calculating the angle from raycast.
 		Vector2 direction = handCamera.ScreenToWorldPoint (Input.mousePosition) - transform.position;
@@ -24,4 +27,5 @@ public class HandMovement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, speed * Time.deltaTime);
 	}
+    #endregion
 }

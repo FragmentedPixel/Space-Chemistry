@@ -456,7 +456,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1418784480745442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4954719417517956}
@@ -800,7 +800,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -835,7 +835,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1129,7 +1129,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  capacity: 20
   releaseSound: {fileID: 8300000, guid: e6da086e3b93a4f72a3212629395d3d5, type: 3}
   collectSound: {fileID: 8300000, guid: 369ab55b50f5fd049b336a2bf759fe6e, type: 3}
   endCollect: {fileID: 8300000, guid: 7607de246ce4d463a9758d6c575d7ca1, type: 3}
@@ -1144,9 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb2ab4501ca64046a0ce86aadc947f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoint: {fileID: 0}
-  dead: 0
-  currentCheckpoint: {x: 0, y: 0, z: 0}
+  respawnDelay: 0.5
 --- !u!114 &114880823727597074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1159,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseInterval: 0.025
-  relaseForce: 300
+  relaseForce: 800
 --- !u!114 &114895579676422094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1177,7 +1174,7 @@ MonoBehaviour:
   jumpForce: 500
   whatisGround:
     serializedVersion: 2
-    m_Bits: 1025
+    m_Bits: 9216
 --- !u!114 &114924839462849950
 MonoBehaviour:
   m_ObjectHideFlags: 1

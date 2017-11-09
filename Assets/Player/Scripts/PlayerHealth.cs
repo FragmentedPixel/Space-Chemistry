@@ -2,35 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for the player's death and respawning.
+ */
+
 public class PlayerHealth : MonoBehaviour
 {
-    public Transform checkPoint;
-    public bool dead = false;
+    #region Parameters
+    public float respawnDelay = 1f;
 
-    public Vector3 currentCheckpoint;
+    private Vector3 currentCheckpoint;
+    private bool dead = false;
+    #endregion
+
+    #region CheckPoint
+    public void SetCheckPoint(Vector3 newCheckPoint)
+    {
+        currentCheckpoint = newCheckPoint;
+    }
 
     public void Death()
     {
         if(dead == false)
         {
             dead = true;
-            StartCoroutine(ExecuteAfterTime(1));
+            StartCoroutine(RespawnPlayerCR(respawnDelay));
         }
     }
 
-    #region CheckPoint
-    IEnumerator ExecuteAfterTime(float time)
-    {
-
-        yield return new WaitForSeconds(time);
-        RespawnPlayer();
-
-    }
-
-    public void RespawnPlayer()
+    private void RespawnPlayer()
     {
         transform.position = currentCheckpoint;
         dead = false;
+    }
+
+    IEnumerator RespawnPlayerCR(float time)
+    {
+        yield return new WaitForSeconds(time);
+        RespawnPlayer();
+
     }
     #endregion
 }

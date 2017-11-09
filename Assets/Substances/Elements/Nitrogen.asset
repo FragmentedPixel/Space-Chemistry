@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Name: Nitrogen
   m_EditorClassIdentifier: 
   reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
+  baseMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
   particleLayer: 9
   particleGravity: -0.5
-  particleMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
+  particleMaterial: {fileID: 0}
   particleLifeTime: 5
-  particleColor: {r: 0, g: 0.83448267, b: 1, a: 0}
+  particleColor: {r: 0, g: 0.83448267, b: 1, a: 1}
   floatability: 0

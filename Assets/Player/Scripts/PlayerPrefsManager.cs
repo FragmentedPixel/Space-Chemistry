@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+
+/*
+ * Responsible for managing the player preferences.
+ */
+
 public class PlayerPrefsManager : MonoBehaviour
 {
     #region Keys
@@ -11,6 +16,11 @@ public class PlayerPrefsManager : MonoBehaviour
     #endregion
 
     #region Methods 
+    private void OnEnable()
+    {
+        Resolution startRes = Screen.resolutions[PlayerPrefsManager.GetResolution()];
+        Screen.SetResolution(startRes.width, startRes.height, GetFullScreen());
+    }
 
     #region Master Volume
     public static void SetMasterVolume(float volume)
@@ -62,10 +72,4 @@ public class PlayerPrefsManager : MonoBehaviour
     #endregion
 
     #endregion
-
-    private void OnEnable()
-    {
-        Resolution startRes = Screen.resolutions[PlayerPrefsManager.GetResolution()];
-        Screen.SetResolution(startRes.width, startRes.height, GetFullScreen());
-    }
 }

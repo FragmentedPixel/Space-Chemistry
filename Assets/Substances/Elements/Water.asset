@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   reactionTable: {fileID: 11400000, guid: 818a668dff542d140949dbb87e85a090, type: 2}
+  baseMaterial: {fileID: 2100000, guid: 900d3f76449e7d84c969e6b7abd9373f, type: 2}
   particleLayer: 8
   particleGravity: 1
-  particleMaterial: {fileID: 2100000, guid: 0adabd7cf01785c47b8ab03189629c38, type: 2}
+  particleMaterial: {fileID: 0}
   particleLifeTime: 3
   particleColor: {r: 0, g: 0.08965492, b: 1, a: 1}

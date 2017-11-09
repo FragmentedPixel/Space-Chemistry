@@ -20,8 +20,9 @@ public class HandGenerator : MonoBehaviour
 	#endregion
 
 	#region Release
-	public bool Relase(sSubstance substanceToRelase)
+	public void Relase(sSubstance substanceToRelase)
 	{
+        //TODO: Update to use generator.
         if (nextRelease <= Time.time)
         {
             // It is time to spawn a new particle.
@@ -36,11 +37,7 @@ public class HandGenerator : MonoBehaviour
             
             // Set the timer.
             nextRelease = Time.time + releaseInterval;
-            return true;
         }
-        else
-            return false;
-        
 	}
 	#endregion
 }

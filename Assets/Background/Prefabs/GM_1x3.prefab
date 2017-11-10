@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4302332090869594}
   m_Layer: 13
-  m_Name: Ground_m_3
+  m_Name: GM_1x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

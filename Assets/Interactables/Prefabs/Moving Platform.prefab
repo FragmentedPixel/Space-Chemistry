@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4860293490563608}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4240247639026856}
   - component: {fileID: 212718050303147576}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943029529400922}
   - component: {fileID: 212221007351914400}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4312939764750606}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4044111684597948}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4872247847481644}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4812987203126194}
   - component: {fileID: 212659731646167112}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4837738442513462}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Moving Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,8 +143,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4296835138335486}
   - component: {fileID: 61020691028146650}
+  - component: {fileID: 50623890617134510}
   - component: {fileID: 114222670876317130}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374822194915792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 0.64, z: 0}
+  m_LocalPosition: {x: 4.69, y: 1.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4044111684597948}
@@ -226,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878508832635224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.29, y: 2.76, z: 0}
+  m_LocalPosition: {x: -7.707762, y: -5.239912, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4296835138335486}
@@ -276,6 +277,26 @@ Transform:
   m_Father: {fileID: 4872247847481644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50623890617134510
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888728781575090}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61020691028146650
 BoxCollider2D:
   m_ObjectHideFlags: 1

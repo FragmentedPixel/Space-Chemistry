@@ -13,6 +13,7 @@ public class MovingPlatform : MonoBehaviour
 	private void Update()
 	{
 		Vector3 direction =  wayPointsparent.GetChild (currentIndex).position - transform.position;
+
 		if(direction.magnitude < threshhold)
 		{
 			currentIndex = (currentIndex + 1) % wayPointsparent.childCount;
@@ -20,10 +21,23 @@ public class MovingPlatform : MonoBehaviour
 		else
 		{
 			direction.Normalize ();
-		
-
 			transform.position = Vector3.Lerp (transform.position, wayPointsparent.GetChild (currentIndex).position, Time.deltaTime * speed);
-			//transform.Translate (direction * Time.deltaTime * speed);	
 		}
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+
+        player.transform.SetParent(transform);
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+
+        player.transform.SetParent(null);
+    }
 }

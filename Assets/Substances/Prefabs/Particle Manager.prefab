@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 1404930214960182, guid: f4e7a79688388ea4e8399c376abd1f7b,
     type: 2}
-  MAX_Particules: 300
+  MAX_Particules: 500

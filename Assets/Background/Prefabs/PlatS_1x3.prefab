@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567693597932980}
   - component: {fileID: 61902986599914090}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatS_1x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371441309637296}
   - component: {fileID: 212695168995158744}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4323057215868492}
   - component: {fileID: 212333165877566536}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421761636271736}
   - component: {fileID: 212205936231811666}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4952647975234936}
   - component: {fileID: 61434756530262054}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlatS_1x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4792240228437068}
   - component: {fileID: 212253356339997540}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

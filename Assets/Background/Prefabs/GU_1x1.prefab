@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4884399358163604}
   - component: {fileID: 212266692064822640}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ground_u_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4141217551041264}
   - component: {fileID: 61655707797590700}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GU_1x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

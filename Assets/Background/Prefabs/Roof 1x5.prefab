@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4362542681177872}
   - component: {fileID: 212522217503168420}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BGTile (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4277260849158352}
   - component: {fileID: 212341019509129982}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BGTile (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4648633445035288}
   - component: {fileID: 212287464956859786}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BGTile (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4924384692356760}
   - component: {fileID: 61323693646211636}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Roof 1x5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4415772172844386}
   - component: {fileID: 212819516664497080}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BGTile (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4786488552004736}
   - component: {fileID: 212336958936225192}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BGTile (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

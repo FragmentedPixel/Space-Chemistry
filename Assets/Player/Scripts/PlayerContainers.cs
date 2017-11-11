@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 public class PlayerContainers : MonoBehaviour
 {
+    //TODO: Stop player from collecting when the container is full.
+    //TODO: Refactor code.
+
     #region Variabiles
     // Reference to the containers.
     //TODO: Implement containers manager.

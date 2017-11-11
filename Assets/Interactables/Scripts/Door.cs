@@ -9,6 +9,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public string NextLevel;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject player = collision.gameObject;

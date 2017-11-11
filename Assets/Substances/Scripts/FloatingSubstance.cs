@@ -29,6 +29,4 @@ public class FloatingSubstance : sSubstance
             rb.AddForce(new Vector2(0, floatability));
         }
     }
-
-
 }

@@ -9,8 +9,6 @@ public class LiquidDetector : MonoBehaviour {
         if (Hit.GetComponent<Rigidbody2D>() != null)
         {
             transform.parent.GetComponent<LiquidPool>().Splash(transform.position.x, Hit.GetComponent<Rigidbody2D>().velocity.y * Hit.GetComponent<Rigidbody2D>().mass / 40f);
-
-           
         }
     }
 }

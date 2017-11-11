@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class MessageManager : MonoBehaviour
 {
+    #region Variabiles
     // Singleton instance.
     private static MessageManager instance;
 
@@ -18,7 +19,9 @@ public class MessageManager : MonoBehaviour
     // Colors.
     private Color initColor;
     private Color finalColor;
+    #endregion
 
+    #region Methods
     private void Start()
     {
         // References.
@@ -65,6 +68,5 @@ public class MessageManager : MonoBehaviour
         yield break;
 
     }
-
-
+    #endregion
 }

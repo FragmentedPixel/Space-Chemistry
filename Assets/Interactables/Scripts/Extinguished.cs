@@ -38,6 +38,7 @@ public class Extinguished : MonoBehaviour
                     {
                         generatorSubstance.particleSubstance = changedSubstance;
                     }
+
 					Destroy (gameObject);
 				}
             }

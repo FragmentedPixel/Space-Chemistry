@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class HandMovement : MonoBehaviour 
 {
+    //TODO: Support controller input.
     #region Parameters
     // Camera from where the raycast is done.
     public Camera handCamera;

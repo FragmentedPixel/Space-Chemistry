@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class HandGenerator : MonoBehaviour 
 {
+    //TODO: Extend simple generator code.
 	#region Parameters
 	// Interval between particles releases.
 	public float releaseInterval = 0.025f;

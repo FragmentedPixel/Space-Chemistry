@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Responsible for updating and changing the settings on the page and playerprefs.
+ */ 
+
 public class SettingsManager : MonoBehaviour
 {
     #region Variabiles

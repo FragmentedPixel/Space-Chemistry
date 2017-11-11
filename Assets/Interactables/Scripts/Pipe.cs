@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
-
+    // Set's the sprite renderer color to the generator specific color.
 	private void Start ()
     {
         Generator particleGenerator = GetComponentInChildren<Generator>();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ContanterMixer : MonoBehaviour
 {
-
+    //TODO: Refactor code.
     //TODO: Change highlight better.
 
     public void Mix(Container first, Container second, Container third)

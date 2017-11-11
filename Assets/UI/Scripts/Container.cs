@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class Container : MonoBehaviour
 {
+    //TODO: Refactor code and comment.
+    //TODO: Implement usefull methods for calling classes.
+
     public sSubstance substance;
     public float particules;
     public float capacity = 15;

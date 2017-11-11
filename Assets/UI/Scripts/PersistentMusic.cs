@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Responsible for playing music through the game.
+ */
+
 public class PersistentMusic : MonoBehaviour
 {
-    #region Varuabiles
+    #region Variabiles
     public AudioClip backgroundLoop;
 
     private AudioSource audioS;

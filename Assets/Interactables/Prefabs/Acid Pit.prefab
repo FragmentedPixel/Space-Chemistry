@@ -11,25 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1540594245837734}
   m_IsPrefabParent: 1
---- !u!1 &1022913622005968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4242818959575104}
-  - component: {fileID: 114145739094790232}
-  - component: {fileID: 114803708121574118}
-  - component: {fileID: 114882104827891874}
-  - component: {fileID: 253500078950038632}
-  m_Layer: 8
-  m_Name: LiquidPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1540594245837734
 GameObject:
   m_ObjectHideFlags: 0
@@ -38,26 +19,17 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4482976239313716}
-  m_Layer: 0
+  - component: {fileID: 114058845115670962}
+  - component: {fileID: 114506089060545668}
+  - component: {fileID: 114020322299627184}
+  - component: {fileID: 253985277838800096}
+  m_Layer: 8
   m_Name: Acid Pit
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4242818959575104
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022913622005968}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4482976239313716}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4482976239313716
 Transform:
   m_ObjectHideFlags: 1
@@ -65,19 +37,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540594245837734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 28.38, z: 0}
+  m_LocalPosition: {x: 24.8, y: -16.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4242818959575104}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114145739094790232
+--- !u!114 &114020322299627184
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022913622005968}
+  m_GameObject: {fileID: 1540594245837734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426029a8d07ffd149ad27d9fb6af8455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114058845115670962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540594245837734}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9197479bb0305024da911321f86853fc, type: 3}
@@ -90,35 +72,24 @@ MonoBehaviour:
   height: 2.2
   width: 2.3
   poolColor: {r: 0.85294116, g: 0.056444637, b: 0.056444637, a: 1}
---- !u!114 &114803708121574118
+--- !u!114 &114506089060545668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022913622005968}
+  m_GameObject: {fileID: 1540594245837734}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72edd4133062d7a4cae7567d558834e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reactantSubstance: {fileID: 11400000, guid: cd1cae7243f17be40b85aaf5ce6ebec2, type: 2}
---- !u!114 &114882104827891874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022913622005968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426029a8d07ffd149ad27d9fb6af8455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!253 &253500078950038632
+--- !u!253 &253985277838800096
 BuoyancyEffector2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022913622005968}
+  m_GameObject: {fileID: 1540594245837734}
   m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:

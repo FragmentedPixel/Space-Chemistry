@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour {
+/*
+ * Responsible for updating the player's checkpoint when triggered by him.
+ */
 
+public class Checkpoint : MonoBehaviour
+{
+    // checked sprite.
     public Sprite checkpointPassed;
 
+    // Renderer component.
     private SpriteRenderer spriterenderer;
 
     void Start()
     {
-        spriterenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+        spriterenderer = GetComponentInChildren<SpriteRenderer>();
     }
 	
     private void OnTriggerEnter2D(Collider2D other)

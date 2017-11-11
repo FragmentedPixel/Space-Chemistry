@@ -6,6 +6,9 @@ using UnityEngine;
  * Responsible for the player's movement.
  */
 
+//TODO: Create more responsive controls.
+//TODO: Support controller input.
+
 public class PlayerMovement : MonoBehaviour
 {
     #region Variabiles

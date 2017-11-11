@@ -276,7 +276,7 @@ public class LiquidPool : MonoBehaviour {
             Quaternion rotation = Quaternion.LookRotation(new Vector3(xpositions[Mathf.FloorToInt(xpositions.Length / 2)], BOTTOM + 8, 5) - position);
 
             //Create the splash and tell it to destroy itself.
-            GameObject splish = Instantiate(splash, position, rotation) as GameObject;
+            GameObject splish = Instantiate(splash, position, rotation, transform) as GameObject;
             Destroy(splish, lifetime + 0.3f);
         }
     }

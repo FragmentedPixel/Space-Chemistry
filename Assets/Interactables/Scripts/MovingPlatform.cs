@@ -27,8 +27,10 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
 
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        if (player==null)
+            return;
         player.transform.SetParent(transform);
 
     }
@@ -37,7 +39,8 @@ public class MovingPlatform : MonoBehaviour
     {
 
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-
+        if (player==null)
+            return;
         player.transform.SetParent(null);
     }
 }

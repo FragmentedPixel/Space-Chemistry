@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 114895579676422094}
   - component: {fileID: 114500851870271196}
   - component: {fileID: 114542466842579852}
+  - component: {fileID: 114723460446724374}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -1113,7 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handCamera: {fileID: 20536245352294422}
-  speed: 360
+  speed: 120
 --- !u!114 &114500851870271196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1140,6 +1141,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 0.5
+--- !u!114 &114723460446724374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691164950640854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e664569b360012d4d9a378683487a9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114880823727597074
 MonoBehaviour:
   m_ObjectHideFlags: 1

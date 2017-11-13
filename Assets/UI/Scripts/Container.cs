@@ -91,6 +91,21 @@ public class Container : MonoBehaviour
 
         // Update fill amount.
     }
+
+    public bool isFull()
+    {
+        return (capacity <= particules);
+    }
+
+    public bool isEmpty()
+    {
+        if (substance == null)
+            return true;
+        else if (particules <= 0)
+            return true;
+        else
+            return false;
+    }
     #endregion
 
     #region Highlighting

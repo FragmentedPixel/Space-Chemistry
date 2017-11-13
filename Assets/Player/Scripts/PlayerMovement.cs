@@ -7,7 +7,6 @@ using UnityEngine;
  */
 
 //TODO: Create more responsive controls.
-//TODO: Support controller input.
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -41,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
 		anim = GetComponentInChildren<Animator>();
     }
 
-
 	void Update () 
 	{
         PlayerMoveKeyboard();
@@ -51,13 +49,8 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = isGrounded();
 
-       // anim.SetBool("Ground", grounded);
-
-        //anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
-
-        if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+        if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Jump")))
         {
-           // anim.SetBool("Ground", false);
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
         }
 
@@ -88,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         temp.x = right ? 0.5f :  -0.5f;
         anim.transform.localScale = temp;
 
-        // Upate the player's components.
+        // update the player's components.
         anim.SetBool(walkingHash, true);
         float forceX = right ? speed : -speed;
         myBody.velocity = (new Vector2(forceX, myBody.velocity.y));

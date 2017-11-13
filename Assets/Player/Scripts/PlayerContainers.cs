@@ -14,8 +14,7 @@ public class PlayerContainers : MonoBehaviour
 
     #region Variabiles
     // Reference to the containers.
-    //TODO: Implement containers manager.
-    public Container[] containers = new Container[3];
+    private Container[] containers = new Container[3];
 
     // currently selected container.
     private int currentIndex = 0;
@@ -36,13 +35,16 @@ public class PlayerContainers : MonoBehaviour
 
     private void Start()
     {
+        // Set the containers from the UI.
+        containers = new Container[3];
+        GetComponent<ContainersManager>().SetContainers(containers[0], containers[1], containers[2]);
+        containers[currentIndex].HighLight();
+
         // Get components from the player.
         generator = GetComponentInChildren<HandGenerator>();
         collector = GetComponentInChildren<HandCollector>();
         mixer = GetComponentInChildren<ContanterMixer>();
-
         audioS = GetComponent<AudioSource>();
-        containers[currentIndex].HighLight();
     }
 
     private void Update()

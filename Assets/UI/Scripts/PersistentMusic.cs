@@ -27,7 +27,7 @@ public class PersistentMusic : MonoBehaviour
     {
         audioS = GetComponent<AudioSource>();
         audioS.clip = backgroundLoop;
-        audioS.volume = PlayerPrefsManager.GetMasterVolume();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume()/10;
         audioS.Play();
     }
     #endregion

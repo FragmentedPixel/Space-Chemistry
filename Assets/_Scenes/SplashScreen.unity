@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24dc599286d08704f933f063797a4320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundLoop: {fileID: 8300000, guid: 3f8c0af9766b73f4bb016cdbbb6ca5f6, type: 3}
+  backgroundLoop: {fileID: 8300000, guid: f0eec2e51c127af4ab3c2f713e79488c, type: 3}
 --- !u!82 &1223913284
 AudioSource:
   m_ObjectHideFlags: 0

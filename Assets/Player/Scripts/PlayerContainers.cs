@@ -36,15 +36,25 @@ public class PlayerContainers : MonoBehaviour
     private void Start()
     {
         // Set the containers from the UI.
-        containers = new Container[3];
-        GetComponent<ContainersManager>().SetContainers(containers[0], containers[1], containers[2]);
-        containers[currentIndex].HighLight();
+        SetContainers();
 
         // Get components from the player.
         generator = GetComponentInChildren<HandGenerator>();
         collector = GetComponentInChildren<HandCollector>();
         mixer = GetComponentInChildren<ContanterMixer>();
         audioS = GetComponent<AudioSource>();
+    }
+
+    private void SetContainers()
+    {
+        containers = new Container[3];
+        ContainersManager containerManager = FindObjectOfType<ContainersManager>();
+        Container[] uiContainers = containerManager.GetContainers();
+
+        for(int i = 0; i < 3; i++)
+            containers[i] = uiContainers[i];
+
+        containers[currentIndex].HighLight();
     }
 
     private void Update()

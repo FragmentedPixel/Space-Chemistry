@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class PlayerContainers : MonoBehaviour
 {
-    //TODO: Stop player from collecting when the container is full.
     //TODO: Refactor code.
 
     #region Variabiles
@@ -31,8 +30,7 @@ public class PlayerContainers : MonoBehaviour
     public AudioClip endCollect;
     #endregion
 
-    #region Methods
-
+    #region Containers & UI
     private void Start()
     {
         // Set the containers from the UI.
@@ -57,24 +55,32 @@ public class PlayerContainers : MonoBehaviour
         containers[currentIndex].HighLight();
     }
 
+    private void UpdateContainersPercent()
+    {
+        foreach (Container container in containers)
+            container.UpdateContainerUI();
+    }
+    #endregion
+
+    #region Commands
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Relase();
-        }
-
-        else if (Input.GetMouseButton(1))
-        {
-            Collect();
-        }
-
-        else if(Input.GetMouseButtonUp(1))
+        if(Input.GetButtonUp("Collect"))
         {
             StopCollecting();
         }
 
-        else if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetButton("Release"))
+        {
+            Relase();
+        }
+
+        else if (Input.GetButton("Collect"))
+        {
+            Collect();
+        }
+
+        else if(Input.GetButtonDown("Mix"))
         {
             Mix();
         }
@@ -109,19 +115,27 @@ public class PlayerContainers : MonoBehaviour
         }
     }
     
-
     private void Collect()
     {
-        // Play corresponding sound.
-        //TODO: Check if done correct.
-        if (!audioS.isPlaying)
-        {
-            audioS.loop = true;
-            audioS.clip = collectSound;
-            audioS.Play();
-        }
+        bool canCollect = collector.Collect(containers[currentIndex]);
 
-        collector.Collect(containers[currentIndex]);
+        if(canCollect)
+        {
+            // Play corresponding sound.
+            if (!audioS.isPlaying)
+            {
+                audioS.loop = true;
+                audioS.clip = collectSound;
+                audioS.Play();
+            }
+        }
+        else
+        {
+            MessageManager.getInstance().DissplayMessage("Container is full.", 1f);
+            StopCollecting();
+        }
+        
+
     }
 
     private void StopCollecting()
@@ -157,6 +171,21 @@ public class PlayerContainers : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             input = 2;
 
+        int controllerInput = (int) Input.GetAxisRaw("Container Axis");
+
+        if (controllerInput != 0f)
+        {
+            input = (currentIndex + controllerInput) % 3;
+
+            if (input < 0)
+            {
+                input = 2;
+            }
+        }
+
+        
+        
+
         //Change the highlighted container according to input.
         if(input != -1)
         {
@@ -168,14 +197,7 @@ public class PlayerContainers : MonoBehaviour
 
     private void Mix()
     {
-        mixer.Mix(containers[0], containers[1], containers[3]);
+        mixer.Mix(containers[0], containers[1], containers[2]);
     }
-
-    private void UpdateContainersPercent()
-    {
-        foreach (Container container in containers)
-            container.UpdateContainerUI();
-    }
-    
     #endregion
 }

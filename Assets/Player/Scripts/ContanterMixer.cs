@@ -33,6 +33,8 @@ public class ContanterMixer : MonoBehaviour
 
     private void MixContainers(Container cont1, Container cont2, Container destContainer)
     {
+        if (cont1.substance == null || cont2.substance == null)
+            return;
 
         sSubstance result = cont1.substance.CollidingWith(cont2.substance);
 

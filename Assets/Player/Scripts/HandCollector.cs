@@ -23,10 +23,17 @@ public class HandCollector : MonoBehaviour
     #endregion
 
     #region Collecting
-    public void Collect(Container _containerToFill)
+    public bool Collect(Container _containerToFill)
     {
         containerToFill = _containerToFill;
-        StartCollecting();
+        bool isFull = containerToFill.isFull();
+
+        if (!isFull)
+            StartCollecting();
+        else
+            StopCollecting();
+
+        return !isFull;
     }
 
     private void StartCollecting()

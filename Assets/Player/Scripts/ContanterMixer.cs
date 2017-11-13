@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for mixing the substances inside the backpack.
+ */
+
 public class ContanterMixer : MonoBehaviour
 {
-    //TODO: Refactor code.
-    //TODO: Change highlight better.
-
     public void Mix(Container first, Container second, Container third)
     {
-        if(first.substance == null && first.particules == 0)
+        // Mix inside the empty container.
+
+        if(first.isEmpty())
         {
             MixContainers(second, third, first);
         }
 
-        else if (second.substance == null && second.particules == 0)
+        else if (second.isEmpty())
         {
             MixContainers(first, third, second);
         }
 
-        else if (third.substance == null && third.particules == 0)
+        else if (third.isEmpty())
         {
             MixContainers(first, second, third);
         }
@@ -33,11 +36,14 @@ public class ContanterMixer : MonoBehaviour
 
     private void MixContainers(Container cont1, Container cont2, Container destContainer)
     {
-        if (cont1.substance == null || cont2.substance == null)
+        // If there is one more empty container there is nothing to mix.
+        if (cont1.isEmpty() || cont2.isEmpty())
             return;
 
+        // Simulate the reaction between the 2 substances.
         sSubstance result = cont1.substance.CollidingWith(cont2.substance);
 
+        // Check the result of the new substance.
         if (result == null)
         {
             MessageManager.getInstance().DissplayMessage("Substances can't mix", 1f);
@@ -45,15 +51,14 @@ public class ContanterMixer : MonoBehaviour
 
         else
         {
-            //TODO: Implement containers logics.
+            // Calculate the number of the particules for the new container.
             float resultPart = cont1.particules + cont2.particules;
-
-            //TODO: Update script name & class
-            //TODO: Check if the mixed containers contains anything.
-
+            
+            // Empty the used containers.
             cont1.EmptyContainer();
             cont2.EmptyContainer();
-
+            
+            // Fill the destination container with the result.
             destContainer.FillWith(resultPart, result);
         }
     }

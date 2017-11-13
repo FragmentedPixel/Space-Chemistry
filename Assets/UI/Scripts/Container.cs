@@ -8,16 +8,17 @@ using UnityEngine.UI;
 
 public class Container : MonoBehaviour
 {
-    //TODO: Refactor code and comment.
-    //TODO: Implement usefull methods for calling classes.
-
+    #region Variabiles
     public sSubstance substance;
     public float particules;
     public float capacity = 15;
 
     public Image highLightImage;
     public Image fillImage;
-    
+    #endregion
+
+    #region UI Updates
+
     public void UpdateContainerSubstance(sSubstance newSubstance)
     {
         substance = newSubstance;
@@ -31,20 +32,25 @@ public class Container : MonoBehaviour
             fillImage.color = substance.particleColor;
     }
 
+    #endregion
+
     #region Fill & Release
     public bool AddParticule(sSubstance substanceParticule)
     {
+        // Update substance if none is inside.
         if(substance == null)
         {
             particules = 1;
             substance = substanceParticule;
             return true;
         }
+        // Check if there is the right substance.
         else if (substance == substanceParticule)
         {
             particules++;
             return true;
         }
+        // Let the player know if the wrong substance is inside.
         else
         {
             MessageManager.getInstance().DissplayMessage("There is an other substance inside this container.", 1f);
@@ -79,9 +85,11 @@ public class Container : MonoBehaviour
     #region Empty & Fill Container
     public void EmptyContainer()
     {
-        fillImage.fillAmount = 0;
+        // Clear all data about the container.
         particules = 0;
         substance = null;
+
+        UpdateContainerUI();
     }
 
     public void FillWith(float particulesCount, sSubstance newSubstance)
@@ -89,7 +97,7 @@ public class Container : MonoBehaviour
         particules = particulesCount;
         substance = newSubstance;
 
-        // Update fill amount.
+        UpdateContainerUI();
     }
 
     public bool isFull()
@@ -109,7 +117,6 @@ public class Container : MonoBehaviour
     #endregion
 
     #region Highlighting
-
     public void HighLight()
     {
         SetImageAlpha(1f);
@@ -126,6 +133,5 @@ public class Container : MonoBehaviour
         highColor.a = alpha;
         highLightImage.color = highColor;
     }
-
     #endregion
 }

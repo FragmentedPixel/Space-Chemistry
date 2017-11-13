@@ -97,7 +97,6 @@ public class PlayerContainers : MonoBehaviour
     private void Relase()
     {
         // PLay corresponding sound.
-        // TODO: Check this.
         if (!audioS.isPlaying)
         {
             audioS.loop = true;
@@ -142,7 +141,6 @@ public class PlayerContainers : MonoBehaviour
     {
         if (audioS.isPlaying)
         {
-            //TODO: Remove this.
             audioS.loop = false;
             audioS.Stop();
             audioS.PlayOneShot(endCollect);

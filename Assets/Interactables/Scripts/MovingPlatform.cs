@@ -11,6 +11,7 @@ public class MovingPlatform : MonoBehaviour
     #region Variabiles
     public Transform wayPointsparent;
 	public float speed = 5f;
+    public float maxSpeed = 3f;
 	public float threshhold = .3f;
 
 	private int currentIndex = 0;
@@ -27,12 +28,13 @@ public class MovingPlatform : MonoBehaviour
 			currentIndex = (currentIndex + 1) % wayPointsparent.childCount;
 		}
 
-        // Move the platform towards the current destionation.
+        // Move the platform towards the current destination.
 		else
 		{
-			direction.Normalize ();
-			transform.position = Vector3.Lerp (transform.position, wayPointsparent.GetChild (currentIndex).position, Time.deltaTime * speed);
-		}
+
+			direction = Vector3.ClampMagnitude(direction, speed);
+            transform.position = Vector3.Lerp(transform.position, transform.position + direction, speed * Time.deltaTime);
+        }
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)

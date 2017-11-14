@@ -201,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374822194915792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.69, y: 1.12, z: 0}
+  m_LocalPosition: {x: 14.09, y: -3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4044111684597948}
@@ -227,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878508832635224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.707762, y: -5.239912, z: 0}
+  m_LocalPosition: {x: -78.15, y: 13.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4296835138335486}
@@ -334,9 +334,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPointsparent: {fileID: 4044111684597948}
-  speed: 1
+  speed: 100
+  maxSpeed: 3
   threshhold: 0.3
-  currentIndex: 0
 --- !u!212 &212221007351914400
 SpriteRenderer:
   m_ObjectHideFlags: 1

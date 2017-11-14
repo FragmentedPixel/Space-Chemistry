@@ -53,23 +53,34 @@ public class HandCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collecting == false)
+            return;
+
+        FiniteBarrel barrel = collision.gameObject.GetComponent<FiniteBarrel>();
+        if(barrel != null)
+        {
+            //TODO: Remove particle only when successful.
+            //TODO: Make error with add particle with null check.
+            sSubstance particleInsideBarrel = barrel.GetParticle();
+            containerToFill.AddParticule(particleInsideBarrel);
+        }
+
         // Get information about the current collision.
         Particle collectedParticle = collision.GetComponent<Particle>();
 
         //Escape collisions with ground or other objects or the players is not collecting now.
-        if (collectedParticle ==  null || collecting == false ) 
-            return;
-
-
-        // Add the substance to the current container sent.
-        bool success = containerToFill.AddParticule(collectedParticle.currentSubstance);
-
-        // Destory particle if collected.
-        if (success)
+        if (collectedParticle !=  null)
         {
-            Destroy(collectedParticle.gameObject);
+            // Add the substance to the current container sent.
+            bool success = containerToFill.AddParticule(collectedParticle.currentSubstance);
+
+            // Destory particle if collected.
+            if (success)
+            {
+                Destroy(collectedParticle.gameObject);
+            }
+
         }
-        
     }
     #endregion
 }

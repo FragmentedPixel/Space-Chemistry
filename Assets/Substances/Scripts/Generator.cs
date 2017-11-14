@@ -31,7 +31,7 @@ public class Generator : MonoBehaviour
     #region Update
     private void Update()
     {
-        if (spawnTimer >= spawnInterval)
+        if (spawnTimer >= spawnInterval && particleSubstance != null)
         {
             // It is time to spawn a new particle.
 
@@ -55,6 +55,11 @@ public class Generator : MonoBehaviour
         {
             spawnTimer += Time.deltaTime;
         }
+    }
+
+    public void SetSubstance(sSubstance newSubst)
+    {
+        particleSubstance = newSubst;
     }
     #endregion
 }

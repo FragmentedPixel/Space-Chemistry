@@ -23,6 +23,9 @@ public class Generator : MonoBehaviour
 
     // State of the particle generated.
     public sSubstance particleSubstance;
+
+    // Should the particle persist?
+    public bool persistentParticle;
     #endregion
 
     #region Update
@@ -36,11 +39,14 @@ public class Generator : MonoBehaviour
             Particle newParticle = ParticlePool.instance.RequestParticle(particleSubstance);
 
 			Vector3 randomVector = randomForce * Random.onUnitSphere;
-           
+
             // Update particle parameters.
-            newParticle.ChangeSubstanceState(particleSubstance);
 			newParticle.rb.AddForce(particleForce + randomVector);
             newParticle.transform.position = transform.position;
+
+            // Make particle persist.
+            if(persistentParticle)
+                newParticle.MakeInfiniteLifeTime();
 
             // Reset timer.
             spawnTimer = 0f; 	

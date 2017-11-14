@@ -37,7 +37,7 @@ public class Particle : MonoBehaviour
         }
         
         // Return the particle to the pool when it dies.
-        if(currentLifeTime > totalLifeTime)
+        if(currentLifeTime > totalLifeTime && totalLifeTime != 0f)
         {
             ParticlePool.instance.ReturnParticle(this);
         }
@@ -127,9 +127,18 @@ public class Particle : MonoBehaviour
         rend.material = newSubstance.particleMaterial;
     }
 
+    public void MakeInfiniteLifeTime()
+    {
+        //TODO: Transform this check into a bool.
+        totalLifeTime = 0f;
+    }
+
     public float GetPercentagePassed()
     {
-        return currentLifeTime/totalLifeTime;
+        if (totalLifeTime != 0f)
+            return currentLifeTime / totalLifeTime;
+        else
+            return 0f;
     }
     #endregion
 }

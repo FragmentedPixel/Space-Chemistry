@@ -4,17 +4,39 @@ using UnityEngine;
 
 public class ContainersManager : MonoBehaviour
 {
-    
+    private Container[] containers;
+
+    private void Awake()
+    {
+        containers =  GetComponentsInChildren<Container>();
+    }
+
     public Container[] GetContainers(int containersCount)
     {
-        Container[] containers =  GetComponentsInChildren<Container>();
-
         if(containers.Length != containersCount)
         {
             Debug.LogError("There are not the same number of containers in UI and player.");
         }
 
         return containers;
+    }
+
+    public void LockAllBarrels()
+    {
+        foreach (Container cont in containers)
+            cont.gameObject.SetActive(false);
+    }
+
+    public void UnLockNextBarrel()
+    {
+        for(int i = 0; i < containers.Length; i++)
+        {
+            if(!containers[i].gameObject.activeInHierarchy)
+            {
+                containers[i].gameObject.SetActive(true);
+                return;
+            }
+        }
     }
 
 }

@@ -31,7 +31,7 @@ public class HandMovement : MonoBehaviour
         }
 
         //TODO: Remove this.
-        connectedToController = false;
+        //connectedToController = false;
     }
     #endregion
 

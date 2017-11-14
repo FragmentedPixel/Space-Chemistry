@@ -9,14 +9,14 @@ using UnityEngine.UI;
 
 public class PlayerContainers : MonoBehaviour
 {
-    //TODO: Refactor code.
-
     #region Variabiles
     // Reference to the containers.
     private Container[] containers = new Container[3];
 
     // currently selected container.
     private int currentIndex = 0;
+    // was the change triggered already?
+    private bool changeTriggered = false;
 
     // Hand subclasses.
     private HandGenerator generator;
@@ -96,7 +96,7 @@ public class PlayerContainers : MonoBehaviour
 
     private void Relase()
     {
-        // PLay corresponding sound.
+        // Play corresponding sound.
         if (!audioS.isPlaying)
         {
             audioS.loop = true;
@@ -113,9 +113,14 @@ public class PlayerContainers : MonoBehaviour
             generator.Relase(particleSubstanceToRelease);
         }
     }
-    
+
+
+
+
     private void Collect()
     {
+        // Check if the current container can collect.
+        //TODO: Move check here.
         bool canCollect = collector.Collect(containers[currentIndex]);
 
         if(canCollect)
@@ -151,17 +156,17 @@ public class PlayerContainers : MonoBehaviour
 
     private void SelectContainer()
     {
-
+        // Stop sounds played.
         if (audioS.isPlaying)
         {
             audioS.loop = false;
-            //audioS.clip = reelase sound;
             audioS.Stop();
         }
 
         // Check for new input.
         int input = -1;
 
+        // Keyboard Input.
         if (Input.GetKeyDown(KeyCode.Alpha1))
             input = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -169,9 +174,11 @@ public class PlayerContainers : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             input = 2;
 
+        // Read controller Input.
         int controllerInput = (int) Input.GetAxisRaw("Container Axis");
 
-        if (controllerInput != 0f)
+        // Change input & lock axis after change.
+        if (controllerInput != 0f && changeTriggered == false)
         {
             input = (currentIndex + controllerInput) % 3;
 
@@ -179,10 +186,15 @@ public class PlayerContainers : MonoBehaviour
             {
                 input = 2;
             }
+
+            changeTriggered = true;
         }
 
-        
-        
+        // Reset Axis
+        if(controllerInput == 0)
+        {
+            changeTriggered = false;
+        }
 
         //Change the highlighted container according to input.
         if(input != -1)

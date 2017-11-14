@@ -22,6 +22,7 @@ public class PlayerContainers : MonoBehaviour
     private HandGenerator generator;
     private HandCollector collector;
     private ContanterMixer mixer;
+    private int containersCount = 2;
 
     // Sounds.
     private AudioSource audioS;
@@ -45,11 +46,11 @@ public class PlayerContainers : MonoBehaviour
 
     private void SetContainers()
     {
-        containers = new Container[3];
+        containers = new Container[containersCount];
         ContainersManager containerManager = FindObjectOfType<ContainersManager>();
-        Container[] uiContainers = containerManager.GetContainers();
+        Container[] uiContainers = containerManager.GetContainers(containersCount);
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < containersCount; i++)
             containers[i] = uiContainers[i];
 
         containers[currentIndex].HighLight();
@@ -169,9 +170,9 @@ public class PlayerContainers : MonoBehaviour
         // Keyboard Input.
         if (Input.GetKeyDown(KeyCode.Alpha1))
             input = 0;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && containersCount >= 2)
             input = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && containersCount >= 3)
             input = 2;
 
         // Read controller Input.
@@ -180,11 +181,11 @@ public class PlayerContainers : MonoBehaviour
         // Change input & lock axis after change.
         if (controllerInput != 0f && changeTriggered == false)
         {
-            input = (currentIndex + controllerInput) % 3;
+            input = (currentIndex + controllerInput) % containersCount;
 
             if (input < 0)
             {
-                input = 2;
+                input = containersCount - 1;
             }
 
             changeTriggered = true;
@@ -207,7 +208,10 @@ public class PlayerContainers : MonoBehaviour
 
     private void Mix()
     {
-        mixer.Mix(containers[0], containers[1], containers[2]);
+        if (containersCount == 3)
+            mixer.Mix(containers[0], containers[1], containers[2]);
+        else if (containersCount == 2)
+            mixer.Mix(containers[0], containers[1]);
     }
     #endregion
 }

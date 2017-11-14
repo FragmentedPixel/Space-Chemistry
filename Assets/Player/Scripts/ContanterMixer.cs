@@ -62,4 +62,48 @@ public class ContanterMixer : MonoBehaviour
             destContainer.FillWith(resultPart, result);
         }
     }
+
+    public void Mix(Container first, Container second)
+    {
+        if(first.isEmpty() && second.isEmpty())
+        {
+            MessageManager.getInstance().DissplayMessage("Both containers are empty.", 1f);
+        }
+
+        else if(first.isEmpty() || second.isEmpty())
+        {
+            MessageManager.getInstance().DissplayMessage("One of the containers is empty", 1f);
+        }
+
+        else
+        {
+            MixContainers(first, second);
+
+        }
+    }
+
+    private void MixContainers(Container cont1, Container cont2)
+    {
+        // Simulate the reaction between the 2 substances.
+        sSubstance result = cont1.substance.CollidingWith(cont2.substance);
+
+        // Check the result of the new substance.
+        if (result == null)
+        {
+            MessageManager.getInstance().DissplayMessage("Substances can't mix", 1f);
+        }
+
+        else
+        {
+            // Calculate the number of the particules for the new container.
+            float resultPart = cont1.particules + cont2.particules;
+
+            // Empty the used containers.
+            cont1.EmptyContainer();
+            cont2.EmptyContainer();
+
+            // Fill the destination container with the result.
+            cont1.FillWith(resultPart, result);
+        }
+    }
 }

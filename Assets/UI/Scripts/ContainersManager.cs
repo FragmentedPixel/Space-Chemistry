@@ -5,13 +5,13 @@ using UnityEngine;
 public class ContainersManager : MonoBehaviour
 {
     
-    public Container[] GetContainers()
+    public Container[] GetContainers(int containersCount)
     {
         Container[] containers =  GetComponentsInChildren<Container>();
 
-        if(containers.Length != 3)
+        if(containers.Length != containersCount)
         {
-            Debug.LogError("There are not 3 containers.");
+            Debug.LogError("There are not the same number of containers in UI and player.");
         }
 
         return containers;

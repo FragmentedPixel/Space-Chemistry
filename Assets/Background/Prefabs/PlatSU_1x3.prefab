@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4147886675652748}
   - component: {fileID: 61342251215978364}
   m_Layer: 0
-  m_Name: PlatS_1x3 1
+  m_Name: PlatSU_1x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

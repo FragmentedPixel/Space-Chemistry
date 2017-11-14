@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce = 5f;
 
+    private float jumpMult = 0f;
+
+    public float jumpForcePerSecond = .1f;
+
     public LayerMask whatisGround;
     #endregion
 
@@ -49,10 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = isGrounded();
 
-        if (grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Jump")))
-        {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-        }
+        Jump();
 
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
         float movement = Input.GetAxisRaw("Horizontal"); 
@@ -99,6 +100,20 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, distanceToGround, whatisGround);
 
         return (hit.point != Vector2.zero);
+    }
+
+    private void Jump()
+    {
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Jump")))
+            jumpMult = 1f;
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetButton("Jump")))
+            jumpMult += jumpForcePerSecond * Time.deltaTime;
+
+        if (grounded && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("Jump")))
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce * jumpMult));
+        }
     }
     #endregion
 }

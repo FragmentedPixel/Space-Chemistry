@@ -1180,6 +1180,7 @@ MonoBehaviour:
   maxVelocity: 4
   groundCheck: {fileID: 4237290739898196}
   jumpForce: 550
+  jumpForcePerSecond: 0.1
   whatisGround:
     serializedVersion: 2
     m_Bits: 9216

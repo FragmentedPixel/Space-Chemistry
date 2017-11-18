@@ -94,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         // update the player's components.
         anim.SetBool(walkingHash, true);
         float forceX = right ? speed : -speed;
+        
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
     }
 

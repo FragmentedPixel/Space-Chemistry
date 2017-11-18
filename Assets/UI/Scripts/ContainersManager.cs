@@ -9,6 +9,9 @@ public class ContainersManager : MonoBehaviour
     private void Awake()
     {
         containers =  GetComponentsInChildren<Container>();
+
+        foreach (Container cont in containers)
+            cont.StopHighLight();
     }
 
     public Container[] GetContainers(int containersCount)

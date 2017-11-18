@@ -122,7 +122,7 @@ public class Container : MonoBehaviour
         SetImageAlpha(1f);
     }
 
-    public void StopHighLigh()
+    public void StopHighLight()
     {
         SetImageAlpha(0f);
     }

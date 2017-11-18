@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: c0928513d64389745bc6602d3f1d2ce3
+timeCreated: 1511029888
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Forgotten Futurist
+  fontNames:
+  - Forgotten Futurist
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1251e3d6c43075341b44edc7a31846f6, type: 3}
+  - {fileID: 12800000, guid: aeb5b7dce6b69af4da2485bdc4bc3a30, type: 3}
+  - {fileID: 12800000, guid: 6726e78e201676b48b02e2a733df6cba, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

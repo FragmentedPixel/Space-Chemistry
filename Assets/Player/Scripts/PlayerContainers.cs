@@ -200,7 +200,7 @@ public class PlayerContainers : MonoBehaviour
         //Change the highlighted container according to input.
         if(input != -1)
         {
-            containers[currentIndex].StopHighLigh();
+            containers[currentIndex].StopHighLight();
             currentIndex = input;
             containers[currentIndex].HighLight();
         }

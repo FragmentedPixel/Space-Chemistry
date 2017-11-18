@@ -29,9 +29,6 @@ public class HandMovement : MonoBehaviour
                 Debug.LogWarning("Nu mergea inainte pentru aveai controller pus. Fuck you Mircea.");
             }
         }
-
-        //TODO: Remove this.
-        //connectedToController = false;
     }
     #endregion
 

@@ -59,10 +59,19 @@ public class HandCollector : MonoBehaviour
         FiniteBarrel barrel = collision.gameObject.GetComponent<FiniteBarrel>();
         if(barrel != null)
         {
-            //TODO: Remove particle only when successful.
-            //TODO: Make error with add particle with null check.
-            sSubstance particleInsideBarrel = barrel.GetParticle();
-            containerToFill.AddParticule(particleInsideBarrel);
+            sSubstance particleInsideBarrel = barrel.CheckParticle();
+
+            if (particleInsideBarrel != null)
+            {
+                bool success = containerToFill.AddParticule(particleInsideBarrel);
+                if (success)
+                    barrel.GetParticle();
+                else
+                    MessageManager.getInstance().DissplayMessage("There is a problem with this barrel", 1f);
+
+            }
+            else
+                MessageManager.getInstance().DissplayMessage("There is no substance inside the barrel", 1f);
         }
 
         // Get information about the current collision.

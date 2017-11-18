@@ -121,7 +121,6 @@ public class PlayerContainers : MonoBehaviour
     private void Collect()
     {
         // Check if the current container can collect.
-        //TODO: Move check here.
         bool canCollect = collector.Collect(containers[currentIndex]);
 
         if(canCollect)

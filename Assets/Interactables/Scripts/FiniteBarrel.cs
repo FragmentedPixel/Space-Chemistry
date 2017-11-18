@@ -30,6 +30,14 @@ public class FiniteBarrel : MonoBehaviour
         fillImage.fillAmount = (float) currentParticles / totalParticles;
     }
 
+    public sSubstance CheckParticle()
+    {
+        if (currentParticles >= 0)
+            return particleSubstance;
+        else
+            return null;
+    }
+
     public sSubstance GetParticle()
     {
         // Return the particle to the player if any.

@@ -15,6 +15,9 @@ public class Particle : MonoBehaviour
     // Current state of the substance.
     public sSubstance currentSubstance;
 
+    // Has infinite life time ?
+    public bool hasInfiniteLifeTime = false;
+
     // Time since the particle was created.
     private float currentLifeTime = 0f;
 
@@ -37,7 +40,7 @@ public class Particle : MonoBehaviour
         }
         
         // Return the particle to the pool when it dies.
-        if(currentLifeTime > totalLifeTime && totalLifeTime != 0f)
+        if(currentLifeTime > totalLifeTime && !hasInfiniteLifeTime)
         {
             ParticlePool.instance.ReturnParticle(this);
         }
@@ -129,13 +132,12 @@ public class Particle : MonoBehaviour
 
     public void MakeInfiniteLifeTime()
     {
-        //TODO: Transform this check into a bool.
-        totalLifeTime = 0f;
+        hasInfiniteLifeTime = true;
     }
 
     public float GetPercentagePassed()
     {
-        if (totalLifeTime != 0f)
+        if (!hasInfiniteLifeTime)
             return currentLifeTime / totalLifeTime;
         else
             return 0f;

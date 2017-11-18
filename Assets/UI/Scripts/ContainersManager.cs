@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Responsible for managing the containers from the UI and sending them to the player.
+ */
+
 public class ContainersManager : MonoBehaviour
 {
     private Container[] containers;

@@ -32,7 +32,6 @@ public class Extinguished : MonoBehaviour
 				if (dropsAdded > dropsNeeded) 
 				{
                     // Stop the fire if enough particles have hit.
-
 					Destroy (gameObject);
 				}
             }

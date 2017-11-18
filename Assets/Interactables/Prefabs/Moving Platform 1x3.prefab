@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837738442513462}
   m_Layer: 13
-  m_Name: Moving Platform
+  m_Name: Moving Platform 1x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,6 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4296835138335486}
   - component: {fileID: 61020691028146650}
+  - component: {fileID: 251988134511829024}
   - component: {fileID: 50623890617134510}
   - component: {fileID: 114222670876317130}
   m_Layer: 13
@@ -227,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878508832635224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.55, y: -14.24, z: 0}
+  m_LocalPosition: {x: 8.618106, y: -33.93035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4296835138335486}
@@ -307,7 +308,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 6dfc56df75a8cb240a5472ea786a22ed, type: 2}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.65}
   m_SpriteTilingProperty:
@@ -469,3 +470,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!251 &251988134511829024
+PlatformEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888728781575090}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

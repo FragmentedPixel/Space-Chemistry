@@ -18,48 +18,61 @@ public class PlayerMovement : MonoBehaviour
     public float maxVelocity = 4f;
     
     // Components.
-    private Rigidbody2D myBody;
+    private Rigidbody2D rb;
     private Animator anim;
     private const string walkingHash = "Walk";
 
+    // Is the player on the ground?
     private bool grounded = false;
 
+    // Player's feet.
     public Transform groundCheck;
+    public LayerMask whatIsGround;
 
-    private float groundRadius = 0.5f;
+    // Jumping Parameters.
+    public float minJump = 5f;
+    public float maxJump = 6f;
 
-    public float jumpForce = 5f;
+    // Button holding.
+    public float maxPressTime = 1f;
+    private float currentPressTime = 0f;
 
-    private float jumpMult = 0f;
-
-    public float jumpForcePerSecond = .1f;
-
-    public LayerMask whatisGround;
     #endregion
 
-    #region Methods
+    
+    #region Init
     void Awake()
     {
-        myBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
     }
 
 	void Update () 
 	{
-        PlayerMoveKeyboard();
-	}
-
-    void PlayerMoveKeyboard()
-    {
         grounded = isGrounded();
 
         Jump();
 
+        HandleMovement();
+    }
+
+    public bool isGrounded()
+    {
+        float distanceToGround = 0.2f;
+        RaycastHit2D hit = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, distanceToGround, whatIsGround);
+
+        return (hit.point != Vector2.zero);
+    }
+    #endregion
+
+    #region Movement
+    private void HandleMovement()
+    {
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
-        float movement = Input.GetAxisRaw("Horizontal"); 
+        float movement = Input.GetAxisRaw("Horizontal");
 
         // Get current speed of the rb.
-        float vel = Mathf.Abs(myBody.velocity.x);
+        float vel = Mathf.Abs(rb.velocity.x);
 
         // Stop if there is no movement input.
         if (movement == 0)
@@ -68,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Update the player rigidbody according to the user input.
-        else if(vel < maxVelocity)
+        else if (vel < maxVelocity)
         {
             bool movingRight = (movement > 0);
             Move(movingRight);
@@ -85,35 +98,39 @@ public class PlayerMovement : MonoBehaviour
         // update the player's components.
         anim.SetBool(walkingHash, true);
         float forceX = right ? speed : -speed;
-        myBody.velocity = (new Vector2(forceX, myBody.velocity.y));
+        rb.velocity = (new Vector2(forceX, rb.velocity.y));
     }
 
     private void StopMove()
     {
-        myBody.velocity = new Vector2(0f, myBody.velocity.y);
+        rb.velocity = new Vector2(0f, rb.velocity.y);
         anim.SetBool(walkingHash, false);
     }
+    #endregion
 
-    public bool isGrounded()
-    {
-        float distanceToGround = 0.1f;
-        RaycastHit2D hit = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, distanceToGround, whatisGround);
-
-        return (hit.point != Vector2.zero);
-    }
-
+    #region Jump
     private void Jump()
     {
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Jump")))
-            jumpMult = 1f;
+        if (Input.GetButtonDown("Jump") && grounded)
+            currentPressTime = 0.01f;
 
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetButton("Jump")))
-            jumpMult += jumpForcePerSecond * Time.deltaTime;
-
-        if (grounded && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("Jump")))
+        if(Input.GetButton("Jump") && grounded)
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce * jumpMult));
+            currentPressTime += Time.deltaTime;
+            if (currentPressTime >= maxPressTime)
+                PerformJump();
         }
+
+        if (Input.GetButtonUp("Jump") && grounded)
+            PerformJump();
+    }
+
+    private void PerformJump()
+    {
+        float jumpForce = Mathf.Lerp(minJump, maxJump, currentPressTime / maxPressTime);
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        currentPressTime = 0f;
     }
     #endregion
+
 }

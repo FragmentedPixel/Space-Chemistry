@@ -30,12 +30,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
 
     // Jumping Parameters.
-    public float minJump = 5f;
-    public float maxJump = 6f;
-
-    // Button holding.
-    public float maxPressTime = 1f;
-    private float currentPressTime = 0f;
+    public float jumpForce;
+    public float pressJumpForce;
 
     #endregion
 
@@ -112,24 +108,18 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         if (Input.GetButtonDown("Jump") && grounded)
-            currentPressTime = 0.01f;
-
-        if(Input.GetButton("Jump") && grounded)
-        {
-            currentPressTime += Time.deltaTime;
-            if (currentPressTime >= maxPressTime)
-                PerformJump();
-        }
-
-        if (Input.GetButtonUp("Jump") && grounded)
             PerformJump();
+
+        if(! grounded && Input.GetButton("Jump"))
+        {
+            rb.AddForce(new Vector2(0f, pressJumpForce));
+        }
+        
     }
 
     private void PerformJump()
     {
-        float jumpForce = Mathf.Lerp(minJump, maxJump, currentPressTime / maxPressTime);
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        currentPressTime = 0f;
     }
     #endregion
 

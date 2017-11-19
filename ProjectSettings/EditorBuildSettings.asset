@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/Levels/Duncea.unity
     guid: 67707010f33769e4fbbcc8ed46af34c3
   - enabled: 1
-    path: Assets/_Scenes/Levels/Level 0.unity
+    path: Assets/_Scenes/Levels/Level0.unity
     guid: 3f893c7b7619ba046b7d2b6542d2df96
   - enabled: 1
     path: Assets/_Scenes/Levels/Level1.unity

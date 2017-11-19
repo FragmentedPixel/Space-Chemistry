@@ -71,14 +71,14 @@ public class PlayerContainers : MonoBehaviour
             StopCollecting();
         }
 
-        else if (Input.GetButton("Release"))
-        {
-            Relase();
-        }
-
         else if (Input.GetButton("Collect"))
         {
             Collect();
+        }
+
+        else if (Input.GetButton("Release"))
+        {
+            Relase();
         }
 
         else if(Input.GetButtonDown("Mix"))
@@ -126,7 +126,7 @@ public class PlayerContainers : MonoBehaviour
         if(canCollect)
         {
             // Play corresponding sound.
-            if (!audioS.isPlaying)
+            if (!audioS.isPlaying || audioS.clip != collectSound)
             {
                 audioS.loop = true;
                 audioS.clip = collectSound;
@@ -156,6 +156,8 @@ public class PlayerContainers : MonoBehaviour
 
     private void SelectContainer()
     {
+        collector.StopCollecting();
+
         // Stop sounds played.
         if (audioS.isPlaying)
         {

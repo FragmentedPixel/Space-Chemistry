@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public bool mirceaChoice = false;
+    public bool mirceaChoice = true;
     public float speed;
     private Transform target;
 

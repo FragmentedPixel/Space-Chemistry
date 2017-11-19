@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745084309553460}
   - component: {fileID: 20136084949584274}
+  - component: {fileID: 114537120731587766}
   m_Layer: 0
   m_Name: GameCamera
   m_TagString: Untagged
@@ -36,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4643813462689802}
   - component: {fileID: 20812341447881558}
+  - component: {fileID: 114908853679303438}
   m_Layer: 0
   m_Name: LiquidCamera
   m_TagString: Untagged
@@ -453,6 +455,32 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1635974336955110}
   m_Enabled: 1
+--- !u!114 &114537120731587766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175930016032560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirceaChoice: 1
+  speed: 3.5
+--- !u!114 &114908853679303438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484389276137334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirceaChoice: 1
+  speed: 3.5
 --- !u!124 &124481563415192588
 Behaviour:
   m_ObjectHideFlags: 1

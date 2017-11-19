@@ -1640,8 +1640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirceaChoice: 0
-  speed: 2
+  mirceaChoice: 1
+  speed: 3.5
 --- !u!1001 &495408919
 Prefab:
   m_ObjectHideFlags: 0
@@ -5576,8 +5576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirceaChoice: 0
-  speed: 2
+  mirceaChoice: 1
+  speed: 3.5
 --- !u!4 &1937660485 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4952647975234936, guid: 2ef7ad1ae0f36974b888b4519cd38d06,

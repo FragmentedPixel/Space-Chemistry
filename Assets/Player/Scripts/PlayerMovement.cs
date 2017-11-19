@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Player's feet.
     public Transform groundCheck;
+    public Transform cameraPoint;
     public LayerMask whatIsGround;
 
     // Jumping Parameters.
@@ -32,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     public float pressJumpForce;
 
     #endregion
-
     
     #region Init
     void Awake()
@@ -40,9 +40,11 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
     }
+    #endregion
 
-	void Update () 
-	{
+    #region Update
+    void Update()
+    {
         grounded = isGrounded();
 
         Jump();
@@ -57,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
         return (hit.point != Vector2.zero);
     }
+
     #endregion
 
     #region Movement

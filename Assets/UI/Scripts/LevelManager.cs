@@ -31,6 +31,11 @@ public class LevelManager : MonoBehaviour
         {
             Reload();
         }
+
+        if(Input.GetKeyDown(KeyCode.F11))
+        {
+            LoadNextLevel();
+        }
     }
 
     #region Changing Scene
@@ -57,6 +62,16 @@ public class LevelManager : MonoBehaviour
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        else
+            ChangeScene("Menu");
     }
     #endregion
 }

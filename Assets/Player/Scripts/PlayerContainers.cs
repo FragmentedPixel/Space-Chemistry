@@ -56,6 +56,14 @@ public class PlayerContainers : MonoBehaviour
         containers[currentIndex].HighLight();
     }
 
+    public void ChangeControl(bool hasControl)
+    {
+        if (hasControl == false)
+            StopCollecting();
+
+        enabled = hasControl;
+    }
+
     private void UpdateContainersPercent()
     {
         foreach (Container container in containers)

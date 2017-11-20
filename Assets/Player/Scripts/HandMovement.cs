@@ -62,5 +62,10 @@ public class HandMovement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
     }
+
+    public void ChangeControl(bool hasControl)
+    {
+        enabled = hasControl;
+    }
     #endregion
 }

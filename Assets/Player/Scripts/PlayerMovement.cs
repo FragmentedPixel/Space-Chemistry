@@ -40,6 +40,14 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
     }
+
+    public void ChangeControl(bool hasControl)
+    {
+        if (hasControl == false)
+            StopMove();
+
+        enabled = hasControl;
+    }
     #endregion
 
     #region Update

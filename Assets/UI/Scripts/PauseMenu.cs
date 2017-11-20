@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/*
+ * Responsible for handling the pause menu input & commands.
+ */
+
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     private bool isOn = false;
 
+    #region Updating the Pannel
     private void Start()
     {
         pausePanel.SetActive(false);
     }
-
 
     private void Update()
     {
@@ -45,7 +49,9 @@ public class PauseMenu : MonoBehaviour
         yield return null;
         myEventSystem.SetSelectedGameObject(myEventSystem.firstSelectedGameObject);
     }
+    #endregion
 
+    #region Button Commands
     public void Resume()
     {
         isOn = false;
@@ -63,4 +69,5 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<LevelManager>().Reload();
     }
+    #endregion
 }

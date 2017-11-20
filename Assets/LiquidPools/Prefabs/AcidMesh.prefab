@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23489245937850544}
   - component: {fileID: 33884584046570392}
   m_Layer: 0
-  m_Name: LiquidMesh
+  m_Name: AcidMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

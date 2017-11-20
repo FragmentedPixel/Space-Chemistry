@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114557429002256768}
   - component: {fileID: 253999544400326770}
   m_Layer: 8
-  m_Name: LiquidPool
+  m_Name: AcidPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -26,7 +26,7 @@ public class HandMovement : MonoBehaviour
             if (names[x].Length == 33)
             {
                 connectedToController = true;
-                Debug.LogWarning("Nu mergea inainte pentru aveai controller pus. Fuck you Mircea.");
+                
             }
         }
     }

@@ -10,7 +10,7 @@ public class HandMovement : MonoBehaviour
 {
     #region Parameters
     // Camera from where the raycast is done.
-    public Camera handCamera;
+    private Camera handCamera;
 
     // Speed of the rotation.
 	public float speed = 5f;
@@ -26,9 +26,10 @@ public class HandMovement : MonoBehaviour
             if (names[x].Length == 33)
             {
                 connectedToController = true;
-                
             }
         }
+
+        handCamera = CameraManager.cameraManager.GetHandCamera();
     }
     #endregion
 

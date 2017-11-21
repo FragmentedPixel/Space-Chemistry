@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     public float zoom = 5;
-    private float initzoom;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,10 +13,9 @@ public class CameraZoom : MonoBehaviour
         if(player != null)
         {
             FollowPlayer[] cameras = FindObjectsOfType<FollowPlayer>();
-            initzoom = cameras[0].GetComponent<Camera>().orthographicSize;
             foreach(FollowPlayer camera in cameras)
             {
-                camera.GetComponent<Camera>().orthographicSize = zoom;
+                camera.GetComponent<FollowPlayer>().SetZoom(zoom);
             }
         }
     }
@@ -31,7 +29,7 @@ public class CameraZoom : MonoBehaviour
             FollowPlayer[] cameras = FindObjectsOfType<FollowPlayer>();
             foreach (FollowPlayer camera in cameras)
             {
-                camera.GetComponent<Camera>().orthographicSize = initzoom;
+                camera.GetComponent<FollowPlayer>().RemoveZoom();
             }
         }
     }

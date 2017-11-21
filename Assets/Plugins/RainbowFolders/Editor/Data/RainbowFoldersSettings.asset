@@ -237,3 +237,8 @@ MonoBehaviour:
     IsRecursive: 0
     SmallIcon: {fileID: 2800000, guid: 5732df58fda8667418f825762e8407e9, type: 3}
     LargeIcon: {fileID: 2800000, guid: d94f8e1edd84ce64dbc22fb63e870c73, type: 3}
+  - Type: 1
+    Key: Assets/LiquidPools/Sprites
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 268edea26d8cd504da659cc71a1d8549, type: 3}
+    LargeIcon: {fileID: 2800000, guid: e69e4447e8078c441b3a955855f4f080, type: 3}

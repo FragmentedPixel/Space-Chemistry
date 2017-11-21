@@ -19,7 +19,7 @@ public class LiquidPool : MonoBehaviour {
     public GameObject splash;
 
     //material for the top of the liquid
-    public Material mat;
+    public Material baseMaterial;
 
     //gameobject for the mesh;
     public GameObject watermesh;
@@ -69,6 +69,7 @@ public class LiquidPool : MonoBehaviour {
     void OnEnable ()
     {
         SpawnWater(width, height);
+        splash.GetComponent<ParticleSystemRenderer>().material.color = poolColor;
 	}
 	
     public void SpawnWater(float width, float height)
@@ -78,7 +79,7 @@ public class LiquidPool : MonoBehaviour {
         gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, height / 2);
         gameObject.GetComponent<BoxCollider2D>().size = new Vector2(width, height);
         gameObject.GetComponent<BoxCollider2D>().usedByEffector = true;
-       // gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        //TODO: Add efector on run time.
 
         //calculate no of edges and nodes we have
         int edgecount = Mathf.RoundToInt(width) * 5; //five per unit width to give smoothness and lower the performance impact
@@ -86,8 +87,12 @@ public class LiquidPool : MonoBehaviour {
 
         //Add our line renderer and set it up;
         Body = gameObject.AddComponent<LineRenderer>();
-        Body.material = mat;
+
+        Material bodyMaterial = new Material(baseMaterial);
+        bodyMaterial.color = poolColor;
+        Body.material = bodyMaterial;
         Body.material.renderQueue = 1000;
+
         Body.positionCount = nodecount;
         Body.startWidth = 0.1f;
         Body.endWidth = 0.1f;
@@ -154,6 +159,7 @@ public class LiquidPool : MonoBehaviour {
             //Create a holder for the mesh, set it to be the manager's child
             meshobjects[i] = Instantiate(watermesh, Vector3.zero, Quaternion.identity) as GameObject;
             meshobjects[i].GetComponent<MeshFilter>().mesh = meshes[i];
+            meshobjects[i].GetComponent<MeshRenderer>().material = bodyMaterial;
             meshobjects[i].transform.parent = transform;
 
             //Create our colliders, set them be our child.
@@ -179,7 +185,6 @@ public class LiquidPool : MonoBehaviour {
 
             if(deadly)
             {
-
                 Death death = GetComponent<Death>();
                 colliders[i].AddComponent<Death>();
             }

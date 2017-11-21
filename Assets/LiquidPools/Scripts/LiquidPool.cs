@@ -27,6 +27,8 @@ public class LiquidPool : MonoBehaviour {
     public float height;
     public float width;
     public Color poolColor;
+
+    public bool deadly = false;
     
     #endregion
 
@@ -175,8 +177,12 @@ public class LiquidPool : MonoBehaviour {
 
             newReactant.reactantSubstance = reactant.reactantSubstance;
 
-            Death death = GetComponent<Death>();
-            colliders[i].AddComponent<Death>();
+            if(deadly)
+            {
+
+                Death death = GetComponent<Death>();
+                colliders[i].AddComponent<Death>();
+            }
         }
     }
 

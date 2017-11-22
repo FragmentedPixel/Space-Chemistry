@@ -10,7 +10,7 @@ public class LevelStarter : MonoBehaviour
     public GameObject particleManagerPrefab;
     public GameObject levelManangerPrefab;
 
-    private void Start()
+    private void Awake()
     {
         Instantiate(playerPrefab, transform.position, transform.rotation, transform);
         Instantiate(cameraPrefab, transform.position, transform.rotation, transform);
@@ -18,6 +18,4 @@ public class LevelStarter : MonoBehaviour
         Instantiate(particleManagerPrefab, transform);
         Instantiate(levelManangerPrefab, transform);
     }
-
-
 }

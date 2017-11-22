@@ -69,7 +69,7 @@ public class LiquidPool : MonoBehaviour {
     void OnEnable ()
     {
         SpawnWater(width, height);
-        splash.GetComponent<ParticleSystemRenderer>().material.color = poolColor;
+        splash.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolColor;
 	}
 	
     public void SpawnWater(float width, float height)
@@ -96,6 +96,8 @@ public class LiquidPool : MonoBehaviour {
         Body.positionCount = nodecount;
         Body.startWidth = 0.1f;
         Body.endWidth = 0.1f;
+
+        
 
         //Declare our physics arrays
         xpositions = new float[nodecount];

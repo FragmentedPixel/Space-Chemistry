@@ -12,6 +12,7 @@ public class ProgressiveBarrel : MonoBehaviour
 
     private ContainersManager containersManager;
     private AudioSource audioS;
+    private bool used = false;
 
     private void Start()
     {
@@ -25,8 +26,9 @@ public class ProgressiveBarrel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-        if(player != null)
+        if(player != null && used == false)
         {
+            used = true;
             containersManager.UnLockNextBarrel();
             audioS.PlayOneShot(unlockSound);
         }

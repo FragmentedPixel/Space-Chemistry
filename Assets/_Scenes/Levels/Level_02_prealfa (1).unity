@@ -109,6 +109,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &3631526
 Prefab:
@@ -748,6 +750,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -763,6 +766,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -7419,7 +7423,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 88.57
+      value: -68.9
       objectReference: {fileID: 0}
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -15959,12 +15963,12 @@ Prefab:
     - target: {fileID: 224301010482460240, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 224301010482460240, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 224367106305832846, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
@@ -15979,12 +15983,12 @@ Prefab:
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 650.5
       objectReference: {fileID: 0}
     - target: {fileID: 224662992324794696, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 305.42935
       objectReference: {fileID: 0}
     - target: {fileID: 224749185208115532, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
@@ -15994,7 +15998,7 @@ Prefab:
     - target: {fileID: 224657273629484016, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 224301010482460240, guid: 65a09024e56e84944a5ff07c334e8be7,
         type: 2}
@@ -16220,6 +16224,41 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224657273629484016, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 224196161110887648, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224196161110887648, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 415.4343
+      objectReference: {fileID: 0}
+    - target: {fileID: 224042558235776022, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224042558235776022, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 415.4343
+      objectReference: {fileID: 0}
+    - target: {fileID: 224527781533323192, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224527781533323192, guid: 65a09024e56e84944a5ff07c334e8be7,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 415.4343
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65a09024e56e84944a5ff07c334e8be7, type: 2}

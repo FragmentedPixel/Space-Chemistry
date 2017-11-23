@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4298851886096870}
   - component: {fileID: 61991953532004774}
+  - component: {fileID: 50487105728827312}
   m_Layer: 0
   m_Name: Water Pipe
   m_TagString: Untagged
@@ -100,6 +101,26 @@ Transform:
   m_Father: {fileID: 4298851886096870}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50487105728827312
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1011202342840226}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61991953532004774
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -140,6 +161,7 @@ MonoBehaviour:
   randomForce: 10
   particleForce: {x: 200, y: 0, z: 0}
   particleSubstance: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
+  persistentParticle: 0
 --- !u!212 &212723788684440654
 SpriteRenderer:
   m_ObjectHideFlags: 1

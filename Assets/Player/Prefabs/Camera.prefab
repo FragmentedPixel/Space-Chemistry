@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 3
   zoomSpeed: 3
 --- !u!114 &114537120731587766
 MonoBehaviour:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 3
   zoomSpeed: 3
 --- !u!114 &114908853679303438
 MonoBehaviour:
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 3
   zoomSpeed: 3
 --- !u!114 &114980663627762390
 MonoBehaviour:

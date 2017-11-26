@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public float movementSpeed;
     public float zoomSpeed;
+
     private Transform target;
     private Transform player;
 
@@ -22,8 +23,8 @@ public class FollowPlayer : MonoBehaviour
 
     private void Update()
     {
-        //TODO: Boundary when the player reaches the camera.
-        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, -10f), Time.deltaTime);
+        //TODO: Solve problem when player is moving backwards.
+        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, -10f), Time.deltaTime * movementSpeed);
     }
 
     public void SetZoom(float newZoom)
@@ -49,5 +50,24 @@ public class FollowPlayer : MonoBehaviour
 
         yield break;
     }
+
+    public void FocusOnPlayer()
+    {
+        Vector3 focusPosition = player.position;
+        focusPosition.z = -10f;
+        transform.position = focusPosition;
+    }
+
+    public bool isCameraInFrontOf(Vector3 testPosition)
+    {
+        if (transform.position.x > testPosition.x)
+            return true;
+        if (transform.position.y > testPosition.y)
+            return true;
+
+        return false;
+    }
+
+
 
 }

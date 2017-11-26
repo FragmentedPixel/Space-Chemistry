@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4032382737581988}
   - component: {fileID: 114451598247866074}
   - component: {fileID: 61318626669784062}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SubstanceOctimizator
   m_TagString: Untagged
   m_Icon: {fileID: 0}

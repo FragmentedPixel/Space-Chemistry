@@ -15,7 +15,7 @@ public class SubstancesOptimizator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Generator generator = collision.gameObject.GetComponent<Generator>();
+        Generator generator = collision.gameObject.GetComponentInChildren<Generator>();
         if(generator != null)
         {
             generator.enabled = true;

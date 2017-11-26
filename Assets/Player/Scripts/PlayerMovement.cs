@@ -63,9 +63,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded()
     {
         float distanceToGround = 0.2f;
-        RaycastHit2D hit = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, distanceToGround, whatIsGround);
 
-        return (hit.point != Vector2.zero);
+        bool isPlayerOnGround = Physics2D.OverlapCircle(groundCheck.position, distanceToGround, whatIsGround);
+
+        return isPlayerOnGround;
     }
 
     #endregion

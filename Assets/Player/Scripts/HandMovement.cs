@@ -46,13 +46,10 @@ public class HandMovement : MonoBehaviour
         else
         {
             dir = handCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            
         }
 
-        if(dir != Vector2.zero)
-        {
-            MoveHand(dir);
-        }
-        
+        MoveHand(dir);    
     }
     
     private void MoveHand(Vector2 direction)

@@ -15,17 +15,11 @@ public class CameraManager : MonoBehaviour
     private void Awake()
     {
         cameraManager = this;
-
         player = FindObjectOfType<PlayerHealth>().transform;
     }
 
     public Camera GetHandCamera()
     {
         return handCamera;
-    }
-
-    private void Update()
-    {
-        handCamera.transform.position = player.position;
     }
 }

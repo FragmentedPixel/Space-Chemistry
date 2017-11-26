@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement()
     {
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
-        float movement = Input.GetAxisRaw("Horizontal");
+        float movement = Input.GetAxis("Horizontal");
 
         // Get current speed of the rb.
         float vel = Mathf.Abs(rb.velocity.x);
@@ -107,8 +107,13 @@ public class PlayerMovement : MonoBehaviour
 
         // update the player's components.
         anim.SetBool(walkingHash, true);
+
+        //TODO: Discus this lepring options
+        //float currentSpeed = Mathf.Lerp(0, maxSpeed, Mathf.Abs(Input.GetAxis("Horizontal")));
+        //float forceX = right ? currentSpeed : -currentSpeed;
+
         float forceX = right ? speed : -speed;
-        
+
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
     }
 

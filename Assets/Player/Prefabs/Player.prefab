@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dcf1d71fe398b4bba3ec1abfca1738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 1
   maxSpeed: 4
   groundCheck: {fileID: 4237290739898196}
   cameraPoint: {fileID: 4369828404441736}

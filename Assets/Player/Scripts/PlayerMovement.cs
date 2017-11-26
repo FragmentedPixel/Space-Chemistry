@@ -9,11 +9,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     #region Variabiles
-    // The movement speed of the player.
-    public float speed = 10f;
 
-    // Maximum speed of the player.
-    public float maxVelocity = 4f;
+    // Movement parameters.
+    [Header("Movement")]
+    public float speed = 10f;
+    public float maxSpeed = 4f;
     
     // Components.
     private Rigidbody2D rb;
@@ -24,16 +24,20 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded = false;
 
     // Player's feet.
+    [Header("Grounded")]
     public Transform groundCheck;
     public Transform cameraPoint;
     public LayerMask whatIsGround;
 
+
     // Jumping Parameters.
+    [Header("Jumping")]
     public float jumpForce;
     public float pressJumpForce;
+    public float gravityBonus = 9.81f;
 
     #endregion
-    
+
     #region Init
     void Awake()
     {
@@ -55,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = isGrounded();
 
-        Jump();
+        HandleJump();
 
         HandleMovement();
     }
@@ -87,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Update the player rigidbody according to the user input.
-        else if (vel < maxVelocity)
+        else if (vel < maxSpeed)
         {
             bool movingRight = (movement > 0);
             Move(movingRight);
@@ -116,21 +120,30 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Jump
-    private void Jump()
+    private void HandleJump()
     {
         if (Input.GetButtonDown("Jump") && grounded)
-            PerformJump();
-
-        if(! grounded && Input.GetButton("Jump"))
         {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (! grounded && Input.GetButton("Jump"))
+        { 
             rb.AddForce(new Vector2(0f, pressJumpForce));
+        }
+
+        if(!grounded)
+        {
+            ApplayGravity();
         }
         
     }
 
-    private void PerformJump()
+    private void ApplayGravity()
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        Vector2 currentVel = rb.velocity;
+        currentVel.y -= gravityBonus * Time.deltaTime;
+        rb.velocity = currentVel;
     }
     #endregion
 

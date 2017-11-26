@@ -829,14 +829,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  maxVelocity: 4
+  maxSpeed: 4
   groundCheck: {fileID: 4237290739898196}
   cameraPoint: {fileID: 4369828404441736}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 9216
-  jumpForce: 6
-  pressJumpForce: 4
+  jumpForce: 8
+  pressJumpForce: 12
+  gravityBonus: 9.81
 --- !u!114 &114924839462849950
 MonoBehaviour:
   m_ObjectHideFlags: 1

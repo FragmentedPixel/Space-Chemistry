@@ -84,14 +84,18 @@ public class PlayerMovement : MonoBehaviour
         // Get current speed of the rb.
         float vel = Mathf.Abs(rb.velocity.x);
 
+        // Slow down if player is going too fast.
+        if(vel > maxSpeed)
+        {
+            SlowDownMovement();
+        }
         // Stop if there is no movement input.
-        if (movement == 0)
+        else if(movement == 0)
         {
             StopMove();
         }
-
-        // Update the player rigidbody according to the user input.
-        else if (vel < maxSpeed)
+        else
+        // Update player's rb according to user input.
         {
             bool movingRight = (movement > 0);
             Move(movingRight);
@@ -107,12 +111,9 @@ public class PlayerMovement : MonoBehaviour
 
         // update the player's components.
         anim.SetBool(walkingHash, true);
-
-        //TODO: Discus this lepring options
-        //float currentSpeed = Mathf.Lerp(0, maxSpeed, Mathf.Abs(Input.GetAxis("Horizontal")));
-        //float forceX = right ? currentSpeed : -currentSpeed;
-
-        float forceX = right ? speed : -speed;
+        
+        float currentSpeed = Mathf.Lerp(0, maxSpeed, Mathf.Abs(Input.GetAxis("Horizontal")));
+        float forceX = right ? currentSpeed : -currentSpeed;
 
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
     }
@@ -121,6 +122,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         anim.SetBool(walkingHash, false);
+    }
+
+    private void SlowDownMovement()
+    {
+        float slowDownTime = 1.5f;
+        float speedX = Mathf.Lerp(rb.velocity.x, 0f, slowDownTime * Time.deltaTime);
+        rb.velocity = new Vector2(speedX, rb.velocity.y);
     }
     #endregion
 

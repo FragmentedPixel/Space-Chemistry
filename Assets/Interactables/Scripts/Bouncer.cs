@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Bouncer : MonoBehaviour
 {
-    public float bounceForce;
+    public float bouncerForce = 25f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +17,7 @@ public class Bouncer : MonoBehaviour
         if (player)
         {
             Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-            playerRb.velocity = - playerRb.velocity.normalized * bounceForce;
+            playerRb.AddForce(-playerRb.velocity.normalized * bouncerForce, ForceMode2D.Impulse);
         }
     }
 }

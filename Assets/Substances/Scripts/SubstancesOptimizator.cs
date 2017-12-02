@@ -6,8 +6,8 @@ public class SubstancesOptimizator : MonoBehaviour
 {
     private void Awake()
     {
-        Generator[] generators = FindObjectsOfType<Generator>();
-        foreach(Generator gen in generators)
+        SubstanceGenerator[] generators = FindObjectsOfType<SubstanceGenerator>();
+        foreach(SubstanceGenerator gen in generators)
         {
             gen.enabled = false;
         }
@@ -15,19 +15,21 @@ public class SubstancesOptimizator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Generator generator = collision.gameObject.GetComponentInChildren<Generator>();
-        if(generator != null)
+        SubstanceGenerator[] generators = collision.gameObject.GetComponentsInChildren<SubstanceGenerator>();
+        if(generators.Length != 0)
         {
-            generator.enabled = true;
+            foreach(SubstanceGenerator generator in generators)
+                generator.enabled = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Generator generator = collision.gameObject.GetComponentInChildren<Generator>();
-        if(generator != null)
+        SubstanceGenerator[] generators = collision.gameObject.GetComponentsInChildren<SubstanceGenerator>();
+        if (generators.Length != 0)
         {
-            generator.enabled = false;
+            foreach (SubstanceGenerator generator in generators)
+                generator.enabled = false;
         }
     }
 }

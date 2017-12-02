@@ -9,57 +9,40 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     #region Parameters
-    // Interval between particles spawns.
-    public float spawnInterval = 0.025f;
+    // Interval between particles releases.
+    public float releaseInterval = 0.025f;
 
-    //The last spawn time.
-    private float spawnTimer = 0f;
+    //The last release time.
+    private float nextRelease = 0f;
 
-	// Magnitude of the random force applied at the spawn.
-	public float randomForce;
-    
     // Initial Force of the particle at spawn.
-    public Vector3 particleForce;
-
-    // State of the particle generated.
-    public sSubstance particleSubstance;
-
-    // Should the particle persist?
-    public bool persistentParticle;
+    public float relaseForce;
     #endregion
 
-    #region Update
-    private void Update()
+    #region Release
+    public Particle CreateSubstance(sSubstance substanceToRelase)
     {
-        if (spawnTimer >= spawnInterval && particleSubstance != null)
+        if (nextRelease <= Time.time && substanceToRelase != null)
         {
             // It is time to spawn a new particle.
 
             // Create the new particle object.
-            Particle newParticle = ParticlePool.instance.RequestParticle(particleSubstance);
-
-			Vector3 randomVector = randomForce * Random.onUnitSphere;
+            Particle newParticle = ParticlePool.instance.RequestParticle(substanceToRelase);
 
             // Update particle parameters.
-			newParticle.rb.AddForce(particleForce + randomVector);
             newParticle.transform.position = transform.position;
+            newParticle.ChangeSubstanceState(substanceToRelase);
+            newParticle.rb.AddForce(transform.right * relaseForce);
 
-            // Make particle persist.
-            if(persistentParticle)
-                newParticle.MakeInfiniteLifeTime();
+            // Set the timer.
+            nextRelease = Time.time + releaseInterval;
 
-            // Reset timer.
-            spawnTimer = 0f; 	
+            return newParticle;
         }
         else
         {
-            spawnTimer += Time.deltaTime;
+            return null;
         }
-    }
-
-    public void SetSubstance(sSubstance newSubst)
-    {
-        particleSubstance = newSubst;
     }
     #endregion
 }

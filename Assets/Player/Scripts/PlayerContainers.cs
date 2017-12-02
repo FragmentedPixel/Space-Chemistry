@@ -119,7 +119,7 @@ public class PlayerContainers : MonoBehaviour
         // Release a particle of the substance.
         if (particleSubstanceToRelease != null)
         {
-            generator.Relase(particleSubstanceToRelease);
+            generator.Release(particleSubstanceToRelease);
         }
     }
 

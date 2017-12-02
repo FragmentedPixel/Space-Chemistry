@@ -630,7 +630,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15, y: 8}
+  m_Size: {x: 25, y: 16}
   m_EdgeRadius: 0
 --- !u!70 &70077327695791148
 CapsuleCollider2D:
@@ -828,8 +828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dcf1d71fe398b4bba3ec1abfca1738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  startSpeed: 1
   maxSpeed: 4
+  acceleration: 1
   groundCheck: {fileID: 4237290739898196}
   cameraPoint: {fileID: 4369828404441736}
   whatIsGround:

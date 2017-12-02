@@ -8,11 +8,11 @@ public class Duplicator : MonoBehaviour
 
     private bool alreadySet = false;
 
-    private Generator emitter;
+    private SubstanceGenerator emitter;
 
     private void Start()
     {
-        emitter = GetComponentInChildren<Generator>();
+        emitter = GetComponentInChildren<SubstanceGenerator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

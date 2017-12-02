@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SubstanceChanger : MonoBehaviour {
-    private Generator generatorSubstance;
+    private SubstanceGenerator generatorSubstance;
     public sSubstance changedSubstance;
     public GameObject gameObjectToBeDestroyed;
 
 	// Use this for initialization
 	void Start () {
-        generatorSubstance = gameObject.GetComponent<Generator>();	
+        generatorSubstance = gameObject.GetComponent<SubstanceGenerator>();	
 	}
 	
 	// Update is called once per frame

@@ -11,7 +11,7 @@ public class Pipe : MonoBehaviour
     // Set's the sprite renderer color to the generator specific color.
 	private void Start ()
     {
-        Generator particleGenerator = GetComponentInChildren<Generator>();
+        SubstanceGenerator particleGenerator = GetComponentInChildren<SubstanceGenerator>();
         SpriteRenderer rend = GetComponentInChildren<SpriteRenderer>();
 
         Color substanceColor = particleGenerator.particleSubstance.particleColor;

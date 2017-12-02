@@ -21,13 +21,15 @@ public class FiniteBarrel : MonoBehaviour
     private void Start()
     {
         // Update the UI according to the substance inside the container.
-        fillImage.color = particleSubstance.particleColor;
+        if(fillImage != null)
+            fillImage.color = particleSubstance.particleColor;
     }
 
     private void Update()
     {
         // Update the UI each frame to represent the substance inside.
-        fillImage.fillAmount = (float) currentParticles / totalParticles;
+        if(fillImage != null)
+            fillImage.fillAmount = (float) currentParticles / totalParticles;
     }
 
     public sSubstance CheckParticle()

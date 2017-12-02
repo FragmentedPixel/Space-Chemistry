@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour
 
     // Movement parameters.
     [Header("Movement")]
-    public float speed = 10f;
+    public float startSpeed = 1f;
     public float maxSpeed = 4f;
+    public float acceleration = 1f;
+    private float currentAcceleration;
     
     // Components.
     private Rigidbody2D rb;
@@ -111,8 +113,9 @@ public class PlayerMovement : MonoBehaviour
 
         // update the player's components.
         anim.SetBool(walkingHash, true);
-        
-        float currentSpeed = Mathf.Lerp(0, maxSpeed, Mathf.Abs(Input.GetAxis("Horizontal")));
+        currentAcceleration += Time.deltaTime;
+
+        float currentSpeed = Mathf.Lerp(startSpeed, maxSpeed, currentAcceleration / acceleration);
         float forceX = right ? currentSpeed : -currentSpeed;
 
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
@@ -122,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         anim.SetBool(walkingHash, false);
+        currentAcceleration = 0f;
     }
 
     private void SlowDownMovement()

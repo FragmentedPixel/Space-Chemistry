@@ -21,4 +21,13 @@ public class SubstancesOptimizator : MonoBehaviour
             generator.enabled = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Generator generator = collision.gameObject.GetComponentInChildren<Generator>();
+        if(generator != null)
+        {
+            generator.enabled = false;
+        }
+    }
 }

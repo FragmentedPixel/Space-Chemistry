@@ -20,6 +20,9 @@ public class HandCollector : MonoBehaviour
 
     // The trigger for entering the collector.
     public Collider2D particleCollector;
+
+    // The particle system emitted when collectiong.
+    public ParticleSystem particleFeedback;
     #endregion
 
     #region Collecting
@@ -53,6 +56,8 @@ public class HandCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        bool success = false;
+
         if (collecting == false)
             return;
 
@@ -63,7 +68,7 @@ public class HandCollector : MonoBehaviour
 
             if (particleInsideBarrel != null)
             {
-                bool success = containerToFill.AddParticule(particleInsideBarrel);
+                success = containerToFill.AddParticule(particleInsideBarrel);
                 if (success)
                     barrel.GetParticle();
                 else
@@ -81,7 +86,7 @@ public class HandCollector : MonoBehaviour
         if (collectedParticle !=  null)
         {
             // Add the substance to the current container sent.
-            bool success = containerToFill.AddParticule(collectedParticle.currentSubstance);
+            success = containerToFill.AddParticule(collectedParticle.currentSubstance);
 
             // Destory particle if collected.
             if (success)
@@ -90,6 +95,9 @@ public class HandCollector : MonoBehaviour
             }
 
         }
+
+        if (success)
+            particleFeedback.Play();
     }
     #endregion
 }

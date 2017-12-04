@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: 5d8f83770c5f35c44967deb827489c8d
+timeCreated: 1512393665
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: robonew_0
+    21300002: robonew_1
+    21300004: robonew_2
+    21300006: robonew_3
+    21300008: robonew_4
+    21300010: robonew_5
+    21300012: robonew_6
+    21300014: robonew_7
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: robonew_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1152
+        width: 479
+        height: 872
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 203.5, y: 435}
+        - {x: 196.5, y: 436}
+        - {x: -149.5, y: 436}
+        - {x: -239.5, y: 327}
+        - {x: -239.5, y: 55}
+        - {x: -14.5, y: -436}
+        - {x: 74.5, y: -436}
+        - {x: 167.5, y: -404}
+        - {x: 239.5, y: 59}
+        - {x: 239.5, y: 314}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_1
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1235
+        width: 127
+        height: 707
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.5, y: 353.5}
+        - {x: -63.5, y: -353.5}
+        - {x: 63.5, y: -353.5}
+        - {x: 63.5, y: 353.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_2
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 1531
+        width: 892
+        height: 482
+      alignment: 9
+      pivot: {x: 0.15036643, y: 0.71089375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -212.5, y: 238.5}
+        - {x: -382.5, y: 238.5}
+        - {x: -430.5, y: 186.5}
+        - {x: -441.5, y: 147.5}
+        - {x: -441.5, y: 34.5}
+        - {x: -342.24805, y: -50.42688}
+        - {x: 209.67883, y: -238.5}
+        - {x: 424.5, y: -238.5}
+        - {x: 441.5, y: -184.5}
+        - {x: 438.32117, y: -52.52014}
+        - {x: 51.5, y: 130.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_3
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 1497
+        width: 136
+        height: 139
+      alignment: 9
+      pivot: {x: 0.14291382, y: 0.5249559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 69.5}
+        - {x: -68, y: 47.5}
+        - {x: -68, y: -26.5}
+        - {x: -31, y: -63.5}
+        - {x: -21, y: -69.5}
+        - {x: 45, y: -69.5}
+        - {x: 68, y: -51.5}
+        - {x: 68, y: 36.5}
+        - {x: 43, y: 69.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 532
+        width: 628
+        height: 430
+      alignment: 9
+      pivot: {x: 0.46685824, y: 0.16925077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 169, y: 215}
+        - {x: 81, y: 215}
+        - {x: -279, y: 114}
+        - {x: -300, y: 87}
+        - {x: -293, y: 40}
+        - {x: -314, y: -41}
+        - {x: -314, y: -149}
+        - {x: -286, y: -209}
+        - {x: -62, y: -215}
+        - {x: 261, y: -215}
+        - {x: 314, y: -147}
+        - {x: 314, y: 76}
+        - {x: 311, y: 101}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_5
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 565
+        width: 885
+        height: 847
+      alignment: 9
+      pivot: {x: 0.5039196, y: 0.037215807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -355.5, y: 423.5}
+        - {x: -442.5, y: 321.5}
+        - {x: -442.5, y: -194.5}
+        - {x: -423.5, y: -320.5}
+        - {x: -219.5, y: -423.5}
+        - {x: 151.5, y: -423.5}
+        - {x: 442.5, y: -375.5}
+        - {x: 442.5, y: 357.5}
+        - {x: 242.5, y: 423.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_6
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 166
+        width: 193
+        height: 193
+      alignment: 9
+      pivot: {x: 0.50907165, y: 0.50502163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -96.5, y: 96.5}
+        - {x: -96.5, y: -96.5}
+        - {x: 96.5, y: -96.5}
+        - {x: 96.5, y: 96.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: robonew_7
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 66
+        width: 819
+        height: 295
+      alignment: 9
+      pivot: {x: 0.50847083, y: 0.9703508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 218.5, y: 147.5}
+        - {x: -166.5, y: 147.5}
+        - {x: -409.5, y: 55.5}
+        - {x: -409.5, y: -147.5}
+        - {x: 402.5, y: -147.5}
+        - {x: 409.5, y: -140.5}
+        - {x: 409.5, y: -57.5}
+        - {x: 395.5, y: -8.5}
+      - - {x: 405.5, y: -129.5}
+        - {x: 405.5, y: -131.5}
+        - {x: 407.5, y: -133.5}
+        - {x: 409.5, y: -133.5}
+        - {x: 409.5, y: -126.5}
+        - {x: 408.5, y: -126.5}
+      - - {x: -409.5, y: -124.5}
+        - {x: -409.5, y: -131.5}
+        - {x: -408.5, y: -132.5}
+        - {x: -405.5, y: -132.5}
+        - {x: -404.5, y: -130.5}
+        - {x: -404.5, y: -125.5}
+        - {x: -406.5, y: -124.5}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

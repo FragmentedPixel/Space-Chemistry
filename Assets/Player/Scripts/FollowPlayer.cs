@@ -4,27 +4,60 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
+    [Header("Movement")]
     public float movementSpeed;
+    public float minMovement = 3f;
+    public float stopThreshold = .05f;
+    public float countingThreshold = .1f;
+
+    [Header("Zooming")]
     public float zoomSpeed;
-
-    private Transform target;
-    private Transform player;
-
     private float initZoom;
+    
+    private Transform player;
+    private Transform target;
+    private Vector3 lastPlayerPosition;
+    private float currentMovement = 0f;
+
 
     private void Start()
     {
         PlayerMovement playerMov = FindObjectOfType<PlayerMovement>();
         target = playerMov.cameraPoint;
+
         player = playerMov.transform;
+        lastPlayerPosition = player.position;
+
+        currentMovement = minMovement;
 
         initZoom = GetComponent<Camera>().orthographicSize;
     }
 
     private void Update()
     {
-        //TODO: Solve problem when player is moving backwards.
-        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, -10f), Time.deltaTime * movementSpeed);
+        // Check if the player moved enough to move
+        float playerMovementDiffernece = (player.position - lastPlayerPosition).magnitude;
+        lastPlayerPosition = player.position;
+        currentMovement += Mathf.Abs(playerMovementDiffernece);
+
+        if(currentMovement > minMovement)
+        {
+            // Camera should move
+            Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -10f);
+
+            // Check if the camera hasn't reached the destination.
+            float distanceLeft = (transform.position - targetPosition).magnitude;
+            if (distanceLeft > stopThreshold)
+            {
+                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * movementSpeed);
+            }
+
+            // Reset the current movement if the camera is close enough.
+            else if(distanceLeft < countingThreshold)
+            {
+                currentMovement = 0f;
+            }
+        }
     }
 
     public void SetZoom(float newZoom)
@@ -50,24 +83,4 @@ public class FollowPlayer : MonoBehaviour
 
         yield break;
     }
-
-    public void FocusOnPlayer()
-    {
-        Vector3 focusPosition = player.position;
-        focusPosition.z = -10f;
-        transform.position = focusPosition;
-    }
-
-    public bool isCameraInFrontOf(Vector3 testPosition)
-    {
-        if (transform.position.x > testPosition.x)
-            return true;
-        if (transform.position.y > testPosition.y)
-            return true;
-
-        return false;
-    }
-
-
-
 }

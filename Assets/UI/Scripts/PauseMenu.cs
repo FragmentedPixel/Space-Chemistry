@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     #region Updating the Pannel
     private void Start()
     {
+        PopUpManager.instance.RequestPopUp("merge");
         pausePanel.SetActive(false);
     }
 
@@ -31,7 +32,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void SetPlayerControl(bool hasControl)
+    public void SetPlayerControl(bool hasControl)
     {
         PlayerMovement playerMov = FindObjectOfType<PlayerMovement>();
         PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();

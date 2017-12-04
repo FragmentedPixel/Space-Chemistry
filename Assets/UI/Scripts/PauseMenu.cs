@@ -15,7 +15,6 @@ public class PauseMenu : MonoBehaviour
     #region Updating the Pannel
     private void Start()
     {
-        PopUpManager.instance.RequestPopUp("merge");
         pausePanel.SetActive(false);
     }
 

@@ -44,9 +44,11 @@ public class HandMovement : MonoBehaviour
         }
 
         else
-        {
-            dir = handCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            
+        {   
+            Ray ray = handCamera.ScreenPointToRay(Input.mousePosition);
+            Vector3 result = ray.GetPoint((transform.position.z - handCamera.transform.position.z) / ray.direction.z);
+
+            dir = result - transform.position;
         }
 
         MoveHand(dir);    

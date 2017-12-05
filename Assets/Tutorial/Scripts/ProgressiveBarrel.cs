@@ -33,4 +33,13 @@ public class ProgressiveBarrel : MonoBehaviour
             audioS.PlayOneShot(unlockSound);
         }
     }
+
+    private void Update()
+    {
+        if(used)
+        {
+            foreach (Transform t in transform)
+                Destroy(t.gameObject);
+        }
+    }
 }

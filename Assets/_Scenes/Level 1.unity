@@ -3589,7 +3589,7 @@ Prefab:
     - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
         type: 2}
       propertyPath: textToDisplay
-      value: 
+      value: Hi Andrei! This is our game! Much fun, such wow! Have fun!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af19953b2935c4b4dbaa786466e96c2e, type: 2}

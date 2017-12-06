@@ -13,9 +13,9 @@ public class LevelStarter : MonoBehaviour
     private void Awake()
     {
         Instantiate(playerPrefab, transform.position, transform.rotation, transform);
-        Instantiate(cameraPrefab, transform.position, transform.rotation, transform);
         Instantiate(UIprefab, transform);
         Instantiate(particleManagerPrefab, transform);
         Instantiate(levelManangerPrefab, transform);
+        Instantiate(cameraPrefab, transform.position, transform.rotation, transform);
     }
 }

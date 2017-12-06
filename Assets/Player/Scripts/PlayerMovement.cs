@@ -108,7 +108,9 @@ public class PlayerMovement : MonoBehaviour
     {
         // Make the player face the movement direction.
         Vector3 temp = anim.transform.localScale;
-        temp.x = right ? 0.5f :  -0.5f;
+        float xValue = Mathf.Abs(temp.x);
+
+        temp.x = right ? xValue : -xValue;  
         anim.transform.localScale = temp;
 
         // update the player's components.

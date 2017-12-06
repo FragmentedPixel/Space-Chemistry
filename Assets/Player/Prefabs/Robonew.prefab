@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4694699972856290}
   - component: {fileID: 50652830542242924}
   - component: {fileID: 70537674649355028}
-  - component: {fileID: 114213999957393870}
+  - component: {fileID: 114044678796090900}
   m_Layer: 0
   m_Name: Robonew
   m_TagString: Untagged
@@ -425,7 +425,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346638981971894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.57, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.923, y: -0.04, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4384512417923054}
@@ -453,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976949891954430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.06883, y: 0.18, z: -0.006843362}
+  m_LocalPosition: {x: -0.39616823, y: 0.18000004, z: -0.006843362}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4715223349332358}
@@ -609,7 +609,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692331332144542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.385008, y: -6.415, z: -0.006843362}
+  m_LocalPosition: {x: -0.07999182, y: -6.415, z: -0.006843362}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4901382639596394}
@@ -725,19 +725,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114113754223081042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509930400684400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c74f8247887dc1488ea2e317f395928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
---- !u!114 &114213999957393870
+--- !u!114 &114044678796090900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -745,7 +733,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721168421789584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79dcf1d71fe398b4bba3ec1abfca1738, type: 3}
+  m_Script: {fileID: 11500000, guid: 895d0bee1424bed419f4a2ba9cb8b7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 1
@@ -759,6 +747,18 @@ MonoBehaviour:
   jumpForce: 0
   pressJumpForce: 0
   gravityBonus: 9.81
+--- !u!114 &114113754223081042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509930400684400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c74f8247887dc1488ea2e317f395928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!114 &114221315605903088
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -51,7 +51,15 @@ public class HandMovement : MonoBehaviour
             dir = result - transform.position;
         }
 
-        MoveHand(dir);    
+        if (transform.parent.parent.localScale.x > 0)
+        {
+            MoveHand(dir);
+        }
+        else if (transform.parent.parent.localScale.x < 0)
+        {
+            MoveHand(-dir);
+        }
+            
     }
     
     private void MoveHand(Vector2 direction)

@@ -15,26 +15,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/Menu.unity
     guid: 2809a742c70d7944fb530325f0aad9c6
   - enabled: 1
-    path: Assets/_Scenes/Levels/LevelTudor.unity
+    path: Assets/_Scenes/Level 1.unity
     guid: 91fc880cdbee5b641b6a59ea75c9a372
   - enabled: 1
-    path: Assets/_Scenes/Levels/Level2_b.unity
-    guid: aba9cef0b7a055d4b9f6736d745272a3
-  - enabled: 1
-    path: Assets/_Scenes/Levels/Level_02_prealfa (1).unity
-    guid: 42f273a3b4e1a0f4c9d60d7ef3d49be3
-  - enabled: 1
-    path: Assets/_Scenes/Levels/Duncea.unity
-    guid: 67707010f33769e4fbbcc8ed46af34c3
-  - enabled: 1
-    path: Assets/_Scenes/Levels/Level0.unity
-    guid: 3f893c7b7619ba046b7d2b6542d2df96
-  - enabled: 1
-    path: Assets/_Scenes/Levels/Level1.unity
-    guid: 151a2ea23e7925b469195ed391fc7237
-  - enabled: 1
-    path: Assets/_Scenes/Levels/Level2.unity
-    guid: f7ab6d35c819f384ea1ab51ea2c6fc08
-  - enabled: 1
-    path: Assets/_Scenes/Levels/Level3.unity
-    guid: f9cae1e432d26e841adda51e9ac7fa6a
+    path: Assets/_Scenes/Level 2.unity
+    guid: e77c2dc8bbde2ff42b13df12e758d5c8

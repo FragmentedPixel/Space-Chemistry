@@ -13,6 +13,11 @@ public class SubstancesOptimizator : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        transform.localPosition = Vector3.zero;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SubstanceGenerator[] generators = collision.gameObject.GetComponentsInChildren<SubstanceGenerator>();

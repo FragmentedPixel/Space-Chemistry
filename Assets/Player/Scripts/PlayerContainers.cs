@@ -99,6 +99,7 @@ public class PlayerContainers : MonoBehaviour
             SelectContainer();
         }
 
+
         UpdateContainersPercent();
 
     }
@@ -166,6 +167,7 @@ public class PlayerContainers : MonoBehaviour
     {
         collector.StopCollecting();
 
+
         // Stop sounds played.
         if (audioS.isPlaying)
         {
@@ -213,6 +215,8 @@ public class PlayerContainers : MonoBehaviour
             currentIndex = input;
             containers[currentIndex].HighLight();
         }
+
+        containers[currentIndex].OnStay();
     }
 
     private void Mix()

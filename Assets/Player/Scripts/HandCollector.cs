@@ -10,7 +10,7 @@ public class HandCollector : MonoBehaviour
 {
     #region Variabiles
     // Is the player collecting now ?
-    private bool collecting = false;
+    [HideInInspector] public bool collecting = false;
 
     // The currently filled container.
     private Container containerToFill;
@@ -57,6 +57,7 @@ public class HandCollector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bool success = false;
+        Color collectedColor = Color.green;
 
         if (collecting == false)
             return;
@@ -91,13 +92,17 @@ public class HandCollector : MonoBehaviour
             // Destory particle if collected.
             if (success)
             {
+                collectedColor = collectedParticle.currentSubstance.particleColor;
                 Destroy(collectedParticle.gameObject);
             }
 
         }
 
         if (success)
+        {
+            particleFeedback.startColor = collectedColor;
             particleFeedback.Play();
+        }
     }
     #endregion
 }

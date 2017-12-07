@@ -23,6 +23,11 @@ public class PopUpManager : MonoBehaviour
         {
             ClosePopUp();
         }
+
+        if(Input.anyKeyDown)
+        {
+            ClosePopUp();
+        }
     }
 
     public void RequestPopUp(string messageToDisplay)

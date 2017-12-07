@@ -15,6 +15,11 @@ public class Container : MonoBehaviour
 
     public Image highLightImage;
     public Image fillImage;
+
+    public float blinkSpeed = .1f;
+    public float targetAlpha = .5f;
+    private float currentBlink;
+    private bool goingToBlack = false;
     #endregion
 
     #region UI Updates
@@ -37,9 +42,12 @@ public class Container : MonoBehaviour
     #region Fill & Release
     public bool AddParticule(sSubstance substanceParticule)
     {
+
         // Update substance if none is inside.
-        if(substance == null)
+        if (substance == null)
         {
+            GreenBackground();
+
             particules = 1;
             substance = substanceParticule;
             return true;
@@ -47,12 +55,15 @@ public class Container : MonoBehaviour
         // Check if there is the right substance.
         else if (substance == substanceParticule)
         {
+            GreenBackground();
+
             particules++;
             return true;
         }
         // Let the player know if the wrong substance is inside.
         else
         {
+            Blink();
             MessageManager.getInstance().DissplayMessage("There is an other substance inside this container.", 1f);
             return false;
         }
@@ -60,15 +71,18 @@ public class Container : MonoBehaviour
 
     public sSubstance ReleaseParticule()
     {
+
         // Check if there is any substance in the container.
-        if(substance == null)
+        if (substance == null)
         {
+            Blink();
             return null;
         }
 
         // Check if there is any substance left inside the container.
         else if (particules == 0)
         {
+            Blink();
             substance = null;
             return null;
         }
@@ -76,9 +90,62 @@ public class Container : MonoBehaviour
         // Return particle of the substance.
         else
         {
+            RedBackground();
             particules--;
             return substance;
         }
+    }
+
+    public void OnStay()
+    {
+        GreyBackground();
+    }
+
+    private void RedBackground()
+    {
+        Color targetColor = Color.red;
+        targetColor.a = highLightImage.color.a;
+        highLightImage.color = targetColor;
+    }
+
+    private void GreenBackground()
+    {
+        Color targetColor = Color.green;
+        targetColor.a = highLightImage.color.a;
+        highLightImage.color = targetColor;
+    }
+
+    private void GreyBackground()
+    {
+        Color targetColor = Color.grey;
+        targetColor.a = highLightImage.color.a;
+        highLightImage.color = targetColor;
+    }
+
+    private void Blink()
+    {
+        currentBlink += blinkSpeed * Time.deltaTime;
+
+        if (currentBlink > 1f)
+        {
+            goingToBlack = !goingToBlack;
+            currentBlink = 0f;
+        }
+
+        if (goingToBlack)
+        {
+            Color targetColor = Color.Lerp(Color.white, Color.black, currentBlink);
+            targetColor.a = highLightImage.color.a;
+            highLightImage.color = targetColor;
+        }
+        else
+        {
+            Color targetColor = Color.Lerp(Color.black, Color.white, currentBlink);
+            targetColor.a = highLightImage.color.a;
+            highLightImage.color = targetColor;
+        }
+
+        
     }
     #endregion
 
@@ -102,6 +169,9 @@ public class Container : MonoBehaviour
 
     public bool isFull()
     {
+        if (particules == 0)
+            Blink();
+
         return (capacity <= particules);
     }
 
@@ -119,7 +189,7 @@ public class Container : MonoBehaviour
     #region Highlighting
     public void HighLight()
     {
-        SetImageAlpha(1f);
+        SetImageAlpha(targetAlpha);
     }
 
     public void StopHighLight()

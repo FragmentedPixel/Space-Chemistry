@@ -677,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5019608, b: 0.5019608, a: 1}
+  m_Color: {r: 0.5, g: 0.5019608, b: 0.5019608, a: 0.5058824}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -774,6 +774,7 @@ MonoBehaviour:
   capacity: 50
   highLightImage: {fileID: 114088247642099466}
   fillImage: {fileID: 114005836506956052}
+  blinkSpeed: 5
 --- !u!114 &114194145054907898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1303,6 +1304,7 @@ MonoBehaviour:
   capacity: 75
   highLightImage: {fileID: 114778577560003786}
   fillImage: {fileID: 114201353662608148}
+  blinkSpeed: 5
 --- !u!114 &114778577560003786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1315,7 +1317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5019608, b: 0.5019608, a: 1}
+  m_Color: {r: 0.5, g: 0.5019608, b: 0.5019608, a: 0.5058824}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

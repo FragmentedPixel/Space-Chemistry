@@ -41,6 +41,13 @@ public class HandMovement : MonoBehaviour
         if(connectedToController)
         {
             dir = new Vector2(Input.GetAxis("Hand X"), Input.GetAxis("Hand Y"));
+            if(dir == Vector2.zero)
+            {
+                Ray ray = handCamera.ScreenPointToRay(Input.mousePosition);
+                Vector3 result = ray.GetPoint((transform.position.z - handCamera.transform.position.z) / ray.direction.z);
+
+                dir = result - transform.position;
+            }
         }
 
         else

@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     public float acceleration = 1f;
     private float currentAcceleration;
     
+    public ParticleSystem trailParticlesRight;
+    public ParticleSystem trailParticlesLeft;
+    public ParticleSystem sparklesPartilces;
+
     // Components.
     private Rigidbody2D rb;
     private Animator anim;
@@ -102,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             bool movingRight = (movement > 0);
             Move(movingRight);
         }
+        
     }
 
     private void Move(bool right)
@@ -121,6 +126,19 @@ public class PlayerMovement : MonoBehaviour
         float forceX = right ? currentSpeed : -currentSpeed;
 
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
+
+        if (grounded)
+        {
+            if (!sparklesPartilces.isPlaying)
+                sparklesPartilces.Play();
+
+            if (right && !trailParticlesRight.isPlaying)
+                trailParticlesRight.Play();
+
+            if (!right && !trailParticlesLeft.isPlaying)
+                trailParticlesLeft.Play();
+        }
+
     }
 
     private void StopMove()

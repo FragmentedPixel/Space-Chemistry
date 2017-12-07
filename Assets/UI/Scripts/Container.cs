@@ -187,6 +187,48 @@ public class Container : MonoBehaviour
     #endregion
 
     #region Highlighting
+    public void Unlock()
+    {
+        StartCoroutine(UnlockCR());
+    }
+
+    private IEnumerator UnlockCR()
+    {
+        int repeats = 5;
+        int current = 0;
+
+        while(current < repeats)
+        {
+            currentBlink += blinkSpeed * Time.deltaTime;
+
+            if (currentBlink > 1f)
+            {
+                goingToBlack = !goingToBlack;
+                currentBlink = 0f;
+
+                current++;
+            }
+
+            if (goingToBlack)
+            {
+                Color targetColor = Color.Lerp(Color.blue, Color.red, currentBlink);
+                targetColor.a = 1;
+                highLightImage.color = targetColor;
+            }
+            else
+            {
+                Color targetColor = Color.Lerp(Color.red, Color.blue, currentBlink);
+                targetColor.a = 1;
+                highLightImage.color = targetColor;
+            }
+
+
+            yield return null;
+        }
+
+        yield break;
+    }
+
     public void HighLight()
     {
         SetImageAlpha(targetAlpha);

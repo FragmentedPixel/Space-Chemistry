@@ -775,6 +775,7 @@ MonoBehaviour:
   highLightImage: {fileID: 114088247642099466}
   fillImage: {fileID: 114005836506956052}
   blinkSpeed: 5
+  targetAlpha: 0.5
 --- !u!114 &114194145054907898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1305,6 +1306,7 @@ MonoBehaviour:
   highLightImage: {fileID: 114778577560003786}
   fillImage: {fileID: 114201353662608148}
   blinkSpeed: 5
+  targetAlpha: 0.5
 --- !u!114 &114778577560003786
 MonoBehaviour:
   m_ObjectHideFlags: 1

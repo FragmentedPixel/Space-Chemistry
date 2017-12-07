@@ -58,11 +58,11 @@ public class HandMovement : MonoBehaviour
             dir = result - transform.position;
         }
 
-        if (transform.parent.parent.localScale.x > 0)
+        if (transform.parent.localScale.x > 0)
         {
             MoveHand(dir);
         }
-        else if (transform.parent.parent.localScale.x < 0)
+        else if (transform.parent.localScale.x < 0)
         {
             MoveHand(-dir);
         }

@@ -41,6 +41,7 @@ public class ContainersManager : MonoBehaviour
             if(!containers[i].gameObject.activeInHierarchy)
             {
                 containers[i].gameObject.SetActive(true);
+                containers[i].Unlock();
                 return;
             }
         }

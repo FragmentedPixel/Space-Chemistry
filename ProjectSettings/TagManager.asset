@@ -42,3 +42,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4208244335
+    locked: 0
+  - name: Decor
+    uniqueID: 583613589
+    locked: 0
+  - name: Fluids
+    uniqueID: 1935629555
+    locked: 0
+  - name: Gas
+    uniqueID: 402469333
+    locked: 0
+  - name: Solid
+    uniqueID: 3604424703
+    locked: 0
+  - name: Pools
+    uniqueID: 835411597
+    locked: 0
+  - name: Ground
+    uniqueID: 1396211595
+    locked: 0
+  - name: Player
+    uniqueID: 4015806025
+    locked: 0

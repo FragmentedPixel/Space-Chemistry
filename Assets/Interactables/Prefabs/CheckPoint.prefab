@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 61138347119222980}
   - component: {fileID: 82217304227872852}
   - component: {fileID: 114372085488047410}
-  - component: {fileID: 114959677740074520}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
@@ -191,19 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointPassed: {fileID: 21300000, guid: 580c92b0f9d3c2a4bb1864c5d502b79d, type: 3}
   passedSound: {fileID: 8300000, guid: 30f29314fc5565447b5311e3ee132ff9, type: 3}
---- !u!114 &114959677740074520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433174982331548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51272e9fdfc58d04a8d5d30f1befe811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToDisplay: This is a check point. If you ever die or somehting bad happends
-    to you, you will spawn back here.
 --- !u!212 &212611376404728328
 SpriteRenderer:
   m_ObjectHideFlags: 1

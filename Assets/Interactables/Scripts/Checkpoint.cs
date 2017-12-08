@@ -23,6 +23,9 @@ public class Checkpoint : MonoBehaviour
     // AudioS component.
     private AudioSource audioS;
 
+    // Light
+    public Light light;
+
     void Start()
     {
         spriterenderer = GetComponentInChildren<SpriteRenderer>();
@@ -39,6 +42,8 @@ public class Checkpoint : MonoBehaviour
         {
             passed = true;
             spriterenderer.sprite = checkpointPassed;
+
+            light.color = Color.green;
             audioS.PlayOneShot(passedSound);
             player.SetCheckPoint(transform.position);
         }

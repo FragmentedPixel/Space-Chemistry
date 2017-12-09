@@ -15,6 +15,7 @@ public class LevelLoading : MonoBehaviour
     private void Start()
     {
         ppp = GetComponent<PostProcessingBehaviour>().profile;
+
         StartCoroutine(LerpCR());
     }
 
@@ -24,8 +25,22 @@ public class LevelLoading : MonoBehaviour
 
         while(currentTime < duration)
         {
-            //ppp.vignette.settings.intensity = Mathf.Lerp(1f, targetIntesity, currentTime / duration);
-            //ppp.vignette.settings.smoothness = Mathf.Lerp(1f, targetSmooth, currentTime / duration);
+            VignetteModel vignet = ppp.vignette;
+            VignetteModel.Settings newVignette = vignet.settings;
+
+            newVignette.intensity = Mathf.Lerp(1f, 0f, currentTime / duration);
+            newVignette.smoothness = Mathf.Lerp(1f, 0f, currentTime / duration);
+
+            vignet.settings = newVignette;
+
+            GrainModel grain = ppp.grain;
+            GrainModel.Settings newGrain = grain.settings;
+
+            newGrain.intensity = Mathf.Lerp(1f, 0f, currentTime / duration);
+            newGrain.size = Mathf.Lerp(3f, 1f, currentTime / duration);
+            newGrain.luminanceContribution = Mathf.Lerp(0f, 1f, currentTime / duration);
+
+            grain.settings = newGrain;
 
             currentTime += Time.deltaTime;
             yield return null;

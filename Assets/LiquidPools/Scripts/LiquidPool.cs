@@ -78,8 +78,11 @@ public class LiquidPool : MonoBehaviour {
         gameObject.AddComponent<BoxCollider2D>();
         gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, height / 2);
         gameObject.GetComponent<BoxCollider2D>().size = new Vector2(width, height);
-        gameObject.GetComponent<BoxCollider2D>().usedByEffector = true;
+        //gameObject.GetComponent<BoxCollider2D>().usedByEffector = true;
+
         //TODO: Add efector on run time.
+        gameObject.AddComponent<BoxCollider2D>();
+
 
         //calculate no of edges and nodes we have
         int edgecount = Mathf.RoundToInt(width) * 5; //five per unit width to give smoothness and lower the performance impact

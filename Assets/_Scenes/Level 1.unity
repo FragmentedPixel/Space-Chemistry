@@ -2265,7 +2265,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664630017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.117104, y: -8.240744, z: 0}
+  m_LocalPosition: {x: -65.12, y: -8.240744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2088960381}
@@ -3126,7 +3126,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782361208228800, guid: 1dbc181fe722f8248a1fbcf1ff890b17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 27.69
+      value: 24.117105
       objectReference: {fileID: 0}
     - target: {fileID: 4782361208228800, guid: 1dbc181fe722f8248a1fbcf1ff890b17, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3557,7 +3557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -23.14
+      value: -20.34
       objectReference: {fileID: 0}
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3936,7 +3936,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263478875}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.617104, y: -8.740744, z: 0}
+  m_LocalPosition: {x: -40.19, y: -8.740744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 29914709}
@@ -4274,7 +4274,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422168292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.617104, y: -8.240744, z: 0}
+  m_LocalPosition: {x: -53.73, y: -8.240744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1522672068}
@@ -5054,11 +5054,6 @@ Prefab:
     - target: {fileID: 1957561093763490, guid: 212b12039b0252240be7b5a5d90bfe62, type: 2}
       propertyPath: m_Name
       value: GradientPool (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114063393321453734, guid: 212b12039b0252240be7b5a5d90bfe62,
-        type: 2}
-      propertyPath: poolColor.g
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 212b12039b0252240be7b5a5d90bfe62, type: 2}

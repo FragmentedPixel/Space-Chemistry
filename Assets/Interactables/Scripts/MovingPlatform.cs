@@ -10,6 +10,7 @@ public class MovingPlatform : MonoBehaviour
 {
     #region Variabiles
     public Transform wayPointsparent;
+    public Transform arrow;
 	public float speed = 5f;
     public float maxSpeed = 3f;
 	public float threshhold = .3f;
@@ -22,8 +23,14 @@ public class MovingPlatform : MonoBehaviour
         // Get the direction towards the current target destination.
 		Vector3 direction =  wayPointsparent.GetChild (currentIndex).position - transform.position;
 
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Slerping the current angle to the target angle.
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        arrow.rotation = rotation;
+
         // Change the direction to the next  
-		if(direction.magnitude < threshhold)
+        if (direction.magnitude < threshhold)
 		{
 			currentIndex = (currentIndex + 1) % wayPointsparent.childCount;
 		}

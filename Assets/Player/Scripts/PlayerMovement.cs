@@ -76,7 +76,19 @@ public class PlayerMovement : MonoBehaviour
 
         bool isPlayerOnGround = Physics2D.OverlapCircle(groundCheck.position, distanceToGround, whatIsGround);
 
+        if(isPlayerOnGround == false)
+        {
+            StopParticles();
+        }
+
         return isPlayerOnGround;
+    }
+
+    private void StopParticles()
+    {
+        sparklesPartilces.Stop();
+        trailParticlesRight.Stop();
+        trailParticlesLeft.Stop();
     }
 
     #endregion
@@ -146,6 +158,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0f, rb.velocity.y);
         anim.SetBool(walkingHash, false);
         currentAcceleration = 0f;
+
+        StopParticles();
     }
 
     private void SlowDownMovement()

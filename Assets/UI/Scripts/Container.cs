@@ -57,7 +57,7 @@ public class Container : MonoBehaviour
         {
             GreenBackground();
 
-            particules++;
+            particules+=2;
             return true;
         }
         // Let the player know if the wrong substance is inside.
@@ -224,6 +224,18 @@ public class Container : MonoBehaviour
 
 
             yield return null;
+        }
+
+        PlayerContainers player = FindObjectOfType<PlayerContainers>();
+
+        if(player.GetCurrentContainer() == this)
+        {
+            GreyBackground();
+            HighLight();
+        }
+        else
+        {
+            StopHighLight();
         }
 
         yield break;

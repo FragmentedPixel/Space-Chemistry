@@ -69,6 +69,11 @@ public class PlayerContainers : MonoBehaviour
         foreach (Container container in containers)
             container.UpdateContainerUI();
     }
+
+    public Container GetCurrentContainer()
+    {
+        return containers[currentIndex];
+    }
     #endregion
 
     #region Commands

@@ -757,7 +757,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114390762312959006, guid: 528452767e894534ba3cdf72b1b72c93, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 528452767e894534ba3cdf72b1b72c93, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &202118302 stripped
@@ -1830,7 +1831,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516624483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.852898, y: -3.2407436, z: 0}
+  m_LocalPosition: {x: 10.852898, y: -4.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 460807332}
@@ -2762,23 +2763,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4924384692356760, guid: 3d60b22d36d50d846b86e400702ea883,
     type: 2}
   m_PrefabInternal: {fileID: 1498809143}
---- !u!1 &777670219 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1733400817103702, guid: 528452767e894534ba3cdf72b1b72c93,
-    type: 2}
-  m_PrefabInternal: {fileID: 196043026}
---- !u!114 &777670220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 777670219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51272e9fdfc58d04a8d5d30f1befe811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToDisplay: You've unlocked a controller. You can use it to store subtances.
 --- !u!1001 &780806154
 Prefab:
   m_ObjectHideFlags: 0
@@ -3599,12 +3583,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114361785687250022, guid: d32f2d44c075aca47b07d2da61a158f3,
-        type: 2}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 1721168421789584, guid: eca9382e71852ce42a4a17f3df0af5fa,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
   m_IsPrefabParent: 0
@@ -4367,7 +4345,7 @@ Prefab:
     - target: {fileID: 114784052284821356, guid: def18f85e967f2748bc45e2f04e0a7df,
         type: 2}
       propertyPath: zoom
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1023206568228826, guid: def18f85e967f2748bc45e2f04e0a7df, type: 2}
       propertyPath: m_Name
@@ -6456,7 +6434,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114390762312959006, guid: 528452767e894534ba3cdf72b1b72c93, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 528452767e894534ba3cdf72b1b72c93, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1907650117

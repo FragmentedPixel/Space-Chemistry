@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.44604236, g: 0.45856953, b: 0.4852941, a: 1}
+  m_AmbientSkyColor: {r: 0.21960784, g: 0.22352941, b: 0.22745098, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -404,6 +404,11 @@ Prefab:
     - target: {fileID: 4669583856729944, guid: 3ae9248dec998aa49a9d2ef0cc1174af, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108880648793665698, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+        type: 2}
+      propertyPath: m_Range
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ae9248dec998aa49a9d2ef0cc1174af, type: 2}
@@ -862,7 +867,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4301602568183718, guid: 03ec4c7c0f397b84a96e192d704a67bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.96
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 4301602568183718, guid: 03ec4c7c0f397b84a96e192d704a67bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4027,26 +4032,15 @@ Prefab:
       propertyPath: m_Name
       value: Burning (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114700157630386802, guid: 03ec4c7c0f397b84a96e192d704a67bc,
+    - target: {fileID: 198304483572098912, guid: 03ec4c7c0f397b84a96e192d704a67bc,
         type: 2}
-      propertyPath: bounceForce
-      value: 5
+      propertyPath: LightsModule.rangeCurve.scalar
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 4304070778766370, guid: 03ec4c7c0f397b84a96e192d704a67bc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304070778766370, guid: 03ec4c7c0f397b84a96e192d704a67bc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304070778766370, guid: 03ec4c7c0f397b84a96e192d704a67bc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.z
-      value: 0
+    - target: {fileID: 198304483572098912, guid: 03ec4c7c0f397b84a96e192d704a67bc,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1371998690
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03ec4c7c0f397b84a96e192d704a67bc, type: 2}
@@ -5201,11 +5195,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.52
+      value: -5.54
       objectReference: {fileID: 0}
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -20.34
+      value: -21.41
       objectReference: {fileID: 0}
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9718,6 +9712,27 @@ Transform:
   m_PrefabParentObject: {fileID: 4952647975234936, guid: 2ef7ad1ae0f36974b888b4519cd38d06,
     type: 2}
   m_PrefabInternal: {fileID: 1741615639}
+--- !u!1 &1764362941 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1298871525029544, guid: 75283b5b921fff646893ee8adbdb4d76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1469215892}
+--- !u!114 &1764362944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764362941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a93fdf017ea4f4b95f63de14846e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveFunction: sin
+  start: 0
+  amplitude: 1
+  phase: 0
+  frequency: 0.5
 --- !u!1001 &1764729158
 Prefab:
   m_ObjectHideFlags: 0
@@ -10982,6 +10997,11 @@ Prefab:
     - target: {fileID: 4942583230921210, guid: 3ae9248dec998aa49a9d2ef0cc1174af, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108880648793665698, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+        type: 2}
+      propertyPath: m_Range
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ae9248dec998aa49a9d2ef0cc1174af, type: 2}

@@ -45,7 +45,7 @@ public class Checkpoint : MonoBehaviour
 
             light.color = Color.green;
             audioS.PlayOneShot(passedSound);
-            player.SetCheckPoint(transform.position);
+            player.SetCheckPoint(new Vector3(transform.position.x,transform.position.y,-1));
         }
     }
 }

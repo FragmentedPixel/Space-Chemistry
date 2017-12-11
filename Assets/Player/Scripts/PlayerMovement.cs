@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement()
     {
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
-        float movement = Input.GetAxis("Horizontal");
+        float movement = Input.GetAxisRaw("Horizontal");
 
         // Get current speed of the rb.
         float vel = Mathf.Abs(rb.velocity.x);
@@ -115,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         else
         // Update player's rb according to user input.
         {
+            Debug.Log("gj man");
             bool movingRight = (movement > 0);
             Move(movingRight);
         }

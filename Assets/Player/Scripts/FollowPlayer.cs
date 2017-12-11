@@ -41,7 +41,6 @@ public class FollowPlayer : MonoBehaviour
 
         if(currentMovement > minMovement)
         {
-            Debug.Log(currentMovement);
             // Camera should move
             Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -10f);
 

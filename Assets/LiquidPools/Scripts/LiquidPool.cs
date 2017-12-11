@@ -10,11 +10,8 @@ public class LiquidPool : MonoBehaviour {
     //CHECK: https://gamedevelopment.tutsplus.com/tutorials/creating-dynamic-2d-water-effects-in-unity--gamedev-14143
     //--------------------------------
 
-    #region Parameters
-    
-    //mass of the nodes
-    public float mass = 1f;
-
+    #region Pool Prefabs
+    [Header("Pool Prefabs")]
     //particle system;
     public GameObject splash;
 
@@ -24,12 +21,17 @@ public class LiquidPool : MonoBehaviour {
     //gameobject for the mesh;
     public GameObject watermesh;
 
+    // SUbstance inside the pool.
+    public sSubstance poolSubstance;
+    #endregion
+
+    #region Pool Parameters
+    [Header("Pool Parameters")]
+    //mass of the nodes
+    public float mass = 1f;
     public float height;
     public float width;
-    public Color poolColor;
-
     public bool deadly = false;
-    
     #endregion
 
     #region Components
@@ -64,12 +66,11 @@ public class LiquidPool : MonoBehaviour {
     private float TOP;
     #endregion
 
-
     // Use this for initialization
     void OnEnable ()
     {
         SpawnWater(width, height);
-        splash.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolColor;
+        splash.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolSubstance.particleColor;
 	}
 	
     public void SpawnWater(float width, float height)
@@ -78,17 +79,27 @@ public class LiquidPool : MonoBehaviour {
         gameObject.AddComponent<BoxCollider2D>();
         gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, height / 2);
         gameObject.GetComponent<BoxCollider2D>().size = new Vector2(width, height);
-        //gameObject.GetComponent<BoxCollider2D>().usedByEffector = true;
 
-        //TODO: Add efector on run time.
-        gameObject.AddComponent<BoxCollider2D>();
+        //Add Color trigger for player collision
+        GameObject colorTrigger = new GameObject();
+        colorTrigger.layer = LayerMask.NameToLayer("Player");
+        colorTrigger.transform.SetParent(transform);
+        colorTrigger.transform.localPosition = Vector2.zero;
 
+        // Set the collision for the color trigger
+        BoxCollider2D box = colorTrigger.AddComponent<BoxCollider2D>();
+        box.offset = new Vector2(0, height / 4);
+        box.size = new Vector2(width, height/2);
+        box.isTrigger = true;
+        colorTrigger.AddComponent<PlayerColor>();
+        colorTrigger.GetComponent<PlayerColor>().colorInPool = poolSubstance.particleColor;
 
         //calculate no of edges and nodes we have
         int edgecount = Mathf.RoundToInt(width) * 5; //five per unit width to give smoothness and lower the performance impact
         int nodecount = edgecount + 1;
 
         //Add our line renderer and set it up;
+        Color poolColor = poolSubstance.particleColor;
         Body = gameObject.AddComponent<LineRenderer>();
 
         Material bodyMaterial = new Material(baseMaterial);
@@ -186,7 +197,7 @@ public class LiquidPool : MonoBehaviour {
             Reactant reactant = GetComponent<Reactant>();
             Reactant newReactant = colliders[i].AddComponent<Reactant>();
 
-            newReactant.reactantSubstance = reactant.reactantSubstance;
+            newReactant.reactantSubstance = poolSubstance;
 
             if(deadly)
             {
@@ -299,7 +310,9 @@ public class LiquidPool : MonoBehaviour {
 
     public void OnDrawGizmos()
     {
-        Gizmos.color = poolColor;
+        if(poolSubstance != null)
+            Gizmos.color = poolSubstance.particleColor;
+
         Gizmos.DrawCube(transform.position + Vector3.up * height / 2, new Vector3(width, height, 1f));
     }
 }

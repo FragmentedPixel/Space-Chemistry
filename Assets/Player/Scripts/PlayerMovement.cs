@@ -115,7 +115,6 @@ public class PlayerMovement : MonoBehaviour
         else
         // Update player's rb according to user input.
         {
-            Debug.Log("gj man");
             bool movingRight = (movement > 0);
             Move(movingRight);
         }

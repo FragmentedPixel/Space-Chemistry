@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1321342289375804
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.875, g: 0.25415826, b: 0.025735319, a: 1}
   m_Intensity: 5
-  m_Range: 4
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -556,7 +556,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1025027244
+  randomSeed: 1701962326
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3777,7 +3777,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1371998690
+  randomSeed: 1282500162
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6995,7 +6995,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1179965879
+  randomSeed: 1758780845
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10219,7 +10219,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 803576668
+  randomSeed: -1155221676
   InitialModule:
     serializedVersion: 3
     enabled: 1

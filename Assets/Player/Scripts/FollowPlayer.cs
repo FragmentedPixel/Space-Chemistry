@@ -37,11 +37,11 @@ public class FollowPlayer : MonoBehaviour
     {
         // Check if the player moved enough to move
         float playerMovementDiffernece = (player.position - lastPlayerPosition).magnitude;
-        lastPlayerPosition = player.position;
-        currentMovement += Mathf.Abs(playerMovementDiffernece);
+        currentMovement = Mathf.Abs(playerMovementDiffernece);
 
         if(currentMovement > minMovement)
         {
+            Debug.Log(currentMovement);
             // Camera should move
             Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -10f);
 
@@ -53,9 +53,9 @@ public class FollowPlayer : MonoBehaviour
             }
 
             // Reset the current movement if the camera is close enough.
-            else if(distanceLeft < countingThreshold)
+            if(distanceLeft < countingThreshold)
             {
-                currentMovement = 0f;
+                lastPlayerPosition = player.position;
             }
         }
     }

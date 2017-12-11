@@ -470,9 +470,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  minMovement: 1.5
+  minMovement: 0.7
   stopThreshold: 0.05
-  countingThreshold: 0.1
+  countingThreshold: 0.3
   zoomSpeed: 3
 --- !u!114 &114537120731587766
 MonoBehaviour:
@@ -486,9 +486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  minMovement: 1.5
+  minMovement: 0.7
   stopThreshold: 0.05
-  countingThreshold: 0.1
+  countingThreshold: 0.3
   zoomSpeed: 3
 --- !u!114 &114572809673363890
 MonoBehaviour:
@@ -526,9 +526,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  minMovement: 1.5
+  minMovement: 0.7
   stopThreshold: 0.05
-  countingThreshold: 0.1
+  countingThreshold: 0.3
   zoomSpeed: 3
 --- !u!114 &114980663627762390
 MonoBehaviour:

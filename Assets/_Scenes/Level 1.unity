@@ -1540,7 +1540,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPanelToShow: {fileID: 1993392163}
   enterSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
-  exitSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
 --- !u!61 &280954751
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2089,6 +2088,74 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aea5a381fc7e988479b4a9c2a5833b16, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &425927529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1265446124772648, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 425927530}
+  - component: {fileID: 425927531}
+  m_Layer: 13
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425927530
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4416377118226596, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 425927529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 499721073}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &425927531
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 108880648793665698, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 425927529}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.32352942, g: 0.38417834, b: 1, a: 1}
+  m_Intensity: 15
+  m_Range: 2
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &427817408
 Prefab:
   m_ObjectHideFlags: 0
@@ -2418,7 +2485,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPanelToShow: {fileID: 168898143}
   enterSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
-  exitSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
 --- !u!61 &487547557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2636,7 +2702,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPanelToShow: {fileID: 460807330}
   enterSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
-  exitSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
 --- !u!61 &516624485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2649,7 +2714,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.085344315, y: 1.5645695}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2669,7 +2734,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516624483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.9719605, z: 0}
+  m_LocalPosition: {x: -8.95, y: -3.68, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 460807332}
@@ -3502,7 +3567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPanelToShow: {fileID: 2088960379}
   enterSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
-  exitSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
 --- !u!61 &664630019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6413,7 +6477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPanelToShow: {fileID: 29914707}
   enterSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
-  exitSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
 --- !u!61 &1263478877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7184,7 +7247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialPanelToShow: {fileID: 1522672066}
   enterSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
-  exitSound: {fileID: 8300000, guid: 5a47e07344545074e9c96ea8ee3d8bbb, type: 3}
 --- !u!212 &1422168296
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7350,7 +7412,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4150745506375000, guid: def18f85e967f2748bc45e2f04e0a7df, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -56.92
+      value: -61.89
       objectReference: {fileID: 0}
     - target: {fileID: 4150745506375000, guid: def18f85e967f2748bc45e2f04e0a7df, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7417,6 +7479,74 @@ Transform:
   m_PrefabParentObject: {fileID: 4150745506375000, guid: def18f85e967f2748bc45e2f04e0a7df,
     type: 2}
   m_PrefabInternal: {fileID: 1442820008}
+--- !u!1 &1446459657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1265446124772648, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1446459658}
+  - component: {fileID: 1446459659}
+  m_Layer: 13
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1446459658
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4416377118226596, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446459657}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 47306887}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1446459659
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 108880648793665698, guid: 3ae9248dec998aa49a9d2ef0cc1174af,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446459657}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.32352942, g: 0.38417834, b: 1, a: 1}
+  m_Intensity: 15
+  m_Range: 2
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1452013914
 Prefab:
   m_ObjectHideFlags: 0

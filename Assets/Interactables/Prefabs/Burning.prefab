@@ -432,6 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncerForce: 25
+  hitSound: {fileID: 8300000, guid: e0db973163fd48144a902086771cd3de, type: 3}
 --- !u!114 &114733276858504548
 MonoBehaviour:
   m_ObjectHideFlags: 1

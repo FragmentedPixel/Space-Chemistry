@@ -101,6 +101,19 @@ public class HandCollector : MonoBehaviour
         if (success)
         {
             particleFeedback.startColor = collectedColor;
+
+            var vel = particleFeedback.velocityOverLifetime;
+
+            PlayerMovement player = FindObjectOfType<PlayerMovement>();
+
+            Vector3 direction = player.transform.position - particleFeedback.transform.position;
+            direction = direction.normalized * 10f;
+
+            vel.x = direction.x;
+            vel.y = direction.y;
+            vel.z = direction.z;
+            
+
             particleFeedback.Play();
         }
     }

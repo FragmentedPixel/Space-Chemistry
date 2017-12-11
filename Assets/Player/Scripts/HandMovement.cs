@@ -12,6 +12,12 @@ public class HandMovement : MonoBehaviour
     // Camera from where the raycast is done.
     private Camera handCamera;
 
+    // Movement sound.
+    public AudioClip[] movementSounds;
+
+    // audio source.
+    private AudioSource audioS;
+
     // Speed of the rotation.
 	public float speed = 5f;
 
@@ -20,6 +26,9 @@ public class HandMovement : MonoBehaviour
 
     private void Start()
     {
+        audioS = gameObject.AddComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume()/3;
+
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
@@ -71,11 +80,20 @@ public class HandMovement : MonoBehaviour
     
     private void MoveHand(Vector2 direction)
     {
+        
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Slerping the current angle to the target angle.
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+
+        Debug.Log(Quaternion.Angle(rotation, transform.rotation));
+
+        if (!audioS.isPlaying && Quaternion.Angle(rotation, transform.rotation) > 2f)
+        {
+            int index = Random.Range(0, movementSounds.Length);
+            audioS.PlayOneShot(movementSounds[index]);
+        }
     }
 
     public void ChangeControl(bool hasControl)

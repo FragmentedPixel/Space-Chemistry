@@ -9,13 +9,20 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     #region Parameters
-    public float respawnDelay = 1f;
+    public AudioClip deathSound;
 
+    private AudioSource audioS;
     private Vector3 currentCheckpoint;
     private bool dead = false;
     #endregion
 
     #region CheckPoint
+    private void Start()
+    {
+        audioS = gameObject.AddComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume();
+    }
+
     public void SetCheckPoint(Vector3 newCheckPoint)
     {
         currentCheckpoint = newCheckPoint;
@@ -26,8 +33,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if(dead == false)
         {
+            audioS.PlayOneShot(deathSound);
             dead = true;
-            StartCoroutine(RespawnPlayerCR(respawnDelay));
+            StartCoroutine(RespawnPlayerCR(deathSound.length));
         }
     }
 

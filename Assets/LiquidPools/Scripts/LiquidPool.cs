@@ -186,7 +186,7 @@ public class LiquidPool : MonoBehaviour {
             
 
             //set the pos and scale to the correct dimes
-            colliders[i].transform.position =  new Vector3 (LEFT + width * (i + 0.5f) / edgecount, TOP - 0.5f, 0);
+            colliders[i].transform.position =  new Vector3 (LEFT + width * (i + 0.5f) / edgecount, TOP - 1f, 0);
             colliders[i].transform.localScale = new Vector3 (width / edgecount, 1, 1);
 
             //add WaterDetector and make sure they're triggers

@@ -43,7 +43,7 @@ public class TutorialPopUp : MonoBehaviour
     {
         audioS.PlayOneShot(enterSound);
 
-        StartCoroutine(ChangeAlpha());
+        StartCoroutine(ChangeAlpha(0f, 1f));
 
         Color newColor = GetComponent<SpriteRenderer>().color;
         newColor.a = 0f;
@@ -53,16 +53,14 @@ public class TutorialPopUp : MonoBehaviour
     private void HidePannel()
     {
 
-        Color newColor = tutorialPanelToShow.GetComponent<SpriteRenderer>().color;
-        newColor.a = 0f;
-        tutorialPanelToShow.GetComponent<SpriteRenderer>().color = newColor;
+        StartCoroutine(ChangeAlpha(1f, 0f));
 
-        newColor = GetComponent<SpriteRenderer>().color;
+        Color newColor = GetComponent<SpriteRenderer>().color;
         newColor.a = 1f;
         GetComponent<SpriteRenderer>().color = newColor;
     }
 
-    private IEnumerator ChangeAlpha()
+    private IEnumerator ChangeAlpha(float start, float end)
     {
         float duration = .5f;
         float currentTime = 0f;
@@ -70,7 +68,7 @@ public class TutorialPopUp : MonoBehaviour
         while(currentTime < duration)
         {
             Color newColor = tutorialPanelToShow.GetComponent<SpriteRenderer>().color;
-            newColor.a = Mathf.Lerp(0f, 1f, currentTime / duration);
+            newColor.a = Mathf.Lerp(start, end, currentTime / duration);
             tutorialPanelToShow.GetComponent<SpriteRenderer>().color = newColor;
 
             currentTime += Time.deltaTime;

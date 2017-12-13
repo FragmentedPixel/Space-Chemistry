@@ -190,6 +190,8 @@ public class PlayerContainers : MonoBehaviour
             input = 1;
         else if (Input.GetKeyDown(KeyCode.Alpha3) && containersCount >= 3)
             input = 2;
+        else if (Input.GetAxis("Mouse ScrollWheel") != 0f)
+            input = (currentIndex + 1) % containers.Length;
 
         // Read controller Input.
         int controllerInput = (int) Input.GetAxisRaw("Container Axis");

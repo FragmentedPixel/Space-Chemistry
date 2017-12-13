@@ -1132,11 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c74f8247887dc1488ea2e317f395928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSounds:
-  - {fileID: 8300000, guid: c8cac94eb08feb94482996bc8f481808, type: 3}
-  - {fileID: 8300000, guid: f1434d2ae524c024cb31b3a76be4a3b1, type: 3}
-  - {fileID: 8300000, guid: 8e908338e53fa3d4ea738ecf812619ef, type: 3}
-  - {fileID: 8300000, guid: 12bb936a56cc53c4e9d3b72c1308dfb9, type: 3}
+  movementSounds: []
   speed: 20
 --- !u!114 &114221315605903088
 MonoBehaviour:

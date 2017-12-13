@@ -6,6 +6,7 @@ public class TutorialPopUp : MonoBehaviour
 {
     public GameObject tutorialPanelToShow;
     public AudioClip enterSound;
+    public GameObject particles;
 
     private AudioSource audioS;
 
@@ -48,6 +49,7 @@ public class TutorialPopUp : MonoBehaviour
         Color newColor = GetComponent<SpriteRenderer>().color;
         newColor.a = 0f;
         GetComponent<SpriteRenderer>().color = newColor;
+        particles.SetActive(false);
     }
 
     private void HidePannel()
@@ -58,11 +60,12 @@ public class TutorialPopUp : MonoBehaviour
         Color newColor = GetComponent<SpriteRenderer>().color;
         newColor.a = 1f;
         GetComponent<SpriteRenderer>().color = newColor;
+        particles.SetActive(true);
     }
 
     private IEnumerator ChangeAlpha(float start, float end)
     {
-        float duration = .5f;
+        float duration = 1f;
         float currentTime = 0f;
 
         while(currentTime < duration)

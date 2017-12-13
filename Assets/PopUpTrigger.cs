@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PopUpTrigger : MonoBehaviour
 {
-    public string textToDisplay;
+    public Sprite[] imagesToDisplay;
+    private int currentIndex = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,9 +13,29 @@ public class PopUpTrigger : MonoBehaviour
 
         if(player != null)
         {
-            PopUpManager.instance.RequestPopUp(textToDisplay);
-            Destroy(this);
+            StartCoroutine(DisplayAll());
         }
+    }
+
+    private IEnumerator DisplayAll()
+    {
+        PopUpManager.instance.RequestPopUp(imagesToDisplay[0]);
+
+        while(currentIndex < imagesToDisplay.Length)
+        {
+            if (Input.anyKeyDown)
+            {
+                currentIndex++;
+                if (currentIndex < imagesToDisplay.Length)
+                    PopUpManager.instance.RequestPopUp(imagesToDisplay[currentIndex]);
+                else
+                    PopUpManager.instance.RequestPopUp(null);
+            }
+
+            yield return null;
+        }
+
+        yield break;
     }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PopUpManager : MonoBehaviour
 {
     public static PopUpManager instance;
-    public Text messageText;
+    public Image message;
 
     private PauseMenu pauseMenu;
 
@@ -17,24 +17,19 @@ public class PopUpManager : MonoBehaviour
         pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
-    private void Update()
+    public void RequestPopUp(Sprite messageToDisplay)
     {
-        if(Input.GetButtonDown("Submit"))
+        if(messageToDisplay == null)
         {
             ClosePopUp();
         }
-
-        if(Input.anyKeyDown)
+        else
         {
-            ClosePopUp();
-        }
-    }
+            message.sprite = messageToDisplay;
+            gameObject.SetActive(true);
+            pauseMenu.SetPlayerControl(false);
 
-    public void RequestPopUp(string messageToDisplay)
-    {
-        messageText.text = messageToDisplay;
-        gameObject.SetActive(true);
-        pauseMenu.SetPlayerControl(false);
+        }
     }
 
     public void ClosePopUp()

@@ -87,7 +87,6 @@ public class HandMovement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
 
-        Debug.Log(Quaternion.Angle(rotation, transform.rotation));
 
         if (!audioS.isPlaying && Quaternion.Angle(rotation, transform.rotation) > 2f)
         {

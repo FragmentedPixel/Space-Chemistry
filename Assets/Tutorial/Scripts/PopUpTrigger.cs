@@ -7,12 +7,15 @@ public class PopUpTrigger : MonoBehaviour
     public Sprite[] imagesToDisplay;
     private int currentIndex = 0;
 
+    private bool triggered = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
 
-        if(player != null)
+        if (player != null && triggered == false)
         {
+            triggered = true;
             StartCoroutine(DisplayAll());
         }
     }

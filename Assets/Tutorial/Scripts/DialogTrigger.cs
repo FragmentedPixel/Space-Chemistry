@@ -5,12 +5,17 @@ using UnityEngine;
 public class DialogTrigger : MonoBehaviour
 {
     public GameObject dialogGO;
+    public AudioClip triggerSound;
 
+    private AudioSource audioS;
     private bool triggered = false;
 
     private void Start()
     {
         dialogGO.transform.localScale = Vector3.zero;
+
+        audioS = GetComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,6 +24,7 @@ public class DialogTrigger : MonoBehaviour
 
         if (player != null && triggered == false)
         {
+            audioS.PlayOneShot(triggerSound);
             StartCoroutine(ShowDialogCR(player.transform.position));
         }
     }
@@ -41,7 +47,7 @@ public class DialogTrigger : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         GameObject.Destroy(dialogGO);
 

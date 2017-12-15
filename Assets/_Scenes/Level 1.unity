@@ -1894,9 +1894,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagesToDisplay:
+  - {fileID: 21300000, guid: 06c086b38e837894bbcf9fb1da1f82db, type: 3}
   - {fileID: 21300000, guid: 954759403f4aa004495807f97a02eb9e, type: 3}
   - {fileID: 21300000, guid: 087813f429fe5f349a6b5a07d7d2ff27, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 7c9a9acabfa66d340bf2e597303db0d4, type: 3}
+  - {fileID: 21300000, guid: b18cfbefb272ca84e9b93d39d087bdee, type: 3}
 --- !u!1001 &270689694
 Prefab:
   m_ObjectHideFlags: 0
@@ -2209,6 +2211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogGO: {fileID: 1595294465}
+  triggerSound: {fileID: 8300000, guid: 1739242eabe6f4f478e02f1e527b5340, type: 3}
 --- !u!61 &293398832
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3308,6 +3311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogGO: {fileID: 1127840315}
+  triggerSound: {fileID: 8300000, guid: 28637f82ebe300f468be7c776c042879, type: 3}
 --- !u!82 &505736668
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3937,7 +3941,7 @@ Prefab:
     - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
         type: 2}
       propertyPath: imagesToDisplay.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4092746007912262, guid: af19953b2935c4b4dbaa786466e96c2e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3975,19 +3979,37 @@ Prefab:
         type: 2}
       propertyPath: imagesToDisplay.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 954759403f4aa004495807f97a02eb9e,
+      objectReference: {fileID: 21300000, guid: 06c086b38e837894bbcf9fb1da1f82db,
         type: 3}
     - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
         type: 2}
       propertyPath: imagesToDisplay.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 087813f429fe5f349a6b5a07d7d2ff27,
+      objectReference: {fileID: 21300000, guid: 954759403f4aa004495807f97a02eb9e,
         type: 3}
     - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
         type: 2}
       propertyPath: imagesToDisplay.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 19a8b73f4157769468bac8d444775449,
+      objectReference: {fileID: 21300000, guid: 087813f429fe5f349a6b5a07d7d2ff27,
+        type: 3}
+    - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
+        type: 2}
+      propertyPath: imagesToDisplay.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c9a9acabfa66d340bf2e597303db0d4,
+        type: 3}
+    - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
+        type: 2}
+      propertyPath: imagesToDisplay.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: b18cfbefb272ca84e9b93d39d087bdee,
+        type: 3}
+    - target: {fileID: 114430231661208064, guid: af19953b2935c4b4dbaa786466e96c2e,
+        type: 2}
+      propertyPath: imagesToDisplay.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: b18cfbefb272ca84e9b93d39d087bdee,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af19953b2935c4b4dbaa786466e96c2e, type: 2}
@@ -7751,6 +7773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogGO: {fileID: 871337405}
+  triggerSound: {fileID: 8300000, guid: d6d94826c9fe0864c9aacb34be53b4e2, type: 3}
 --- !u!61 &1190866620
 BoxCollider2D:
   m_ObjectHideFlags: 0

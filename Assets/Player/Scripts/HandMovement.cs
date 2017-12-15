@@ -91,7 +91,7 @@ public class HandMovement : MonoBehaviour
         if (!audioS.isPlaying && Quaternion.Angle(rotation, transform.rotation) > 2f)
         {
             int index = Random.Range(0, movementSounds.Length);
-            audioS.PlayOneShot(movementSounds[index]);
+            //audioS.PlayOneShot(movementSounds[index]);
         }
     }
 

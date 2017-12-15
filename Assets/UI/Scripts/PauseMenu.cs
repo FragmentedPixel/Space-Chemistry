@@ -69,5 +69,10 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<LevelManager>().Reload();
     }
+
+    public void ShowTutorials()
+    {
+        FindObjectOfType<TutorialsList>().DisplayTutorials();
+    }
     #endregion
 }

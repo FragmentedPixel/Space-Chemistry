@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopUpTrigger : MonoBehaviour
+public class TutorialsList : MonoBehaviour
 {
     public Sprite[] imagesToDisplay;
     private int currentIndex = 0;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void DisplayTutorials()
     {
-        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-
-        if(player != null)
-        {
-            StartCoroutine(DisplayAll());
-        }
+        StartCoroutine(DisplayAll());
     }
 
     private IEnumerator DisplayAll()
@@ -23,14 +18,14 @@ public class PopUpTrigger : MonoBehaviour
 
         bool pressed = false;
 
-        while(currentIndex < imagesToDisplay.Length)
+        while (currentIndex < imagesToDisplay.Length)
         {
-            if(Input.GetAxis("Horizontal") < 0f && pressed == false)
+            if (Input.GetAxis("Horizontal") < 0f && pressed == false)
             {
                 pressed = true;
                 currentIndex--;
 
-                if(currentIndex < 0)
+                if (currentIndex < 0)
                 {
                     currentIndex = 0;
                 }
@@ -41,7 +36,7 @@ public class PopUpTrigger : MonoBehaviour
                     PopUpManager.instance.RequestPopUp(null);
             }
 
-            else if(Input.GetAxis("Horizontal") > 0f && pressed == false)
+            else if (Input.GetAxis("Horizontal") > 0f && pressed == false)
             {
                 pressed = true;
                 currentIndex++;
@@ -69,6 +64,8 @@ public class PopUpTrigger : MonoBehaviour
 
             yield return null;
         }
+
+        currentIndex = 0;
 
         PopUpManager.instance.RequestPopUp(null);
 

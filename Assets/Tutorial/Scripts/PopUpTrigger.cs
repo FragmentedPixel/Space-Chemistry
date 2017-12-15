@@ -22,7 +22,7 @@ public class PopUpTrigger : MonoBehaviour
         PopUpManager.instance.RequestPopUp(imagesToDisplay[0]);
         yield return new WaitForSeconds(.3f);
 
-        bool pressed = Input.GetAxis("Horizontal") == 0;
+        bool pressed = (Input.GetAxis("Horizontal") != 0);
 
         while (currentIndex < imagesToDisplay.Length)
         {

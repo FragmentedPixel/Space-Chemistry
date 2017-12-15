@@ -173,12 +173,12 @@ public class PlayerMovement : MonoBehaviour
     #region Jump
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Jump") && grounded)
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) && grounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        if (! grounded && Input.GetButton("Jump"))
+        if (! grounded && (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)))
         { 
             rb.AddForce(new Vector2(0f, pressJumpForce));
         }

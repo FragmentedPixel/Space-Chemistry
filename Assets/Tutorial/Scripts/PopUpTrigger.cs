@@ -20,10 +20,11 @@ public class PopUpTrigger : MonoBehaviour
     private IEnumerator DisplayAll()
     {
         PopUpManager.instance.RequestPopUp(imagesToDisplay[0]);
+        yield return new WaitForSeconds(.3f);
 
-        bool pressed = false;
+        bool pressed = Input.GetAxis("Horizontal") == 0;
 
-        while(currentIndex < imagesToDisplay.Length)
+        while (currentIndex < imagesToDisplay.Length)
         {
             if(Input.GetAxis("Horizontal") < 0f && pressed == false)
             {

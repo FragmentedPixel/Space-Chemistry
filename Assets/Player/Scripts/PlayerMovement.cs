@@ -178,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        if (! grounded && (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)))
+        if (! grounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.Space)))
         { 
             rb.AddForce(new Vector2(0f, pressJumpForce));
         }

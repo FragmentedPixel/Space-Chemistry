@@ -327,7 +327,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649452141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -528.39075, y: -295, z: 0}
+  m_LocalPosition: {x: -661.9596, y: -295, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 24968755}
@@ -556,8 +556,6 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Dev Team:
 
-    Alexandru Oprea
-
     Mircea Scarlatescu
 
     Stefan Aluneanu
@@ -569,6 +567,8 @@ MonoBehaviour:
     Vlad Duncea
 
     Ioana Merode
+
+    Alexandru Oprea
 
 
     Special thanks:
@@ -819,8 +819,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1971572630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 516.5, y: 290.5, z: 0}
-  m_LocalScale: {x: 0.9683333, y: 0.9683333, z: 0.9683333}
+  m_LocalPosition: {x: 632.5, y: 284.5, z: 0}
+  m_LocalScale: {x: 0.9483333, y: 0.9483333, z: 0.9483333}
   m_Children:
   - {fileID: 338003802}
   - {fileID: 1230833910}

@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 212085234736176446}
   - component: {fileID: 61853189815964062}
   - component: {fileID: 114430231661208064}
+  - component: {fileID: 114553339964512190}
   m_Layer: 0
-  m_Name: Popup Trigger
+  m_Name: Tutorial Trigger
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -78,7 +79,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51272e9fdfc58d04a8d5d30f1befe811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToDisplay: Hai spune ca merge pls
+  imagesToDisplay: []
+  currentIndex: 0
+  triggered: 0
+--- !u!114 &114553339964512190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707056077732378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3226d270f5f3342a751080aa09c4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagesToDisplay: []
 --- !u!212 &212085234736176446
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -72,7 +72,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowTutorials()
     {
-        FindObjectOfType<TutorialsList>().DisplayTutorials();
+		FindObjectOfType<TutorialsManager>().DisplayTutorials();
     }
     #endregion
 }

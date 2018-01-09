@@ -2,30 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialsList : MonoBehaviour
+public class TutorialTrigger : MonoBehaviour
 {
     public Sprite[] imagesToDisplay;
     private int currentIndex = 0;
 
-    public void DisplayTutorials()
+    private bool triggered = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(DisplayAll());
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+
+        if (player != null && triggered == false)
+        {
+            triggered = true;
+            StartCoroutine(DisplayAll());
+        }
     }
 
     private IEnumerator DisplayAll()
     {
         PopUpManager.instance.RequestPopUp(imagesToDisplay[0]);
+        yield return new WaitForSeconds(.3f);
 
-        bool pressed = false;
+        bool pressed = (Input.GetAxis("Horizontal") != 0);
 
         while (currentIndex < imagesToDisplay.Length)
         {
-            if (Input.GetAxis("Horizontal") < 0f && pressed == false)
+            if(Input.GetAxis("Horizontal") < 0f && pressed == false)
             {
                 pressed = true;
                 currentIndex--;
 
-                if (currentIndex < 0)
+                if(currentIndex < 0)
                 {
                     currentIndex = 0;
                 }
@@ -36,7 +45,7 @@ public class TutorialsList : MonoBehaviour
                     PopUpManager.instance.RequestPopUp(null);
             }
 
-            else if (Input.GetAxis("Horizontal") > 0f && pressed == false)
+            else if(Input.GetAxis("Horizontal") > 0f && pressed == false)
             {
                 pressed = true;
                 currentIndex++;
@@ -64,8 +73,6 @@ public class TutorialsList : MonoBehaviour
 
             yield return null;
         }
-
-        currentIndex = 0;
 
         PopUpManager.instance.RequestPopUp(null);
 

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4092746007912262}
   - component: {fileID: 212085234736176446}
   - component: {fileID: 61853189815964062}
-  - component: {fileID: 114430231661208064}
   - component: {fileID: 114553339964512190}
   m_Layer: 0
   m_Name: Tutorial Trigger
@@ -68,20 +67,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &114430231661208064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707056077732378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51272e9fdfc58d04a8d5d30f1befe811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imagesToDisplay: []
-  currentIndex: 0
-  triggered: 0
 --- !u!114 &114553339964512190
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -27,7 +27,7 @@ public class Particle : MonoBehaviour
     // Components
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Collider2D col;
-    [HideInInspector] public MeshRenderer rend;
+	[HideInInspector] public SpriteRenderer rend;
     #endregion
 
     #region State Specific
@@ -80,7 +80,7 @@ public class Particle : MonoBehaviour
 	{
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        rend = GetComponent<MeshRenderer>();
+		rend = GetComponent<SpriteRenderer>();
 	}
 
 	public void Activate(sSubstance newSubstance)

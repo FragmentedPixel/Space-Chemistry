@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4515937610808996}
   - component: {fileID: 114154404399451586}
   m_Layer: 0
-  m_Name: New Camera
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: -5765324120231101433, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4272130448977636}
   - component: {fileID: 20177825856728418}
-  - component: {fileID: 114476377510200486}
   - component: {fileID: 114863532486460478}
+  - component: {fileID: 81235823234644688}
   m_Layer: 0
   m_Name: Hand Camrea
   m_TagString: MainCamera
@@ -107,6 +107,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &81235823234644688
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888243504677250}
+  m_Enabled: 1
 --- !u!114 &114154404399451586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,22 +128,6 @@ MonoBehaviour:
   handCamera: {fileID: 20177825856728418}
   liquidCamera: {fileID: 0}
   gameCamera: {fileID: 0}
---- !u!114 &114476377510200486
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1888243504677250}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449678038cd1eef478c2e3e0945e5278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3
-  minMovement: 0.7
-  stopThreshold: 0.05
-  countingThreshold: 0.3
-  zoomSpeed: 3
 --- !u!114 &114863532486460478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,3 +142,4 @@ MonoBehaviour:
   target: {fileID: 0}
   smoothSpeed: 1.25
   offset: {x: 0, y: 0, z: 0}
+  zoomSpeed: 1

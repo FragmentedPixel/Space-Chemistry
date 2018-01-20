@@ -26,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
     public void SetCheckPoint(Vector3 newCheckPoint)
     {
         currentCheckpoint = newCheckPoint;
-        Debug.Log(currentCheckpoint);
     }
 
     public void Death()

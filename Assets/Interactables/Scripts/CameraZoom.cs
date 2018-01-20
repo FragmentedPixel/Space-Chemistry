@@ -12,11 +12,8 @@ public class CameraZoom : MonoBehaviour
 
         if(player != null)
         {
-            FollowPlayer[] cameras = FindObjectsOfType<FollowPlayer>();
-            foreach(FollowPlayer camera in cameras)
-            {
-                camera.GetComponent<FollowPlayer>().SetZoom(zoom);
-            }
+			CameraFollow camera = FindObjectOfType<CameraFollow>();
+			camera.SetZoom(zoom);
         }
     }
 
@@ -26,11 +23,8 @@ public class CameraZoom : MonoBehaviour
 
         if (player != null)
         {
-            FollowPlayer[] cameras = FindObjectsOfType<FollowPlayer>();
-            foreach (FollowPlayer camera in cameras)
-            {
-                camera.GetComponent<FollowPlayer>().RemoveZoom();
-            }
+			CameraFollow camera = FindObjectOfType<CameraFollow>();
+			camera.RemoveZoom ();
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * Responsible for managing the containers from the UI and sending them to the player.
@@ -32,10 +33,14 @@ public class ContainersManager : MonoBehaviour
     {
         foreach (Container cont in containers)
             cont.gameObject.SetActive(false);
+
+		GetComponent<Image> ().enabled = false;
     }
 
     public void UnLockNextBarrel()
     {
+		GetComponent<Image> ().enabled = true;
+		
         for(int i = 0; i < containers.Length; i++)
         {
             if(!containers[i].gameObject.activeInHierarchy)

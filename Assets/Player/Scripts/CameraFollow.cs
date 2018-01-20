@@ -5,17 +5,26 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour 
 {
 
-	public Transform target;
 
 	public float smoothSpeed = 12.5f;
-	public Vector3 offset;
-
-	private float initZoom;
 	public float zoomSpeed = 1f;
+    public float moveThreshold = 1f;
+
+    private Transform target;
+    private Transform player;
+
+    private float currentMovement;
+
+    private Vector3 lastPlayerPosition;
+    private Vector3 lastTargetPosition;
+
+    private Vector3 offset;
+	private float initZoom;
 
 	private void Start()
 	{
 		PlayerMovement playerMov = FindObjectOfType<PlayerMovement>();
+        player = playerMov.transform;
 		target = playerMov.cameraPoint;
 
 		offset = transform.position - target.position;
@@ -25,7 +34,14 @@ public class CameraFollow : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		Vector3 desiredPosition = target.position + offset;
+        float currentMovement = (lastPlayerPosition - player.position).magnitude;
+        if(currentMovement > moveThreshold)
+        {
+            lastPlayerPosition = player.position;
+            lastTargetPosition = target.position;
+        }
+
+ 		Vector3 desiredPosition = lastTargetPosition + offset;
 		Vector3 smoothedPosition = Vector3.Lerp (transform.position, desiredPosition, smoothSpeed * Time.fixedDeltaTime);
 
 		transform.position = smoothedPosition;

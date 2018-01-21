@@ -13,7 +13,7 @@ public class Extinguished : MonoBehaviour
     public Image dropsBar;
     public sSubstance substanceNeeded;
 
-    public ParticleSystem backgroundParticules;
+    public ParticleSystem[] backgroundParticules;
 
 	// Number of drops needed in order to extinguish the fire.
     public float dropsNeeded = 30;
@@ -29,7 +29,10 @@ public class Extinguished : MonoBehaviour
             if(substance.currentSubstance == substanceNeeded)
             {
                 dropsAdded++;
-                backgroundParticules.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0f, dropsAdded / dropsNeeded);
+                foreach(ParticleSystem backgroundpart in backgroundParticules)
+                {
+                    backgroundpart.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0f, dropsAdded / dropsNeeded);
+                }
 
 				if (dropsAdded > dropsNeeded) 
 				{

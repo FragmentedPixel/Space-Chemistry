@@ -811,6 +811,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imagesToDisplay:
   - {fileID: 21300000, guid: 7c9a9acabfa66d340bf2e597303db0d4, type: 3}
+  - {fileID: 21300000, guid: 087813f429fe5f349a6b5a07d7d2ff27, type: 3}
+  - {fileID: 21300000, guid: b18cfbefb272ca84e9b93d39d087bdee, type: 3}
+  - {fileID: 21300000, guid: 954759403f4aa004495807f97a02eb9e, type: 3}
 --- !u!61 &148570810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1834,7 +1837,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f2a721cbed9114e8143ff6559bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagesToDisplay: []
+  imagesToDisplay:
+  - {fileID: 21300000, guid: 7c9a9acabfa66d340bf2e597303db0d4, type: 3}
+  - {fileID: 21300000, guid: 087813f429fe5f349a6b5a07d7d2ff27, type: 3}
+  - {fileID: 21300000, guid: b18cfbefb272ca84e9b93d39d087bdee, type: 3}
+  - {fileID: 21300000, guid: 954759403f4aa004495807f97a02eb9e, type: 3}
 --- !u!1 &271347140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,8 +6531,8 @@ Transform:
   - {fileID: 803822320}
   - {fileID: 1927474362}
   - {fileID: 1911174075}
-  - {fileID: 2054924981}
   - {fileID: 201997182}
+  - {fileID: 2054924981}
   - {fileID: 92551166}
   - {fileID: 941828727}
   - {fileID: 272651243}

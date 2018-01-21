@@ -1183,7 +1183,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4413879403299324, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114888107709593076, guid: c5c62bd37fef05d4d8e1210db6c0dc1d,
         type: 2}
@@ -3065,7 +3065,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4293914072327772, guid: ab7e44ba1bbed74468941f25a7c8fd5e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 251718353638787904, guid: ab7e44ba1bbed74468941f25a7c8fd5e, type: 2}
@@ -6812,11 +6812,11 @@ Transform:
   - {fileID: 1963775661}
   - {fileID: 2121932809}
   - {fileID: 39536499}
-  - {fileID: 1538389581}
   - {fileID: 874870296}
+  - {fileID: 1538389581}
   - {fileID: 1113549461}
-  - {fileID: 1808954212}
   - {fileID: 1445127872}
+  - {fileID: 1808954212}
   - {fileID: 603317068}
   - {fileID: 236663578}
   - {fileID: 808816036}
@@ -7501,7 +7501,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4214741878355750, guid: 498b0a8a9401af347beffbcdd7a90f94, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1578357314928980, guid: 498b0a8a9401af347beffbcdd7a90f94, type: 2}
       propertyPath: m_Name
@@ -7874,7 +7874,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4150745506375000, guid: def18f85e967f2748bc45e2f04e0a7df, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4150745506375000, guid: def18f85e967f2748bc45e2f04e0a7df, type: 2}
       propertyPath: m_LocalScale.x
@@ -9101,7 +9101,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4010681891018798, guid: 1256959131c1409428464d4564daae57, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114260795441514096, guid: 1256959131c1409428464d4564daae57,
         type: 2}

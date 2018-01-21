@@ -21,6 +21,8 @@ public class HandMovement : MonoBehaviour
     // Speed of the rotation.
 	public float speed = 5f;
 
+    public float rotationoffset = 20f;
+
     // Is reading Input from controller.
     private bool connectedToController = false;
 
@@ -82,6 +84,7 @@ public class HandMovement : MonoBehaviour
     {
         
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        angle += connectedToController ? (0f) : (rotationoffset);
 
         // Slerping the current angle to the target angle.
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);

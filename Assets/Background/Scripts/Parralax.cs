@@ -15,6 +15,9 @@ public class Parralax : MonoBehaviour
 
     [Tooltip("Smoothing of the parralax effect.")]
     public float smoothing = .5f;
+
+    public float depth = 2f;
+
     #endregion
 
     #region Camera
@@ -35,7 +38,7 @@ public class Parralax : MonoBehaviour
 
         for (int i = 0; i < backgroundsParent.childCount; i++)
         {
-            parralaxScales[i] = backgroundsParent.GetChild(i).position.z * -1;
+            parralaxScales[i] = depth * -1;
         }
     }
     #endregion

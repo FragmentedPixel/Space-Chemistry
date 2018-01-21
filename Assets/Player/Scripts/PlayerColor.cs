@@ -11,7 +11,6 @@ public class PlayerColor : MonoBehaviour
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
         if(player != null)
         {
-            Debug.Log("da");
             SpriteRenderer[] playerMesh = player.GetComponentsInChildren<SpriteRenderer>();
             foreach(SpriteRenderer sp in playerMesh)
             {
@@ -25,8 +24,7 @@ public class PlayerColor : MonoBehaviour
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
         if (player != null)
         {
-            Debug.Log("nu");
-
+         
             SpriteRenderer[] playerMesh = player.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer sp in playerMesh)
             {

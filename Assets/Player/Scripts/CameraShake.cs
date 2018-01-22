@@ -40,12 +40,13 @@ public class CameraShake : MonoBehaviour
         else
         {
             shakeDuration = 0f;
-            camTransform.localPosition = originalPos;
+            enabled = false;
         }
     }
 
     public void Shake(float duration)
     {
         shakeDuration = duration;
+        enabled = true;
     }
 }

@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeDuration: 0.5
-  delay: 2
+  delay: 2.3
   impactSound: {fileID: 8300000, guid: 6148c811826682249b5dd5b63fc8fd54, type: 3}
 --- !u!212 &212194793347818678
 SpriteRenderer:

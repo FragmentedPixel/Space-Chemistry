@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845307475908262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.95, y: -32.2, z: 0.24609375}
+  m_LocalPosition: {x: 84.449, y: -23.41444, z: 0.24609375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4991878947695090}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012352078538400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 3, z: 0}
+  m_LocalPosition: {x: 7.71, y: 4.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4039232735300396}
@@ -191,7 +191,7 @@ MonoBehaviour:
   meteoritHitSound: {fileID: 8300000, guid: 08a67c16a0425114db5b87dca299b1ec, type: 3}
   containerPrefab: {fileID: 1871354615595146, guid: b7f984d2fc4e6d4439f8b802b540d3ff,
     type: 2}
-  containerSpawn: {fileID: 0}
+  containerSpawn: {fileID: 4991878947695090}
 --- !u!212 &212517606064898662
 SpriteRenderer:
   m_ObjectHideFlags: 1

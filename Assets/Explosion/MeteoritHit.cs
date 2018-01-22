@@ -16,7 +16,7 @@ public class MeteoritHit : OneTimeEvent
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
         audioS.PlayOneShot(meteoritHitSound);
 
-        Instantiate(containerPrefab, containerSpawn);
+        Instantiate(containerPrefab, containerSpawn.position, containerPrefab.transform.rotation, containerSpawn);
     }
 
 

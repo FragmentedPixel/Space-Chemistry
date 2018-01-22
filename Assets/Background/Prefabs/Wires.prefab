@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4406000133591932}
   - component: {fileID: 212959098147997008}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837349127058222}
   - component: {fileID: 212111931221861044}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4214741878355750}
   - component: {fileID: 212604968891963406}
-  m_Layer: 0
+  - component: {fileID: 61267361852750800}
+  m_Layer: 13
   m_Name: Wires
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4755674227913936}
   - component: {fileID: 212377226983847246}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +131,31 @@ Transform:
   m_Father: {fileID: 4214741878355750}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61267361852750800
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578357314928980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 2.56}
+  m_EdgeRadius: 0
 --- !u!212 &212111931221861044
 SpriteRenderer:
   m_ObjectHideFlags: 1

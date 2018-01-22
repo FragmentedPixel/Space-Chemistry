@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4250017696942766}
   - component: {fileID: 212114535996949740}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4382982826040628}
   - component: {fileID: 212173326832734562}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4889938465258900}
   - component: {fileID: 212366363806916586}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4942933763618672}
   - component: {fileID: 212313015117908136}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Wires (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4267154397401884}
   - component: {fileID: 212450216025273182}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4102024111751458}
   - component: {fileID: 212174132135670094}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Wires
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4153613008488904}
   - component: {fileID: 212368118051343780}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4160690560804840}
-  m_Layer: 0
+  - component: {fileID: 61315288544196524}
+  m_Layer: 13
   m_Name: Wire 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4764716896247302}
   - component: {fileID: 212601382080523326}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4944478987202260}
   - component: {fileID: 212279209146271242}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Wires (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4036493156473884}
   - component: {fileID: 212164045368316102}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000147726957414}
   - component: {fileID: 212610394044117664}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4696930921219908}
   - component: {fileID: 212603399911659558}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WIRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,6 +400,31 @@ Transform:
   m_Father: {fileID: 4160690560804840}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61315288544196524
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419472376341732}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.7, y: 2.6}
+  m_EdgeRadius: 0
 --- !u!212 &212114535996949740
 SpriteRenderer:
   m_ObjectHideFlags: 1

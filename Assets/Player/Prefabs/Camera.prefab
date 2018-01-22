@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 81235823234644688}
   - component: {fileID: 114776851746594012}
   - component: {fileID: 114210574745708084}
+  - component: {fileID: 114897172770173546}
   m_Layer: 0
   m_Name: Hand Camrea
   m_TagString: MainCamera
@@ -168,3 +169,18 @@ MonoBehaviour:
   smoothSpeed: 1.25
   zoomSpeed: 1
   moveThreshold: 1
+--- !u!114 &114897172770173546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888243504677250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bedad40543c7004f9627013c26e175b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4272130448977636}
+  shakeDuration: 0.7
+  shakeAmount: 1
+  decreaseFactor: 1

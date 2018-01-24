@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class RepiarableItem : MonoBehaviour
 {
-    public MonoBehaviour[] scriptToEnable;
     public float repiarDuration;
     public Image repiarProgress;
     public ParticleSystem repairParticles;
@@ -65,10 +64,7 @@ public class RepiarableItem : MonoBehaviour
             yield return null;
         }
 
-        foreach(MonoBehaviour script in scriptToEnable)
-        {
-            script.enabled = true;
-        }
+        RepiaredItem();
 
         Destroy(gameObject);
 
@@ -82,7 +78,6 @@ public class RepiarableItem : MonoBehaviour
         {
             repiarCanvas.enabled = true;
             overviewCanvas.enabled = false;
-            //Repiar();
         }
     }
 
@@ -94,5 +89,10 @@ public class RepiarableItem : MonoBehaviour
             repiarCanvas.enabled = false;
             overviewCanvas.enabled = true;
         }
+    }
+
+    public virtual void RepiaredItem()
+    {
+        Debug.Log("Item was repaired.");
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RepiarableItem : MonoBehaviour
 {
+    public MonoBehaviour[] scriptToEnable;
     public float repiarDuration;
     public Image repiarProgress;
     public ParticleSystem repairParticles;
@@ -64,7 +65,11 @@ public class RepiarableItem : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Object repiared");
+        foreach(MonoBehaviour script in scriptToEnable)
+        {
+            script.enabled = true;
+        }
+
         Destroy(gameObject);
 
         yield break;

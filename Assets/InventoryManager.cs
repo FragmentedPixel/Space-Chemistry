@@ -10,6 +10,15 @@ public class InventoryManager : MonoBehaviour
     private List<Image> images = new List<Image>();
     private PlayerInventory playerInvetory;
 
+    private void Start()
+    {
+        CollectableObject[] objectsToCollect = FindObjectsOfType<CollectableObject>();
+        if(objectsToCollect.Length <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     public void AddImage(Sprite newSprite)
     {
         Image newImage = Instantiate(original, transform);

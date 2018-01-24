@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 108142346600182654}
   - component: {fileID: 114484959200696778}
   m_Layer: 0
-  m_Name: Light Bec
+  m_Name: Bec Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,5 +16,5 @@ MonoBehaviour:
   particleLayer: 8
   particleGravity: 1
   particleMaterial: {fileID: 0}
-  particleLifeTime: 5
+  particleLifeTime: 2.8
   particleColor: {r: 0, g: 0, b: 1, a: 1}

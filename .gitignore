@@ -33,3 +33,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/_Scenes/etc.meta
+Assets/Substances/Materials/base-mat.mat

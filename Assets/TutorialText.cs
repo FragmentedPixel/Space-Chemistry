@@ -14,7 +14,7 @@ public class TutorialText : MonoBehaviour
     {
         controllerConnected = HandMovement.connectedToController;
 
-        if (controllerConnected)
+        if (controllerConnected == false)
             GetComponent<Text>().text = KeyboardText;
         else
             GetComponent<Text>().text = GamepadText;

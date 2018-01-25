@@ -8,10 +8,8 @@ public class StartConnecting : MonoBehaviour
     public float speed;
     public Image[] containers;
 
-    private void Start()
-    {
-        StartFilling();
-    }
+    public BoxCollider2D colliderToEnable;
+    public DoorOpener doorToOpen;
 
     public void StartFilling()
     {
@@ -34,7 +32,8 @@ public class StartConnecting : MonoBehaviour
 
     private void FinishedFilling()
     {
-
+        colliderToEnable.enabled = true;
+        doorToOpen.Opendoor();
     }
 	
 }

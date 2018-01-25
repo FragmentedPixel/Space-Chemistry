@@ -53,5 +53,10 @@ public class DoorOpener : MonoBehaviour
         door.transform.position = lappedPosition;
     }
 
+    public void Opendoor()
+    {
+        opneningDoor = true;
+    }
+
 
 }

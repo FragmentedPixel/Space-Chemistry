@@ -66,8 +66,6 @@ public class RepiarableItem : MonoBehaviour
 
         RepiaredItem();
 
-        Destroy(gameObject);
-
         yield break;
     }
 
@@ -95,5 +93,12 @@ public class RepiarableItem : MonoBehaviour
     {
         PlayerInventory player = FindObjectOfType<PlayerInventory>();
         player.RemoveItems(itemNeeded, amount);
+
+        FindObjectOfType<StartConnecting>().StartFilling();
+
+        overviewCanvas.gameObject.SetActive(false);
+        repiarCanvas.gameObject.SetActive(false);
+        
+        Destroy(this);
     }
 }

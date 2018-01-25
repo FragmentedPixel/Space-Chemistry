@@ -22,7 +22,23 @@ public class PlayerInventory : MonoBehaviour
                 counter++;
         }
 
-        return (amount <= counter);
+        bool result = (amount <= counter);
+
+
+        if(result == true)
+        {
+            int currentAmount = 0;
+
+            for(int i = 0; i < inventory.Count; i++)
+            {
+                if(inventory[i] == itemRequested)
+                {
+
+                }
+            }
+        }
+
+        return result;
     }
 
     private void Update()

@@ -23,22 +23,16 @@ public class HandMovement : MonoBehaviour
 
     public float rotationoffset = 20f;
 
+    Vector3 lastMouseCoordinates;
+
     // Is reading Input from controller.
     private bool connectedToController = false;
 
     private void Start()
     {
+        lastMouseCoordinates = Input.mousePosition;
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume()/3;
-
-        string[] names = Input.GetJoystickNames();
-        for (int x = 0; x < names.Length; x++)
-        {
-            if (names[x].Length == 33)
-            {
-                connectedToController = true;
-            }
-        }
 
         handCamera = CameraManager.cameraManager.GetHandCamera();
     }
@@ -47,18 +41,33 @@ public class HandMovement : MonoBehaviour
     #region Update
     private void Update()
 	{
+        bool controolermoved = false;
+        for (int i = 0; i < 20; i++)
+        {
+            if (Input.GetKeyDown("joystick 1 button " + i))
+            {
+                controolermoved = true;
+            }
+        }
+
+        if (lastMouseCoordinates != Input.mousePosition)
+        {
+            lastMouseCoordinates = Input.mousePosition;
+            connectedToController = false;
+            Cursor.visible = true;
+        }
+        if (controolermoved)
+        {
+            connectedToController = true;
+           
+        }
+        Cursor.visible = !connectedToController;
+
         Vector2 dir = Vector2.zero;
 
         if(connectedToController)
         {
             dir = new Vector2(Input.GetAxis("Hand X"), Input.GetAxis("Hand Y"));
-            if(dir == Vector2.zero)
-            {
-                Ray ray = handCamera.ScreenPointToRay(Input.mousePosition);
-                Vector3 result = ray.GetPoint((transform.position.z - handCamera.transform.position.z) / ray.direction.z);
-
-                dir = result - transform.position;
-            }
         }
 
         else
@@ -68,7 +77,8 @@ public class HandMovement : MonoBehaviour
 
             dir = result - transform.position;
         }
-
+        if (dir == Vector2.zero)
+            return;
         if (transform.parent.localScale.x > 0)
         {
             MoveHand(dir);

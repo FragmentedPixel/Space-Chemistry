@@ -35,6 +35,16 @@ public class HandMovement : MonoBehaviour
         audioS.volume = PlayerPrefsManager.GetMasterVolume()/3;
 
         handCamera = CameraManager.cameraManager.GetHandCamera();
+
+        string[] names = Input.GetJoystickNames();
+        for (int x = 0; x < names.Length; x++)
+        {
+            if (names[x].Length == 33)
+            {
+                connectedToController = true;
+            }
+        }
+
     }
     #endregion
 

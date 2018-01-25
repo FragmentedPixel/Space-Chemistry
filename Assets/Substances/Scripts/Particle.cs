@@ -80,7 +80,7 @@ public class Particle : MonoBehaviour
 	{
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-		rend = GetComponent<SpriteRenderer>();
+		rend = GetComponentInChildren<SpriteRenderer>();
 	}
 
 	public void Activate(sSubstance newSubstance)
@@ -145,7 +145,7 @@ public class Particle : MonoBehaviour
 
     public void ScaleDownSprite(Vector2 newScale)
     {
-
+        rend.transform.localScale = newScale;
     }
     #endregion
 }

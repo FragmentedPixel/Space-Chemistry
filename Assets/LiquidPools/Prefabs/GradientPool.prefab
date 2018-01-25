@@ -54,13 +54,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9197479bb0305024da911321f86853fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 1
   splash: {fileID: 1087251709110314, guid: e4bf72cf515967c4088f5e76b6195978, type: 2}
   baseMaterial: {fileID: 2100000, guid: afe5b682d283a4443b712e178f741d68, type: 2}
   watermesh: {fileID: 1690723453561738, guid: 75ecc2698e8f55840afcfefeaa15c2b9, type: 2}
+  poolSubstance: {fileID: 0}
+  mass: 1
   height: 1.8
   width: 10.27
-  poolColor: {r: 0, g: 0, b: 1, a: 1}
   deadly: 0
 --- !u!114 &114639506249903706
 MonoBehaviour:

@@ -91,7 +91,7 @@ public class sSubstance : ScriptableObject
         // Update the particle scale.
         particleScale.x = scaleValue;
         particleScale.y = scaleValue;
-        substanceScript.transform.localScale = particleScale;
+        substanceScript.ScaleDownSprite(particleScale);
     }
 
     #endregion

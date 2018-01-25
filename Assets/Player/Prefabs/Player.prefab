@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebcdfd1234b13943bc496f191ac9a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseInterval: 0.1
+  releaseInterval: 0.033
   relaseForce: 400
 --- !u!114 &114245199670654994
 MonoBehaviour:

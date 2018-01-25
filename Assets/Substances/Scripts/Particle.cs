@@ -142,5 +142,10 @@ public class Particle : MonoBehaviour
         else
             return 0f;
     }
+
+    public void ScaleDownSprite(Vector2 newScale)
+    {
+
+    }
     #endregion
 }

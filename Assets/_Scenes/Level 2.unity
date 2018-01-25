@@ -1613,6 +1613,24 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: 'Air Cleaner offline
+
+        Spare parts have been thrown arround
+
+        Find them!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: 'Air Cleaner offline
+
+        Spare parts have been thrown arround
+
+        Find them!'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
   m_IsPrefabParent: 0
@@ -3601,6 +3619,18 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: "Strange how water reacts with \nthe life serum, maybe it will prove
+        usefull"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: "Strange how water reacts with \nthe life serum, maybe it will prove
+        usefull"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
   m_IsPrefabParent: 0
@@ -4368,6 +4398,24 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 0.6999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: 'In the upper right corner, you have the invetory
+
+        Once you collect the parts
+
+        They will show up in your inventory'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: 'In the upper right corner, you have the invetory
+
+        Once you collect the parts
+
+        They will show up in your inventory'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -5993,6 +6041,20 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.86
       objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: 'ENTERING LIFE SUPPORT
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: 'ENTERING LIFE SUPPORT
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
   m_IsPrefabParent: 0
@@ -6338,6 +6400,20 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: -0.28599405
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: 'It seems that water reacts forming a walkable surface,
+
+        around this colorant'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: 'It seems that water reacts forming a walkable surface,
+
+        around this colorant'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}

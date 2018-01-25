@@ -26,7 +26,7 @@ public class HandMovement : MonoBehaviour
     Vector3 lastMouseCoordinates;
 
     // Is reading Input from controller.
-    private bool connectedToController = false;
+    public static bool connectedToController = false;
 
     private void Start()
     {

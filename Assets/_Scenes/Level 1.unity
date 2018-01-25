@@ -6049,8 +6049,9 @@ Prefab:
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: GamepadText
-      value: "Collect substances in the world using the \nShoot them using the LEFT
-        MOUSE BUTTON"
+      value: 'Collect substances in the world using the RIGHT TRIGGER
+
+        Shoot them using the LEFT TRIGGER'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -9771,6 +9772,16 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.40958965
       objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: LIFE SUPPORT
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: LIFE SUPPORT
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
   m_IsPrefabParent: 0
@@ -11414,6 +11425,16 @@ Prefab:
       propertyPath: m_Name
       value: Background Tutorial (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: "TO LIFE \nSUPPORT"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: "TO LIFE \nSUPPORT"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
   m_IsPrefabParent: 0
@@ -12146,6 +12167,16 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 83.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: Collect all these checkpoints to progress.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: Collect all these checkpoints to progress.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -17196,6 +17227,20 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: KeyboardText
+      value: 'This is a container,
+
+        It can hold substances collected'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
+        type: 2}
+      propertyPath: GamepadText
+      value: 'This is a container,
+
+        It can hold substances collected'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}

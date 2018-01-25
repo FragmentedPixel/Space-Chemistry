@@ -33,7 +33,11 @@ public class InventoryManager : MonoBehaviour
         {
             if(im.sprite == spriteToRemove)
             {
+                Image imageToDelete = im;
                 images.Remove(im);
+
+                Destroy(imageToDelete.gameObject);
+
                 return;
             }
         }

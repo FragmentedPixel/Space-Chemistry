@@ -93,6 +93,7 @@ public class RepiarableItem : MonoBehaviour
 
     public virtual void RepiaredItem()
     {
-        Debug.Log("Item was repaired.");
+        PlayerInventory player = FindObjectOfType<PlayerInventory>();
+        player.RemoveItems(itemNeeded, amount);
     }
 }

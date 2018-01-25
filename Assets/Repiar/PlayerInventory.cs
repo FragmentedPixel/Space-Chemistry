@@ -13,6 +13,27 @@ public class PlayerInventory : MonoBehaviour
         FindObjectOfType<InventoryManager>().AddImage(newItem.image);
     }
 
+    public void RemoveItems(InventoryItem itemRequested, int amount)
+    {
+        int currentAmount = 0;
+
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i] == itemRequested)
+            {
+                FindObjectOfType<InventoryManager>().RemoveImage(itemRequested.image);
+                currentAmount++;
+                inventory.RemoveAt(i);
+                i--;
+            }
+
+            if (currentAmount == amount)
+            {
+                return;
+            }
+        }
+    }
+
     public bool HasItem(InventoryItem itemRequested, int amount)
     {
         int counter = 0;
@@ -24,31 +45,17 @@ public class PlayerInventory : MonoBehaviour
 
         bool result = (amount <= counter);
 
-
-        if(result == true)
-        {
-            int currentAmount = 0;
-
-            for(int i = 0; i < inventory.Count; i++)
-            {
-                if(inventory[i] == itemRequested)
-                {
-
-                }
-            }
-        }
-
         return result;
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetButtonDown("Repiar"))
         {
             FindObjectToRepair();
         }
 
-        if(Input.GetKeyUp(KeyCode.Q))
+        if(Input.GetButtonUp("Repiar"))
         {
             StopRepairingObject();
         }
@@ -57,6 +64,7 @@ public class PlayerInventory : MonoBehaviour
     private void FindObjectToRepair()
     {
         float repiarRange = 3f;
+        repairedItem = null;
         RepiarableItem[] items = FindObjectsOfType<RepiarableItem>();
         foreach(RepiarableItem item in items)
         {
@@ -68,7 +76,15 @@ public class PlayerInventory : MonoBehaviour
             }
         }
 
-        repairedItem.StartRepair();
+        if(repairedItem != null)
+        {
+            repairedItem.StartRepair();
+        }
+        else
+        {
+            MessageManager.getInstance().DissplayMessage("There is nothing to repair.", 3f);
+        }
+
     }
 
     private void StopRepairingObject()

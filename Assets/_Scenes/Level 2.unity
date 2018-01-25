@@ -9479,6 +9479,11 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 114090881429145496, guid: 37032b5bc4647f54f961f55ffb7dadb6,
+        type: 2}
+      propertyPath: m_Text
+      value: Hold Q to repiar
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 212676864313655264, guid: 37032b5bc4647f54f961f55ffb7dadb6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 37032b5bc4647f54f961f55ffb7dadb6, type: 2}

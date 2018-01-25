@@ -57,7 +57,7 @@ public class Container : MonoBehaviour
         {
             GreenBackground();
 
-            particules+=2;
+            particules+=7;
             return true;
         }
         // Let the player know if the wrong substance is inside.

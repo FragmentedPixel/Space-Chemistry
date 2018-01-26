@@ -23,14 +23,11 @@ public class HandMovement : MonoBehaviour
 
     public float rotationoffset = 20f;
 
-    Vector3 lastMouseCoordinates;
 
     // Is reading Input from controller.
-    public static bool connectedToController = false;
 
     private void Start()
     {
-        lastMouseCoordinates = Input.mousePosition;
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume()/3;
 
@@ -41,7 +38,7 @@ public class HandMovement : MonoBehaviour
         {
             if (names[x].Length == 33)
             {
-                connectedToController = true;
+				MyImputManager.connectedToController = true;
             }
         }
 
@@ -51,31 +48,11 @@ public class HandMovement : MonoBehaviour
     #region Update
     private void Update()
 	{
-        bool controolermoved = false;
-        for (int i = 0; i < 20; i++)
-        {
-            if (Input.GetKeyDown("joystick 1 button " + i))
-            {
-                controolermoved = true;
-            }
-        }
-
-        if (lastMouseCoordinates != Input.mousePosition)
-        {
-            lastMouseCoordinates = Input.mousePosition;
-            connectedToController = false;
-            Cursor.visible = true;
-        }
-        if (controolermoved)
-        {
-            connectedToController = true;
-           
-        }
-        Cursor.visible = !connectedToController;
+        
 
         Vector2 dir = Vector2.zero;
 
-        if(connectedToController)
+		if(MyImputManager.connectedToController)
         {
             dir = new Vector2(Input.GetAxis("Hand X"), Input.GetAxis("Hand Y"));
         }
@@ -104,7 +81,7 @@ public class HandMovement : MonoBehaviour
     {
         
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle += connectedToController ? (0f) : (rotationoffset);
+		angle += MyImputManager.connectedToController ? (0f) : (rotationoffset);
 
         // Slerping the current angle to the target angle.
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);

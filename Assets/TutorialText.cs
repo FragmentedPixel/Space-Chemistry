@@ -12,7 +12,7 @@ public class TutorialText : MonoBehaviour
 
     private void OnEnable()
     {
-        controllerConnected = HandMovement.connectedToController;
+		controllerConnected = MyImputManager.connectedToController;
 
         if (controllerConnected == false)
             GetComponent<Text>().text = KeyboardText;

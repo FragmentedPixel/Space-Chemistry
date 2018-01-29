@@ -48,7 +48,8 @@ public class RepiarableItem : MonoBehaviour
     {
         repiarText.enabled = true;
         repairParticles.Stop();
-
+        repairParticles.Clear();
+        
         repiarProgress.fillAmount = 0f;
         StopAllCoroutines();
     }
@@ -98,7 +99,8 @@ public class RepiarableItem : MonoBehaviour
 
         overviewCanvas.gameObject.SetActive(false);
         repiarCanvas.gameObject.SetActive(false);
-        
+        repairParticles.Stop();
+
         Destroy(this);
     }
 }

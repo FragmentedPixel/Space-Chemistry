@@ -15,6 +15,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveItems(InventoryItem itemRequested, int amount)
     {
+        
         int currentAmount = 0;
 
         for (int i = 0; i < inventory.Count; i++)
@@ -25,6 +26,7 @@ public class PlayerInventory : MonoBehaviour
                 currentAmount++;
                 inventory.RemoveAt(i);
                 i--;
+                Debug.Log("removing item");
             }
 
             if (currentAmount == amount)
@@ -91,6 +93,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (repairedItem != null)
         {
+            Debug.Log("stoppedRepairing");
             repairedItem.StopRepair();
         }
     }

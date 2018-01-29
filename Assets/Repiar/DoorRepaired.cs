@@ -6,7 +6,7 @@ public class DoorRepaired : RepiarableItem
 {
     public BoxCollider2D[] collidersToEnable;
 
-    public override void RepiaredItem()
+    public override void RepairedItem()
     {
         foreach(BoxCollider2D collider in collidersToEnable)
         {

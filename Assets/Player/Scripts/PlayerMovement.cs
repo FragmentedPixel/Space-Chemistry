@@ -81,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
             StopParticles();
         }
 
+        anim.SetBool("Ground", grounded);
+
         return isPlayerOnGround;
     }
 
@@ -175,7 +177,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) && grounded)
         {
+            anim.SetBool("Jump", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+        else
+        {
+            anim.SetBool("Jump", false);
         }
 
         if (! grounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.Space)))

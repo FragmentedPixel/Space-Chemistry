@@ -484,8 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerConnected: 0
-  KeyboardText: Hold Q to repiar
-  GamepadText: Hold Y to repiar
+  KeyboardText: Hold Q to repair
+  GamepadText: Hold Y to repair
 --- !u!1001 &94529552
 Prefab:
   m_ObjectHideFlags: 0
@@ -4023,8 +4023,8 @@ Prefab:
     - target: {fileID: 114117784386252000, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: m_Text
-      value: "Strange how water reacts with \nthe life serum, maybe it will prove
-        usefull"
+      value: "Strange how the water reacts with \nthe life serum, maybe the reaction
+        will prove usefull"
       objectReference: {fileID: 0}
     - target: {fileID: 1413546930820166, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
       propertyPath: m_Name
@@ -4048,14 +4048,14 @@ Prefab:
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: KeyboardText
-      value: "Strange how water reacts with \nthe life serum, maybe it will prove
-        usefull"
+      value: "Strange how the water reacts with \nthe life serum, maybe the reaction
+        will prove usefull"
       objectReference: {fileID: 0}
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: GamepadText
-      value: "Strange how water reacts with \nthe life serum, maybe it will prove
-        usefull"
+      value: "Strange how the water reacts with \nthe life serum, maybe the reaction
+        will prove usefull"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -4184,12 +4184,12 @@ Prefab:
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: KeyboardText
-      value: "You can swap between containers using \n1 and 2 buttons"
+      value: "You can swap between containers using \n1 and 2 "
       objectReference: {fileID: 0}
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: GamepadText
-      value: "You can swap between containers using \nthe right and left triggers"
+      value: "You can swap between containers using \nthe R1 and L1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -5011,11 +5011,11 @@ Prefab:
     - target: {fileID: 114117784386252000, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: m_Text
-      value: 'In the upper right corner, you have the invetory
+      value: 'In the upper right corner, you have the inventory
 
         Once you collect the parts
 
-        They will show up in your inventory'
+        They will be collected there'
       objectReference: {fileID: 0}
     - target: {fileID: 1413546930820166, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
       propertyPath: m_Name
@@ -5034,20 +5034,20 @@ Prefab:
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: KeyboardText
-      value: 'In the upper right corner, you have the invetory
+      value: 'In the upper right corner, you have the inventory
 
         Once you collect the parts
 
-        They will show up in your inventory'
+        They will be collected there'
       objectReference: {fileID: 0}
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: GamepadText
-      value: 'In the upper right corner, you have the invetory
+      value: 'In the upper right corner, you have the inventory
 
         Once you collect the parts
 
-        They will show up in your inventory'
+        They will be collected there'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -7479,9 +7479,7 @@ Prefab:
     - target: {fileID: 114117784386252000, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: m_Text
-      value: 'It seems that water reacts forming a walkable surface,
-
-        around this colorant'
+      value: It seems that water reacts with the acid to form a walkable surface
       objectReference: {fileID: 0}
     - target: {fileID: 1413546930820166, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
       propertyPath: m_Name
@@ -7505,16 +7503,12 @@ Prefab:
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: KeyboardText
-      value: 'It seems that water reacts forming a walkable surface,
-
-        around this colorant'
+      value: It seems that water reacts with the acid to form a walkable surface
       objectReference: {fileID: 0}
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: GamepadText
-      value: 'It seems that water reacts forming a walkable surface,
-
-        around this colorant'
+      value: It seems that water reacts with the acid to form a walkable surface
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d2393e98780a744c8e4cd36e132714c, type: 2}
@@ -7686,6 +7680,19 @@ Prefab:
       propertyPath: stopAction
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1500749064834410, guid: 37032b5bc4647f54f961f55ffb7dadb6, type: 2}
+      propertyPath: m_Name
+      value: Repairable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842151699705784, guid: 37032b5bc4647f54f961f55ffb7dadb6, type: 2}
+      propertyPath: m_Name
+      value: Repair Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090881429145496, guid: 37032b5bc4647f54f961f55ffb7dadb6,
+        type: 2}
+      propertyPath: m_Text
+      value: Hold Q to repair
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37032b5bc4647f54f961f55ffb7dadb6, type: 2}
   m_IsPrefabParent: 0
@@ -7731,6 +7738,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1256959131c1409428464d4564daae57, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1477874369 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1477874368}
 --- !u!4 &1479563642 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4521730264959506, guid: cc59cd9abc8d1144c9d9225a3f04d8cb,
@@ -7998,11 +8009,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4663680450485330, guid: 1e6eb02342b143b4097fd8863c39a99e,
     type: 2}
   m_PrefabInternal: {fileID: 1520131506}
---- !u!4 &1520931172 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4010681891018798, guid: 1256959131c1409428464d4564daae57,
-    type: 2}
-  m_PrefabInternal: {fileID: 1477874368}
 --- !u!4 &1547116652 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4526950469485688, guid: 66e048bab730fc846b315fd030a6fa9c,
@@ -8041,7 +8047,7 @@ Transform:
   - {fileID: 2011468270}
   - {fileID: 1036926549}
   - {fileID: 1432478219}
-  - {fileID: 1520931172}
+  - {fileID: 1477874369}
   m_Father: {fileID: 1305504210}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

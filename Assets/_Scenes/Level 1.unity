@@ -12828,10 +12828,10 @@ Transform:
   - {fileID: 7113263}
   - {fileID: 1397384596}
   - {fileID: 1333329765}
-  - {fileID: 334713303}
-  - {fileID: 2064998217}
-  - {fileID: 702636016}
   - {fileID: 381827564}
+  - {fileID: 702636016}
+  - {fileID: 2064998217}
+  - {fileID: 334713303}
   m_Father: {fileID: 1031257587}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13317,9 +13317,9 @@ Prefab:
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}
       propertyPath: GamepadText
-      value: 'Move with Right Stick
+      value: 'Move with Left Stick
 
-        Press X to jump'
+        Press A to jump'
       objectReference: {fileID: 0}
     - target: {fileID: 114668264643671970, guid: 0d2393e98780a744c8e4cd36e132714c,
         type: 2}

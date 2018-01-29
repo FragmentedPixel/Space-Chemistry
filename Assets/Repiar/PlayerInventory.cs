@@ -50,12 +50,12 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Repiar"))
+        if(Input.GetButtonDown("Repair"))
         {
             FindObjectToRepair();
         }
 
-        if(Input.GetButtonUp("Repiar"))
+        if(Input.GetButtonUp("Repair"))
         {
             StopRepairingObject();
         }

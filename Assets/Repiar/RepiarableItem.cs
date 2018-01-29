@@ -40,7 +40,7 @@ public class RepiarableItem : MonoBehaviour
         }
         else
         {
-            MessageManager.getInstance().DissplayMessage("Not enough items invetory.", 3f);
+            MessageManager.getInstance().DissplayMessage("Not enough items in invetory.", 3f);
         }
     }
 
@@ -64,7 +64,7 @@ public class RepiarableItem : MonoBehaviour
             yield return null;
         }
 
-        RepiaredItem();
+        RepairedItem();
 
         yield break;
     }
@@ -89,7 +89,7 @@ public class RepiarableItem : MonoBehaviour
         }
     }
 
-    public virtual void RepiaredItem()
+    public virtual void RepairedItem()
     {
         PlayerInventory player = FindObjectOfType<PlayerInventory>();
         player.RemoveItems(itemNeeded, amount);

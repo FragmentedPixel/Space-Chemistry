@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
     public float acceleration = 1f;
     private float currentAcceleration;
     
-    public ParticleSystem trailParticlesRight;
-    public ParticleSystem trailParticlesLeft;
     public ParticleSystem sparklesPartilces;
 
     // Components.
@@ -89,8 +87,6 @@ public class PlayerMovement : MonoBehaviour
     private void StopParticles()
     {
         sparklesPartilces.Stop();
-        trailParticlesRight.Stop();
-        trailParticlesLeft.Stop();
     }
 
     #endregion
@@ -137,6 +133,8 @@ public class PlayerMovement : MonoBehaviour
         currentAcceleration += Time.deltaTime;
 
         float currentSpeed = Mathf.Lerp(startSpeed, maxSpeed, currentAcceleration / acceleration);
+        anim.SetFloat("MovementSpeed", currentAcceleration / acceleration);
+
         float forceX = right ? currentSpeed : -currentSpeed;
 
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
@@ -145,12 +143,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!sparklesPartilces.isPlaying)
                 sparklesPartilces.Play();
-
-            if (right && !trailParticlesRight.isPlaying)
-                trailParticlesRight.Play();
-
-            if (!right && !trailParticlesLeft.isPlaying)
-                trailParticlesLeft.Play();
         }
 
     }

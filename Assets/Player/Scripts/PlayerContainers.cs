@@ -24,6 +24,9 @@ public class PlayerContainers : MonoBehaviour
     private ContanterMixer mixer;
     private int containersCount = 2;
 
+    //Tutorial variable
+    public static int availableContainers = 2;
+
     // Sounds.
     private AudioSource audioS;
     public AudioClip releaseSound;
@@ -186,12 +189,12 @@ public class PlayerContainers : MonoBehaviour
         // Keyboard Input.
         if (Input.GetKeyDown(KeyCode.Alpha1))
             input = 0;
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && containersCount >= 2)
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && availableContainers >= 2)
             input = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && containersCount >= 3)
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && availableContainers >= 3)
             input = 2;
         else if (Input.GetAxis("Mouse ScrollWheel") != 0f)
-            input = (currentIndex + 1) % containers.Length;
+            input = (currentIndex + 1) % availableContainers;
 
         // Read controller Input.
         int controllerInput = (int) Input.GetAxisRaw("Container Axis");
@@ -199,7 +202,7 @@ public class PlayerContainers : MonoBehaviour
         // Change input & lock axis after change.
         if (controllerInput != 0f && changeTriggered == false)
         {
-            input = (currentIndex + controllerInput) % containersCount;
+            input = (currentIndex + controllerInput) % availableContainers;
 
             if (input < 0)
             {

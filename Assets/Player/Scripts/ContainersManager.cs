@@ -35,16 +35,18 @@ public class ContainersManager : MonoBehaviour
             cont.gameObject.SetActive(false);
 
 		GetComponent<Image> ().enabled = false;
+        PlayerContainers.availableContainers = 0; //Set all available containers to 0 for the player script
     }
 
     public void UnLockNextBarrel()
     {
 		GetComponent<Image> ().enabled = true;
-		
-        for(int i = 0; i < containers.Length; i++)
+        
+        for (int i = 0; i < containers.Length; i++)
         {
             if(!containers[i].gameObject.activeInHierarchy)
             {
+                PlayerContainers.availableContainers++; //Unlock one more container for the player
                 containers[i].gameObject.SetActive(true);
                 containers[i].Unlock();
                 return;

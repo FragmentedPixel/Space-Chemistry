@@ -17,21 +17,28 @@ public class MyImputManager : MonoBehaviour {
 	void Update () 
 	{
 		
-		bool controolermoved = false;
+		bool controlermoved = false;
 		for (int i = 0; i < 20; i++)
 		{
 			if (Input.GetKeyDown("joystick 1 button " + i))
 			{
-				controolermoved = true;
+				controlermoved = true;
 			}
 		}
+        for (int i = 0; i < 6; i++)
+        {
+            if (Input.GetKeyDown("joystick 1 axis " + i))
+            {
+                controlermoved = true;
+            }
+        }
 
-		if (lastMouseCoordinates != Input.mousePosition)
+        if (lastMouseCoordinates != Input.mousePosition)
 		{
 			lastMouseCoordinates = Input.mousePosition;
 			connectedToController = false;
 		}
-		if (controolermoved)
+		if (controlermoved)
 		{
 			connectedToController = true;
 

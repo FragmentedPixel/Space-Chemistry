@@ -38,7 +38,6 @@ public class PlayerHealth : MonoBehaviour
         {
             audioS.PlayOneShot(deathSound);
             dead = true;
-            StartCoroutine(RespawnPlayerCR(deathSound.length));
             anim.SetBool("Dead", true);
 
             PlayerMovement playerMov = GetComponent<PlayerMovement>();
@@ -48,6 +47,9 @@ public class PlayerHealth : MonoBehaviour
             playerMov.ChangeControl(false);
             playerCont.ChangeControl(false);
             playerHand.ChangeControl(false);
+
+            StartCoroutine(RespawnPlayerCR(deathSound.length));
+
         }
     }
 
@@ -64,21 +66,26 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator RespawnPlayerCR(float time)
     {
+        yield return new WaitForSeconds(.1f);
+
         while(anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
         {
             yield return null;
         }
-
+        
         transform.position = currentCheckpoint;
-        dead = false;
-        anim.SetBool("Dead", false);
 
         while(anim.GetCurrentAnimatorStateInfo(0).IsName("Respawn"))
         {
             yield return null;
         }
 
+        Debug.Log("da");
         RespawnPlayer();
+
+
+        dead = false;
+        anim.SetBool("Dead", false);
 
         yield break;
     }

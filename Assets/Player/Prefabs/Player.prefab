@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 4074474638847332}
   - component: {fileID: 58708474686387794}
   - component: {fileID: 114960006961846234}
+  - component: {fileID: 114537982147484134}
   m_Layer: 12
   m_Name: Collector
   m_TagString: Untagged
@@ -485,13 +486,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1185171598965794}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.19080894, w: 0.9816273}
   m_LocalPosition: {x: 7.1, y: -2.67, z: -2.8278403}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4403730678982432}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22}
 --- !u!4 &4122152711504220
 Transform:
   m_ObjectHideFlags: 1
@@ -1045,7 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseInterval: 0.033
-  relaseForce: 400
+  relaseForce: 560
 --- !u!114 &114245199670654994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1093,6 +1094,19 @@ MonoBehaviour:
   jumpForce: 8
   pressJumpForce: 12
   gravityBonus: 9.81
+--- !u!114 &114537982147484134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428685149344270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f038e3926bccac74cbe6332c498328e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 3
+  projectileMaterial: {fileID: 2100000, guid: 584d55f79ca470746a9c1b9e4a13d8ff, type: 2}
 --- !u!114 &114550035096795416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7921,7 +7935,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -7706108
+  randomSeed: 2053861117
   InitialModule:
     serializedVersion: 3
     enabled: 1

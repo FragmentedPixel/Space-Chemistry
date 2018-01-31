@@ -52,11 +52,20 @@ public class ProjectilePath : MonoBehaviour
 
     void DisplayIndicators()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 indicator;
 
-        mousePosition.z = transform.position.z;
+        if (!MyImputManager.connectedToController)
+        {
+            Vector3 handPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            indicator = (handPosition - transform.position).normalized * power;
+        }
+        else
+        {
+            //indicator = (transform.position - transform.parent.position).normalized * power;
+            indicator = transform. * power;
+        }
 
-        Vector3 indicator = (mousePosition - transform.position).normalized * power;
+
 
 
         argo[0].transform.position = transform.position;

@@ -5922,6 +5922,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93cda312d0cb04048add9a88ec5926ca, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1114662946
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 20.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694699972856290, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: eca9382e71852ce42a4a17f3df0af5fa, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1119088582 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4636993943696042, guid: 1150dcbc3c1a3e547863e72c24d58082,

@@ -73,19 +73,21 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
         
+        yield return new WaitForSeconds(time);
+        anim.SetBool("Dead", false);
+        
         transform.position = currentCheckpoint;
+
+        yield return new WaitForSeconds(.3f);
 
         while(anim.GetCurrentAnimatorStateInfo(0).IsName("Respawn"))
         {
             yield return null;
         }
-
-        Debug.Log("da");
+        
         RespawnPlayer();
 
-
         dead = false;
-        anim.SetBool("Dead", false);
 
         yield break;
     }

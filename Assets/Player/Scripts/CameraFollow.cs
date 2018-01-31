@@ -24,8 +24,11 @@ public class CameraFollow : MonoBehaviour
 		PlayerMovement playerMov = FindObjectOfType<PlayerMovement>();
         player = playerMov.transform;
 		target = playerMov.cameraPoint;
-        
-		initZoom = GetComponent<Camera>().orthographicSize;
+
+        transform.position = player.position + offset;
+
+
+        initZoom = GetComponent<Camera>().orthographicSize;
 	}
 
 	void FixedUpdate()

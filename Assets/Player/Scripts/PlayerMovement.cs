@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
 
     // Movement parameters.
     [Header("Movement")]
-    public float startSpeed = 1f;
+    public float minSpeed = 1f;
     public float maxSpeed = 4f;
+
     public float acceleration = 1f;
-    private float currentAcceleration;
+    private float currentSpeed = 0f;
     
     public ParticleSystem sparklesPartilces;
 
@@ -130,10 +131,11 @@ public class PlayerMovement : MonoBehaviour
 
         // update the player's components.
         anim.SetBool(walkingHash, true);
-        currentAcceleration += Time.deltaTime;
+        currentSpeed += Time.deltaTime * acceleration;
 
-        float currentSpeed = Mathf.Lerp(startSpeed, maxSpeed, currentAcceleration / acceleration);
-        anim.SetFloat("MovementSpeed", currentAcceleration / acceleration);
+        currentSpeed = Mathf.Clamp(currentSpeed, minSpeed, maxSpeed);
+        float animValue = (currentSpeed - minSpeed) / (maxSpeed - minSpeed);
+        anim.SetFloat("MovementSpeed", animValue);
 
         float forceX = right ? currentSpeed : -currentSpeed;
 
@@ -151,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         anim.SetBool(walkingHash, false);
-        currentAcceleration = 0f;
+        currentSpeed = minSpeed;
 
         StopParticles();
     }

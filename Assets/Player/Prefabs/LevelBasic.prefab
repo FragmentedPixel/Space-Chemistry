@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792882789647614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -69.37, y: -29.98, z: -1}
+  m_LocalPosition: {x: -6.08, y: -25.32, z: -0.9360943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4996c3c20be562246a6e039b08a09381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1721168421789584, guid: 741a95361e328534880799759797b36d,
+  playerPrefab: {fileID: 1721168421789584, guid: eca9382e71852ce42a4a17f3df0af5fa,
     type: 2}
   cameraPrefab: {fileID: 1704539790679490, guid: 35cebed80214cd34b872cbd485ca59e0,
     type: 2}

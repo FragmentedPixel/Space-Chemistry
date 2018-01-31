@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     private AudioSource audioS;
     private Vector3 currentCheckpoint;
     private bool dead = false;
+
+    private Animator anim;
     #endregion
 
     #region CheckPoint
@@ -21,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
     {
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void SetCheckPoint(Vector3 newCheckPoint)
@@ -35,20 +39,48 @@ public class PlayerHealth : MonoBehaviour
             audioS.PlayOneShot(deathSound);
             dead = true;
             StartCoroutine(RespawnPlayerCR(deathSound.length));
+            anim.SetBool("Dead", true);
+
+            PlayerMovement playerMov = GetComponent<PlayerMovement>();
+            PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
+            HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();
+
+            playerMov.ChangeControl(false);
+            playerCont.ChangeControl(false);
+            playerHand.ChangeControl(false);
         }
     }
 
     private void RespawnPlayer()
     {
-        transform.position = currentCheckpoint;
-        dead = false;
+        PlayerMovement playerMov = GetComponent<PlayerMovement>();
+        PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
+        HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();
+
+        playerMov.ChangeControl(true);
+        playerCont.ChangeControl(true);
+        playerHand.ChangeControl(true);
     }
 
     IEnumerator RespawnPlayerCR(float time)
     {
-        yield return new WaitForSeconds(time);
+        while(anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+        {
+            yield return null;
+        }
+
+        transform.position = currentCheckpoint;
+        dead = false;
+        anim.SetBool("Dead", false);
+
+        while(anim.GetCurrentAnimatorStateInfo(0).IsName("Respawn"))
+        {
+            yield return null;
+        }
+
         RespawnPlayer();
 
+        yield break;
     }
     #endregion
 }

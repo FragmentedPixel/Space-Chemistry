@@ -114,6 +114,8 @@ public class PlayerContainers : MonoBehaviour
 
     private void Relase()
     {
+        if (availableContainers == 0)
+            return;
         // Play corresponding sound.
         if (!audioS.isPlaying)
         {
@@ -137,9 +139,12 @@ public class PlayerContainers : MonoBehaviour
 
     private void Collect()
     {
+        if (availableContainers == 0)
+            return;
+
         // Check if the current container can collect.
         bool canCollect = collector.Collect(containers[currentIndex]);
-
+        
         if(canCollect)
         {
             // Play corresponding sound.

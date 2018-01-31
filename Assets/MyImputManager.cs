@@ -25,14 +25,6 @@ public class MyImputManager : MonoBehaviour {
 				controlermoved = true;
 			}
 		}
-        for (int i = 1; i < 6; i++)
-        {
-            if (Input.GetAxis("Joystick axis " + i)!=-1)
-            {
-                Debug.Log("Axis moved "+ i+ Input.GetAxis("Joystick axis " + i));
-                controlermoved = true;
-            }
-        }
 
         if (lastMouseCoordinates != Input.mousePosition)
 		{

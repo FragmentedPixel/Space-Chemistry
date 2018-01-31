@@ -25,10 +25,11 @@ public class MyImputManager : MonoBehaviour {
 				controlermoved = true;
 			}
 		}
-        for (int i = 0; i < 19; i++)
+        for (int i = 1; i < 6; i++)
         {
-            if (Input.GetKeyDown("Joystick 1 axis " + i))
+            if (Input.GetAxis("Joystick axis " + i)!=-1)
             {
+                Debug.Log("Axis moved "+ i+ Input.GetAxis("Joystick axis " + i));
                 controlermoved = true;
             }
         }

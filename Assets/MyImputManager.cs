@@ -25,9 +25,9 @@ public class MyImputManager : MonoBehaviour {
 				controlermoved = true;
 			}
 		}
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 19; i++)
         {
-            if (Input.GetKeyDown("joystick 1 axis " + i))
+            if (Input.GetKeyDown("Joystick 1 axis " + i))
             {
                 controlermoved = true;
             }

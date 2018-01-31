@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     private AudioSource audioS;
     private Vector3 currentCheckpoint;
     private bool dead = false;
+
+    private Animator anim;
     #endregion
 
     #region CheckPoint
@@ -21,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
     {
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void SetCheckPoint(Vector3 newCheckPoint)
@@ -34,21 +38,58 @@ public class PlayerHealth : MonoBehaviour
         {
             audioS.PlayOneShot(deathSound);
             dead = true;
+            anim.SetBool("Dead", true);
+
+            PlayerMovement playerMov = GetComponent<PlayerMovement>();
+            PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
+            HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();
+
+            playerMov.ChangeControl(false);
+            playerCont.ChangeControl(false);
+            playerHand.ChangeControl(false);
+
             StartCoroutine(RespawnPlayerCR(deathSound.length));
+
         }
     }
 
     private void RespawnPlayer()
     {
-        transform.position = currentCheckpoint;
-        dead = false;
+        PlayerMovement playerMov = GetComponent<PlayerMovement>();
+        PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
+        HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();
+
+        playerMov.ChangeControl(true);
+        playerCont.ChangeControl(true);
+        playerHand.ChangeControl(true);
     }
 
     IEnumerator RespawnPlayerCR(float time)
     {
+        yield return new WaitForSeconds(.1f);
+
+        while(anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+        {
+            yield return null;
+        }
+        
         yield return new WaitForSeconds(time);
+        anim.SetBool("Dead", false);
+        
+        transform.position = currentCheckpoint;
+
+        yield return new WaitForSeconds(.3f);
+
+        while(anim.GetCurrentAnimatorStateInfo(0).IsName("Respawn"))
+        {
+            yield return null;
+        }
+        
         RespawnPlayer();
 
+        dead = false;
+
+        yield break;
     }
     #endregion
 }

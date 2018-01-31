@@ -12,13 +12,12 @@ public class PlayerMovement : MonoBehaviour
 
     // Movement parameters.
     [Header("Movement")]
-    public float startSpeed = 1f;
+    public float minSpeed = 1f;
     public float maxSpeed = 4f;
+
     public float acceleration = 1f;
-    private float currentAcceleration;
+    private float currentSpeed = 0f;
     
-    public ParticleSystem trailParticlesRight;
-    public ParticleSystem trailParticlesLeft;
     public ParticleSystem sparklesPartilces;
 
     // Components.
@@ -81,14 +80,14 @@ public class PlayerMovement : MonoBehaviour
             StopParticles();
         }
 
+        anim.SetBool("Ground", grounded);
+
         return isPlayerOnGround;
     }
 
     private void StopParticles()
     {
         sparklesPartilces.Stop();
-        trailParticlesRight.Stop();
-        trailParticlesLeft.Stop();
     }
 
     #endregion
@@ -132,9 +131,12 @@ public class PlayerMovement : MonoBehaviour
 
         // update the player's components.
         anim.SetBool(walkingHash, true);
-        currentAcceleration += Time.deltaTime;
+        currentSpeed += Time.deltaTime * acceleration;
 
-        float currentSpeed = Mathf.Lerp(startSpeed, maxSpeed, currentAcceleration / acceleration);
+        currentSpeed = Mathf.Clamp(currentSpeed, minSpeed, maxSpeed);
+        float animValue = (currentSpeed - minSpeed) / (maxSpeed - minSpeed);
+        anim.SetFloat("MovementSpeed", animValue);
+
         float forceX = right ? currentSpeed : -currentSpeed;
 
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
@@ -143,12 +145,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!sparklesPartilces.isPlaying)
                 sparklesPartilces.Play();
-
-            if (right && !trailParticlesRight.isPlaying)
-                trailParticlesRight.Play();
-
-            if (!right && !trailParticlesLeft.isPlaying)
-                trailParticlesLeft.Play();
         }
 
     }
@@ -157,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         anim.SetBool(walkingHash, false);
-        currentAcceleration = 0f;
+        currentSpeed = minSpeed;
 
         StopParticles();
     }
@@ -175,7 +171,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) && grounded)
         {
+            anim.SetBool("Jump", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+        else
+        {
+            anim.SetBool("Jump", false);
         }
 
         if (! grounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.Space)))

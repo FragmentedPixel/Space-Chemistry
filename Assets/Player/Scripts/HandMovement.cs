@@ -31,7 +31,7 @@ public class HandMovement : MonoBehaviour
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume()/3;
 
-        handCamera = CameraManager.cameraManager.GetHandCamera();
+        handCamera = Camera.main;
 
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)

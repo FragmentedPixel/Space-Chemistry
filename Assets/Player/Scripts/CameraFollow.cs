@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour 
 {
-
-
 	public float smoothSpeed = 12.5f;
 	public float zoomSpeed = 1f;
     public float moveThreshold = 1f;
@@ -18,7 +16,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 lastPlayerPosition;
     private Vector3 lastTargetPosition;
 
-    private Vector3 offset;
+    public Vector3 offset;
 	private float initZoom;
 
 	private void Start()
@@ -27,9 +25,10 @@ public class CameraFollow : MonoBehaviour
         player = playerMov.transform;
 		target = playerMov.cameraPoint;
 
-		offset = transform.position - target.position;
-		offset.x = offset.y = 0f;
-		initZoom = GetComponent<Camera>().orthographicSize;
+        transform.position = player.position + offset;
+
+
+        initZoom = GetComponent<Camera>().orthographicSize;
 	}
 
 	void FixedUpdate()

@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1721168421789584, guid: 741a95361e328534880799759797b36d,
     type: 2}
-  cameraPrefab: {fileID: 1076100061402944, guid: 62a21e07b253326418b111d76e62696a,
+  cameraPrefab: {fileID: 1704539790679490, guid: 35cebed80214cd34b872cbd485ca59e0,
     type: 2}
   UIprefab: {fileID: 1395837530920456, guid: 65a09024e56e84944a5ff07c334e8be7, type: 2}
   particleManagerPrefab: {fileID: 1513436198089506, guid: 6c6a3f0e3d4d52b4ea11a57715e3bcc3,

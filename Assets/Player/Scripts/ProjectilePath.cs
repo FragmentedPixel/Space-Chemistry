@@ -62,7 +62,7 @@ public class ProjectilePath : MonoBehaviour
         else
         {
             //indicator = (transform.position - transform.parent.position).normalized * power;
-            indicator = transform. * power;
+			indicator = transform.forward * power;
         }
 
 

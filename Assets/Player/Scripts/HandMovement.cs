@@ -48,8 +48,6 @@ public class HandMovement : MonoBehaviour
     #region Update
     private void Update()
 	{
-        
-
         Vector2 dir = Vector2.zero;
 
 		if(MyImputManager.connectedToController)

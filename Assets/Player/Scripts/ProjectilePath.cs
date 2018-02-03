@@ -30,7 +30,9 @@ public class ProjectilePath : MonoBehaviour
             go.GetComponent<Collider>().enabled = false;
             go.GetComponent<Renderer>().material = projectileMaterial;
             go.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            go.transform.parent = transform;
             argo[i] = go;
+
         }
     }
 	
@@ -61,8 +63,7 @@ public class ProjectilePath : MonoBehaviour
         }
         else
         {
-            //indicator = (transform.position - transform.parent.position).normalized * power;
-			indicator = transform.forward * power;
+			indicator = transform.right * power;
         }
 
 

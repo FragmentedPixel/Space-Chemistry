@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4114165260200460}
   - component: {fileID: 114221315605903088}
+  - component: {fileID: 114134024221641018}
   m_Layer: 8
   m_Name: Generator
   m_TagString: Untagged
@@ -203,7 +204,6 @@ GameObject:
   - component: {fileID: 4074474638847332}
   - component: {fileID: 58708474686387794}
   - component: {fileID: 114960006961846234}
-  - component: {fileID: 114537982147484134}
   m_Layer: 12
   m_Name: Collector
   m_TagString: Untagged
@@ -1034,6 +1034,19 @@ MonoBehaviour:
   movementSounds: []
   speed: 20
   rotationoffset: 20
+--- !u!114 &114134024221641018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185171598965794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f038e3926bccac74cbe6332c498328e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 3
+  projectileMaterial: {fileID: 2100000, guid: 584d55f79ca470746a9c1b9e4a13d8ff, type: 2}
 --- !u!114 &114221315605903088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1094,19 +1107,6 @@ MonoBehaviour:
   jumpForce: 8
   pressJumpForce: 12
   gravityBonus: 9.81
---- !u!114 &114537982147484134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1428685149344270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f038e3926bccac74cbe6332c498328e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 3
-  projectileMaterial: {fileID: 2100000, guid: 584d55f79ca470746a9c1b9e4a13d8ff, type: 2}
 --- !u!114 &114550035096795416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7935,7 +7935,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2053861117
+  randomSeed: -141337485
   InitialModule:
     serializedVersion: 3
     enabled: 1

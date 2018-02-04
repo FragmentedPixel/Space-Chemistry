@@ -17,6 +17,8 @@ public class HandCollector : MonoBehaviour
     
     // The force at which the particles are attracted.
     public Effector2D particleSoaker;
+    public Effector2D particleHelper1;
+    public Effector2D particleHelper2;
 
     // The trigger for entering the collector.
     public Collider2D particleCollector;
@@ -43,6 +45,8 @@ public class HandCollector : MonoBehaviour
     {
         collecting = true;
         particleSoaker.enabled = true;
+        particleHelper1.enabled = true;
+        particleHelper2.enabled = true;
         particleCollector.enabled = true;
     }
 
@@ -50,6 +54,8 @@ public class HandCollector : MonoBehaviour
     {
         collecting = false;
         particleSoaker.enabled = false;
+        particleHelper1.enabled = false;
+        particleHelper2.enabled = false;
         particleCollector.enabled = false;
      
     }

@@ -32,6 +32,7 @@ public class LiquidPool : MonoBehaviour {
     public float height;
     public float width;
     public bool deadly = false;
+    private EdgeCollider2D edge;
     #endregion
 
     #region Components
@@ -75,16 +76,17 @@ public class LiquidPool : MonoBehaviour {
 	
     public void SpawnWater(float width, float height)
     {
-       //for floating add a box collider
-        gameObject.AddComponent<BoxCollider2D>();
-        gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, height / 2);
-        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(width, height);
-
         //Add Color trigger for player collision
-        GameObject colorTrigger = new GameObject();
+        GameObject colorTrigger = new GameObject("Color Trigger");
         colorTrigger.layer = LayerMask.NameToLayer("Player");
         colorTrigger.transform.SetParent(transform);
         colorTrigger.transform.localPosition = Vector2.zero;
+
+
+        if (deadly)
+        {
+            colorTrigger.AddComponent<Death>();
+        }
 
         // Set the collision for the color trigger
         BoxCollider2D box = colorTrigger.AddComponent<BoxCollider2D>();
@@ -97,6 +99,12 @@ public class LiquidPool : MonoBehaviour {
         //calculate no of edges and nodes we have
         int edgecount = Mathf.RoundToInt(width) * 5; //five per unit width to give smoothness and lower the performance impact
         int nodecount = edgecount + 1;
+
+        //for floating add a box collider
+        edge = gameObject.AddComponent<EdgeCollider2D>();
+        edge.points = new Vector2[edgecount];
+        edge.edgeRadius = .5f;
+        edge.offset = new Vector2(0f, -.6f);
 
         //Add our line renderer and set it up;
         Color poolColor = poolSubstance.particleColor;
@@ -128,8 +136,7 @@ public class LiquidPool : MonoBehaviour {
         BOTTOM = transform.position.y;
         TOP = BOTTOM + height;
         LEFT = transform.position.x - width/2;
-
-        Debug.DrawLine(new Vector3(LEFT, TOP, 0f), new Vector3(transform.position.x + width / 2, BOTTOM, 0f), Color.red, Mathf.Infinity);
+        
 
         //for each node, set the line renderer and physics arrays
         for (int i = 0; i < nodecount; i++)
@@ -182,7 +189,7 @@ public class LiquidPool : MonoBehaviour {
             colliders[i] = new GameObject();
             colliders[i].name = "Trigger";
             colliders[i].AddComponent<BoxCollider2D>();
-            colliders[i].transform.parent = transform;
+            colliders[i].transform.parent = meshobjects[i].transform;
             
 
             //set the pos and scale to the correct dimes
@@ -199,11 +206,6 @@ public class LiquidPool : MonoBehaviour {
 
             newReactant.reactantSubstance = poolSubstance;
 
-            if(deadly)
-            {
-                Death death = GetComponent<Death>();
-                colliders[i].AddComponent<Death>();
-            }
         }
     }
 
@@ -261,8 +263,12 @@ public class LiquidPool : MonoBehaviour {
 
     void UpdateMeshes()
     {
+        Vector2[] points = new Vector2[meshes.Length];
+
         for (int i = 0; i < meshes.Length; i++)
         {
+            points[i] = new Vector2(xpositions[i] - LEFT - width/2, ypositions[i] - BOTTOM);
+
             Vector3[] Vertices = new Vector3[4];
             Vertices[0] = new Vector3(xpositions[i], ypositions[i], z);
             Vertices[1] = new Vector3(xpositions[i + 1], ypositions[i + 1], z);
@@ -271,11 +277,15 @@ public class LiquidPool : MonoBehaviour {
 
             meshes[i].vertices = Vertices;
         }
+
+        for(int i = 0; i < meshes.Length; i++)
+            if(points[i] != edge.points[i])
+                edge.points = points;
+        
     }
 
     public void Splash(float xpos, float velocity)
     {
-        
         //If the position is within the bounds of the water:
         if (xpos >= xpositions[0] && xpos <= xpositions[xpositions.Length - 1])
         {
@@ -303,6 +313,7 @@ public class LiquidPool : MonoBehaviour {
             Quaternion rotation = Quaternion.LookRotation(new Vector3(xpositions[Mathf.FloorToInt(xpositions.Length / 2)], BOTTOM + 8, 5) - position);
 
             //Create the splash and tell it to destroy itself.
+
             GameObject splish = Instantiate(splash, position, rotation, transform) as GameObject;
             Destroy(splish, lifetime + 0.3f);
         }

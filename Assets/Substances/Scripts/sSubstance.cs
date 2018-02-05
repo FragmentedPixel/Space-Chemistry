@@ -85,7 +85,7 @@ public class sSubstance : ScriptableObject
         float percentagePassed = substanceScript.GetPercentagePassed();
 
         // Calculate scale depending on life time left.
-        float scaleValue = 1.0f - percentagePassed;
+        float scaleValue = 1.0f - percentagePassed/2;
         Vector2 particleScale = Vector2.one;
 
         // Update the particle scale.

@@ -30,7 +30,9 @@ public class Generator : MonoBehaviour
             Particle newParticle = ParticlePool.instance.RequestParticle(substanceToRelase);
 
             // Update particle parameters.
-            newParticle.transform.position = transform.position;
+            Vector3 spawnPosition = transform.position;
+            spawnPosition.z = 0f;
+            newParticle.transform.position = spawnPosition;
             newParticle.ChangeSubstanceState(substanceToRelase);
             newParticle.rb.AddForce(transform.right * relaseForce);
 

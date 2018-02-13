@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222801472253458752}
   - component: {fileID: 114962778342369282}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Repair Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

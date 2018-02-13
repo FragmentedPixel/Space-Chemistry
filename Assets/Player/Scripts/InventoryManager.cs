@@ -5,13 +5,11 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public Image original;
-
-    private List<Image> images = new List<Image>();
-    private PlayerInventory playerInvetory;
+    public Image invetoryImagePrefab;
 
     private void Start()
     {
+        // If there are no collectabiles in this level, we don't need the pannel.
         CollectableObject[] objectsToCollect = FindObjectsOfType<CollectableObject>();
         if(objectsToCollect.Length <= 0)
         {
@@ -19,28 +17,21 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void AddImage(Sprite newSprite)
+    public void OnItemsChanged()
     {
-        Image newImage = Instantiate(original, transform);
-        newImage.sprite = newSprite;
+        // Destroy existing items.
+        foreach (Transform oldItem in transform)
+            Destroy(oldItem.gameObject);
 
-        images.Add(newImage);
-    }
+        // Get current owned items.
+        List<RepairItem> ownedItems = RepairItemsManager.GetAllOwnedItems();
 
-    public void RemoveImage(Sprite spriteToRemove)
-    {
-        foreach(Image im in images)
+        // Add the current owned items to the inventory.
+        foreach(RepairItem item in ownedItems)
         {
-            if(im.sprite == spriteToRemove)
-            {
-                Image imageToDelete = im;
-                images.Remove(im);
-
-                Destroy(imageToDelete.gameObject);
-
-                return;
-            }
+            //TODO: Add object count as well.
+            Image newImage = Instantiate(invetoryImagePrefab, transform);
+            newImage.sprite = item.itemSprite;
         }
     }
-
 }

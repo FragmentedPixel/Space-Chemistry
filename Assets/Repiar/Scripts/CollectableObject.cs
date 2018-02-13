@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+ * Responsible for sending collected objects to the inventory.
+ */
 
-public class CollectableObject : MonoBehaviour
+public class CollectableObject : SoundMonoBehaviour
 {
-    public InventoryItem item;
+    public RepairItem item;
     public AudioClip pickupSound;
 
     private bool pickedUp = false;
@@ -16,18 +19,13 @@ public class CollectableObject : MonoBehaviour
         if(player != null && pickedUp == false)
         {
             pickedUp = true;
-
+            Destroy(GetComponentInChildren<Transform>().gameObject);
 
             GetComponent<SpriteRenderer>().enabled = false;
-            AudioSource audioS = gameObject.AddComponent<AudioSource>();
-            audioS.volume = PlayerPrefsManager.GetMasterVolume();
             audioS.PlayOneShot(pickupSound);
-            Destroy(gameObject.GetComponentInChildren<Transform>().gameObject);
 
-            player.AddItem(item);
+            item.Collect();
             Destroy(gameObject, pickupSound.length);
         }
     }
-
-
 }

@@ -9,8 +9,7 @@ public class RepiarableItem : MonoBehaviour
     public Image repiarProgress;
     public ParticleSystem repairParticles;
 
-    public InventoryItem itemNeeded;
-    public int amount;
+    public List<ItemNeeded> itemsNeeded;
 
     public Canvas repiarCanvas;
     public Canvas overviewCanvas;
@@ -21,10 +20,14 @@ public class RepiarableItem : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < itemsNeeded.Count; i++)
         {
-            Image newImage = Instantiate(original, itemsNeedPannel);
-            newImage.sprite = itemNeeded.image;
+            ItemNeeded currentItem = itemsNeeded[i];
+            for(int j = 0; j < currentItem.amount; j++)
+            {
+                Image newImage = Instantiate(original, itemsNeedPannel);
+                newImage.sprite = currentItem.item.itemSprite;
+            }   
         }
     }
 
@@ -34,14 +37,41 @@ public class RepiarableItem : MonoBehaviour
         repiarText.enabled = false;
         repairParticles.Play();
 
-        if (inventory.HasItem(itemNeeded, amount))
+        if (HasAllItems())
         {
             StartCoroutine(RepairingCR());
         }
         else
         {
-            MessageManager.getInstance().DissplayMessage("Not enough items in invetory.", 3f);
+            MessageManager.getInstance().DissplayMessage("Not enough items in inventory.", 3f);
         }
+    }
+
+    private void UseAllItems()
+    {
+        for (int i = 0; i < itemsNeeded.Count; i++)
+        {
+            ItemNeeded currentItem = itemsNeeded[i];
+            for (int j = 0; j < currentItem.amount; j++)
+            {
+                currentItem.item.Use(currentItem.amount);
+            }
+        }
+    }
+
+    private bool HasAllItems()
+    {
+        for (int i = 0; i < itemsNeeded.Count; i++)
+        {
+            ItemNeeded currentItem = itemsNeeded[i];
+            for (int j = 0; j < currentItem.amount; j++)
+            {
+                if (currentItem.item.Has(currentItem.amount) == false)
+                    return false;
+            }
+        }
+
+        return true;
     }
 
     public void StopRepair()
@@ -56,6 +86,7 @@ public class RepiarableItem : MonoBehaviour
 
     private IEnumerator RepairingCR()
     {
+
         float currentTime = 0f;
         while(currentTime <= repiarDuration)
         {
@@ -93,7 +124,8 @@ public class RepiarableItem : MonoBehaviour
     public virtual void RepairedItem()
     {
         PlayerInventory player = FindObjectOfType<PlayerInventory>();
-        player.RemoveItems(itemNeeded, amount);
+
+        UseAllItems();
 
         FindObjectOfType<StartConnecting>().StartFilling();
 
@@ -103,4 +135,11 @@ public class RepiarableItem : MonoBehaviour
 
         Destroy(this);
     }
+}
+
+[System.Serializable]
+public class ItemNeeded
+{
+    public RepairItem item;
+    public int amount;
 }

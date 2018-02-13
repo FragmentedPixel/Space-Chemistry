@@ -12,6 +12,11 @@ public class CollectableObject : SoundMonoBehaviour
 
     private bool pickedUp = false;
 
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = item.itemSprite;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerInventory player = collision.gameObject.GetComponent<PlayerInventory>();
@@ -19,9 +24,10 @@ public class CollectableObject : SoundMonoBehaviour
         if(player != null && pickedUp == false)
         {
             pickedUp = true;
-            Destroy(GetComponentInChildren<Transform>().gameObject);
 
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponentInChildren<ParticleSystem>().Stop();
+
             audioS.PlayOneShot(pickupSound);
 
             item.Collect();

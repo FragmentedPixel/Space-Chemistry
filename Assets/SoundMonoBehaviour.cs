@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class SoundMonoBehaviour : MonoBehaviour
 {
-    public int priority;
+    public int soundPriority = 50;
 
     protected AudioSource audioS;
 
-    private void Start()
+    private void Awake()
     {
-        Debug.Log("da");
-
         audioS = GetComponent<AudioSource>();
         if(audioS == null)
         {
             audioS = gameObject.AddComponent<AudioSource>();
         }
 
-        audioS.priority = priority;
+        audioS.priority = soundPriority;
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
     }
 

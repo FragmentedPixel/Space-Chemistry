@@ -1931,7 +1931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0329c5e3084b62e46a301fd7e89ddcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invetoryImagePrefab: {fileID: 0}
+  invetoryImagePrefab: {fileID: 114962778342369282, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
+    type: 2}
 --- !u!114 &114635637254970280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3531,10 +3532,10 @@ RectTransform:
   m_Children:
   - {fileID: 224710574730682472}
   - {fileID: 224150639201859014}
-  - {fileID: 224749185208115532}
-  - {fileID: 224071536704567336}
   - {fileID: 224836071219402120}
+  - {fileID: 224071536704567336}
   - {fileID: 224708420042405952}
+  - {fileID: 224749185208115532}
   m_Father: {fileID: 4505154212830260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3610,7 +3611,7 @@ RectTransform:
   m_Children:
   - {fileID: 224051410868065198}
   m_Father: {fileID: 224662992324794696}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3648,7 +3649,7 @@ RectTransform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 224662992324794696}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3721,7 +3722,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000042, y: 1.0000042, z: 1.0000042}
   m_Children: []
   m_Father: {fileID: 224662992324794696}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}

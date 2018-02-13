@@ -11,6 +11,7 @@ public class RepairItem : ScriptableObject
     private void OnEnable()
     {
         RepairItemsManager.AddItem(this);
+        count = 0;
     }
 
     public void Collect()

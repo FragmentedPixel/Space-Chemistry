@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Chips
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300064, guid: 99645c2e2507d2f42ab46fcae10525c9, type: 3}
-  count: 3
+  count: 1

@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063016172934314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.29782, y: -5.081579, z: -0.1875}
+  m_LocalPosition: {x: 24.135305, y: -7.7109566, z: -0.0859375}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4368264904814212}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4d71d183c3ad145bd33347876a5b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 0
+  soundPriority: 50
   item: {fileID: 11400000, guid: f907a1bdd62e97e4f886391bb23249a0, type: 2}
   pickupSound: {fileID: 8300000, guid: 97811d6e0217094459b26e9083ed81e4, type: 3}
 --- !u!114 &114648508655488590

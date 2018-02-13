@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0329c5e3084b62e46a301fd7e89ddcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invetoryImagePrefab: {fileID: 114962778342369282, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
+  invetoryImagePrefab: {fileID: 114442045879331770, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
     type: 2}
 --- !u!114 &114635637254970280
 MonoBehaviour:

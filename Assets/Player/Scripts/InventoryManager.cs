@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public Image invetoryImagePrefab;
+    public InvetoryImage invetoryImagePrefab;
 
     private void Start()
     {
@@ -30,8 +30,8 @@ public class InventoryManager : MonoBehaviour
         foreach(RepairItem item in ownedItems)
         {
             //TODO: Add object count as well.
-            Image newImage = Instantiate(invetoryImagePrefab, transform);
-            newImage.sprite = item.itemSprite;
+            InvetoryImage newImage = Instantiate(invetoryImagePrefab, transform);
+            newImage.SetUp(item.itemSprite, item.count);
         }
     }
 }

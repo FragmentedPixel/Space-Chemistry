@@ -568,7 +568,9 @@ MonoBehaviour:
   repairParticles: {fileID: 198461774064045338}
   itemsNeeded:
   - item: {fileID: 11400000, guid: f907a1bdd62e97e4f886391bb23249a0, type: 2}
-    amount: 3
+    amount: 2
+  - item: {fileID: 11400000, guid: ade11525d7ab21646a4db29355be21d1, type: 2}
+    amount: 1
   repiarCanvas: {fileID: 223755172542891778}
   overviewCanvas: {fileID: 223503180587717316}
   original: {fileID: 114962778342369282, guid: 1c6b531688c9fd848a1b65b0f19f71c6, type: 2}

@@ -25,9 +25,11 @@ public class PlayerMovement : PlayerContrable
     public float jumpForce;
     public float pressJumpForce;
     public float gravityBonus = 9.81f;
+    public float bigFallDistance = 2f;
 
     [Header("Effects")]
     public ParticleSystem trailParticles;
+    public ParticleSystem bigFallParticles;
 
     // Components.
     private Rigidbody2D rb;
@@ -42,6 +44,7 @@ public class PlayerMovement : PlayerContrable
     // Current state of the player
     private bool grounded = false;
     private float currentSpeed = 0f;
+    private float currentJump = 0f;
 
     #endregion
 
@@ -85,7 +88,7 @@ public class PlayerMovement : PlayerContrable
         // Updating the effects if the player is not on the ground.
         if(isPlayerOnGround == false)
         {
-            StopParticles();
+            StopTrailParticles();
         }
 
         // Updating the anim.
@@ -114,14 +117,20 @@ public class PlayerMovement : PlayerContrable
             // The jump should last longer.
             rb.AddForce(new Vector2(0f, pressJumpForce * Time.deltaTime), ForceMode2D.Impulse);
         }
+        else if(grounded && currentJump >= bigFallDistance)
+        {
+            PlayFallParticles();
+        }
 
         // Update to reflect grounded state.
         if (!grounded)
         {
+            currentJump += Time.deltaTime;
             ApplayGravity();
         }
         else
         {
+            currentJump = 0f;
             anim.SetBool(jumpHash, false);
         }
     }
@@ -169,7 +178,7 @@ public class PlayerMovement : PlayerContrable
 
         if (grounded)
         {
-            PlayParticles();
+            PlayTrailParticles();
         }
 
     }
@@ -211,7 +220,7 @@ public class PlayerMovement : PlayerContrable
         anim.SetBool(walkingHash, false);
         currentSpeed = minSpeed;
 
-        StopParticles();
+        StopTrailParticles();
     }
 
     private void SlowDownMovement()
@@ -223,15 +232,20 @@ public class PlayerMovement : PlayerContrable
     #endregion
 
     #region Particles
-    private void StopParticles()
+    private void StopTrailParticles()
     {
         trailParticles.Stop();
     }
 
-    private void PlayParticles()
+    private void PlayTrailParticles()
     {
         if (!trailParticles.isPlaying)
             trailParticles.Play();
+    }
+
+    private void PlayFallParticles()
+    {
+        bigFallParticles.Play();
     }
     #endregion
 }

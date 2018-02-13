@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
 	private float initZoom;
 
-	private void Start()
+	private void Awake()
 	{
 		PlayerMovement playerMov = FindObjectOfType<PlayerMovement>();
         player = playerMov.transform;

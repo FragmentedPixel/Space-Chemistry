@@ -22,6 +22,7 @@ public class CollectableObject : MonoBehaviour
             AudioSource audioS = gameObject.AddComponent<AudioSource>();
             audioS.volume = PlayerPrefsManager.GetMasterVolume();
             audioS.PlayOneShot(pickupSound);
+            Destroy(gameObject.GetComponentInChildren<Transform>().gameObject);
 
             player.AddItem(item);
             Destroy(gameObject, pickupSound.length);

@@ -9,7 +9,7 @@ public class SkillsManager : MonoBehaviour {
     int freesp = 10;
     int[] Skills=new int[3];
     [HideInInspector]
-    public bool SkillsActive;
+    public bool SkillsActive=false;
 
     #endregion
 
@@ -39,7 +39,8 @@ public class SkillsManager : MonoBehaviour {
 
             }
             SkillsActive = !SkillsActive;
-            gameObject.SetActive(SkillsActive);
+            transform.GetChild(0).gameObject.SetActive(SkillsActive);
+            //GetComponentInChildren<Transform>().gameObject.SetActive(SkillsActive);
         }
     }
 

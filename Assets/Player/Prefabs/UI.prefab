@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1271880240358338
 GameObject:
   m_ObjectHideFlags: 1
@@ -755,6 +755,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1848975843498470
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224051410868065198}
+  m_Layer: 5
+  m_Name: UpgradeSystemChild
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1876015188685072
 GameObject:
   m_ObjectHideFlags: 1
@@ -1478,7 +1493,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114797169821703148}
         m_MethodName: LevelUpSkill
         m_Mode: 3
         m_Arguments:
@@ -1916,8 +1931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0329c5e3084b62e46a301fd7e89ddcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invetoryImagePrefab: {fileID: 114962778342369282, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
-    type: 2}
+  invetoryImagePrefab: {fileID: 0}
 --- !u!114 &114635637254970280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1980,11 +1994,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114483877366394370}
+  m_TargetGraphic: {fileID: 114159824941803194}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114797169821703148}
         m_MethodName: LevelUpSkill
         m_Mode: 3
         m_Arguments:
@@ -2530,11 +2544,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114675896726673170}
+  m_TargetGraphic: {fileID: 114159824941803194}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114797169821703148}
         m_MethodName: LevelUpSkill
         m_Mode: 3
         m_Arguments:
@@ -2992,6 +3006,26 @@ RectTransform:
   m_AnchoredPosition: {x: 959.99994, y: -472.6671}
   m_SizeDelta: {x: 150, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224051410868065198
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848975843498470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224208400322515754}
+  - {fileID: 224596219311288206}
+  m_Father: {fileID: 224708420042405952}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224054636812208104
 RectTransform:
   m_ObjectHideFlags: 1
@@ -3158,12 +3192,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 224708420042405952}
+  m_Father: {fileID: 224051410868065198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000782916, y: -490.1671}
+  m_AnchoredPosition: {x: -0.0000782916, y: -540.1671}
   m_SizeDelta: {x: 1819.9999, y: 980.3342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224209635214632990
@@ -3396,19 +3430,19 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945259669833940}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224209635214632990}
   - {fileID: 224887262141418556}
   - {fileID: 224885915317107060}
-  m_Father: {fileID: 224708420042405952}
+  m_Father: {fileID: 224051410868065198}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224609989640325406
@@ -3574,8 +3608,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224208400322515754}
-  - {fileID: 224596219311288206}
+  - {fileID: 224051410868065198}
   m_Father: {fileID: 224662992324794696}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

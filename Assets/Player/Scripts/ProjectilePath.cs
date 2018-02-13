@@ -63,6 +63,8 @@ public class ProjectilePath : MonoBehaviour
         }
 
         argo[0].GetComponent<SpriteRenderer>().enabled = false;
+        argo[argo.Length - 1].GetComponent<SpriteRenderer>().enabled = false;
+
         var v3 = transform.position;
         var y = (force * (indicator)).y;
         float t = 0.0f;
@@ -78,7 +80,11 @@ public class ProjectilePath : MonoBehaviour
 
         for(int i = 1; i < argo.Length-1; i++)
         {
-            argo[i].transform.rotation = Quaternion.LookRotation(argo[i - 1].transform.position - argo[i].transform.position, transform.forward);
+            float angle = Mathf.Atan2(argo[i+1].transform.position.y - argo[i].transform.position.y, argo[i+1].transform.position.x - argo[i].transform.position.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
+            argo[i].transform.rotation = rotation;
         }
     }
 }

@@ -6,147 +6,203 @@ using UnityEngine;
  * Responsible for the player's movement.
  */
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PlayerContrable
 {
     #region Variabiles
 
-    // Movement parameters.
-    [Header("Movement")]
-    public float minSpeed = 1f;
-    public float maxSpeed = 4f;
-
-    public float acceleration = 1f;
-    private float currentSpeed = 0f;
-    
-    public ParticleSystem sparklesPartilces;
-
-    // Components.
-    private Rigidbody2D rb;
-    private Animator anim;
-    private const string walkingHash = "Walk";
-
-    // Is the player on the ground?
-    private bool grounded = false;
-
-    // Player's feet.
     [Header("Grounded")]
     public Transform groundCheck;
     public Transform cameraPoint;
     public LayerMask whatIsGround;
+    public float distanceToGround = .3f;
 
-
-    // Jumping Parameters.
+    [Header("Movement")]
+    public float minSpeed = 1f;
+    public float maxSpeed = 4f;
+    public float acceleration = 1f;
+    
     [Header("Jumping")]
     public float jumpForce;
     public float pressJumpForce;
     public float gravityBonus = 9.81f;
 
+    [Header("Effects")]
+    public ParticleSystem trailParticles;
+
+    // Components.
+    private Rigidbody2D rb;
+    private Animator anim;
+
+    // Animation Hashes
+    private const string walkingHash = "Walk";
+    private const string jumpHash = "Jump";
+    private const string movementSpeedHash = "MovementSpeed";
+    private const string groundedHash = "Ground";
+    
+    // Current state of the player
+    private bool grounded = false;
+    private float currentSpeed = 0f;
+
     #endregion
 
-    #region Init
+    #region Super Classes
+
+    public override void RemoveControl()
+    {
+        StopMove();
+    }
+
+    #endregion
+
+    #region Initialization
     void Awake()
     {
+        // Get components from the GO.
         rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
     }
-
-    public void ChangeControl(bool hasControl)
-    {
-        if (hasControl == false)
-            StopMove();
-
-        enabled = hasControl;
-    }
     #endregion
 
-    #region Update
-    void Update()
+    #region Every Frame
+
+    private void Update()
     {
+        // Check if is grounded this frame.
         grounded = isGrounded();
 
+        // Handle Jump input.
         HandleJump();
 
+        // Handle Movement input.
         HandleMovement();
     }
 
-    public bool isGrounded()
+    private bool isGrounded()
     {
-        float distanceToGround = 0.2f;
-
+        // Circular raycast for ground elements.
         bool isPlayerOnGround = Physics2D.OverlapCircle(groundCheck.position, distanceToGround, whatIsGround);
 
+        // Updating the effects if the player is not on the ground.
         if(isPlayerOnGround == false)
         {
             StopParticles();
         }
 
-        anim.SetBool("Ground", grounded);
+        // Updating the anim.
+        anim.SetBool(groundedHash, grounded);
 
+        // Return to update isgrounded.
         return isPlayerOnGround;
     }
 
-    private void StopParticles()
+    #endregion
+
+    #region Jump
+
+    private void HandleJump()
     {
-        sparklesPartilces.Stop();
+        // Check the player input.
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) && grounded)
+        {
+            // The jump has started and we need to update the animator.
+            anim.SetBool(jumpHash, true);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+        else if (!grounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.Space)))
+        {
+            //TODO: Allow the player to add force only when going up (rb.vel.y > .3f)
+            // The jump should last longer.
+            rb.AddForce(new Vector2(0f, pressJumpForce * Time.deltaTime), ForceMode2D.Impulse);
+        }
+
+        // Update to reflect grounded state.
+        if (!grounded)
+        {
+            ApplayGravity();
+        }
+        else
+        {
+            anim.SetBool(jumpHash, false);
+        }
     }
 
+    private void ApplayGravity()
+    {
+        // Apply extra down velocity for more falling speed.
+        Vector2 currentVel = rb.velocity;
+        currentVel.y -= gravityBonus * Time.deltaTime;
+        rb.velocity = currentVel;
+    }
     #endregion
 
     #region Movement
     private void HandleMovement()
     {
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
-        float movement = Input.GetAxisRaw("Horizontal");
+        float playerInput = Input.GetAxisRaw("Horizontal");
 
-        // Get current speed of the rb.
-        float vel = Mathf.Abs(rb.velocity.x);
-
-        // Slow down if player is going too fast.
-        if(vel > maxSpeed)
-        {
-            SlowDownMovement();
-        }
-        // Stop if there is no movement input.
-        else if(movement == 0)
+        // Stop movement if there is no horizontal movement.
+        if(playerInput == 0)
         {
             StopMove();
         }
+
+        // Update player's rb according to user b input.
         else
-        // Update player's rb according to user input.
         {
-            bool movingRight = (movement > 0);
-            Move(movingRight);
+            bool movingRight = (playerInput > 0);
+            MovePlayer(movingRight);
         }
         
     }
 
-    private void Move(bool right)
+    private void MovePlayer(bool movingRight)
+    {
+        // Updates the player's sprite flip to face forward direction.
+        FlipSprite(movingRight);
+
+        // Updates the forces applied to the rb.
+        MoveRigidBody(movingRight);
+
+        // Updates the player's animator.
+        AnimatorMovement();
+
+        if (grounded)
+        {
+            PlayParticles();
+        }
+
+    }
+
+    private void FlipSprite(bool movingRight)
     {
         // Make the player face the movement direction.
         Vector3 temp = anim.transform.localScale;
         float xValue = Mathf.Abs(temp.x);
 
-        temp.x = right ? xValue : -xValue;  
+        // Update the player mesh with the new scale.
+        temp.x = movingRight ? xValue : -xValue;
         anim.transform.localScale = temp;
+    }
 
-        // update the player's components.
+    private void AnimatorMovement()
+    {
+        // Set the walking subtree
         anim.SetBool(walkingHash, true);
-        currentSpeed += Time.deltaTime * acceleration;
 
-        currentSpeed = Mathf.Clamp(currentSpeed, minSpeed, maxSpeed);
+        // Set the value for the walking blend state.
         float animValue = (currentSpeed - minSpeed) / (maxSpeed - minSpeed);
-        anim.SetFloat("MovementSpeed", animValue);
+        anim.SetFloat(movementSpeedHash, animValue);
+    }
 
-        float forceX = right ? currentSpeed : -currentSpeed;
+    private void MoveRigidBody(bool movingRight)
+    {
+        currentSpeed += Time.deltaTime * acceleration;
+        currentSpeed = Mathf.Clamp(currentSpeed, minSpeed, maxSpeed);
+
+        float forceX = movingRight ? currentSpeed : -currentSpeed;
 
         rb.velocity = (new Vector2(forceX, rb.velocity.y));
-
-        if (grounded)
-        {
-            if (!sparklesPartilces.isPlaying)
-                sparklesPartilces.Play();
-        }
-
     }
 
     private void StopMove()
@@ -166,37 +222,16 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
-    #region Jump
-    private void HandleJump()
+    #region Particles
+    private void StopParticles()
     {
-        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) && grounded)
-        {
-            anim.SetBool("Jump", true);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        else
-        {
-            anim.SetBool("Jump", false);
-        }
-
-        if (! grounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.Space)))
-        { 
-            rb.AddForce(new Vector2(0f, pressJumpForce));
-        }
-
-        if(!grounded)
-        {
-            ApplayGravity();
-        }
-        
+        trailParticles.Stop();
     }
 
-    private void ApplayGravity()
+    private void PlayParticles()
     {
-        Vector2 currentVel = rb.velocity;
-        currentVel.y -= gravityBonus * Time.deltaTime;
-        rb.velocity = currentVel;
+        if (!trailParticles.isPlaying)
+            trailParticles.Play();
     }
     #endregion
-
 }

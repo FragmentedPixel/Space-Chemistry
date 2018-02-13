@@ -1209,15 +1209,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpeed: 1
   maxSpeed: 4
-  acceleration: 1.5
-  sparklesPartilces: {fileID: 198622933809539622}
+  acceleration: 3
+  trailParticles: {fileID: 198622933809539622}
   groundCheck: {fileID: 4934691800337036}
   cameraPoint: {fileID: 4767733956061922}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 9216
   jumpForce: 8
-  pressJumpForce: 12
+  pressJumpForce: 10
   gravityBonus: 9.81
 --- !u!114 &114550035096795416
 MonoBehaviour:

@@ -1242,7 +1242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 3
-  projectileMaterial: {fileID: 2100000, guid: 584d55f79ca470746a9c1b9e4a13d8ff, type: 2}
+  arrowPrefab: {fileID: 1183183346919632, guid: 89c206fef18685b48b6ce01e373f98ec,
+    type: 2}
 --- !u!114 &114221315605903088
 MonoBehaviour:
   m_ObjectHideFlags: 1

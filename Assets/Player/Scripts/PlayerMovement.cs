@@ -24,6 +24,7 @@ public class PlayerMovement : PlayerContrable
     [Header("Jumping")]
     public float jumpForce;
     public float pressJumpForce;
+    public float jumpMovement;
     public float gravityBonus = 9.81f;
     public float bigFallDistance = 2f;
 
@@ -142,30 +143,34 @@ public class PlayerMovement : PlayerContrable
         currentVel.y -= gravityBonus * Time.deltaTime;
         rb.velocity = currentVel;
     }
+
     #endregion
 
-    #region Movement
+    #region Movement 
     private void HandleMovement()
     {
         //this can return -1 if you move to the left 0 if you don't move 1 if you move to the right
         float playerInput = Input.GetAxisRaw("Horizontal");
+        bool movingRight = (playerInput > 0);
 
         // Stop movement if there is no horizontal movement.
-        if(playerInput == 0)
+        if (playerInput == 0)
         {
             StopMove();
         }
 
         // Update player's rb according to user b input.
-        else
+        else if(grounded)
         {
-            bool movingRight = (playerInput > 0);
-            MovePlayer(movingRight);
+            MoveOnGround(movingRight);
         }
-        
+        else if(!grounded)
+        {
+            MoveInAir(movingRight);
+        }
     }
 
-    private void MovePlayer(bool movingRight)
+    private void MoveOnGround(bool movingRight)
     {
         // Updates the player's sprite flip to face forward direction.
         FlipSprite(movingRight);
@@ -176,11 +181,17 @@ public class PlayerMovement : PlayerContrable
         // Updates the player's animator.
         AnimatorMovement();
 
-        if (grounded)
-        {
-            PlayTrailParticles();
-        }
+        // Add effects to the movement.
+        PlayTrailParticles();
+    }
 
+    private void MoveInAir(bool movingRight)
+    {
+        // Updates the player's sprite flip to face forward direction.
+        FlipSprite(movingRight);
+
+        // Updates the forces applied to the rb.
+        MoveRigidBody(movingRight);
     }
 
     private void FlipSprite(bool movingRight)
@@ -206,8 +217,16 @@ public class PlayerMovement : PlayerContrable
 
     private void MoveRigidBody(bool movingRight)
     {
-        currentSpeed += Time.deltaTime * acceleration;
-        currentSpeed = Mathf.Clamp(currentSpeed, minSpeed, maxSpeed);
+        if(grounded)
+        {
+            currentSpeed += Time.deltaTime * acceleration;
+            currentSpeed = Mathf.Clamp(currentSpeed, minSpeed, maxSpeed);
+        }
+        else
+        {
+            currentSpeed = jumpMovement;
+        }
+        
 
         float forceX = movingRight ? currentSpeed : -currentSpeed;
 

@@ -332,12 +332,12 @@ GameObject:
   - component: {fileID: 4694699972856290}
   - component: {fileID: 50652830542242924}
   - component: {fileID: 70537674649355028}
+  - component: {fileID: 114353845344474238}
   - component: {fileID: 114557154280084880}
   - component: {fileID: 114245199670654994}
   - component: {fileID: 114696262080332962}
-  - component: {fileID: 114353845344474238}
-  - component: {fileID: 82393526015591802}
   - component: {fileID: 114035919591515110}
+  - component: {fileID: 82393526015591802}
   - component: {fileID: 81230038520315792}
   m_Layer: 11
   m_Name: Player
@@ -1214,7 +1214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667e90fb9d5efe645818b99f5f68a9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
   repairedItem: {fileID: 0}
 --- !u!114 &114113754223081042
 MonoBehaviour:
@@ -1316,6 +1315,7 @@ MonoBehaviour:
   acceleration: 3
   jumpForce: 8
   pressJumpForce: 10
+  jumpMovement: 3
   gravityBonus: 9.81
   bigFallDistance: 1
   trailParticles: {fileID: 198873523495360018}

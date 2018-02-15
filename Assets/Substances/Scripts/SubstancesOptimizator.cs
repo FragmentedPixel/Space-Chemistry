@@ -23,8 +23,8 @@ public class SubstancesOptimizator : MonoBehaviour
         SubstanceGenerator[] generators = collision.gameObject.GetComponentsInChildren<SubstanceGenerator>();
         if(generators.Length != 0)
         {
-            foreach(SubstanceGenerator generator in generators)
-                generator.enabled = true;
+            foreach (SubstanceGenerator generator in generators)
+                generator.Enable();
         }
     }
 
@@ -34,7 +34,7 @@ public class SubstancesOptimizator : MonoBehaviour
         if (generators.Length != 0)
         {
             foreach (SubstanceGenerator generator in generators)
-                generator.enabled = false;
+                generator.Disable();
         }
     }
 }

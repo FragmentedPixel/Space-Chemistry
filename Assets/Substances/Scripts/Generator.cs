@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for generating particles at a specific interval.
  */
 
-public class Generator : MonoBehaviour
+public class Generator : SoundMonoBehaviour
 {
     #region Parameters
     // Interval between particles releases.

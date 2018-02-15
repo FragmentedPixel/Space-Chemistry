@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4320827722736880}
   - component: {fileID: 114905084929409240}
+  - component: {fileID: 82878517268598692}
   m_Layer: 0
   m_Name: Emitter
   m_TagString: Untagged
@@ -100,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4954373635711548}
   - component: {fileID: 114888107709593076}
+  - component: {fileID: 82646306067872278}
   m_Layer: 0
   m_Name: Emitter (1)
   m_TagString: Untagged
@@ -116,7 +118,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4602070338217392}
   - component: {fileID: 212467215460156932}
-  - component: {fileID: 82047174808580800}
   m_Layer: 0
   m_Name: PIPE LEFT
   m_TagString: Untagged
@@ -149,7 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4076177806699772}
   - component: {fileID: 212617812339802832}
-  - component: {fileID: 82217497448412462}
   m_Layer: 0
   m_Name: PIPE RIGHT
   m_TagString: Untagged
@@ -379,12 +379,12 @@ PolygonCollider2D:
       - {x: 1.4309578, y: -2.1325722}
       - {x: 1.4333229, y: -1.3819809}
       - {x: 1.4223976, y: 3.647667}
---- !u!82 &82047174808580800
+--- !u!82 &82646306067872278
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1450037821266234}
+  m_GameObject: {fileID: 1389059389943338}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -398,7 +398,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.05
+  MinDistance: 0.2
   MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
@@ -459,12 +459,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82217497448412462
+--- !u!82 &82878517268598692
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574557728360882}
+  m_GameObject: {fileID: 1101233123616656}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -478,7 +478,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.05
+  MinDistance: 0.2
   MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
@@ -550,6 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1dc6f85d22038449972dc0a6891031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPriority: 50
   releaseInterval: 0.1
   relaseForce: 100
   randomForce: 5
@@ -566,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1dc6f85d22038449972dc0a6891031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPriority: 50
   releaseInterval: 0.1
   relaseForce: 100
   randomForce: 5

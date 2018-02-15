@@ -297,3 +297,23 @@ MonoBehaviour:
     IsRecursive: 0
     SmallIcon: {fileID: 2800000, guid: b3234aceffe9f9b4d9a996be7f0bb931, type: 3}
     LargeIcon: {fileID: 2800000, guid: 39bbe70e6f465fe4682184eda239d9ae, type: 3}
+  - Type: 1
+    Key: Assets/Explosion
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 81d4c8f9bff9faf428c35c0b4de40701, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 4fe6b269af5e6bf4abab1a1d755508d2, type: 3}
+  - Type: 1
+    Key: Assets/LevelSelect
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: f14480b09218f3047a15b5ded872de28, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 38dec0c9e1ada504d98f8a0f4959a215, type: 3}
+  - Type: 1
+    Key: Assets/Lights
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 36e0a02c0316e0b40bd7ffc8eb437a7f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: ce20e3678b7748244854c06fcd7d7d00, type: 3}
+  - Type: 1
+    Key: Assets/UI -Menu
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 277aff0709e51d2418b61f0c82cb277f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: c34025bbb220b844a8e633a414c63632, type: 3}

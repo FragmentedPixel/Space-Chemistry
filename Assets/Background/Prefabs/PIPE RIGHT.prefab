@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4010681891018798}
   - component: {fileID: 60377807117483144}
-  - component: {fileID: 82590335655744038}
   m_Layer: 0
   m_Name: PIPE RIGHT
   m_TagString: Untagged
@@ -53,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4924564165045220}
   - component: {fileID: 114260795441514096}
+  - component: {fileID: 82938598809248860}
   m_Layer: 0
   m_Name: Emitter
   m_TagString: Untagged
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1171326060030626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.63, y: 9.499998, z: 0}
+  m_LocalPosition: {x: 13.9, y: 9.499998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4077783729383428}
@@ -253,12 +253,12 @@ PolygonCollider2D:
       - {x: 0.6803169, y: -1.9180374}
       - {x: 0.6681328, y: -1.2586594}
       - {x: 2.5002632, y: -1.2498703}
---- !u!82 &82590335655744038
+--- !u!82 &82938598809248860
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1171326060030626}
+  m_GameObject: {fileID: 1475850931085800}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -272,7 +272,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.05
+  MinDistance: 0.2
   MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
@@ -290,13 +290,13 @@ AudioSource:
       tangentMode: 0
     - serializedVersion: 2
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.5092621
+      inSlope: -1
+      outSlope: -1
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1dc6f85d22038449972dc0a6891031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPriority: 50
   releaseInterval: 0.025
   relaseForce: 100
   randomForce: 1

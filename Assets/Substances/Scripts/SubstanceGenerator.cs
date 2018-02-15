@@ -36,4 +36,16 @@ public class SubstanceGenerator : Generator
     {
         particleSubstance = newSubst;
     }
+
+    public void Enable()
+    {
+        enabled = true;
+        audioS.Stop();
+    }
+
+    public void Disable()
+    {
+        enabled = false;
+        audioS.Play();
+    }
 }

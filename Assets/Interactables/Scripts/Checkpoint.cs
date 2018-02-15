@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for updating the player's checkpoint when triggered by him.
  */
 
-public class Checkpoint : MonoBehaviour
+public class Checkpoint : SoundMonoBehaviour
 {
     // checked sprite.
     public Sprite checkpointPassed;
@@ -20,18 +20,12 @@ public class Checkpoint : MonoBehaviour
     // Renderer component.
     private SpriteRenderer spriterenderer;
 
-    // AudioS component.
-    private AudioSource audioS;
-
     // Light
     public Light light;
 
     void Start()
     {
         spriterenderer = GetComponentInChildren<SpriteRenderer>();
-        audioS = GetComponent<AudioSource>();
-
-        audioS.volume = PlayerPrefsManager.GetMasterVolume();
     }
 	
     private void OnTriggerEnter2D(Collider2D other)

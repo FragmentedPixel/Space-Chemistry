@@ -340,8 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerConnected: 0
-  KeyboardText: Hold Q to repair
-  GamepadText: Hold Y to repair
+  KeyboardText: Press Q to repair
+  GamepadText: Press Y to repair
 --- !u!114 &114045045784369518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hold Q to repair
+  m_Text: Press Q
 --- !u!114 &114204396784785898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -564,13 +564,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repiarDuration: 3
-  repiarProgress: {fileID: 114461876385427090}
-  repairParticles: {fileID: 198461774064045338}
   itemsNeeded:
   - item: {fileID: 11400000, guid: f907a1bdd62e97e4f886391bb23249a0, type: 2}
     amount: 2
   - item: {fileID: 11400000, guid: ade11525d7ab21646a4db29355be21d1, type: 2}
     amount: 1
+  pressesNeeded: 6
+  lostPerSecond: 40
+  wonPerPress: 30
+  repiarProgress: {fileID: 114461876385427090}
+  repairParticles: {fileID: 198461774064045338}
   repiarCanvas: {fileID: 223755172542891778}
   overviewCanvas: {fileID: 223503180587717316}
   invetoryImagePrefab: {fileID: 114442045879331770, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
@@ -7371,7 +7374,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1956375562
+  randomSeed: 1498169947
   InitialModule:
     serializedVersion: 3
     enabled: 1

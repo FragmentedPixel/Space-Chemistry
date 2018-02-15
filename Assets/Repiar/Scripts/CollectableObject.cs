@@ -19,7 +19,7 @@ public class CollectableObject : SoundMonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerInventory player = collision.gameObject.GetComponent<PlayerInventory>();
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
         
         if(player != null && pickedUp == false)
         {

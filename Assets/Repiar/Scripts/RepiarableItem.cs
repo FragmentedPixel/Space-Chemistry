@@ -5,21 +5,30 @@ using UnityEngine.UI;
 
 public class RepiarableItem : MonoBehaviour
 {
+    [Header("Repair Parameters")] 
     public float repiarDuration;
-    public Image repiarProgress;
-    public ParticleSystem repairParticles;
-
     public List<ItemNeeded> itemsNeeded;
 
+    [Header("Quick Time event")]
+    public float pressesNeeded = 100f;
+    public float lostPerSecond = 5f;
+    public float wonPerPress = 30f;
+
+    [Header("Repair Feedback")]
+    public Image repiarProgress;
+    public ParticleSystem repairParticles;
     public Canvas repiarCanvas;
     public Canvas overviewCanvas;
-
     public InvetoryImage invetoryImagePrefab;
     public Transform itemsNeedPannel;
     public Text repiarText;
 
+    private bool isPlayerInside;
+    private bool isRepairingNow;
+
     private void Start()
     {
+        // Display the items needed above the object.
         for (int i = 0; i < itemsNeeded.Count; i++)
         {
             ItemNeeded currentItem = itemsNeeded[i];
@@ -29,9 +38,16 @@ public class RepiarableItem : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetButtonDown("Repair") && isPlayerInside == true && isRepairingNow == false)
+        {
+            StartRepair();
+        }
+    }
+
     public void StartRepair()
     {
-        PlayerInventory inventory = FindObjectOfType<PlayerInventory>();
         repiarText.enabled = false;
         repairParticles.Play();
 
@@ -77,33 +93,79 @@ public class RepiarableItem : MonoBehaviour
         repiarText.enabled = true;
         repairParticles.Stop();
         repairParticles.Clear();
+        isRepairingNow = false;
         
         repiarProgress.fillAmount = 0f;
         StopAllCoroutines();
     }
 
-    private IEnumerator RepairingCR()
+    /*private IEnumerator RepairingCR()
     {
+        isRepairingNow = true;
+        float currentProgress = 0f;
+        float progressNeeded = pressesNeeded * wonPerPress;
 
         float currentTime = 0f;
-        while(currentTime <= repiarDuration)
+        while (currentTime <= repiarDuration)
         {
-            repiarProgress.fillAmount = currentTime / repiarDuration;
+            repiarProgress.fillAmount = currentProgress / progressNeeded;
+
+            currentProgress -= Time.deltaTime * lostPerSecond;
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                currentProgress += wonPerPress;
+            }
+
             currentTime += Time.deltaTime;
 
             yield return null;
         }
 
-        RepairedItem();
+        isRepairingNow = false;
+
+        if (currentProgress >= progressNeeded)
+            OnItemRepaired();
+        else
+            StopRepair();
+
+        yield break;
+    } */
+
+    private IEnumerator RepairingCR()
+    {
+        isRepairingNow = true;
+        float currentProgress = wonPerPress;
+        float progressNeeded = pressesNeeded * wonPerPress;
+
+        while (currentProgress > 0f && currentProgress < progressNeeded)
+        {
+            repiarProgress.fillAmount = currentProgress / progressNeeded;
+
+            currentProgress -= Time.deltaTime * lostPerSecond;
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                currentProgress += wonPerPress;
+            }
+
+            yield return null;
+        }
+
+        isRepairingNow = false;
+
+        if (currentProgress >= progressNeeded)
+            OnItemRepaired();
+        else
+            StopRepair();
 
         yield break;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerInventory playerInventory = collision.gameObject.GetComponent<PlayerInventory>();
-        if (playerInventory != null)
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+        if (player != null)
         {
+            isPlayerInside = true;
             repiarCanvas.enabled = true;
             overviewCanvas.enabled = false;
         }
@@ -111,18 +173,17 @@ public class RepiarableItem : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerInventory playerInventory = collision.gameObject.GetComponent<PlayerInventory>();
-        if (playerInventory != null)
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+        if (player != null)
         {
+            isPlayerInside = false;
             repiarCanvas.enabled = false;
             overviewCanvas.enabled = true;
         }
     }
 
-    public virtual void RepairedItem()
+    public virtual void OnItemRepaired()
     {
-        PlayerInventory player = FindObjectOfType<PlayerInventory>();
-
         UseAllItems();
 
         FindObjectOfType<StartConnecting>().StartFilling();

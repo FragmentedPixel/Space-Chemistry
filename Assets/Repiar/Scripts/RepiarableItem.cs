@@ -14,7 +14,7 @@ public class RepiarableItem : MonoBehaviour
     public Canvas repiarCanvas;
     public Canvas overviewCanvas;
 
-    public Image original;
+    public InvetoryImage invetoryImagePrefab;
     public Transform itemsNeedPannel;
     public Text repiarText;
 
@@ -23,11 +23,9 @@ public class RepiarableItem : MonoBehaviour
         for (int i = 0; i < itemsNeeded.Count; i++)
         {
             ItemNeeded currentItem = itemsNeeded[i];
-            for(int j = 0; j < currentItem.amount; j++)
-            {
-                Image newImage = Instantiate(original, itemsNeedPannel);
-                newImage.sprite = currentItem.item.itemSprite;
-            }   
+            
+            InvetoryImage invetoryImage = Instantiate(invetoryImagePrefab, itemsNeedPannel);
+            invetoryImage.SetUp(currentItem.item.itemSprite, currentItem.amount);   
         }
     }
 

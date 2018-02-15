@@ -573,7 +573,8 @@ MonoBehaviour:
     amount: 1
   repiarCanvas: {fileID: 223755172542891778}
   overviewCanvas: {fileID: 223503180587717316}
-  original: {fileID: 114962778342369282, guid: 1c6b531688c9fd848a1b65b0f19f71c6, type: 2}
+  invetoryImagePrefab: {fileID: 114442045879331770, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
+    type: 2}
   itemsNeedPannel: {fileID: 224921577054204480}
   repiarText: {fileID: 114090881429145496}
 --- !u!198 &198027195995951202

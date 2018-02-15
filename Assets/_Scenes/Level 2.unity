@@ -5820,6 +5820,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1383435491513278, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
   m_IsPrefabParent: 0
@@ -7256,6 +7260,10 @@ Prefab:
     - target: {fileID: 1171326060030626, guid: 1256959131c1409428464d4564daae57, type: 2}
       propertyPath: m_Name
       value: PIPE RIGHT (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171326060030626, guid: 1256959131c1409428464d4564daae57, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1256959131c1409428464d4564daae57, type: 2}
@@ -9407,16 +9415,6 @@ Prefab:
     - target: {fileID: 4413879403299324, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114888107709593076, guid: c5c62bd37fef05d4d8e1210db6c0dc1d,
-        type: 2}
-      propertyPath: releaseInterval
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905084929409240, guid: c5c62bd37fef05d4d8e1210db6c0dc1d,
-        type: 2}
-      propertyPath: releaseInterval
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1383435491513278, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
       propertyPath: m_Name

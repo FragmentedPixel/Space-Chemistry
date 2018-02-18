@@ -22,6 +22,7 @@ public class RepiarableItem : MonoBehaviour
     public InvetoryImage invetoryImagePrefab;
     public Transform itemsNeedPannel;
     public Text repiarText;
+    public Image repairImage;
 
     private bool isPlayerInside;
     private bool isRepairingNow;
@@ -36,6 +37,10 @@ public class RepiarableItem : MonoBehaviour
             InvetoryImage invetoryImage = Instantiate(invetoryImagePrefab, itemsNeedPannel);
             invetoryImage.SetUp(currentItem.item.itemSprite, currentItem.amount);   
         }
+
+
+        maxScale = repairImage.transform.localScale;
+        minScale = .8f * maxScale;
     }
 
     private void Update()
@@ -43,6 +48,18 @@ public class RepiarableItem : MonoBehaviour
         if(Input.GetButtonDown("Repair") && isPlayerInside == true && isRepairingNow == false)
         {
             StartRepair();
+        }
+
+        if (goingdown)
+            repairImage.transform.localScale = Vector3.Lerp(maxScale, minScale, currentTime / maxTime);
+        else
+            repairImage.transform.localScale = Vector3.Lerp(minScale, maxScale, currentTime / maxTime);
+
+        currentTime += Time.fixedDeltaTime;
+        if (currentTime > maxTime)
+        {
+            goingdown = !goingdown;
+            currentTime = 0f;
         }
     }
 
@@ -131,11 +148,19 @@ public class RepiarableItem : MonoBehaviour
         yield break;
     } */
 
+    private bool goingdown;
+    private float currentTime = 0f;
+    private float maxTime = 1f;
+    Vector3 maxScale;
+    Vector3 minScale;
+    
     private IEnumerator RepairingCR()
     {
         isRepairingNow = true;
         float currentProgress = wonPerPress;
         float progressNeeded = pressesNeeded * wonPerPress;
+
+        
 
         while (currentProgress > 0f && currentProgress < progressNeeded)
         {

@@ -71,6 +71,12 @@ public class LiquidPool : MonoBehaviour {
     void OnEnable ()
     {
         SpawnWater(width, height);
+
+        //TODO: Make finite barrel more intersting
+        GetComponent<BoxCollider2D>().size = new Vector2(width, height);
+        GetComponent<BoxCollider2D>().offset = new Vector2(0f, height/2);
+
+
         splash.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolSubstance.particleColor;
 	}
 	

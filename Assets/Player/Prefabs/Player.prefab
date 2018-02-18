@@ -1299,11 +1299,11 @@ MonoBehaviour:
     m_Bits: 9216
   distanceToGround: 0.3
   minSpeed: 1
-  maxSpeed: 4
+  maxSpeed: 5
   acceleration: 3
   jumpForce: 8
   pressJumpForce: 10
-  jumpMovement: 3
+  jumpMovement: 4
   gravityBonus: 9.81
   bigFallDistance: 1
   trailParticles: {fileID: 198873523495360018}

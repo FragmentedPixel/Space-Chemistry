@@ -63,7 +63,7 @@ public class HandCollector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bool success = false;
-        Color collectedColor = Color.green;
+        Color collectedColor = Color.black;
 
         if (collecting == false)
             return;
@@ -77,7 +77,11 @@ public class HandCollector : MonoBehaviour
             {
                 success = containerToFill.AddParticule(particleInsideBarrel);
                 if (success)
-                    barrel.GetParticle();
+                {
+                    
+                    sSubstance collectedSubstance = barrel.GetParticle();
+                    collectedColor = collectedSubstance.particleColor;
+                }
                 else
                     MessageManager.getInstance().DissplayMessage("There is a problem with this barrel", 1f);
 

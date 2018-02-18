@@ -7,7 +7,7 @@ using UnityEngine.UI;
  * Responsible for managing the player's containers.
  */
 
-public class PlayerContainers : MonoBehaviour
+public class PlayerContainers : PlayerContrable
 {
     #region Variabiles
     // Reference to the containers.
@@ -16,7 +16,7 @@ public class PlayerContainers : MonoBehaviour
     // currently selected container.
     private int currentIndex = 0;
     // was the change triggered already?
-    private bool changeTriggered = false;
+    private bool axisTriggered = false;
 
     // Hand subclasses.
     private HandGenerator generator;
@@ -58,15 +58,7 @@ public class PlayerContainers : MonoBehaviour
 
         containers[currentIndex].HighLight();
     }
-
-    public void ChangeControl(bool hasControl)
-    {
-        if (hasControl == false)
-            StopCollecting();
-
-        enabled = hasControl;
-    }
-
+    
     private void UpdateContainersPercent()
     {
         foreach (Container container in containers)
@@ -79,10 +71,27 @@ public class PlayerContainers : MonoBehaviour
     }
     #endregion
 
+    #region Super Class
+    // Action performed when control is removed.
+    public override void RemoveControl()
+    {
+        StopCollecting();
+    }
+    #endregion
+
     #region Commands
     private void Update()
     {
-        if(Input.GetButtonUp("Collect"))
+        if (MyImputManager.connectedToController)
+            ReadControllerInput();
+        else
+            ReadInputKeyboard();
+
+    }
+
+    private void ReadInputKeyboard()
+    {
+        if (Input.GetButtonUp("Collect"))
         {
             StopCollecting();
         }
@@ -97,7 +106,7 @@ public class PlayerContainers : MonoBehaviour
             Relase();
         }
 
-        else if(Input.GetButtonDown("Mix"))
+        else if (Input.GetButtonDown("Mix"))
         {
             Mix();
         }
@@ -107,15 +116,48 @@ public class PlayerContainers : MonoBehaviour
             SelectContainer();
         }
 
+        UpdateContainersPercent();
+    }
+
+    private void ReadControllerInput()
+    {
+        float axisInput = Input.GetAxisRaw("Container Axis");
+        
+        if (axisInput == 0f && axisTriggered == true)
+        {
+            StopCollecting();
+        }
+
+        else if (axisInput < 0f)
+        {
+            Collect();
+        }
+
+        else if (axisInput > 0f)
+        {
+            Relase();
+        }
+
+        else if (Input.GetButtonDown("Mix"))
+        {
+            Mix();
+        }
+
+        else
+        {
+            SelectContainer();
+        }
 
         UpdateContainersPercent();
-
     }
 
     private void Relase()
     {
+        axisTriggered = true;
+
         if (availableContainers == 0)
             return;
+
         // Play corresponding sound.
         if (!audioS.isPlaying)
         {
@@ -134,11 +176,9 @@ public class PlayerContainers : MonoBehaviour
         }
     }
 
-
-
-
     private void Collect()
     {
+        axisTriggered = true;
         if (availableContainers == 0)
             return;
 
@@ -166,7 +206,9 @@ public class PlayerContainers : MonoBehaviour
 
     private void StopCollecting()
     {
-        if (audioS.isPlaying)
+        axisTriggered = false;
+
+        if (audioS.isPlaying && audioS.loop == true)
         {
             audioS.loop = false;
             audioS.Stop();
@@ -179,7 +221,6 @@ public class PlayerContainers : MonoBehaviour
     private void SelectContainer()
     {
         collector.StopCollecting();
-
 
         // Stop sounds played.
         if (audioS.isPlaying)
@@ -202,29 +243,11 @@ public class PlayerContainers : MonoBehaviour
             input = (currentIndex + 1) % availableContainers;
 
         // Read controller Input.
-        int controllerInput = (int) Input.GetAxisRaw("Container Axis");
-
-        // Change input & lock axis after change.
-        if (controllerInput != 0f && changeTriggered == false)
-        {
-            input = (currentIndex + controllerInput) % availableContainers;
-
-            if (input < 0)
-            {
-                input = containersCount - 1;
-            }
-
-            changeTriggered = true;
-        }
-
-        // Reset Axis
-        if(controllerInput == 0)
-        {
-            changeTriggered = false;
-        }
+        if (Input.GetButtonDown("Change Container"))
+            input = (currentIndex + 1) % availableContainers;
 
         //Change the highlighted container according to input.
-        if(input != -1)
+        if (input != -1)
         {
             containers[currentIndex].StopHighLight();
             currentIndex = input;

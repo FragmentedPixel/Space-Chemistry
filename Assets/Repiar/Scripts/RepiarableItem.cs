@@ -142,7 +142,7 @@ public class RepiarableItem : MonoBehaviour
             repiarProgress.fillAmount = currentProgress / progressNeeded;
 
             currentProgress -= Time.deltaTime * lostPerSecond;
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetButtonDown("Repair"))
             {
                 currentProgress += wonPerPress;
             }

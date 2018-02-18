@@ -33,6 +33,8 @@ public class PauseMenu : MonoBehaviour
 
     public void SetPlayerControl(bool hasControl)
     {
+        //TODO: Add projectile path to player controlable.
+        //TODO: Find all player contralable objects instead.
         PlayerMovement playerMov = FindObjectOfType<PlayerMovement>();
         PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
         HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();

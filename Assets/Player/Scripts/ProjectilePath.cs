@@ -22,11 +22,17 @@ public class ProjectilePath : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        Cursor.visible = false;
+
         home = transform.position;
         argo = new GameObject[samples];
         for (var i = 0; i < argo.Length; i++)
         {
             var go = Instantiate(arrowPrefab, transform.position, transform.rotation, transform);
+
+            float currentAlpha = .7f - (i / (float)argo.Length);
+            go.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, currentAlpha);
+
             argo[i] = go;
         }
     }
@@ -44,6 +50,7 @@ public class ProjectilePath : MonoBehaviour
         {
             argo[i].GetComponent<SpriteRenderer>().enabled = show;
             argo[i].transform.position = home;
+
         }
     }
 
@@ -62,6 +69,8 @@ public class ProjectilePath : MonoBehaviour
 			indicator = transform.right * power;
         }
 
+        indicator = transform.right * power;
+
         argo[0].GetComponent<SpriteRenderer>().enabled = false;
         argo[argo.Length - 1].GetComponent<SpriteRenderer>().enabled = false;
 
@@ -76,13 +85,14 @@ public class ProjectilePath : MonoBehaviour
             v3.y = y * t + 0.5f * Physics.gravity.y * t * t + transform.position.y;
             v3.z = transform.parent.position.z;
             argo[i].transform.position = v3;
+
+            
         }
 
         for(int i = 1; i < argo.Length-1; i++)
         {
             float angle = Mathf.Atan2(argo[i+1].transform.position.y - argo[i].transform.position.y, argo[i+1].transform.position.x - argo[i].transform.position.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
 
             argo[i].transform.rotation = rotation;
         }

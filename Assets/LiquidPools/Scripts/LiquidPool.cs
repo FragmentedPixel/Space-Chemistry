@@ -75,9 +75,6 @@ public class LiquidPool : MonoBehaviour {
         //TODO: Make finite barrel more intersting
         GetComponent<BoxCollider2D>().size = new Vector2(width, height);
         GetComponent<BoxCollider2D>().offset = new Vector2(0f, height/2);
-
-
-        splash.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolSubstance.particleColor;
 	}
 	
     public void SpawnWater(float width, float height)
@@ -307,10 +304,6 @@ public class LiquidPool : MonoBehaviour {
             //Set the lifetime of the particle system.
             float lifetime = 0.93f + Mathf.Abs(velocity) * 0.07f;
 
-            //Set the splash to be between two values in Shuriken by setting it twice.
-            splash.GetComponent<ParticleSystem>().startSpeed = 8 + 2 * Mathf.Pow(Mathf.Abs(velocity), 0.5f);
-            splash.GetComponent<ParticleSystem>().startSpeed = 9 + 2 * Mathf.Pow(Mathf.Abs(velocity), 0.5f);
-            splash.GetComponent<ParticleSystem>().startLifetime = lifetime;
 
             //Set the correct position of the particle system.
             Vector3 position = new Vector3(xpositions[index], ypositions[index] - 0.35f, 5);
@@ -319,9 +312,17 @@ public class LiquidPool : MonoBehaviour {
             Quaternion rotation = Quaternion.LookRotation(new Vector3(xpositions[Mathf.FloorToInt(xpositions.Length / 2)], BOTTOM + 8, 5) - position);
 
             //Create the splash and tell it to destroy itself.
-
             GameObject splish = Instantiate(splash, position, rotation, transform) as GameObject;
             Destroy(splish, lifetime + 0.3f);
+
+            //Set the splash to be between two values in Shuriken by setting it twice.
+
+            var main = splish.GetComponent<ParticleSystem>().main;
+
+            splish.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolSubstance.particleColor;
+            main.startSpeed = 8 + 2 * Mathf.Pow(Mathf.Abs(velocity), 0.5f);
+            main.startSpeed = 9 + 2 * Mathf.Pow(Mathf.Abs(velocity), 0.5f);
+            main.startLifetime = lifetime;
         }
     }
 

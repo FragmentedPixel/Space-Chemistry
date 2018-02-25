@@ -8,7 +8,7 @@ public class PopUpManager : MonoBehaviour
     public static PopUpManager instance;
     public Image messageImage;
 
-    private PauseMenu pauseMenu;
+    private UIManager uiManager;
 
     private Sprite[] spritesToDisplay;
     private int spriteIndex;
@@ -17,13 +17,13 @@ public class PopUpManager : MonoBehaviour
     {
         instance = this;
         gameObject.SetActive(false);
-        pauseMenu = FindObjectOfType<PauseMenu>();
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     public void RequestPopUp(Sprite[] messagesToDisplay)
     {
         gameObject.SetActive(true);
-        pauseMenu.SetPlayerControl(false);
+        uiManager.SetPlayerControl(false);
 
 
         spritesToDisplay = messagesToDisplay;
@@ -35,7 +35,7 @@ public class PopUpManager : MonoBehaviour
     public void ClosePopUp()
     {
         gameObject.SetActive(false);
-        pauseMenu.SetPlayerControl(true);
+        uiManager.SetPlayerControl(true);
     }
 
     public void NextImage()

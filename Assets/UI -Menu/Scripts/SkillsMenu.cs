@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillsManager : MonoBehaviour {
+public class SkillsMenu : UIMenu {
 
     #region Variables
 
@@ -24,26 +24,6 @@ public class SkillsManager : MonoBehaviour {
     #endregion
 
     #region Methods
-
-    private void Update()
-    {
-        //read from serialization
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            if(!SkillsActive)
-            {
-                
-            }
-            else
-            {
-
-            }
-            SkillsActive = !SkillsActive;
-            transform.GetChild(0).gameObject.SetActive(SkillsActive);
-            //GetComponentInChildren<Transform>().gameObject.SetActive(SkillsActive);
-        }
-    }
-
     //Level up a certain skill
     public void LevelUpSkill(int SkillID)
     {

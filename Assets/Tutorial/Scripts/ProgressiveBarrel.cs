@@ -10,13 +10,13 @@ public class ProgressiveBarrel : MonoBehaviour
 {
     public AudioClip unlockSound;
 
-    private ContainersManager containersManager;
+    private ContainersUI containersManager;
     private AudioSource audioS;
     private bool used = false;
 
     private void Start()
     {
-        containersManager = FindObjectOfType<ContainersManager>();
+        containersManager = FindObjectOfType<ContainersUI>();
         containersManager.LockAllBarrels();
 
         audioS = GetComponent<AudioSource>();

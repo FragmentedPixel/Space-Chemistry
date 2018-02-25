@@ -7,7 +7,7 @@ using UnityEngine.UI;
  * Responsible for managing the containers from the UI and sending them to the player.
  */
 
-public class ContainersManager : MonoBehaviour
+public class ContainersUI : MonoBehaviour
 {
     private Container[] containers;
 

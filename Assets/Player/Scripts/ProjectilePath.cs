@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectilePath : MonoBehaviour
+public class ProjectilePath : PlayerContrable
 {
     public float power = 5f;
     public GameObject arrowPrefab;

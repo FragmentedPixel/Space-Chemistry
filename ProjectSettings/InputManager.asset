@@ -300,7 +300,7 @@ InputManager:
     negativeButton: 
     positiveButton: q
     altNegativeButton: 
-    altPositiveButton: joystick button 3
+    altPositiveButton: joystick button 2
     gravity: 1000
     dead: 0.0001
     sensitivity: 1000
@@ -413,6 +413,22 @@ InputManager:
     positiveButton: joystick button 5
     altNegativeButton: 
     altPositiveButton: 
+    gravity: 1000
+    dead: 0.5
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SkillMenu
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 2
+    altNegativeButton: 
+    altPositiveButton: x
     gravity: 1000
     dead: 0.5
     sensitivity: 1000

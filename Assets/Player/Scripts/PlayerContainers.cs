@@ -50,7 +50,7 @@ public class PlayerContainers : PlayerContrable
     private void SetContainers()
     {
         containers = new Container[containersCount];
-        ContainersManager containerManager = FindObjectOfType<ContainersManager>();
+        ContainersUI containerManager = FindObjectOfType<ContainersUI>();
         Container[] uiContainers = containerManager.GetContainers(containersCount);
 
         for(int i = 0; i < containersCount; i++)

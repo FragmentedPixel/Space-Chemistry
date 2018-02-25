@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InvetoryPanel : MonoBehaviour
+public class InvetoryUI : MonoBehaviour
 {
     public InvetoryImage invetoryImagePrefab;
     private Animator anim;

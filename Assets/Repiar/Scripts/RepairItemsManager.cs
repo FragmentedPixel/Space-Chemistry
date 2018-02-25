@@ -8,7 +8,7 @@ public static class RepairItemsManager
 
     public static void Update()
     {
-        Object.FindObjectOfType<InvetoryPanel>().OnItemsChanged();
+        Object.FindObjectOfType<InvetoryUI>().OnItemsChanged();
     }
 
     public static void AddItem(RepairItem newItem)

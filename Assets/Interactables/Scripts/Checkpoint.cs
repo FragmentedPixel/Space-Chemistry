@@ -30,16 +30,17 @@ public class Checkpoint : SoundMonoBehaviour
 	
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
 
         if (player != null && passed == false)
         {
+            PlayerHealth playerHeath = player.GetComponentInChildren<PlayerHealth>();
             passed = true;
             spriterenderer.sprite = checkpointPassed;
 
             light.color = Color.green;
             audioS.PlayOneShot(passedSound);
-            player.SetCheckPoint(new Vector3(transform.position.x,transform.position.y,-1));
+            playerHeath.SetCheckPoint(new Vector3(transform.position.x,transform.position.y,-1));
         }
     }
 }

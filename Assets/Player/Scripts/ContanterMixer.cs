@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for mixing the substances inside the backpack.
  */
 
-public class ContanterMixer : MonoBehaviour
+public class ContanterMixer
 {
     public void Mix(Container first, Container second, Container third)
     {

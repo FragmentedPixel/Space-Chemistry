@@ -9,7 +9,7 @@ public class InvetoryUI : MonoBehaviour
     private Animator anim;
 
 
-    private void Start()
+    private void Awake()
     {
         anim = GetComponent<Animator>();
 
@@ -24,6 +24,11 @@ public class InvetoryUI : MonoBehaviour
     public void HighLight()
     {
         anim.SetTrigger("Highlight-Trigger");
+    }
+
+    public void Hide()
+    {
+        anim.SetTrigger("Hide-Trigger");
     }
 
     public void OnItemsChanged()

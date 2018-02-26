@@ -9,6 +9,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     #region Parameters
+    [Range(0f,2f)] public float scale;
     public AudioClip deathSound;
 
     private AudioSource audioS;
@@ -16,15 +17,27 @@ public class PlayerHealth : MonoBehaviour
     private bool dead = false;
 
     private Animator anim;
+    private ParticleSystem[] particles;
     #endregion
 
     #region CheckPoint
     private void Start()
     {
+        particles = GetComponentsInChildren<ParticleSystem>();
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
         anim = GetComponentInChildren<Animator>();
+    }
+
+    private void Update()
+    {
+        foreach(ParticleSystem particle in particles)
+        {
+            var main = particle.main;
+            ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve(scale);
+            main.startSize = curve;
+        }
     }
 
     public void SetCheckPoint(Vector3 newCheckPoint)

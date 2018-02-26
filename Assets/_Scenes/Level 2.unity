@@ -5340,6 +5340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1198402146}
+  - {fileID: 2111551406}
   m_Father: {fileID: 1305504210}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7354,7 +7355,7 @@ Transform:
   - {fileID: 1983638068}
   - {fileID: 466249047}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1309643283
 Prefab:
@@ -8788,7 +8789,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141774317913680, guid: d32f2d44c075aca47b07d2da61a158f3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114361785687250022, guid: d32f2d44c075aca47b07d2da61a158f3,
         type: 2}
@@ -10562,12 +10563,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2111551404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.71, y: -32.66, z: 7.896012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -35.11, y: -6.7199993, z: 7.896012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 927414512}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2111551407
 MonoBehaviour:
@@ -10580,7 +10581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39aff7c97f0c68e4db8d34e710e4cf81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerSound: {fileID: 8300000, guid: 97811d6e0217094459b26e9083ed81e4, type: 3}
+  triggerSound: {fileID: 8300000, guid: 7cac462ea89f8564aa40594441456869, type: 3}
   soundPriority: 50
 --- !u!1001 &2117194581
 Prefab:

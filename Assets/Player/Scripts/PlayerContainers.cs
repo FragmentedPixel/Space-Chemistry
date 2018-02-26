@@ -43,8 +43,8 @@ public class PlayerContainers : PlayerContrable
         // Get components from the player.
         generator = GetComponentInChildren<HandGenerator>();
         collector = GetComponentInChildren<HandCollector>();
-        mixer = GetComponentInChildren<ContanterMixer>();
         audioS = GetComponent<AudioSource>();
+        mixer = new ContanterMixer();
     }
 
     private void SetContainers()

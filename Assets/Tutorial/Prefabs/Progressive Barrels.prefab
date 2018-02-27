@@ -250,7 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be3c1d6ce2d9444d91e0a39eb735631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockSound: {fileID: 8300000, guid: e688d58121d34284d820de9d826dfcdc, type: 3}
+  triggerSound: {fileID: 8300000, guid: 28637f82ebe300f468be7c776c042879, type: 3}
+  soundPriority: 50
 --- !u!114 &114951692988931152
 MonoBehaviour:
   m_ObjectHideFlags: 1

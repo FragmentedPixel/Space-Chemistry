@@ -15,6 +15,7 @@ public class ContainersUI : UIMenu
     {
         base.Awake();
         containers =  GetComponentsInChildren<Container>();
+        gameObject.SetActive(true);
 
         foreach (Container cont in containers)
             cont.StopHighLight();

@@ -15,6 +15,5 @@ public class InvetoryTrigger : PlayerTriggerable
     protected override void OnPlayerTriggered()
     {
         invetoryUI.Activate();
-        invetoryUI.HighLight();
     }
 }

@@ -3660,6 +3660,11 @@ Prefab:
       propertyPath: m_Name
       value: Chip
       objectReference: {fileID: 0}
+    - target: {fileID: 114353710192888656, guid: 37001d2bd8a7edc46a4114c47967078b,
+        type: 2}
+      propertyPath: triggerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 97811d6e0217094459b26e9083ed81e4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37001d2bd8a7edc46a4114c47967078b, type: 2}
   m_IsPrefabParent: 0
@@ -5522,6 +5527,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114307962816899022, guid: ed28db22378572e4bbbb9aa2d36e3479,
+        type: 2}
+      propertyPath: triggerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 97811d6e0217094459b26e9083ed81e4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed28db22378572e4bbbb9aa2d36e3479, type: 2}
   m_IsPrefabParent: 0
@@ -8581,6 +8591,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114856249779514066, guid: 9c6bc6b60d1b3b24abd93472172ba918,
+        type: 2}
+      propertyPath: triggerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 97811d6e0217094459b26e9083ed81e4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c6bc6b60d1b3b24abd93472172ba918, type: 2}
   m_IsPrefabParent: 0

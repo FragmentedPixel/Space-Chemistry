@@ -22,7 +22,7 @@ public class MessageManager : UIMenu
     #endregion
 
     #region Methods
-    private void Start()
+    private void Awake()
     {
         // References.
         instance = this;

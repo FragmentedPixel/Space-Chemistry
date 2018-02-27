@@ -15,8 +15,12 @@ public class PlayerUIManager : MonoBehaviour
         // Activate the containers pannel.
         containersUI.Activate();
 
-        // Activate the invetory pannel.
-        invetoryUI.Activate();
+        // Activate the invetory if needed.
+        InvetoryUI invUI = (InvetoryUI)invetoryUI;
+        if (invUI.IsNeeded())
+            invetoryUI.Activate();
+        else
+            invetoryUI.Deactivate();
         
         // Activate the health UI.
         //healthUI.Activate();

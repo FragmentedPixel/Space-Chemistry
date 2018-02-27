@@ -10,11 +10,12 @@ public class Death : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
 
         if (player != null)
         {
-            player.Death();
+            PlayerHealth health = player.GetComponentInChildren<PlayerHealth>();
+            health.Death();
         }
     }
 }

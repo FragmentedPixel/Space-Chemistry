@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         audioS = gameObject.AddComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
-        anim = GetComponentInChildren<Animator>();
+        anim = transform.parent.GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
             dead = true;
             anim.SetBool("Dead", true);
 
-            PlayerMovement playerMov = GetComponent<PlayerMovement>();
+            PlayerMovement playerMov = GetComponentInParent<PlayerMovement>();
             PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
             HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();
 
@@ -68,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void RespawnPlayer()
     {
-        PlayerMovement playerMov = GetComponent<PlayerMovement>();
+        PlayerMovement playerMov = GetComponentInParent<PlayerMovement>();
         PlayerContainers playerCont = playerMov.GetComponent<PlayerContainers>();
         HandMovement playerHand = playerMov.GetComponentInChildren<HandMovement>();
 
@@ -89,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(time);
         anim.SetBool("Dead", false);
         
-        transform.position = currentCheckpoint;
+        transform.parent.position = currentCheckpoint;
 
         yield return new WaitForSeconds(.3f);
 

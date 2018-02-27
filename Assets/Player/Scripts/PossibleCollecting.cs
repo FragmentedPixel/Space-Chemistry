@@ -16,8 +16,6 @@ public class PossibleCollecting : MonoBehaviour
 
             if (particleInsideBarrel != null)
             {
-
-
                 StartFeedBack();
             }
         }
@@ -43,12 +41,18 @@ public class PossibleCollecting : MonoBehaviour
 
     private IEnumerator PossibleCollectingCR()
     {
-        feedbackSprite.enabled = true;
+        ChangeFeedBack(true);
 
         yield return new WaitForSeconds(feedbackDuration);
 
-        feedbackSprite.enabled = false;
+        ChangeFeedBack(false);
 
         yield break;
+    }
+
+    private void ChangeFeedBack(bool isEnabled)
+    {
+        foreach (Transform t in transform)
+            t.gameObject.SetActive(isEnabled);
     }
 }

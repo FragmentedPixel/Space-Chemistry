@@ -7,7 +7,7 @@ using UnityEngine.UI;
  * Responsible for displaying messages on screen for a short period of time.
  */
 
-public class MessageManager : MonoBehaviour
+public class MessageManager : UIMenu
 {
     #region Variabiles
     // Singleton instance.

@@ -7,12 +7,13 @@ using UnityEngine.UI;
  * Responsible for managing the containers from the UI and sending them to the player.
  */
 
-public class ContainersUI : MonoBehaviour
+public class ContainersUI : UIMenu
 {
     private Container[] containers;
 
     private void Awake()
     {
+        base.Awake();
         containers =  GetComponentsInChildren<Container>();
 
         foreach (Container cont in containers)

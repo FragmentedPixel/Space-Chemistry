@@ -11,7 +11,7 @@ public class PauseMenu : UIMenu
     #region Button Commands
     public void Resume()
     {
-        GetComponentInParent<UIManager>().ResumeGame();
+        GetComponentInParent<MenuUIManager>().ResumeGame();
     }
 
     public void GoToMenu()

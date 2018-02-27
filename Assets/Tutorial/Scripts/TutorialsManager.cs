@@ -9,6 +9,6 @@ public class TutorialsManager : MonoBehaviour
 
     public void DisplayTutorials()
     {
-        PopUpManager.instance.RequestPopUp(imagesToDisplay);
+        PopUpUI.instance.RequestPopUp(imagesToDisplay);
     }
 }

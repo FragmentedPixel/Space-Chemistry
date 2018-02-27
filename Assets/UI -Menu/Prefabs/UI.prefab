@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224710574730682472}
-  - component: {fileID: 114567853087073186}
   - component: {fileID: 222727979321631024}
+  - component: {fileID: 114567853087073186}
   - component: {fileID: 114575270688193572}
+  - component: {fileID: 95534802955208332}
   - component: {fileID: 114844389962002106}
   m_Layer: 0
   m_Name: Container Panel
@@ -56,8 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224836071219402120}
   - component: {fileID: 222110247573689140}
-  - component: {fileID: 114809010216177716}
   - component: {fileID: 114099189503529794}
+  - component: {fileID: 114809010216177716}
   - component: {fileID: 95138269470140926}
   - component: {fileID: 114620888324999814}
   m_Layer: 0
@@ -343,6 +344,7 @@ GameObject:
   - component: {fileID: 224749185208115532}
   - component: {fileID: 222351780291493986}
   - component: {fileID: 114124355113778816}
+  - component: {fileID: 95634502504809998}
   - component: {fileID: 114606877365178984}
   m_Layer: 5
   m_Name: Error Texts
@@ -514,6 +516,7 @@ GameObject:
   - component: {fileID: 224071536704567336}
   - component: {fileID: 222124904705843854}
   - component: {fileID: 114513810861587664}
+  - component: {fileID: 95183741749154396}
   - component: {fileID: 114508520051926264}
   m_Layer: 5
   m_Name: PopUp
@@ -521,7 +524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1515402083415774
 GameObject:
   m_ObjectHideFlags: 1
@@ -638,7 +641,7 @@ GameObject:
   - component: {fileID: 114764185665634864}
   - component: {fileID: 114712841927629134}
   m_Layer: 5
-  m_Name: ContainerBottle
+  m_Name: ContainerBottle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,6 +724,7 @@ GameObject:
   - component: {fileID: 223918790389474272}
   - component: {fileID: 114877755567285632}
   - component: {fileID: 114104362910051774}
+  - component: {fileID: 114967847495994872}
   m_Layer: 5
   m_Name: Player Canvas
   m_TagString: Untagged
@@ -773,7 +777,7 @@ GameObject:
   - component: {fileID: 114442127875087942}
   - component: {fileID: 114583212430512064}
   m_Layer: 5
-  m_Name: ContainerBottle
+  m_Name: ContainerBottle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,6 +889,57 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ba49312d3cc56ca468d82a71ef60760a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95183741749154396
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510637285180854}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b486120acebc5fa42a80911c84899c97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95534802955208332
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025656267341334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ba3652d112dcf247a6006dec328ec3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95634502504809998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362496700309464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8c8fbf710b498143bdfa6ccbea7b211, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1701,6 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ecc98deeb4f6e47b00cae3d96df0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
   messageImage: {fileID: 114732300843737590}
 --- !u!114 &114513810861587664
 MonoBehaviour:
@@ -1965,6 +2021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3380ca010cde97344b0b7e4eaf863e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!114 &114620888324999814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1976,6 +2033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0329c5e3084b62e46a301fd7e89ddcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
   invetoryImagePrefab: {fileID: 114442045879331770, guid: 1c6b531688c9fd848a1b65b0f19f71c6,
     type: 2}
 --- !u!114 &114635637254970280
@@ -2596,6 +2654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05fed22f641dc0549b7e49f1e98557d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!114 &114851892227512832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2723,6 +2782,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114967847495994872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753938466783212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1442a326312244aacf2a8146d6b1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containersUI: {fileID: 114844389962002106}
+  invetoryUI: {fileID: 114620888324999814}
+  popUpUI: {fileID: 114508520051926264}
+  errorTextUI: {fileID: 114606877365178984}
 --- !u!114 &114971476650150676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3425,7 +3499,7 @@ RectTransform:
   m_GameObject: {fileID: 1876015188685072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_Children:
   - {fileID: 224387912429438484}
   - {fileID: 224965144293963764}

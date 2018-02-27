@@ -15,7 +15,7 @@ public class TutorialTrigger : MonoBehaviour
         if (player != null && triggered == false)
         {
             triggered = true;
-            PopUpManager.instance.RequestPopUp(imagesToDisplay);
+            PopUpUI.instance.RequestPopUp(imagesToDisplay);
         }
     }
 }

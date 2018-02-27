@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopUpManager : MonoBehaviour
+public class PopUpUI : UIMenu
 {
-    public static PopUpManager instance;
+    public static PopUpUI instance;
     public Image messageImage;
 
-    private UIManager uiManager;
+    private MenuUIManager uiManager;
 
     private Sprite[] spritesToDisplay;
     private int spriteIndex;
@@ -17,7 +17,7 @@ public class PopUpManager : MonoBehaviour
     {
         instance = this;
         gameObject.SetActive(false);
-        uiManager = FindObjectOfType<UIManager>();
+        uiManager = FindObjectOfType<MenuUIManager>();
     }
 
     public void RequestPopUp(Sprite[] messagesToDisplay)

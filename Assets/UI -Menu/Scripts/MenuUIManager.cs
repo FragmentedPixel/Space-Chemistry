@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 //TODO: Newst on top.
 
-public class UIManager : MonoBehaviour
+public class MenuUIManager : MonoBehaviour
 {
     #region Variabiles
     public UIMenu pauseMenu;

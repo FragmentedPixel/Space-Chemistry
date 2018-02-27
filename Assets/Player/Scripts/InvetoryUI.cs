@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InvetoryUI : MonoBehaviour
+public class InvetoryUI : UIMenu
 {
     public InvetoryImage invetoryImagePrefab;
-    private Animator anim;
-
-
-    private void Awake()
+    
+    public bool IsNeeded()
     {
-        anim = GetComponent<Animator>();
-
         // If there are no collectabiles in this level, we don't need the pannel.
         CollectableObject[] objectsToCollect = FindObjectsOfType<CollectableObject>();
-        if(objectsToCollect.Length <= 0)
-        {
-            gameObject.SetActive(false);
-        }
+        return (objectsToCollect.Length <= 0);
     }
 
     public void HighLight()

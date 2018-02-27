@@ -6,9 +6,9 @@ public class UIMenu : MonoBehaviour
 {
     protected Animator anim;
 
-    public bool isOpen;
+    [HideInInspector]public bool isOpen;
 
-    private void Awake()
+    protected void Awake()
     {
         anim = GetComponent<Animator>();
         gameObject.SetActive(false);
@@ -37,5 +37,4 @@ public class UIMenu : MonoBehaviour
         gameObject.SetActive(false);
         yield break;
     }
-
 }

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class InvetoryTrigger : PlayerTriggerable
 {
+    InvetoryUI invetoryUI;
+
     private void Start()
     {
-        FindObjectOfType<InvetoryUI>().Hide();
+        invetoryUI = FindObjectOfType<InvetoryUI>();
+        invetoryUI.Deactivate();
     }
 
     protected override void OnPlayerTriggered()
     {
-        FindObjectOfType<InvetoryUI>().HighLight();
+        invetoryUI.Activate();
+        invetoryUI.HighLight();
     }
 }

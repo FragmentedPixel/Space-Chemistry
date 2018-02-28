@@ -7,6 +7,15 @@ public class PossibleCollecting : MonoBehaviour
     public SpriteRenderer feedbackSprite;
     public float feedbackDuration;
 
+    private PlayerInstructions instructions;
+
+    private void Start()
+    {
+        PlayerMovement player = GetComponentInParent<PlayerMovement>();
+
+        instructions = player.GetComponentInChildren<PlayerInstructions>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FiniteBarrel barrel = collision.gameObject.GetComponent<FiniteBarrel>();
@@ -52,7 +61,12 @@ public class PossibleCollecting : MonoBehaviour
 
     private void ChangeFeedBack(bool isEnabled)
     {
-        foreach (Transform t in transform)
-            t.gameObject.SetActive(isEnabled);
+        feedbackSprite.enabled = isEnabled;
+
+        if (isEnabled)
+            instructions.ShowCollectingCanvas();
+        else
+            instructions.HideCollectingCanvas();
+
     }
 }

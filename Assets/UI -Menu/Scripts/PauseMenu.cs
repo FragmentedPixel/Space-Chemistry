@@ -26,7 +26,7 @@ public class PauseMenu : UIMenu
 
     public void ShowTutorials()
     {
-		FindObjectOfType<TutorialsManager>().DisplayTutorials();
+		FindObjectOfType<MenuUIManager>().DisplayTutorials();
     }
     #endregion
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMenu : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class UIMenu : MonoBehaviour
 
     [HideInInspector]public bool isOpen;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         anim = GetComponent<Animator>();
         gameObject.SetActive(false);

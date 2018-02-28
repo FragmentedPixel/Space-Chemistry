@@ -6,7 +6,6 @@ public class PlayerUIManager : MonoBehaviour
 {
     public UIMenu containersUI;
     public UIMenu invetoryUI;
-    public UIMenu popUpUI;
     public UIMenu errorTextUI;
     //public UIMenu healthUI;
 

@@ -3,47 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopUpUI : UIMenu
+public class TutorialsUI : UIMenu
 {
-    public static PopUpUI instance;
     public Image messageImage;
+    public Sprite[] spritesToDisplay;
 
-    private MenuUIManager uiManager;
-
-    private Sprite[] spritesToDisplay;
     private int spriteIndex;
 
-    private void Awake()
+    private void OnEnable()
     {
-        instance = this;
-        gameObject.SetActive(false);
-        uiManager = FindObjectOfType<MenuUIManager>();
-    }
-
-    public void RequestPopUp(Sprite[] messagesToDisplay)
-    {
-        gameObject.SetActive(true);
-        uiManager.SetPlayerControl(false);
-
-
-        spritesToDisplay = messagesToDisplay;
         spriteIndex = 0;
 
-        StartCoroutine(DisplayAll());
+        StartCoroutine(DisplayAllCR());
     }
-
-    public void ClosePopUp()
-    {
-        gameObject.SetActive(false);
-        uiManager.SetPlayerControl(true);
-    }
-
+    
     public void NextImage()
     {
         spriteIndex++;
 
         if (spriteIndex >= spritesToDisplay.Length)
-            ClosePopUp();
+            Deactivate();
     }
 
     public void PreviousImage()
@@ -56,7 +35,7 @@ public class PopUpUI : UIMenu
         }
     }
 
-    private IEnumerator DisplayAll()
+    private IEnumerator DisplayAllCR()
     {
         while(spriteIndex < spritesToDisplay.Length)
         {
@@ -81,7 +60,7 @@ public class PopUpUI : UIMenu
             yield return null;
         }
 
-        ClosePopUp();
+        Deactivate();
 
         yield break;
     }

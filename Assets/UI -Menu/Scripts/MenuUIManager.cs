@@ -10,10 +10,13 @@ public class MenuUIManager : MonoBehaviour
     #region Variabiles
     public UIMenu pauseMenu;
     public UIMenu skillMenu;
+    public UIMenu tutorialMenu;
 
     private List<UIMenu> menus;
 
     private bool playerHasControl = false;
+
+    private int zIndex = 0;
     #endregion
 
     #region Menu Handeling
@@ -30,6 +33,7 @@ public class MenuUIManager : MonoBehaviour
         menus = new List<UIMenu>();
         menus.Add(skillMenu);
         menus.Add(pauseMenu);
+        menus.Add(tutorialMenu);
     }
 
     private void CheckMenu(UIMenu menuToCheck)
@@ -130,6 +134,11 @@ public class MenuUIManager : MonoBehaviour
     public void ResumeGame()
     {
         CloseAllMenus();
+    }
+
+    public void DisplayTutorials()
+    {
+        CheckMenu(tutorialMenu);
     }
     #endregion
 }

@@ -21,7 +21,7 @@ public class Bouncer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
 
         if (player)
         {

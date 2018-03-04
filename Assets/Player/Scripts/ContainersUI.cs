@@ -20,7 +20,9 @@ public class ContainersUI : UIMenu
         foreach (Container cont in containers)
             cont.StopHighLight();
 
-        FindObjectOfType<PersistentContainers>().LevelStarted();
+        var persistent = FindObjectOfType<PersistentContainers>();
+        if(persistent!= null)
+            persistent.LevelStarted();
     }
 
     public Container[] GetContainers(int containersCount)

@@ -1731,12 +1731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f2a721cbed9114e8143ff6559bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagesToDisplay:
-  - {fileID: 21300000, guid: 7c9a9acabfa66d340bf2e597303db0d4, type: 3}
-  - {fileID: 21300000, guid: 087813f429fe5f349a6b5a07d7d2ff27, type: 3}
-  - {fileID: 21300000, guid: b18cfbefb272ca84e9b93d39d087bdee, type: 3}
-  - {fileID: 21300000, guid: 954759403f4aa004495807f97a02eb9e, type: 3}
-  currentIndex: 0
 --- !u!224 &270678544 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224719499650199370, guid: 0d2393e98780a744c8e4cd36e132714c,

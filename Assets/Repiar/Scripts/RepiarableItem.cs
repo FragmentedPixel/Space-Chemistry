@@ -10,19 +10,28 @@ public class RepiarableItem : MonoBehaviour
     public List<ItemNeeded> itemsNeeded;
 
     [Header("Quick Time event")]
-    public float pressesNeeded = 100f;
-    public float lostPerSecond = 5f;
-    public float wonPerPress = 30f;
+    public int pressesNeeded = 5;
+    public Transform[] locations;
+    private int lastLocationIndex;
 
-    [Header("Repair Feedback")]
-    public Image repiarProgress;
-    public ParticleSystem repairParticles;
+    [Header("Repair Panel")]
     public Canvas repiarCanvas;
+    public Image repairLocations;
+    public Text repiarText;
+    public Image repairImage;
+
+    [Header("OverView Panel")]
     public Canvas overviewCanvas;
     public InvetoryImage invetoryImagePrefab;
     public Transform itemsNeedPannel;
-    public Text repiarText;
-    public Image repairImage;
+
+    [Header("Button Animation")]
+    private bool goingdown;
+    private float currentTime = 0f;
+    private float maxTime = 1f;
+    private Vector3 maxScale;
+    private Vector3 minScale;
+
 
     private bool isPlayerInside;
     private bool isRepairingNow;
@@ -38,6 +47,7 @@ public class RepiarableItem : MonoBehaviour
             invetoryImage.SetUp(currentItem.item.itemSprite, currentItem.amount);   
         }
 
+        repiarCanvas.enabled = false;
 
         maxScale = repairImage.transform.localScale;
         minScale = .8f * maxScale;
@@ -66,7 +76,6 @@ public class RepiarableItem : MonoBehaviour
     public void StartRepair()
     {
         repiarText.enabled = false;
-        repairParticles.Play();
 
         if (HasAllItems())
         {
@@ -108,68 +117,24 @@ public class RepiarableItem : MonoBehaviour
     public void StopRepair()
     {
         repiarText.enabled = true;
-        repairParticles.Stop();
-        repairParticles.Clear();
         isRepairingNow = false;
         
-        repiarProgress.fillAmount = 0f;
         StopAllCoroutines();
     }
-
-    /*private IEnumerator RepairingCR()
-    {
-        isRepairingNow = true;
-        float currentProgress = 0f;
-        float progressNeeded = pressesNeeded * wonPerPress;
-
-        float currentTime = 0f;
-        while (currentTime <= repiarDuration)
-        {
-            repiarProgress.fillAmount = currentProgress / progressNeeded;
-
-            currentProgress -= Time.deltaTime * lostPerSecond;
-            if(Input.GetKeyDown(KeyCode.Q))
-            {
-                currentProgress += wonPerPress;
-            }
-
-            currentTime += Time.deltaTime;
-
-            yield return null;
-        }
-
-        isRepairingNow = false;
-
-        if (currentProgress >= progressNeeded)
-            OnItemRepaired();
-        else
-            StopRepair();
-
-        yield break;
-    } */
-
-    private bool goingdown;
-    private float currentTime = 0f;
-    private float maxTime = 1f;
-    Vector3 maxScale;
-    Vector3 minScale;
     
     private IEnumerator RepairingCR()
     {
         isRepairingNow = true;
-        float currentProgress = wonPerPress;
-        float progressNeeded = pressesNeeded * wonPerPress;
 
-        
+        int currentPressed = 0;
 
-        while (currentProgress > 0f && currentProgress < progressNeeded)
+        while (isRepairingNow && currentPressed < pressesNeeded)
         {
-            repiarProgress.fillAmount = currentProgress / progressNeeded;
-
-            currentProgress -= Time.deltaTime * lostPerSecond;
             if (Input.GetButtonDown("Repair"))
             {
-                currentProgress += wonPerPress;
+                currentPressed ++;
+                if(currentPressed < pressesNeeded)
+                    repairImage.transform.position = GetRandomLocation().position;
             }
 
             yield return null;
@@ -177,12 +142,26 @@ public class RepiarableItem : MonoBehaviour
 
         isRepairingNow = false;
 
-        if (currentProgress >= progressNeeded)
+        if (currentPressed >= pressesNeeded)
             OnItemRepaired();
         else
             StopRepair();
 
         yield break;
+    }
+
+    private Transform GetRandomLocation()
+    {
+        int currentLocationIndex = 0;
+        do
+        {
+            currentLocationIndex = Random.Range(0, locations.Length);
+
+        } while (currentLocationIndex == lastLocationIndex);
+
+        lastLocationIndex = currentLocationIndex;
+        return locations[currentLocationIndex];
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -201,6 +180,7 @@ public class RepiarableItem : MonoBehaviour
         PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
         if (player != null)
         {
+            isRepairingNow = false;
             isPlayerInside = false;
             repiarCanvas.enabled = false;
             overviewCanvas.enabled = true;
@@ -215,7 +195,6 @@ public class RepiarableItem : MonoBehaviour
 
         overviewCanvas.gameObject.SetActive(false);
         repiarCanvas.gameObject.SetActive(false);
-        repairParticles.Stop();
 
         Destroy(this);
     }

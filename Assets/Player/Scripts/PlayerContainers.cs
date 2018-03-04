@@ -7,10 +7,16 @@ using UnityEngine.UI;
  * Responsible for managing the player's containers.
  */
 
+public enum ContainersState
+{
+    Collecting, Releasing, Mixing, Idle
+}
+
 public class PlayerContainers : PlayerContrable
 {
     #region Variabiles
     // Reference to the containers.
+    public ContainersState state;
     private Container[] containers = new Container[3];
 
     // currently selected container.
@@ -32,6 +38,9 @@ public class PlayerContainers : PlayerContrable
     public AudioClip releaseSound;
     public AudioClip collectSound;
     public AudioClip endCollect;
+
+    // Enum state
+
     #endregion
 
     #region Containers & UI
@@ -153,6 +162,7 @@ public class PlayerContainers : PlayerContrable
 
     private void Relase()
     {
+        state = ContainersState.Releasing;
         axisTriggered = true;
 
         if (availableContainers == 0)
@@ -178,6 +188,7 @@ public class PlayerContainers : PlayerContrable
 
     private void Collect()
     {
+        state = ContainersState.Collecting;
         axisTriggered = true;
         if (availableContainers == 0)
             return;
@@ -206,6 +217,7 @@ public class PlayerContainers : PlayerContrable
 
     private void StopCollecting()
     {
+        state = ContainersState.Idle;
         axisTriggered = false;
 
         if (audioS.isPlaying && audioS.loop == true)
@@ -220,6 +232,8 @@ public class PlayerContainers : PlayerContrable
 
     private void SelectContainer()
     {
+        state = ContainersState.Idle;
+
         collector.StopCollecting();
 
         // Stop sounds played.
@@ -259,6 +273,8 @@ public class PlayerContainers : PlayerContrable
 
     private void Mix()
     {
+        state = ContainersState.Mixing;
+
         if (containersCount == 3)
             mixer.Mix(containers[0], containers[1], containers[2]);
         else if (containersCount == 2)

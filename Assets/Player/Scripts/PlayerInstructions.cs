@@ -9,8 +9,12 @@ public class PlayerInstructions : MonoBehaviour
 
     private List<Canvas> instructions = new List<Canvas>();
 
+    // Components
+    private PlayerContainers containers;
+
     private void Start()
     {
+        containers = transform.parent.GetComponentInChildren<PlayerContainers>();
         instructions.Add(collectingCanvas);
     }
 
@@ -29,6 +33,7 @@ public class PlayerInstructions : MonoBehaviour
 
     public void ShowCollectingCanvas()
     {
+        if(containers.state != ContainersState.Releasing)
         ShowCanvas(collectingCanvas);
     }
 

@@ -26,7 +26,7 @@ public class sSubstance : ScriptableObject
     public float particleGravity;
 
     // Material of the particle.
-    public Material particleMaterial;
+    [HideInInspector]public Material particleMaterial;
 
     // How much time before the particle scales down and dies
     public float particleLifeTime = 3.0f;

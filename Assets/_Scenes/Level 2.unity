@@ -374,7 +374,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -698,7 +698,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2282,7 +2282,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3334,7 +3334,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7730,7 +7730,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9961,7 +9961,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10223,6 +10223,25 @@ Prefab:
     - target: {fileID: 1383435491513278, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
       propertyPath: m_Name
       value: Pipe Double (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 82646306067872278, guid: c5c62bd37fef05d4d8e1210db6c0dc1d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114888107709593076, guid: c5c62bd37fef05d4d8e1210db6c0dc1d,
+        type: 2}
+      propertyPath: particleSubstance
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998,
+        type: 2}
+    - target: {fileID: 4428520521781840, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.7579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428520521781840, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.15343
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
@@ -10599,7 +10618,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c48bc32051cee1342a31319c25b11375, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -11,7 +11,7 @@ public class ContainersUI : UIMenu
 {
     private Container[] containers;
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         containers =  GetComponentsInChildren<Container>();
@@ -19,6 +19,8 @@ public class ContainersUI : UIMenu
 
         foreach (Container cont in containers)
             cont.StopHighLight();
+
+        FindObjectOfType<PersistentContainers>().LevelStarted();
     }
 
     public Container[] GetContainers(int containersCount)

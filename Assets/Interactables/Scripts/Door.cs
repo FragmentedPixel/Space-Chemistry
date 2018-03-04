@@ -16,6 +16,12 @@ public class Door : MonoBehaviour
 
         if(player.CompareTag("Player"))
         {
+            var persistent = FindObjectOfType<PersistentContainers>();
+            if(persistent != null)
+            {
+                FindObjectOfType<PersistentContainers>().LevelEnded();
+            }
+
             FindObjectOfType<LevelManager>().ChangeScene(NextLevel);
         }
     }

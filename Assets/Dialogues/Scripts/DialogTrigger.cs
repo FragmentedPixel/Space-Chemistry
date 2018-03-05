@@ -1,41 +1,35 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogTrigger : MonoBehaviour
+/*
+ * Responsible for triggering a dialog when the player enters the trigger.
+ */
+
+public class DialogTrigger : PlayerTriggerable
 {
+    #region Variabiles
     public GameObject dialogGO;
-    public AudioClip triggerSound;
+    public float duration = .5f;
+    #endregion
 
-    private AudioSource audioS;
-    private bool triggered = false;
-
+    #region Initialization
     private void Start()
     {
         dialogGO.transform.localScale = Vector3.zero;
+    }
+    #endregion
 
-        audioS = GetComponent<AudioSource>();
-        audioS.volume = PlayerPrefsManager.GetMasterVolume();
+    #region Player Interaction
+    protected override void OnPlayerTriggered()
+    {
+        StartCoroutine(ShowDialogCR());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator ShowDialogCR()
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-
-        if (player != null && triggered == false)
-        {
-            audioS.PlayOneShot(triggerSound);
-            StartCoroutine(ShowDialogCR(player.transform.position));
-        }
-    }
-
-    private IEnumerator ShowDialogCR(Vector3 startPosition)
-    {
-        triggered = true;
-
-        float duration = .5f;
         float currentTime = 0f;
 
+        Vector3 startPosition = FindObjectOfType<PlayerMovement>().transform.position;
         Vector3 endPosition = dialogGO.transform.position;
 
         while(currentTime < duration)
@@ -49,9 +43,9 @@ public class DialogTrigger : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        GameObject.Destroy(dialogGO);
+        Destroy(dialogGO);
 
         yield break;
     }
-
+    #endregion
 }

@@ -6,23 +6,18 @@ using UnityEngine;
  * Responsible for transferring the player to the next level when reached.
  */
 
-public class Door : MonoBehaviour
+public class Door : PlayerTriggerable
 {
     public string NextLevel;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnPlayerTriggered()
     {
-        GameObject player = collision.gameObject;
-
-        if(player.CompareTag("Player"))
+        var persistent = FindObjectOfType<PersistentContainers>();
+        if (persistent != null)
         {
-            var persistent = FindObjectOfType<PersistentContainers>();
-            if(persistent != null)
-            {
-                FindObjectOfType<PersistentContainers>().LevelEnded();
-            }
-
-            FindObjectOfType<LevelManager>().ChangeScene(NextLevel);
+            FindObjectOfType<PersistentContainers>().LevelEnded();
         }
+
+        FindObjectOfType<LevelManager>().ChangeScene(NextLevel);
     }
 }

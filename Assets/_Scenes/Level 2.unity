@@ -10732,8 +10732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39aff7c97f0c68e4db8d34e710e4cf81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerSound: {fileID: 8300000, guid: 7cac462ea89f8564aa40594441456869, type: 3}
   soundPriority: 50
+  triggerSound: {fileID: 8300000, guid: 7cac462ea89f8564aa40594441456869, type: 3}
 --- !u!1001 &2117194581
 Prefab:
   m_ObjectHideFlags: 0

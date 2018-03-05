@@ -17,7 +17,6 @@ public class Parralax : MonoBehaviour
     public float smoothing = .5f;
 
     public float depth = 2f;
-
     #endregion
 
     #region Camera

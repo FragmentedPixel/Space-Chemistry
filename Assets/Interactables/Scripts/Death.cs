@@ -6,11 +6,11 @@ using UnityEngine;
  * Responsible for killing the player.
  */ 
 
-public class Death : MonoBehaviour
+public class Death : PlayerTriggerable
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnPlayerTriggered()
     {
-        PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
 
         if (player != null)
         {

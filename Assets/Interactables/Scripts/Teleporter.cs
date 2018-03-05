@@ -10,6 +10,4 @@ public class Teleporter : MonoBehaviour
     {
         collision.transform.position = destination.position;
     }
-
-
 }

@@ -15,6 +15,7 @@ public class Container : MonoBehaviour
 
     public Image highLightImage;
     public Image fillImage;
+    public Transform containerTransform;
 
     public float blinkSpeed = .1f;
     public float targetAlpha = .5f;
@@ -244,11 +245,14 @@ public class Container : MonoBehaviour
     public void HighLight()
     {
         SetImageAlpha(targetAlpha);
+        containerTransform.GetComponent<RectTransform>().localScale = Vector3.one * 1.2f;
+
     }
 
     public void StopHighLight()
     {
         SetImageAlpha(0f);
+        containerTransform.GetComponent<RectTransform>().localScale = Vector3.one * 1f;
     }
 
     private void SetImageAlpha(float alpha)

@@ -15,7 +15,8 @@ public class InvetoryUI : UIMenu
 
         // If there are no collectabiles in this level, we don't need the pannel.
         CollectableObject[] objectsToCollect = FindObjectsOfType<CollectableObject>();
-        return (objectsToCollect.Length <= 0);
+        
+        return (objectsToCollect.Length < 0);
     }
 
     public void HighLight()

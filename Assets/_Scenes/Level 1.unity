@@ -1698,7 +1698,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 269994065}
-  - component: {fileID: 269994066}
   m_Layer: 0
   m_Name: Tutorials
   m_TagString: Untagged
@@ -1720,17 +1719,6 @@ Transform:
   m_Father: {fileID: 1031257587}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &269994066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 269994064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97f2a721cbed9114e8143ff6559bacd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &270678544 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224719499650199370, guid: 0d2393e98780a744c8e4cd36e132714c,
@@ -1850,8 +1838,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974768e3f06e8444a9b50848ea1f4108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogGO: {fileID: 1595294465}
+  soundPriority: 50
   triggerSound: {fileID: 8300000, guid: 1739242eabe6f4f478e02f1e527b5340, type: 3}
+  dialogGO: {fileID: 1595294465}
+  duration: 0.5
 --- !u!61 &293398832
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7915,8 +7905,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974768e3f06e8444a9b50848ea1f4108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogGO: {fileID: 871337405}
+  soundPriority: 50
   triggerSound: {fileID: 8300000, guid: d6d94826c9fe0864c9aacb34be53b4e2, type: 3}
+  dialogGO: {fileID: 871337405}
+  duration: 0.5
 --- !u!61 &1190866620
 BoxCollider2D:
   m_ObjectHideFlags: 0

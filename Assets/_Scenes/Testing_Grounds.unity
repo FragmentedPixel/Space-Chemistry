@@ -9957,7 +9957,7 @@ Prefab:
         type: 2}
       propertyPath: particleSubstance
       value: 
-      objectReference: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998,
+      objectReference: {fileID: 11400000, guid: 2bc4a9ec3f5229641a3fb31da6c277b6,
         type: 2}
     - target: {fileID: 4428520521781840, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9966,6 +9966,14 @@ Prefab:
     - target: {fileID: 4428520521781840, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.15343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954373635711548, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954373635711548, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5c62bd37fef05d4d8e1210db6c0dc1d, type: 2}

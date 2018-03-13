@@ -121,6 +121,7 @@ public class Particle : MonoBehaviour
 
         // Set the rigidbody for the particle..
         rb.gravityScale = newSubstance.particleGravity;
+        rb.constraints = RigidbodyConstraints2D.None;
         rb.velocity = Vector2.zero;
 
         // Move it to the corresponding layer.

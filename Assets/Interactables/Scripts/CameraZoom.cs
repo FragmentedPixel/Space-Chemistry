@@ -8,7 +8,7 @@ public class CameraZoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
 
         if(player != null)
         {
@@ -19,7 +19,7 @@ public class CameraZoom : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
 
         if (player != null)
         {

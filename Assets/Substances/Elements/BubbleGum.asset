@@ -18,3 +18,4 @@ MonoBehaviour:
   particleMaterial: {fileID: 0}
   particleLifeTime: 3
   particleColor: {r: 1, g: 0.3882353, b: 0.7921569, a: 1}
+  solidifyTime: 1.5

@@ -144,6 +144,11 @@ public class Particle : MonoBehaviour
             return 0f;
     }
 
+    public float GetCurrentLifeTime()
+    {
+        return currentLifeTime;
+    }
+
     public void ScaleDownSprite(Vector2 newScale)
     {
         rend.transform.localScale = newScale;

@@ -65,7 +65,7 @@ public class sSubstance : ScriptableObject
 
     #endregion
 
-    #region Movement & Scale
+    #region General Methods
 
     public void MovementAnimation(Transform transform, Rigidbody2D rb)
     {
@@ -86,6 +86,21 @@ public class sSubstance : ScriptableObject
 
         // Calculate scale depending on life time left.
         float scaleValue = 1.0f - percentagePassed/2;
+        Vector2 particleScale = Vector2.one;
+
+        // Update the particle scale.
+        particleScale.x = scaleValue;
+        particleScale.y = scaleValue;
+        substanceScript.ScaleDownSprite(particleScale);
+    }
+
+    public void ScaleUp(Particle substanceScript)
+    {
+        // The effect for the particle to seem to fade away
+        float percentagePassed = substanceScript.GetPercentagePassed();
+
+        // Calculate scale depending on life time left.
+        float scaleValue = 1.0f + percentagePassed / 2;
         Vector2 particleScale = Vector2.one;
 
         // Update the particle scale.

@@ -68,8 +68,8 @@ public class LiquidPool : MonoBehaviour {
         SpawnWater(width, height);
 
         //TODO: Make finite barrel more interesting
-        GetComponent<BoxCollider2D>().size = new Vector2(width, height);
-        GetComponent<BoxCollider2D>().offset = new Vector2(0f, height/2);
+        GetComponent<BoxCollider2D>().size = new Vector2(width, height/2);
+        GetComponent<BoxCollider2D>().offset = new Vector2(0f, height/4);
 	}
 	
     public void SpawnWater(float width, float height)

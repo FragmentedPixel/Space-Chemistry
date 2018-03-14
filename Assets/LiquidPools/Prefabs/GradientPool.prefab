@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957561093763490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.57, y: -2.68, z: -1}
+  m_LocalPosition: {x: -5.39, y: 3.828, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,10 +83,10 @@ MonoBehaviour:
   splash: {fileID: 1087251709110314, guid: e4bf72cf515967c4088f5e76b6195978, type: 2}
   baseMaterial: {fileID: 2100000, guid: afe5b682d283a4443b712e178f741d68, type: 2}
   watermesh: {fileID: 1690723453561738, guid: 75ecc2698e8f55840afcfefeaa15c2b9, type: 2}
-  poolSubstance: {fileID: 0}
+  poolSubstance: {fileID: 11400000, guid: 8c3a036ca8d09c14eb5e1a7a65918998, type: 2}
   mass: 1
   height: 1.8
-  width: 10.27
+  width: 12.76
   deadly: 0
 --- !u!114 &114639506249903706
 MonoBehaviour:

@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class LiquidPool : MonoBehaviour {
 
-    //--------------------------------
-    //IN CASE OF EXTREME CONFUSION----
-    //CHECK: https://gamedevelopment.tutsplus.com/tutorials/creating-dynamic-2d-water-effects-in-unity--gamedev-14143
-    //--------------------------------
-
     #region Pool Prefabs
     [Header("Pool Prefabs")]
     //particle system;
@@ -72,7 +67,7 @@ public class LiquidPool : MonoBehaviour {
     {
         SpawnWater(width, height);
 
-        //TODO: Make finite barrel more intersting
+        //TODO: Make finite barrel more interesting
         GetComponent<BoxCollider2D>().size = new Vector2(width, height);
         GetComponent<BoxCollider2D>().offset = new Vector2(0f, height/2);
 	}
@@ -304,7 +299,6 @@ public class LiquidPool : MonoBehaviour {
             //Set the lifetime of the particle system.
             float lifetime = 0.93f + Mathf.Abs(velocity) * 0.07f;
 
-
             //Set the correct position of the particle system.
             Vector3 position = new Vector3(xpositions[index], ypositions[index] - 0.35f, 5);
 
@@ -316,7 +310,6 @@ public class LiquidPool : MonoBehaviour {
             Destroy(splish, lifetime + 0.3f);
 
             //Set the splash to be between two values in Shuriken by setting it twice.
-
             var main = splish.GetComponent<ParticleSystem>().main;
 
             splish.GetComponent<ParticleSystemRenderer>().sharedMaterial.color = poolSubstance.particleColor;

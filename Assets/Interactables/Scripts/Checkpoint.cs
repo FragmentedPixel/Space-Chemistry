@@ -15,7 +15,7 @@ public class Checkpoint : SoundMonoBehaviour
     public AudioClip passedSound;
 
     //Was this checkpoint already passed?
-    private bool passed = false;
+    public bool passed = false;
 
     // Renderer component.
     private SpriteRenderer spriterenderer;

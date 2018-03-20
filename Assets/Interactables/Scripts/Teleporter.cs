@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
+    public bool teleportPlayerOnly = true;
     public Checkpoint[] checkpoints;
     public Light spotLight;
     public Transform destination;
@@ -17,7 +18,19 @@ public class Teleporter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(AreAllCheckpointsPassed() == true)
-            collision.transform.position = destination.position;
+        {
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            if(player != null)
+            {
+                collision.transform.position = destination.position;
+                FindObjectOfType<LevelLoading>().StartLevel();
+            }
+            else if(teleportPlayerOnly == false)
+            {
+                collision.transform.position = destination.position;
+            }
+
+        }
     }
 
     private bool AreAllCheckpointsPassed()

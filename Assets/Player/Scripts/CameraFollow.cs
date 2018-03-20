@@ -25,8 +25,7 @@ public class CameraFollow : MonoBehaviour
         player = playerMov.transform;
 		target = playerMov.cameraPoint;
 
-        transform.position = player.position + offset;
-
+        FocusOnPlayer();
 
         initZoom = GetComponent<Camera>().orthographicSize;
 	}
@@ -69,4 +68,9 @@ public class CameraFollow : MonoBehaviour
 
 		yield break;
 	}
+
+    public void FocusOnPlayer()
+    {
+        transform.position = player.position + offset;
+    }
 }

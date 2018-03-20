@@ -16,11 +16,17 @@ public class LevelLoading : MonoBehaviour
     {
         ppp = GetComponent<PostProcessingBehaviour>().profile;
 
+        StartLevel();
+    }
+
+    public void StartLevel()
+    {
         StartCoroutine(LerpCR());
     }
 
     private IEnumerator LerpCR()
     {
+        GetComponent<CameraFollow>().FocusOnPlayer();
         float currentTime = 0f;
 
         while(currentTime < duration)

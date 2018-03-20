@@ -42,6 +42,9 @@ public class PossibleCollecting : MonoBehaviour
 
     private void StartFeedBack()
     {
+        if (instructions.CanCollect() == false)
+            return;
+
         StopAllCoroutines();
 
         StartCoroutine(PossibleCollectingCR());

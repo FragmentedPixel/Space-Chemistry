@@ -281,4 +281,15 @@ public class PlayerContainers : PlayerContrable
             mixer.Mix(containers[0], containers[1]);
     }
     #endregion
+
+    private bool AreContainersAvaible()
+    {
+        ContainersUI containersUI = FindObjectOfType<ContainersUI>();
+        return containersUI.AreContainersAvailable();
+    }
+
+    public bool CanCollect()
+    {
+        return (state != ContainersState.Releasing && AreContainersAvaible() == true);
+    }
 }

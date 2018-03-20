@@ -60,4 +60,17 @@ public class ContainersUI : UIMenu
         }
     }
 
+    public bool AreContainersAvailable()
+    {
+        for (int i = 0; i < containers.Length; i++)
+        {
+            if (containers[i].gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

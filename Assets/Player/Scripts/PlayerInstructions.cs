@@ -33,12 +33,16 @@ public class PlayerInstructions : MonoBehaviour
 
     public void ShowCollectingCanvas()
     {
-        if(containers.state != ContainersState.Releasing)
         ShowCanvas(collectingCanvas);
     }
 
     public void HideCollectingCanvas()
     {
         HideCanvas(collectingCanvas);
+    }
+
+    public bool CanCollect()
+    {
+        return containers.CanCollect() ;
     }
 }

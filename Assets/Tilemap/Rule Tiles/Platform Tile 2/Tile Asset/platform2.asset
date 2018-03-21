@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d746e0082aaaaf0458b2b02bb4d45a47, type: 3}
+  m_Name: platform2
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 21300000, guid: c48421fb5f2b9fd468e3187b399dd5b0, type: 3}
+  m_DefaultColliderType: 2
+  m_NeighborType: 0
+  m_TilingRules:
+  - m_Neighbors: 0000000002000000000000000200000002000000000000000200000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: a332aa4194094e846a8fabba13bf817e, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 1
+    m_Output: 0
+    m_ColliderType: 2
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000001000000000000000200000001000000000000000100000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: f59cce63466646f48beee8b9b374fd59, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 1
+    m_Output: 0
+    m_ColliderType: 2
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000002000000000000000200000001000000000000000100000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: d97558acecf56a749938568ab4fefb20, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 1
+    m_Output: 0
+    m_ColliderType: 2
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000002000000000000000100000001000000000000000200000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: bfd4d1251ba1a1c469dce768a960657b, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 1
+    m_Output: 0
+    m_ColliderType: 2
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000002000000000000000200000001000000000000000200000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 76281ab8477b52841a7830dc98d2737b, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 1
+    m_Output: 0
+    m_ColliderType: 2
+    m_RandomTransform: 0
+  - m_Neighbors: 0000000001000000000000000100000001000000000000000100000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: c48421fb5f2b9fd468e3187b399dd5b0, type: 3}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 0
+    m_ColliderType: 2
+    m_RandomTransform: 0

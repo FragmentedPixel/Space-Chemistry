@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for unlocking the barrels through the level.
  */
 
-public class ProgressiveBarrel : PlayerTriggerable
+public class ProgressiveBarrel : OneTimeSoundTrigger
 {
     private ContainersUI containersManager;
  

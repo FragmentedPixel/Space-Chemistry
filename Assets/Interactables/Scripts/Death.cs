@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for killing the player.
  */ 
 
-public class Death : PlayerTriggerable
+public class Death : OneTimeSoundTrigger
 {
     protected override void OnPlayerTriggered()
     {

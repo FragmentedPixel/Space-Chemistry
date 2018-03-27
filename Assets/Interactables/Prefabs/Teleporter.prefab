@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312209622160948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.11, y: 8.303831, z: -3.25}
+  m_LocalPosition: {x: 48.149796, y: 24.927197, z: -3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4242273983569528}
@@ -171,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467245041974086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.3, y: -18.51, z: 0}
+  m_LocalPosition: {x: 3.2, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4680962121992474}
@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cfaa7b836da8c458a78b574889fcb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportPlayerOnly: 1
   checkpoints:
   - {fileID: 0}
   spotLight: {fileID: 108650288787392210}

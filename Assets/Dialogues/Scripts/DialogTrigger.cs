@@ -5,7 +5,7 @@ using UnityEngine;
  * Responsible for triggering a dialog when the player enters the trigger.
  */
 
-public class DialogTrigger : PlayerTriggerable
+public class DialogTrigger : OneTimeSoundTrigger
 {
     #region Variabiles
     public GameObject dialogGO;

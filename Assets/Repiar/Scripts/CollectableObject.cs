@@ -5,7 +5,7 @@ using UnityEngine;
  * Responsible for sending collected objects to the inventory.
  */
 
-public class CollectableObject : PlayerTriggerable
+public class CollectableObject : OneTimeSoundTrigger
 {
     public RepairItem item;
 

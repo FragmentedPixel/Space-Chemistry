@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTriggerable : SoundMonoBehaviour
+public class OneTimeSoundTrigger : SoundMonoBehaviour
 {
     private bool triggered = false;
     public AudioClip triggerSound;

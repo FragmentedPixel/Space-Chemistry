@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvetoryTrigger : PlayerTriggerable
+public class InvetoryTrigger : OneTimeSoundTrigger
 {
     InvetoryUI invetoryUI;
 

@@ -2,30 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraZoom : MonoBehaviour
+public class CameraZoom : PlayerEnterExit
 {
     public float zoom = 5;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnPlayerEnter()
     {
-        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-
-        if(player != null)
-        {
-			CameraFollow camera = FindObjectOfType<CameraFollow>();
-			camera.SetZoom(zoom);
-        }
+        CameraFollow camera = FindObjectOfType<CameraFollow>();
+        camera.SetZoom(zoom);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected override void OnPlayerExit()
     {
-        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-
-        if (player != null)
-        {
-			CameraFollow camera = FindObjectOfType<CameraFollow>();
-			camera.RemoveZoom ();
-        }
+        CameraFollow camera = FindObjectOfType<CameraFollow>();
+        camera.RemoveZoom();
     }
-
 }

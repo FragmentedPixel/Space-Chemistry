@@ -158,5 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b425efbe9d795a4e9dea2f405538ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPriority: 50
+  triggerSound: {fileID: 8300000, guid: 6148c811826682249b5dd5b63fc8fd54, type: 3}
   shakeDuration: 0.7
-  impactSound: {fileID: 8300000, guid: 08a67c16a0425114db5b87dca299b1ec, type: 3}

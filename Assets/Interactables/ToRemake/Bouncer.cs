@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for bouncing the player back when colliding with him.
  */
 
-public class Bouncer : PlayerTriggerable
+public class Bouncer : OneTimeSoundTrigger
 {
     public float bouncerForce = 25f;
 

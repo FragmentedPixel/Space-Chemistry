@@ -6,7 +6,7 @@ using UnityEngine;
  * Responsible for transferring the player to the next level when reached.
  */
 
-public class Door : PlayerTriggerable
+public class Door : OneTimeSoundTrigger
 {
     public string NextLevel;
 

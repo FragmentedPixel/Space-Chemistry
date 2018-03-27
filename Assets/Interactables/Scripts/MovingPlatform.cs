@@ -50,7 +50,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Stick the player to the platform.
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
 
         if (player != null)
             player.transform.SetParent(transform);
@@ -59,7 +59,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         // Remove the player from the platform.
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
 
         if (player != null)
             player.transform.SetParent(null);

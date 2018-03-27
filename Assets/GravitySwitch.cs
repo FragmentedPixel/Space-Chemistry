@@ -23,4 +23,6 @@ public class GravitySwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F6))
             SwitchAllRbs(gravity);
     }
+
+    
 }

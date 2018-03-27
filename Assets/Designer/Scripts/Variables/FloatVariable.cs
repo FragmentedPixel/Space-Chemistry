@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [Serializable]
+[CreateAssetMenu(fileName = "Float Variable", menuName = "Variables/Float", order = 0)]
 public class FloatVariable : ScriptableObject
 {
     [Tooltip("Description of the variable.")]
@@ -11,7 +12,7 @@ public class FloatVariable : ScriptableObject
 
     private float currentValue;
 
-    public float value
+    public float CurrentValue
     {
         get { return currentValue; }
         set {
@@ -27,7 +28,7 @@ public class FloatVariable : ScriptableObject
 
     private void OnVariableChanged()
     {
-        Debug.Log("Variable was changed.");
+
     }
 
 

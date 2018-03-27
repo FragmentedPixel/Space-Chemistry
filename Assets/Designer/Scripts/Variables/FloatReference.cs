@@ -13,13 +13,19 @@ public class FloatReference
         ConstantValue = value;
     }
 
-    public float Value
+    public float CurrentValue
     {
-        get { return UseConstant ? ConstantValue : Variable.value; }
+        get { return UseConstant ? ConstantValue : Variable.CurrentValue; }
+        set {
+            if (UseConstant)
+                ConstantValue = value;
+            else
+                Variable.CurrentValue = value;
+        }
     }
 
     public static implicit operator float(FloatReference reference)
     {
-        return reference.Value;
+        return reference.CurrentValue;
     }
 }

@@ -207,6 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8c66a1455d2ce47aa668f13c3d0d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPriority: 50
+  triggerSound: {fileID: 0}
   NextLevel: Level 2
 --- !u!212 &212080767504705206
 SpriteRenderer:

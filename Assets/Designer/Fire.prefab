@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114700157630386802}
   - component: {fileID: 61656485638658758}
   m_Layer: 13
-  m_Name: Burning
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -421,8 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce2a0d2686964f47952bbd275e46d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPriority: 50
+  triggerSound: {fileID: 0}
   bouncerForce: 25
-  hitSound: {fileID: 8300000, guid: e0db973163fd48144a902086771cd3de, type: 3}
 --- !u!114 &114733276858504548
 MonoBehaviour:
   m_ObjectHideFlags: 1

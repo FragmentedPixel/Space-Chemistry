@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114966558510135842}
   - component: {fileID: 82158263130772638}
   m_Layer: 11
-  m_Name: Falling Object Trigger
+  m_Name: Falling Object In Bg Trigger
   m_TagString: Untagged
   m_Icon: {fileID: -2349822300998112484, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

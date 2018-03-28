@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundPriority: 50
+  triggerSound: {fileID: 0}
   item: {fileID: 11400000, guid: f907a1bdd62e97e4f886391bb23249a0, type: 2}
-  pickupSound: {fileID: 8300000, guid: 97811d6e0217094459b26e9083ed81e4, type: 3}
 --- !u!114 &114648508655488590
 MonoBehaviour:
   m_ObjectHideFlags: 1

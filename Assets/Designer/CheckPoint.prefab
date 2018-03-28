@@ -257,6 +257,7 @@ MonoBehaviour:
   soundPriority: 50
   checkpointPassed: {fileID: 21300000, guid: 580c92b0f9d3c2a4bb1864c5d502b79d, type: 3}
   passedSound: {fileID: 8300000, guid: 30f29314fc5565447b5311e3ee132ff9, type: 3}
+  passed: 0
   light: {fileID: 108308801264429612}
 --- !u!212 &212611376404728328
 SpriteRenderer:

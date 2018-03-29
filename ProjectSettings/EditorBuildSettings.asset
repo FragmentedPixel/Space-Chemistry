@@ -6,32 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/SplashScreen.unity
+    path: Assets/_Scenes/Menus/SplashScreen.unity
     guid: 223dd37e1c5cb7b44a065f1cc43ad2ea
   - enabled: 1
-    path: Assets/_Scenes/Credits.unity
+    path: Assets/_Scenes/Menus/Credits.unity
     guid: b2704e1a44a8105459a3dc17d9a5aa2c
   - enabled: 1
-    path: Assets/_Scenes/Settings.unity
+    path: Assets/_Scenes/Menus/Settings.unity
     guid: 416c1aae6bd700646acf008e5c97a446
   - enabled: 1
-    path: Assets/_Scenes/Menu.unity
+    path: Assets/_Scenes/Menus/Menu.unity
     guid: 2809a742c70d7944fb530325f0aad9c6
   - enabled: 1
-    path: Assets/_Scenes/LevelSelect.unity
-    guid: df629c5a0fa583f469475bedaf797e29
-  - enabled: 1
-    path: Assets/_Scenes/Level 1_remake.unity
+    path: Assets/_Scenes/Developement/Level 1_remake.unity
     guid: ba4ed9e826f85e8499e3183798a34594
   - enabled: 1
-    path: Assets/_Scenes/Level 1.unity
+    path: Assets/_Scenes/Old Levels/Level 1.unity
     guid: 047df6315a16a32469e29d1e1c1e50ee
   - enabled: 1
-    path: Assets/_Scenes/Level 2_remake.unity
+    path: Assets/_Scenes/Developement/Level 2_remake.unity
     guid: 5b5099a8e36d5ae4286bdbbefced96ee
   - enabled: 1
-    path: Assets/_Scenes/Level 2.unity
+    path: Assets/_Scenes/Old Levels/Level 2.unity
     guid: 8a4032eed3625d041a523cfbd1482ad8
   - enabled: 1
-    path: Assets/_Scenes/Thanks.unity
+    path: Assets/_Scenes/Menus/LevelSelect.unity
+    guid: 17c802843f7f29f42bd266efdefe2880
+  - enabled: 1
+    path: Assets/_Scenes/Menus/Thanks.unity
     guid: 32981900a0f59fb439aaceb8d12498cf

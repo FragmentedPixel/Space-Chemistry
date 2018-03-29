@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 224965144293963764}
   - component: {fileID: 222884472060598372}
   - component: {fileID: 114966707265112500}
+  - component: {fileID: 114418898228966508}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -292,6 +293,7 @@ GameObject:
   - component: {fileID: 224805190601299162}
   - component: {fileID: 222695251062887742}
   - component: {fileID: 114346361927790622}
+  - component: {fileID: 114489051590954198}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -1679,6 +1681,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114418898228966508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237740426168834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99e8b9c7a174146af91317f091b88d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyboardSprite: {fileID: 21300000, guid: eb5ee955225a1044eac950972dabd97f, type: 3}
+  ControllerSprite: {fileID: 21300000, guid: 5a723b50624bc16419bae47c06cb3cc3, type: 3}
 --- !u!114 &114442127875087942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1725,6 +1740,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114489051590954198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326133320054572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99e8b9c7a174146af91317f091b88d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyboardSprite: {fileID: 21300000, guid: b277b00fef795a84a9ca047eb256ff9e, type: 3}
+  ControllerSprite: {fileID: 21300000, guid: 989f12cb9fc8aaf419df5b3e07fb0c61, type: 3}
 --- !u!114 &114501859530753054
 MonoBehaviour:
   m_ObjectHideFlags: 1

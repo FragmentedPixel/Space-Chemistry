@@ -6,6 +6,19 @@ public class Elevator : MonoBehaviour
 {
     public float speed = 3f;
 
+    private void OnEnable()
+    {
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
+        player.DisableJump();
+    }
+
+    private void Update()
+    {
+        float input = Input.GetAxis("Vertical");
+
+        transform.position += Vector3.up * input * speed * Time.deltaTime;
+    }
+
     public void MoveTo(Vector3 destination)
     {
         StopAllCoroutines();

@@ -144,6 +144,11 @@ public class PlayerMovement : PlayerContrable
         rb.velocity = currentVel;
     }
 
+    public void DisableJump()
+    {
+        jumpForce = 0f;
+    }
+
     #endregion
 
     #region Movement 

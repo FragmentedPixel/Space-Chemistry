@@ -14,9 +14,9 @@ public class Parralax : MonoBehaviour
     private float[] parralaxScales;
 
     [Tooltip("Smoothing of the parralax effect.")]
-    public float smoothing = .5f;
+    public FloatReference smoothing;
 
-    public float depth = 2f;
+    public FloatReference depth;
     #endregion
 
     #region Camera
@@ -29,12 +29,16 @@ public class Parralax : MonoBehaviour
     {
         // Sets Camera information
         cam = Camera.main.transform;
-
         lastCamPos = cam.position;
+
+        // If the parent is null, this is our parent.
+        if (backgroundsParent == null)
+            backgroundsParent = transform;
 
         // Sets the backgrounds informations.
         parralaxScales = new float[backgroundsParent.childCount];
 
+        // Update all the scales.
         for (int i = 0; i < backgroundsParent.childCount; i++)
         {
             parralaxScales[i] = depth * -1;
@@ -45,6 +49,7 @@ public class Parralax : MonoBehaviour
     #region Parralax Effect
     private void LateUpdate()
     {
+        // Go through all the childs of the parent.
         for (int i = 0; i < backgroundsParent.childCount; i++)
         {
             // Calculate parallax amount from camera movement.
